@@ -16,7 +16,8 @@
     "bannedFrom": "2026-09-18",
     "restored": "2026-09-24",
     "orderEnds": "2026-10-08",
-    "status": "Passes restored under a 14-day court order"
+    "status": "Passes restored under a 14-day court order",
+    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. The order is temporary: it runs fourteen days. The outlets' motion for a longer one is due September 28, and the court has said it \"intends to rule expeditiously.\""
   },
   "hero": {
     "deck": [
@@ -1096,8 +1097,16 @@
   ],
   "corrections": [
     {
+      "date": "2026-09-21",
+      "text": "The tracker entry this page draws on originally said the phrase \"ban on the free press\" appeared in no transcript of Trump's remarks. The Roll Call Factbase transcript of the September 18 Oval Office session shows him saying it. The entry also quoted him as saying \"It's a very simple ban\"; the transcript reads \"Uh, a very simple ban.\" And it said Betsy Klein had covered the White House since the Obama administration; the complaint says since 2018."
+    },
+    {
       "date": "2026-09-24",
       "text": "An earlier version of the tracker entry this page draws on described Karem v. Trump as a 2019 decision. It is the D.C. Circuit’s 2020 opinion; the 2019 ruling in that case was the district court’s. The same entry said reporters were turned away on September 24 \"in defiance\" of the order. The record supports \"despite\": the White House filed a sworn timeline and the judge accepted it."
+    },
+    {
+      "date": "2026-09-24",
+      "text": "Later the same day, before this page was published, three quotations in the tracker entry were checked against their original sources and fixed. The restraining order's line on Sherrill and Karem had been quoted as one passage, although a citation to the government's brief sits between its two sentences; the two are now quoted separately. Trump's answer about his oath carried an \"and\" that the Roll Call Factbase transcript does not contain. Ari Fleischer's post had been quoted from a first sentence we could verify only as read aloud on ABC; it is now quoted from \"Banning them\" onward, as Newsweek published it. None of the corrections changes the meaning."
     }
   ]
 }

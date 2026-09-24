@@ -28,7 +28,29 @@ export const outlet = (t) => {
   return head.length > 48 ? head.slice(0, 46) + '…' : head;
 };
 
-export const slug = (s) => s.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 64);
+export const slug = (s) => s.toLowerCase().replace(/['‘’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 64);
+
+// Typographer's quotes. The data keeps straight quotes, which is what the
+// integrity check and the tracker use; the page renders curly ones. An
+// apostrophe inside a word, or after one, closes; a quote after a space or an
+// opening bracket or dash opens.
+export const smart = (s) => s
+  .replace(/(^|[\s([{\u2014\u2013-])"/g, '$1“')
+  .replace(/"/g, '”')
+  .replace(/(\w)'(?=\w)/g, '$1’')
+  .replace(/(^|[\s([{“\u2014\u2013-])'/g, '$1‘')
+  .replace(/'/g, '’');
+
+// Apply `smart` to every string in a dive's data except the ones that are
+// identifiers, dates or source records (source headlines are matched as written).
+const RAW = new Set(['url', 'sources', 'slug', 'trackerIds', 'actor', 'date', 'updated', 'bannedFrom', 'restored', 'orderEnds']);
+export function smartAll(o, key) {
+  if (RAW.has(key)) return o;
+  if (typeof o === 'string') return smart(o);
+  if (Array.isArray(o)) return o.map((x) => smartAll(x, key));
+  if (o && typeof o === 'object') return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, smartAll(v, k)]));
+  return o;
+}
 
 // Unique source URLs anywhere inside an object.
 export function sourceCount(o) {

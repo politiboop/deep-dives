@@ -687,7 +687,15 @@ footer { padding: 44px 0 60px; }
   --ac-court: var(--st-court);
   --ac-press: var(--st-record);
   --ac-congress: var(--st-threat);
+  /* The shared --text-3 (#6b7480) measures 4.1:1 on the page and 3.9:1 on a card,
+     under the 4.5:1 floor for small text. It carries the source links, timestamps
+     and attributions, the things this site most needs read. 5.2:1 on a card. */
+  --text-3: #7f8894;
+  /* Height of the sticky header: the topbar, plus the section rail below 1000px. */
+  --head-h: 54px;
 }
+@media (max-width: 1000px) { :root { --head-h: 95px; } }
+section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .topnav a.is-home { color: var(--text); }
 
 /* ── front door ────────────────────────────────────────────────────────── */
@@ -745,6 +753,7 @@ footer { padding: 44px 0 60px; }
 .stand-now .stand-status {
   font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
   font-size: clamp(28px, 3.6vw, 40px); line-height: 1.02; margin-top: 8px;
+  color: var(--text);
 }
 .stand-now p { color: var(--text-2); font-size: 15px; margin-top: 12px; }
 .stand-dates { list-style: none; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 22px; }
@@ -759,9 +768,9 @@ footer { padding: 44px 0 60px; }
 
 /* ── the six days (timeline of events) ─────────────────────────────────── */
 .days { max-width: 900px; }
-.day { margin-bottom: 10px; }
+.day { margin-bottom: 10px; scroll-margin-top: var(--head-h); }
 .day-head {
-  position: sticky; top: 54px; z-index: 5;
+  position: sticky; top: var(--head-h); z-index: 5;
   display: flex; align-items: baseline; gap: 12px;
   background: rgba(11, 13, 16, 0.97); padding: 14px 0 10px;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -773,7 +782,7 @@ footer { padding: 44px 0 60px; }
 .events { list-style: none; border-left: 2px solid var(--line); margin-left: 5px; padding: 4px 0 12px; }
 .ev {
   position: relative; padding: 14px 0 14px 26px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: calc(var(--head-h) + 56px);
 }
 .ev::before {
   content: ""; position: absolute; left: -7px; top: 21px;
@@ -784,7 +793,7 @@ footer { padding: 44px 0 60px; }
 .ev[data-actor="court"] { --ev-c: var(--ac-court); }
 .ev[data-actor="press"] { --ev-c: var(--ac-press); }
 .ev[data-actor="congress"] { --ev-c: var(--ac-congress); }
-.ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; }
+.ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; }
 .ev-time { color: var(--text-3); text-transform: uppercase; }
 .actor-chip {
   color: var(--ev-c); text-transform: uppercase; font-weight: 500;
@@ -799,19 +808,19 @@ footer { padding: 44px 0 60px; }
 .ev-body p { font-size: 15.5px; line-height: 1.68; color: var(--text-2); margin-top: 8px; }
 .ev-src { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .ev-src a {
-  font-family: var(--font-mono); font-size: 11px; color: var(--text-3);
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-3);
   text-decoration: none; border-bottom: 1px solid var(--line);
 }
 .ev-src a:hover { color: var(--st-court); border-color: var(--st-court); }
 .actor-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: -12px 0 18px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-2); }
 .actor-legend span { display: inline-flex; align-items: center; gap: 7px; }
 .actor-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-@media (max-width: 640px) { .ev h3 { font-size: 21px; } .day-head { top: 54px; } }
+@media (max-width: 640px) { .ev h3 { font-size: 21px; } }
 
 /* ── the claim and the record ──────────────────────────────────────────── */
 .ev-claim .unquoted { font-style: normal; font-family: var(--font-body); }
 .ev-claim .para-note {
-  display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px;
+  display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px;
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3);
 }
 
@@ -827,11 +836,11 @@ footer { padding: 44px 0 60px; }
   background: var(--surface); border: 1px solid var(--line-soft); border-radius: 6px;
   padding: 16px 18px; margin-bottom: 10px;
 }
-.voice-col.is-defended .voice { border-left: 3px solid var(--text-3); }
-.voice-col.is-objected .voice { border-left: 3px solid var(--st-record); }
+/* Both sides get the same card. Any accent here would give one side more weight. */
+.voice { border-left: 3px solid var(--line); }
 .voice blockquote { font-family: var(--font-serif); font-style: italic; font-size: 16px; line-height: 1.6; color: var(--text); }
 .voice .who { margin-top: 10px; font-size: 14px; color: var(--text); font-weight: 600; }
-.voice .role { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--text-3); margin-top: 2px; }
+.voice .role { display: block; font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--text-3); margin-top: 2px; }
 .voice .ev-src { margin-top: 8px; }
 
 /* ── the filing: amici roster ──────────────────────────────────────────── */
@@ -863,31 +872,136 @@ footer { padding: 44px 0 60px; }
 .precedent li.is-now .yr { color: var(--brand-bright); }
 .precedent .case { font-size: 17px; font-weight: 600; color: var(--text); line-height: 1.3; }
 .precedent .case em { font-style: italic; }
-.precedent .court { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--text-3); margin-top: 3px; font-weight: 400; }
+.precedent .court { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--text-3); margin-top: 3px; font-weight: 400; }
 .precedent .holding { font-size: 15px; color: var(--text-2); line-height: 1.62; margin-top: 8px; }
 @media (max-width: 560px) { .precedent li { grid-template-columns: 1fr; gap: 6px; } }
 
 /* ── corrections ───────────────────────────────────────────────────────── */
 .corrections { list-style: none; max-width: 820px; margin-top: 18px; }
 .corrections li { padding: 12px 0; border-top: 1px solid var(--line-soft); font-size: 14px; color: var(--text-2); }
-.corrections .d { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.corrections .d { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* the hero quote on a dive carries a lead-in line */
 .hero-quote .lead { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); margin-bottom: 8px; font-style: normal; }
 
-/* live countdown number on the dive's stat row */
-.stat[data-tone="order"] .num { color: var(--st-court); }
-.stat[data-tone="press"] .num { color: var(--st-record); }
 
 /* A dive's section nav has more items than the rigging page's, so it must never
    wrap: one line or hidden. */
 .topnav a { white-space: nowrap; }
 @media (max-width: 1000px) { .topnav { display: none; } .countdown-chip { margin-left: auto; } }
 
-/* A dive's stat row carries six figures, not the rigging page's seven. */
-.statrow.is-6 { grid-template-columns: repeat(6, 1fr); }
-@media (max-width: 1100px) { .statrow.is-6 { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .statrow.is-6 { grid-template-columns: repeat(2, 1fr); } }
+/* A dive's stat row sets its own column count (--n) from the figures it has. */
+.statrow.is-dive { grid-template-columns: repeat(var(--n, 4), 1fr); }
+@media (max-width: 640px) { .statrow.is-dive { grid-template-columns: repeat(2, 1fr); } }
 
 /* A dive's take runs several paragraphs; the shared block was built for one. */
 .ev-take p:not(.take-lbl) + p { margin-top: 14px; }
+
+/* ── small text the shared half sets below the readable size ───────────── */
+.stat .lbl { font-size: 11px; }
+.ev-row.ev-head { font-size: 11px; }
+.ev-when { font-size: 12px; }
+
+/* ── the status strip, under the headline ─────────────────────────────── */
+/* A returning reader's first question is where things stand now, so the
+   answer sits under the headline and links to the full status. */
+.status-strip {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
+  width: fit-content; max-width: 100%; margin-top: 24px; padding: 11px 16px 12px;
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--st-court); border-radius: 0 6px 6px 0;
+  text-decoration: none; color: inherit; transition: border-color 0.15s;
+}
+.status-strip:hover { border-color: var(--line); border-left-color: var(--st-court); }
+.status-strip .ss-lbl {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--st-court);
+}
+.status-strip .ss-status {
+  font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.15;
+  text-transform: uppercase; letter-spacing: 0.01em; color: var(--text);
+}
+.status-strip .ss-more { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+.status-strip:hover .ss-more { color: var(--text-2); }
+
+/* ── hero: the deck and the quote side by side on a wide screen ──────── */
+.hero-body .hero-quote { margin-top: 32px; }
+@media (min-width: 1000px) {
+  .hero-body { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; align-items: start; }
+  .hero-body .hero-quote { margin-top: 26px; }
+}
+@media (max-width: 640px) { .hero .deck { font-size: 17px; } }
+
+/* ── the countdown chip links to the status ───────────────────────────── */
+a.countdown-chip { text-decoration: none; transition: border-color 0.15s; }
+a.countdown-chip:hover { border-color: var(--text-3); }
+
+/* ── the section rail, below 1000px ───────────────────────────────────── */
+.subnav { display: none; }
+@media (max-width: 1000px) {
+  .subnav { display: block; border-top: 1px solid var(--line-soft); }
+  .subnav-inner {
+    display: flex; align-items: center; gap: 2px; height: 40px;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .subnav-inner::-webkit-scrollbar { display: none; }
+  /* Scroll containers drop their end padding; this keeps the last link off the edge. */
+  .subnav-inner::after { content: ""; flex: 0 0 14px; }
+  .subnav a {
+    flex: 0 0 auto; white-space: nowrap;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+    text-decoration: none; color: var(--text-2);
+    padding: 6px 10px; border-radius: 4px;
+  }
+  .subnav a:first-child { margin-left: -10px; }
+  .subnav a.is-active { color: var(--brand-bright); background: var(--raised); }
+}
+
+/* ── the week at a glance, atop the timeline ──────────────────────────── */
+.daystrip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; margin: 0 0 30px; }
+.ds-cell {
+  display: flex; flex-direction: column; gap: 9px;
+  background: var(--surface); border: 1px solid var(--line-soft); border-radius: 6px;
+  padding: 12px 12px 14px; text-decoration: none; color: inherit; transition: border-color 0.15s;
+}
+.ds-cell:hover { border-color: var(--text-3); }
+.ds-date { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-bright); }
+.ds-dow { color: var(--text); }
+.ds-count { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.ds-dots { display: flex; flex-wrap: wrap; gap: 3px; }
+.ds-dots i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.ds-cnt { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); }
+.ds-lead { font-size: 13.5px; line-height: 1.38; color: var(--text-2); }
+.ds-cell:hover .ds-lead { color: var(--text); }
+@media (max-width: 900px) {
+  .daystrip {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-right: -24px; padding-right: 24px;
+  }
+  .daystrip::-webkit-scrollbar { display: none; }
+  .ds-cell { flex: 0 0 150px; scroll-snap-align: start; }
+}
+
+/* ── the claim table on a phone: the column headers are hidden, so each cell
+   says which column it is ──────────────────────────────────────────────── */
+.cell-lbl { display: none; }
+@media (max-width: 800px) {
+  .cell-lbl {
+    display: block; margin-bottom: 5px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-3);
+  }
+  .ev-found .cell-lbl { margin-top: 12px; }
+}
+
+/* ── our take: neutral, and no actor's color ──────────────────────────── */
+/* The shared take block is purple, which here is the press's color in the
+   timeline. Opinion gets its own look instead of borrowing a side's. */
+.ev-take { border-left-color: var(--text-2); background: var(--surface); }
+.ev-take .take-lbl { color: var(--text); }
+.readme-card.take { border-left-color: var(--text-2); }
+.readme-card.take h3 { color: var(--text); }
+
+/* ── the corrections log sits inside a method card; it is not a bullet list ── */
+.method-card .corrections li { padding-left: 0; }
+.method-card .corrections li::before { content: none; }

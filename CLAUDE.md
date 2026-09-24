@@ -18,7 +18,13 @@ the batch workflow).
   `src/components/Sources.astro` (a row of source links labeled by outlet),
   `src/lib/fmt.js` (dates, outlet labels, source counts), `src/styles/global.css`.
 - **The stylesheet is election-rigging's, copied, with additions below a marked line.** Keep the
-  shared half in step with that repo when either changes.
+  shared half in step with that repo when either changes. The additions deliberately override a
+  few shared values rather than editing the shared half: `--text-3` (the shared gray fails the
+  4.5:1 contrast floor for small text), several small mono sizes, and the purple take block.
+  Election-rigging still carries the old values.
+- **Quotes are curly on the page and straight in the data.** `smartAll()` in `src/lib/fmt.js`
+  converts every data string except identifiers, dates and `sources` (whose headlines are matched
+  as written). Type curly quotes and apostrophes directly in template prose.
 - **Every number on a page is computed from its data file.** Never hardcode a count the data can
   produce. The figures are rendered into the HTML; the count-up animation is decoration and only
   runs when the page is visible, so a hidden or scriptless reader still sees the right numbers.
@@ -40,7 +46,10 @@ A dive file (`src/data/press-ban.json` is the reference):
 
 ```
 slug, updated, trackerIds          the seed entries every source and quote must trace to
-meta        kicker, title, dek, status, and the dates the page computes from
+meta        kicker, title, dek, status (one line, shown under the headline), statusText (the
+            paragraph under "Where it stands"), and the dates the page computes from.
+            `orderEnds` is optional: while present it drives the topbar chip and the countdown
+            stat; remove it when the order is replaced and both disappear.
 hero        deck (paragraphs), quote { lead, text, cite, sources }
 days        [{ date, events: [{ time?, actor, title, body[], sources[] }] }]
 claims      [{ claim, who, found, detail, sources[] }]   "paraphrased" in `who` renders unquoted
@@ -122,12 +131,23 @@ echo '{"tool_input":{"file_path":"'$PWD'/src/data/press-ban.json"}}' | node .cla
 ## Keeping a dive current
 
 When the seed entry changes in a tracker batch, update the dive's data in the same pass: new
-events into `days`, a changed `meta.status`, retired and new `watch` items, and `updated`. Log
-any correction in `corrections`.
+events into `days`, a changed `meta.status` and `meta.statusText`, retired and new `watch` items,
+and `updated`. Log any correction in `corrections`, including corrections made to the seed entry.
+
+The countdown counts down only while the order has days left. From its end date it shows "Order
+set to end [date]" instead of "0 days left", which stays true whatever the court does next, but
+the status itself still has to be updated by hand.
 
 ## Design notes
 
 - Dark theme only, tokens and status palette shared with election-rigging.
+- **Color means an actor, and only an actor.** In the timeline, red is the administration, blue
+  the court, purple the press, amber Congress. Nothing editorial borrows those colors: the take
+  is neutral gray, and the two columns of "Who objected, and who defended it" get identical cards.
+  A colored accent on one side reads as the page taking it.
+- Hero figures are about the story, not the page. The source count goes in the eyebrow.
+- Below 1000px the section links move to a second, sideways-scrolling row of the topbar
+  (`.subnav` in `Base.astro`). Sticky offsets use `--head-h`, which grows to match.
 - Titles follow the tracker's headline rules: organic, newspaper-style, no em dashes.
 - No emojis. Arrows and typographic marks are fine.
 - Links to sibling sites use their configured domains only if they resolve. At creation,

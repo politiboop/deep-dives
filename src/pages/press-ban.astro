@@ -1,8 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
-import dive from '../data/press-ban.json';
-import { longDate, shortDate, weekday, daysBetween, slug, sourceCount } from '../lib/fmt.js';
+import raw from '../data/press-ban.json';
+import { longDate, shortDate, weekday, daysBetween, slug, sourceCount, smartAll } from '../lib/fmt.js';
+
+// The data keeps straight quotes; the page renders typographer's quotes.
+const dive = smartAll(raw);
 
 const { meta, hero, days, claims, voices, amici, precedent, watch, take, corrections } = dive;
 
@@ -23,6 +26,18 @@ const isPast = (d) => d && d < dive.updated;
 const paraphrased = (c) => /paraphrased/i.test(c.who);
 const whoLabel = (c) => c.who.replace(/,\s*paraphrased/i, '');
 
+// The hero figures: the story, not the page. (The source count lives in the eyebrow.)
+const stats = [
+  { n: meta.outlets.length, label: 'News organizations banned' },
+  { n: banDays, label: 'Days from the ban to restored passes' },
+  { n: amiciCount, label: 'Organizations that filed against it, Fox News among them' },
+];
+// The restraining order's scheduled end. Rendered as a date, which stays true
+// whatever happens next; the script below turns it into a countdown only while
+// the order still has days to run. Remove `orderEnds` from the data when the
+// order is replaced and both the chip and the stat disappear.
+const orderEnd = meta.orderEnds && shortDate(meta.orderEnds);
+
 const NAV = [
   { href: '#days', label: 'The Days' },
   { href: '#claims', label: 'Claims' },
@@ -37,30 +52,33 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
 ---
 
 <Base title={`${meta.title}: The White House Press Ban | Deep Dives`} ogTitle={`${meta.title}: The White House Press Ban`} description={description} nav={NAV}>
-  <span slot="chip" class="countdown-chip" id="order-chip"><strong id="order-days">—</strong> days<span class="cd-long"> left on the order</span></span>
+  {orderEnd && <a slot="chip" class="countdown-chip" href="#stand"><span id="order-chip-text">Order set to end {orderEnd}</span></a>}
 
   <!-- ── HERO ─────────────────────────────────────────────────────────── -->
   <div class="hero">
     <div class="wrap">
-      <p class="eyebrow">Deep Dives · {meta.kicker} · Updated {longDate(dive.updated)}</p>
+      <p class="eyebrow">Deep Dives · {meta.kicker} · Updated {longDate(dive.updated)} · {sources} sources</p>
       <h1>Shut <span class="accent">out</span>.</h1>
-      {hero.deck.map((p) => <p class="deck">{p}</p>)}
+      <a class="status-strip" href="#stand">
+        <span class="ss-lbl">Where it stands</span>
+        <span class="ss-status">{meta.status}</span>
+        <span class="ss-more">As of {shortDate(dive.updated)} ↓</span>
+      </a>
 
-      <div class="statrow is-6">
-        <div class="stat" data-tone="active"><div class="num" data-count={meta.outlets.length}>{meta.outlets.length}</div><div class="lbl">News organizations banned</div></div>
-        <div class="stat"><div class="num" data-count={banDays}>{banDays}</div><div class="lbl">Days from the ban to restored passes</div></div>
-        <div class="stat" data-tone="press"><div class="num" data-count={amiciCount}>{amiciCount}</div><div class="lbl">Organizations that filed against it, Fox News among them</div></div>
-        <div class="stat"><div class="num" data-count={claims.length}>{claims.length}</div><div class="lbl">Government claims set against the record</div></div>
-        <div class="stat" data-tone="order"><div class="num" id="order-days-big">—</div><div class="lbl">Days left on the court order</div></div>
-        <div class="stat"><div class="num" data-count={sources}>{sources}</div><div class="lbl">Sources on this page</div></div>
+      <div class="hero-body">
+        <div>{hero.deck.map((p) => <p class="deck">{p}</p>)}</div>
+        <blockquote class="hero-quote">
+          <p class="lead">{hero.quote.lead}</p>
+          <p>“{hero.quote.text}”</p>
+          <cite>{hero.quote.cite}</cite>
+          <Sources sources={hero.quote.sources} />
+        </blockquote>
       </div>
 
-      <blockquote class="hero-quote">
-        <p class="lead">{hero.quote.lead}</p>
-        <p>“{hero.quote.text}”</p>
-        <cite>{hero.quote.cite}</cite>
-        <Sources sources={hero.quote.sources} />
-      </blockquote>
+      <div class="statrow is-dive" style={`--n:${stats.length + (orderEnd ? 1 : 0)}`}>
+        {stats.map((s) => <div class="stat"><div class="num" data-count={s.n}>{s.n}</div><div class="lbl">{s.label}</div></div>)}
+        {orderEnd && <div class="stat"><div class="num" id="order-num">{orderEnd}</div><div class="lbl" id="order-lbl">Scheduled end of the court order</div></div>}
+      </div>
     </div>
   </div>
 
@@ -104,12 +122,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <div class="stand-now">
           <p class="stand-lbl">Status</p>
           <p class="stand-status">{meta.status}</p>
-          <p>
-            A federal judge ordered the hard passes restored on September 24, and journalists from all
-            three outlets were back inside the White House that day. The order is temporary: it runs
-            fourteen days. The outlets' motion for a longer one is due September 28, and the court has
-            said it "intends to rule expeditiously."
-          </p>
+          <p>{meta.statusText}</p>
         </div>
         <ul class="stand-dates">
           {datedWatch.map((w) => (
@@ -135,9 +148,24 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         {Object.values(ACTORS).map((a) => <span><i style={`background:${a.color}`}></i>{a.label}</span>)}
       </div>
 
+      <!-- The week at a glance: one cell per day, a dot per event in the actor's
+           color, and the day's first headline. Each cell jumps to its day. -->
+      <nav class="daystrip" aria-label="Jump to a day">
+        {days.map((d) => (
+          <a class="ds-cell" href={`#day-${d.date}`}>
+            <span class="ds-date"><span class="ds-dow">{weekday(d.date).slice(0, 3)}</span> {shortDate(d.date)}</span>
+            <span class="ds-count">
+              <span class="ds-dots" aria-hidden="true">{d.events.map((e) => <i style={`background:${ACTORS[e.actor].color}`}></i>)}</span>
+              <span class="ds-cnt">{d.events.length} {d.events.length === 1 ? 'event' : 'events'}</span>
+            </span>
+            <span class="ds-lead">{d.events[0].title}</span>
+          </a>
+        ))}
+      </nav>
+
       <div class="days">
         {days.map((d) => (
-          <div class="day">
+          <div class="day" id={`day-${d.date}`}>
             <h3 class="day-head"><span class="dow">{weekday(d.date)}</span> <span class="dn">{shortDate(d.date)}</span> <span class="cnt">{d.events.length} {d.events.length === 1 ? 'event' : 'events'}</span></h3>
             <ol class="events">
               {d.events.map((e) => (
@@ -165,7 +193,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <p class="kicker">Checked against the record</p>
         <h2>The claim and the record</h2>
         <p class="sub">
-          The government's case, in its own words wherever it put the point in writing, next to what
+          The government’s case, in its own words wherever it put the point in writing, next to what
           the filings, the transcripts and the cited stories themselves show.
         </p>
       </div>
@@ -178,6 +206,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         {claims.map((c) => (
           <div class="ev-row" role="row">
             <span class="ev-claim" role="cell">
+              <span class="cell-lbl">What the government said</span>
               {paraphrased(c)
                 ? <strong class="unquoted">{c.claim}</strong>
                 : <strong>“{c.claim}”</strong>}
@@ -185,6 +214,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
               {paraphrased(c) && <span class="para-note">Paraphrased from the letter</span>}
             </span>
             <span class="ev-found" role="cell">
+              <span class="cell-lbl">What the record shows</span>
               <strong>{c.found}</strong>
               <span class="ev-detail">{c.detail}</span>
               <Sources sources={c.sources} />
@@ -235,7 +265,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           <div class="amici-num">{amiciCount}</div>
           <p class="amici-copy">
             <strong>News organizations and press groups that filed a brief against the ban on September 23.</strong>
-            The Reporters Committee for Freedom of the Press and the White House Correspondents'
+            The Reporters Committee for Freedom of the Press and the White House Correspondents’
             Association led it. Many of the signers hold White House credentials and sit in the pool
             rotation themselves, the brief says. It was filed without opposition.
           </p>
@@ -320,15 +350,15 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <div class="method-card">
           <h3>Where this comes from</h3>
           <ul>
-            <li>This page is built from The Trump Tracker's entry on the ban, which follows the tracker's validation protocol: two independent sources for any core claim, primary documents preferred, single-sourced claims labeled.</li>
-            <li>The court record carries the most weight here. The order, the government's brief, the letters, the sworn declarations and the amicus brief are all linked directly.</li>
+            <li>This page is built from The Trump Tracker’s entry on the ban, which follows the tracker’s validation protocol: two independent sources for any core claim, primary documents preferred, single-sourced claims labeled.</li>
+            <li>The court record carries the most weight here. The order, the government’s brief, the letters, the sworn declarations and the amicus brief are all linked directly.</li>
             <li>Right-leaning outlets are cited where they covered the story, including Fox News, Breitbart and the Washington Examiner.</li>
           </ul>
         </div>
         <div class="method-card">
           <h3>How it is checked</h3>
           <ul>
-            <li>An automated check runs on every change: every link on this page must appear in the tracker entry's sources, and every quotation must appear word for word in the entry. Either failure blocks the page.</li>
+            <li>An automated check runs on every change: every link on this page must appear in the tracker entry’s sources, and every quotation must appear word for word in the entry. Either failure blocks the page.</li>
             <li>Before publishing, each quotation was also checked against the saved text of the specific source attached to it. That check found three quotations in the underlying entry that did not match their originals, and they were corrected there first.</li>
             <li>Where the record is contested, the page says so and gives both accounts.</li>
           </ul>
@@ -336,7 +366,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <div class="method-card">
           <h3>What we mean by the record</h3>
           <ul>
-            <li>It means what the documents say: the court's findings, sworn statements, transcripts and the text of the stories the government cited. It does not mean our reading of them.</li>
+            <li>It means what the documents say: the court’s findings, sworn statements, transcripts and the text of the stories the government cited. It does not mean our reading of them.</li>
             <li>A finding in a temporary restraining order is a finding of likelihood at an early stage, not a final judgment. The page treats it that way.</li>
           </ul>
         </div>
@@ -353,14 +383,21 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     </div>
   </section>
 
-  <script define:vars={{ orderEnds: meta.orderEnds }}>
+  <script define:vars={{ orderEnds: meta.orderEnds || null }}>
     // ── days left on the restraining order ──
-    const [y, m, d] = orderEnds.split('-').map(Number);
-    const end = new Date(y, m - 1, d);
-    const left = Math.max(0, Math.ceil((end - new Date()) / 86400000));
-    document.getElementById('order-days').textContent = left;
-    document.getElementById('order-days-big').textContent = left;
-    document.getElementById('order-chip').setAttribute('aria-label', left + ' days left on the court order');
+    // Count down only while the order has days to run. From its last day on, the
+    // server-rendered "set to end" date stays in place: that stays true whatever the
+    // court does next, where "0 days left" would silently go wrong.
+    if (orderEnds) {
+      const [y, m, d] = orderEnds.split('-').map(Number);
+      const left = Math.ceil((new Date(y, m - 1, d) - new Date()) / 86400000);
+      if (left > 0) {
+        const unit = left === 1 ? 'day' : 'days';
+        document.getElementById('order-chip-text').innerHTML = `<strong>${left}</strong> ${unit} left<span class="cd-long"> on the order</span>`;
+        document.getElementById('order-num').textContent = left;
+        document.getElementById('order-lbl').textContent = (left === 1 ? 'Day' : 'Days') + ' left on the court order';
+      }
+    }
   </script>
 
   <script>
@@ -388,11 +425,17 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     });
     document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => io.observe(el));
 
-    // ── scroll-spy on the section nav ──
-    const links = [...document.querySelectorAll<HTMLAnchorElement>('.topnav a')];
+    // ── scroll-spy on the section nav (the topbar's, and the phone rail's) ──
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.topnav a, .subnav a')];
+    const rail = document.querySelector<HTMLElement>('.subnav-inner');
     const spy = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id));
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id));
+        // Keep the active section's link in view on the phone rail. Scroll the rail
+        // itself, never the page, and only when the rail is showing.
+        const on = rail?.querySelector<HTMLElement>(`a[href="#${e.target.id}"]`);
+        if (rail && on && rail.offsetParent) rail.scrollTo({ left: on.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
       });
     }, { rootMargin: '-30% 0px -60% 0px' });
     ['days', 'claims', 'voices', 'precedent', 'take', 'watch', 'method'].forEach((id) => {

@@ -48,6 +48,13 @@ const { title, description, ogTitle = title, nav = [] } = Astro.props;
         </nav>
         <slot name="chip" />
       </div>
+      <!-- Below 1000px the topbar has no room for the section links, so they move
+           to a second row that scrolls sideways. Only one of the two is ever shown. -->
+      {nav.length > 0 && (
+        <nav class="subnav" aria-label="Sections">
+          <div class="wrap subnav-inner">{nav.map((n) => <a href={n.href}>{n.label}</a>)}</div>
+        </nav>
+      )}
     </header>
 
     <main id="top">
