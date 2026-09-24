@@ -1,0 +1,12 @@
+---
+// A compact row of source links. The visible label is the outlet; the full
+// citation is in the title attribute and the accessible name.
+import { outlet } from '../lib/fmt.js';
+interface Props { sources: { text: string; url: string }[]; }
+const { sources } = Astro.props;
+---
+<p class="ev-src">
+  {sources.map((s) => (
+    <a href={s.url} target="_blank" rel="noopener noreferrer" title={s.text} aria-label={s.text}>{outlet(s.text)} ↗</a>
+  ))}
+</p>

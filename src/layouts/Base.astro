@@ -1,0 +1,74 @@
+---
+// The shell every page shares: fonts, analytics, the topbar and the footer.
+// A dive passes its own section links as `nav` and its countdown as the
+// `chip` slot; the front door passes neither.
+import '@fontsource/barlow-condensed/500.css';
+import '@fontsource/barlow-condensed/600.css';
+import '@fontsource/barlow-condensed/700.css';
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/500.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/lora/400-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  nav?: { href: string; label: string }[];
+}
+const { title, description, ogTitle = title, nav = [] } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
+    <SpeedInsights />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="wordmark" href="/">Deep <em>Dives</em></a>
+        <nav class="topnav" aria-label="Sections">
+          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
+        <slot name="chip" />
+      </div>
+    </header>
+
+    <main id="top">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="wrap foot-inner">
+        <p class="foot-note">
+          Deep Dives is an independent documentation project. Facts are sourced; opinions are
+          labeled. Every link and every quotation on these pages traces to a verified entry in The
+          Trump Tracker. Found an error? We correct openly, and each page keeps its own log.
+        </p>
+        <div class="foot-links">
+          <a href="/">All deep dives</a>
+          <a href="https://thetrumptracker.com" target="_blank" rel="noopener noreferrer">The Trump Tracker ↗</a>
+          <a href="https://research.thetrumptracker.com" target="_blank" rel="noopener noreferrer">The research site ↗</a>
+          <a href="https://thecivicsdesk.com" target="_blank" rel="noopener noreferrer">The Civics Desk ↗</a>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

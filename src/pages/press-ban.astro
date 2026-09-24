@@ -1,0 +1,403 @@
+---
+import Base from '../layouts/Base.astro';
+import Sources from '../components/Sources.astro';
+import dive from '../data/press-ban.json';
+import { longDate, shortDate, weekday, daysBetween, slug, sourceCount } from '../lib/fmt.js';
+
+const { meta, hero, days, claims, voices, amici, precedent, watch, take, corrections } = dive;
+
+const ACTORS = {
+  wh:       { label: 'The administration', color: 'var(--ac-wh)' },
+  court:    { label: 'The court',          color: 'var(--ac-court)' },
+  press:    { label: 'The press',          color: 'var(--ac-press)' },
+  congress: { label: 'Congress',           color: 'var(--ac-congress)' },
+};
+
+// Every number on the page is computed from the data file.
+const banDays = daysBetween(meta.bannedFrom, meta.restored);
+const eventCount = days.reduce((n, d) => n + d.events.length, 0);
+const amiciCount = amici.lead.length + amici.names.length;
+const sources = sourceCount(dive);
+const datedWatch = watch.filter((w) => w.date);
+const isPast = (d) => d && d < dive.updated;
+const paraphrased = (c) => /paraphrased/i.test(c.who);
+const whoLabel = (c) => c.who.replace(/,\s*paraphrased/i, '');
+
+const NAV = [
+  { href: '#days', label: 'The Days' },
+  { href: '#claims', label: 'Claims' },
+  { href: '#voices', label: 'Who Spoke' },
+  { href: '#precedent', label: 'Precedent' },
+  { href: '#take', label: 'Our Take' },
+  { href: '#watch', label: 'Watch' },
+  { href: '#method', label: 'Method' },
+];
+
+const description = `${meta.dek} ${eventCount} documented events, ${claims.length} of the government's claims set against the record, and ${sources} sources.`;
+---
+
+<Base title={`${meta.title}: The White House Press Ban | Deep Dives`} ogTitle={`${meta.title}: The White House Press Ban`} description={description} nav={NAV}>
+  <span slot="chip" class="countdown-chip" id="order-chip"><strong id="order-days">—</strong> days<span class="cd-long"> left on the order</span></span>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Deep Dives · {meta.kicker} · Updated {longDate(dive.updated)}</p>
+      <h1>Shut <span class="accent">out</span>.</h1>
+      {hero.deck.map((p) => <p class="deck">{p}</p>)}
+
+      <div class="statrow is-6">
+        <div class="stat" data-tone="active"><div class="num" data-count={meta.outlets.length}>{meta.outlets.length}</div><div class="lbl">News organizations banned</div></div>
+        <div class="stat"><div class="num" data-count={banDays}>{banDays}</div><div class="lbl">Days from the ban to restored passes</div></div>
+        <div class="stat" data-tone="press"><div class="num" data-count={amiciCount}>{amiciCount}</div><div class="lbl">Organizations that filed against it, Fox News among them</div></div>
+        <div class="stat"><div class="num" data-count={claims.length}>{claims.length}</div><div class="lbl">Government claims set against the record</div></div>
+        <div class="stat" data-tone="order"><div class="num" id="order-days-big">—</div><div class="lbl">Days left on the court order</div></div>
+        <div class="stat"><div class="num" data-count={sources}>{sources}</div><div class="lbl">Sources on this page</div></div>
+      </div>
+
+      <blockquote class="hero-quote">
+        <p class="lead">{hero.quote.lead}</p>
+        <p>“{hero.quote.text}”</p>
+        <cite>{hero.quote.cite}</cite>
+        <Sources sources={hero.quote.sources} />
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ── HOW TO READ ──────────────────────────────────────────────────── -->
+  <section id="readme" aria-label="How to read this page">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">How to read this page</p>
+        <h2>Facts and takes are separated. On purpose.</h2>
+      </div>
+      <div class="readme-grid">
+        <div class="readme-card facts">
+          <h3>The facts</h3>
+          <p>
+            Everything outside the labeled take is reporting: dates, names, direct quotations and
+            court filings, each linked to where it came from. {sources} sources in all, including
+            the court record itself and right-leaning outlets where they covered the story. Every
+            quotation on this page has been checked word for word against its source.
+          </p>
+        </div>
+        <div class="readme-card take">
+          <h3>Our take</h3>
+          <p>
+            When we give an opinion it is labeled, set apart, and easy to skip. Ours is near the end
+            of the page. You do not have to share it to use everything else here: the record is laid
+            out so you can check it and decide for yourself.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHERE IT STANDS ──────────────────────────────────────────────── -->
+  <section id="stand" aria-label="Where it stands">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">As of {longDate(dive.updated)}</p>
+        <h2>Where it stands</h2>
+      </div>
+      <div class="stand">
+        <div class="stand-now">
+          <p class="stand-lbl">Status</p>
+          <p class="stand-status">{meta.status}</p>
+          <p>
+            A federal judge ordered the hard passes restored on September 24, and journalists from all
+            three outlets were back inside the White House that day. The order is temporary: it runs
+            fourteen days. The outlets' motion for a longer one is due September 28, and the court has
+            said it "intends to rule expeditiously."
+          </p>
+        </div>
+        <ul class="stand-dates">
+          {datedWatch.map((w) => (
+            <li class={isPast(w.date) ? 'is-past' : ''}><span class="d">{shortDate(w.date)}</span><span><strong>{w.title}.</strong></span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE SIX DAYS ─────────────────────────────────────────────────── -->
+  <section id="days" aria-label="The six days">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">In order</p>
+        <h2>The six days</h2>
+        <p class="sub">
+          {eventCount} documented events from the first post to the restored passes. Each links to its
+          sources; each has its own address, so you can send someone a single moment.
+        </p>
+      </div>
+      <div class="actor-legend" aria-hidden="true">
+        {Object.values(ACTORS).map((a) => <span><i style={`background:${a.color}`}></i>{a.label}</span>)}
+      </div>
+
+      <div class="days">
+        {days.map((d) => (
+          <div class="day">
+            <h3 class="day-head"><span class="dow">{weekday(d.date)}</span> <span class="dn">{shortDate(d.date)}</span> <span class="cnt">{d.events.length} {d.events.length === 1 ? 'event' : 'events'}</span></h3>
+            <ol class="events">
+              {d.events.map((e) => (
+                <li class="ev" data-actor={e.actor} id={`${d.date}-${slug(e.title)}`}>
+                  <div class="ev-meta">
+                    {e.time && <span class="ev-time">{e.time}</span>}
+                    <span class="actor-chip">{ACTORS[e.actor].label}</span>
+                  </div>
+                  <h3>{e.title}</h3>
+                  <div class="ev-body">{e.body.map((p) => <p>{p}</p>)}</div>
+                  <Sources sources={e.sources} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE CLAIM AND THE RECORD ─────────────────────────────────────── -->
+  <section id="claims" aria-label="The claim and the record">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Checked against the record</p>
+        <h2>The claim and the record</h2>
+        <p class="sub">
+          The government's case, in its own words wherever it put the point in writing, next to what
+          the filings, the transcripts and the cited stories themselves show.
+        </p>
+      </div>
+
+      <div class="ev-table is-compare" role="table" aria-label="The government's claims and the record">
+        <div class="ev-row ev-head" role="row">
+          <span role="columnheader">What the government said</span>
+          <span role="columnheader">What the record shows</span>
+        </div>
+        {claims.map((c) => (
+          <div class="ev-row" role="row">
+            <span class="ev-claim" role="cell">
+              {paraphrased(c)
+                ? <strong class="unquoted">{c.claim}</strong>
+                : <strong>“{c.claim}”</strong>}
+              <span class="ev-when">{whoLabel(c)}</span>
+              {paraphrased(c) && <span class="para-note">Paraphrased from the letter</span>}
+            </span>
+            <span class="ev-found" role="cell">
+              <strong>{c.found}</strong>
+              <span class="ev-detail">{c.detail}</span>
+              <Sources sources={c.sources} />
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO SPOKE ────────────────────────────────────────────────────── -->
+  <section id="voices" aria-label="Who objected and who defended it">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Both sides, in their own words</p>
+        <h2>Who objected, and who defended it</h2>
+        <p class="sub">
+          The strongest version of each side, quoted. The objection did not break along party lines,
+          and the defense did not rest on a single argument.
+        </p>
+      </div>
+
+      <div class="voices">
+        <div class="voice-col is-objected">
+          <h3>Objected</h3>
+          {voices.objected.map((v) => (
+            <div class="voice">
+              <blockquote>“{v.quote}”</blockquote>
+              <p class="who">{v.who}<span class="role">{v.role}</span></p>
+              <Sources sources={v.sources} />
+            </div>
+          ))}
+        </div>
+        <div class="voice-col is-defended">
+          <h3>Defended</h3>
+          {voices.defended.map((v) => (
+            <div class="voice">
+              <blockquote>“{v.quote}”</blockquote>
+              <p class="who">{v.who}<span class="role">{v.role}</span></p>
+              <Sources sources={v.sources} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="amici">
+        <div class="amici-head">
+          <div class="amici-num">{amiciCount}</div>
+          <p class="amici-copy">
+            <strong>News organizations and press groups that filed a brief against the ban on September 23.</strong>
+            The Reporters Committee for Freedom of the Press and the White House Correspondents'
+            Association led it. Many of the signers hold White House credentials and sit in the pool
+            rotation themselves, the brief says. It was filed without opposition.
+          </p>
+        </div>
+        <div class="roster">
+          {amici.lead.map((n) => <span class="is-lead">{n}</span>)}
+          {amici.names.map((n) => <span class={n === amici.highlight ? 'is-highlight' : ''}>{n}</span>)}
+        </div>
+        <Sources sources={amici.sources} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE PRECEDENT ────────────────────────────────────────────────── -->
+  <section id="precedent" aria-label="The precedent">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">What the case turns on</p>
+        <h2>The precedent</h2>
+        <p class="sub">
+          The government asked the court to treat the first and third of these as wrongly decided.
+          A trial judge is bound by the appeals court above it, and the order says so in as many
+          words.
+        </p>
+      </div>
+      <ol class="precedent">
+        {precedent.map((p, i) => (
+          <li class={i === precedent.length - 1 ? 'is-now' : ''}>
+            <span class="yr">{p.year}</span>
+            <div>
+              <p class="case"><em>{p.name}</em><span class="court">{p.court}</span></p>
+              <p class="holding">{p.holding}</p>
+              <Sources sources={p.sources} />
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── OUR TAKE ─────────────────────────────────────────────────────── -->
+  <section id="take" aria-label="Our take">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Reading the record</p>
+        <h2>Our take</h2>
+      </div>
+      <div class="ev-take">
+        <p class="take-lbl">Our take — opinion, not reporting</p>
+        {take.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT TO WATCH ────────────────────────────────────────────────── -->
+  <section id="watch" aria-label="What to watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Dated triggers</p>
+        <h2>What to watch</h2>
+        <p class="sub">The six days above are history. These are the dates where the story continues.</p>
+      </div>
+      <ul class="watch-list">
+        {watch.map((w) => (
+          <li>
+            <span class="watch-when">{w.when}</span>
+            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── METHOD ───────────────────────────────────────────────────────── -->
+  <section id="method" aria-label="Method">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Standards</p>
+        <h2>Method</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>Where this comes from</h3>
+          <ul>
+            <li>This page is built from The Trump Tracker's entry on the ban, which follows the tracker's validation protocol: two independent sources for any core claim, primary documents preferred, single-sourced claims labeled.</li>
+            <li>The court record carries the most weight here. The order, the government's brief, the letters, the sworn declarations and the amicus brief are all linked directly.</li>
+            <li>Right-leaning outlets are cited where they covered the story, including Fox News, Breitbart and the Washington Examiner.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>How it is checked</h3>
+          <ul>
+            <li>An automated check runs on every change: every link on this page must appear in the tracker entry's sources, and every quotation must appear word for word in the entry. Either failure blocks the page.</li>
+            <li>Before publishing, each quotation was also checked against the saved text of the specific source attached to it. That check found three quotations in the underlying entry that did not match their originals, and they were corrected there first.</li>
+            <li>Where the record is contested, the page says so and gives both accounts.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>What we mean by the record</h3>
+          <ul>
+            <li>It means what the documents say: the court's findings, sworn statements, transcripts and the text of the stories the government cited. It does not mean our reading of them.</li>
+            <li>A finding in a temporary restraining order is a finding of likelihood at an early stage, not a final judgment. The page treats it that way.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Corrections</h3>
+          <ul>
+            <li>Corrections are made openly. This log covers the page and the tracker entry it draws on.</li>
+          </ul>
+          <ul class="corrections">
+            {corrections.map((c) => <li><span class="d">{longDate(c.date)}</span>{c.text}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ orderEnds: meta.orderEnds }}>
+    // ── days left on the restraining order ──
+    const [y, m, d] = orderEnds.split('-').map(Number);
+    const end = new Date(y, m - 1, d);
+    const left = Math.max(0, Math.ceil((end - new Date()) / 86400000));
+    document.getElementById('order-days').textContent = left;
+    document.getElementById('order-days-big').textContent = left;
+    document.getElementById('order-chip').setAttribute('aria-label', left + ' days left on the court order');
+  </script>
+
+  <script>
+    // ── count-up on the hero stats ──
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animate = (el) => {
+      const target = +el.dataset.count, dur = 900, t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    // The real figures are already in the markup, so a reader whose script is slow,
+    // blocked, or running in a hidden tab still sees the right numbers. The count-up
+    // is decoration: it only runs when the page is visible and motion is welcome.
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        if (!reduce && !document.hidden) animate(el);
+        io.unobserve(el);
+      });
+    });
+    document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => io.observe(el));
+
+    // ── scroll-spy on the section nav ──
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.topnav a')];
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    ['days', 'claims', 'voices', 'precedent', 'take', 'watch', 'method'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  </script>
+</Base>

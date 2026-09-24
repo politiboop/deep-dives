@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import dives from '../data/dives.json';
+import { longDate, sourceCount } from '../lib/fmt.js';
+
+// Load each dive's data file so the front door can show real counts.
+const files = import.meta.glob('../data/*.json', { eager: true });
+const data = (slug) => files[`../data/${slug}.json`]?.default;
+const list = [...dives]
+  .sort((a, b) => b.updated.localeCompare(a.updated))
+  .map((d) => {
+    const x = data(d.slug);
+    const events = x ? x.days.reduce((n, day) => n + day.events.length, 0) : 0;
+    return { ...d, events, sources: x ? sourceCount(x) : 0 };
+  });
+
+const description = 'One story at a time, taken all the way down. Each deep dive follows a single episode from the first post to the latest ruling, sets what was claimed against what the record shows, and links every fact to its source.';
+---
+
+<Base title="Deep Dives | The Trump Tracker" ogTitle="Deep Dives" description={description}>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">From the team behind The Trump Tracker</p>
+      <h1>Deep <span class="accent">dives</span>.</h1>
+      <p class="deck">
+        One story at a time, taken all the way down. Each dive follows a single episode from the first
+        post to the latest ruling, sets <strong>what was claimed</strong> against <strong>what the record
+        shows</strong>, and links every fact to its source.
+      </p>
+      <p class="deck">
+        Facts and opinions are kept apart. Every link and every quotation traces to a verified entry in
+        The Trump Tracker, and a check that runs on every change will not let a page through otherwise.
+      </p>
+    </div>
+  </div>
+
+  <section id="dives" aria-label="The deep dives">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Read one</p>
+        <h2>The dives</h2>
+      </div>
+      <div class="dive-list">
+        {list.map((d) => (
+          <a class="dive-card" href={`/${d.slug}`}>
+            <div>
+              <p class="kicker">{d.kicker}</p>
+              <h3>{d.title}</h3>
+              <p class="dek">{d.dek}</p>
+              <p class="meta"><strong>{d.status}</strong> · {d.events} events · {d.sources} sources · Updated {longDate(d.updated)}</p>
+            </div>
+            <span class="go">Read the dive →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="family" aria-label="The rest of the work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">The rest of the work</p>
+        <h2>Where these come from</h2>
+        <p class="sub">The dives sit on top of three sites. Each goes deeper in its own way.</p>
+      </div>
+      <div class="family">
+        <a href="https://thetrumptracker.com" target="_blank" rel="noopener noreferrer">
+          <p class="fam-name">The Trump Tracker ↗</p>
+          <p class="fam-what">The sourced record every dive is built from, entry by entry.</p>
+        </a>
+        <a href="https://research.thetrumptracker.com" target="_blank" rel="noopener noreferrer">
+          <p class="fam-name">The research site ↗</p>
+          <p class="fam-what">Long-form analysis that connects the entries into patterns.</p>
+        </a>
+        <a href="https://thecivicsdesk.com" target="_blank" rel="noopener noreferrer">
+          <p class="fam-name">The Civics Desk ↗</p>
+          <p class="fam-what">Plain-language explainers for readers who have not been following closely.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="standards" aria-label="How these are built">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Standards</p>
+        <h2>How these are built</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>From the record</h3>
+          <ul>
+            <li>Every dive is written from Trump Tracker entries that have already been through the tracker's validation protocol, with court filings and transcripts linked directly wherever they exist.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Checked, mechanically</h3>
+          <ul>
+            <li>Every link must appear in a seed entry's sources and every quotation must appear word for word in a seed entry. A page that fails either check does not go out.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Both sides, quoted</h3>
+          <ul>
+            <li>The people defending what the dive documents are quoted in their strongest form, next to the people objecting. You should be able to disagree with our take and still trust the page.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Corrected in the open</h3>
+          <ul>
+            <li>Each dive keeps its own corrections log. When a dive exposes an error in the tracker, the tracker is fixed first.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

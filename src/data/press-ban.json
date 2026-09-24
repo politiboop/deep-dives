@@ -1,0 +1,1103 @@
+{
+  "slug": "press-ban",
+  "updated": "2026-09-24",
+  "trackerIds": [
+    "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
+  ],
+  "meta": {
+    "kicker": "The press",
+    "title": "Shut Out",
+    "dek": "Trump banned three news organizations from the White House. Six days later a judge he appointed ordered them back in. The claims, the record, and what comes next.",
+    "outlets": [
+      "CNN",
+      "MS NOW",
+      "Politico"
+    ],
+    "bannedFrom": "2026-09-18",
+    "restored": "2026-09-24",
+    "orderEnds": "2026-10-08",
+    "status": "Passes restored under a 14-day court order"
+  },
+  "hero": {
+    "deck": [
+      "On September 18, 2026, the president posted that, \"effective immediately,\" he was banning CNN, MS NOW and Politico from the White House. The next morning the Secret Service took their reporters' badges at the gate. He named no story. His lawyers later cited national security. A federal judge he appointed found nothing in the record to support that, and ordered the badges returned.",
+      "Below: the six days in order, what the government claimed set against what the record shows, who objected and who defended it, the precedent the case turns on, and what happens next. Every fact is sourced. Every opinion is labeled."
+    ],
+    "quote": {
+      "text": "Maybe—but this Court is bound by D.C. Circuit precedent, full stop.",
+      "lead": "To the argument that the governing precedents were wrongly decided:",
+      "cite": "U.S. District Judge Timothy J. Kelly, temporary restraining order, September 24, 2026",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    }
+  },
+  "days": [
+    {
+      "date": "2026-09-18",
+      "events": [
+        {
+          "time": "3:04 p.m.",
+          "actor": "wh",
+          "title": "Trump announces the ban on Truth Social",
+          "body": [
+            "He posted that, \"effective immediately,\" he was banning CNN, MS NOW and Politico from the White House \"as a result of their constant 'reporting' FAKE NEWS!\" He added: \"Other Fake News Media Outlets to follow.\"",
+            "He named no story. CNN reported that he did not \"identify any specific reporting that prompted his social media declaration.\""
+          ],
+          "sources": [
+            {
+              "text": "Trump's Truth archive: September 18, 2026 post announcing the ban",
+              "url": "https://www.trumpstruth.org/statuses/41800"
+            },
+            {
+              "text": "Associated Press: Trump says he is banning CNN, MS NOW and Politico from the White House (September 18, 2026)",
+              "url": "https://apnews.com/article/trump-cnn-msnow-politico-media-bans-bb675679fb10738a51bef90bde6c525a"
+            },
+            {
+              "text": "CNN: Trump says he's 'banning' CNN, MS NOW and Politico from the White House (September 18, 2026)",
+              "url": "https://www.cnn.com/2026/09/18/media/trump-claims-ban-cnn-msnow-politico-white-house"
+            }
+          ]
+        },
+        {
+          "time": "Minutes later",
+          "actor": "wh",
+          "title": "In the Oval Office: 'a very simple ban'",
+          "body": [
+            "Asked what the ban would look like, he said, per the Roll Call Factbase transcript: \"Oh, the ban on the free press, right? Uh, a very simple ban. I don't want them in my office. I don't want them here. I would say the ban would go as far as you can.\"",
+            "Asked how it squared with his oath: \"Uh, because they're fake news. Uh, you get so tired of reading and seeing fake news.\" Asked what set it off: \"it's really just cumulative stories over the last two years. You get sick of it.\" He said the ban could be lifted if the outlets \"could straighten themselves out.\""
+          ],
+          "sources": [
+            {
+              "text": "Roll Call Factbase: Transcript of Donald Trump remarks in the Oval Office (September 18, 2026)",
+              "url": "https://rollcall.com/factbase/trump/transcript/donald-trump-remarks-healthcare-drug-prices-oval-office-september-18-2026/"
+            },
+            {
+              "text": "CNN: Trump says he's 'banning' CNN, MS NOW and Politico from the White House (September 18, 2026)",
+              "url": "https://www.cnn.com/2026/09/18/media/trump-claims-ban-cnn-msnow-politico-white-house"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "The correspondents’ association objects, led by a Fox News reporter",
+          "body": [
+            "The White House Correspondents' Association, whose president, Jacqui Heinrich, is Fox News's senior White House correspondent, said: \"The WHCA stands in defense of our colleagues at CNN, MSNOW, and POLITICO who are being singled out for doing their jobs.\"",
+            "Ari Fleischer, George W. Bush's press secretary, wrote that he agreed several outlets were biased and unfair, and then rejected the remedy: \"Banning them from the WH is not the solution... Don't ban them. Or one day they'll ban us.\""
+          ],
+          "sources": [
+            {
+              "text": "White House Correspondents' Association: Statement on White House position on CNN, MSNOW and POLITICO (September 18, 2026)",
+              "url": "https://whca.press/2026/09/18/statement-on-white-house-position-on-cnn-msnow-and-politico/"
+            },
+            {
+              "text": "NBC News: CNN, Politico and MS NOW denied White House access after Trump announces ban (September 19, 2026)",
+              "url": "https://www.nbcnews.com/politics/white-house/ms-now-journalists-denied-access-white-house-trump-announced-ban-rcna598677"
+            },
+            {
+              "text": "Newsweek: Trump Says CNN, MS NOW, Politico Barred From White House Access (September 18, 2026)",
+              "url": "https://www.newsweek.com/donald-trump-cnn-banned-white-house-access-politico-12462184"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "events": [
+        {
+          "time": "Around 8 a.m.",
+          "actor": "wh",
+          "title": "The Secret Service takes the badges at the gate",
+          "body": [
+            "Hard passes were deactivated and physically confiscated at the security kiosk. MS NOW's Akayla Gardner: \"officer asked me to hand over my badge. He said that it was disabled. I asked why I was not able to get inside. He said it was above him.\"",
+            "\"I asked him if he could provide an explanation as to why it had been deactivated,\" CNN's Betsy Klein said. \"He said he had no further information.\" Politico's Cheyenne Haslett had her pass taken as well. None of them received written notice or a reason."
+          ],
+          "sources": [
+            {
+              "text": "CNN: CNN, MS NOW and Politico denied access to White House after Trump 'ban' (September 19, 2026)",
+              "url": "https://www.cnn.com/2026/09/19/media/trump-msnow-cnn-politico-white-house-ban"
+            },
+            {
+              "text": "CBS News: CNN, MS NOW and Politico staffers turned away from White House after Trump ban (September 19, 2026)",
+              "url": "https://www.cbsnews.com/news/white-house-media-ban-ms-now-politico-cnn-trump/"
+            },
+            {
+              "text": "NBC News: CNN, Politico and MS NOW denied White House access after Trump announces ban (September 19, 2026)",
+              "url": "https://www.nbcnews.com/politics/white-house/ms-now-journalists-denied-access-white-house-trump-announced-ban-rcna598677"
+            },
+            {
+              "text": "NPR: CNN, MS NOW, Politico reporters denied access to White House following Trump ban (September 19, 2026)",
+              "url": "https://www.npr.org/2026/09/19/nx-s1-5974854/trump-cnn-msnow-politico-ban"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "On the Sunday shows, the administration defends it",
+          "body": [
+            "U.N. Ambassador Mike Waltz told CNN that \"the president is absolutely within his rights to limit journalists to government facilities.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN Transcripts: State of the Union (September 20, 2026)",
+              "url": "https://transcripts.cnn.com/show/sotu/date/2026-09-20/segment/01"
+            },
+            {
+              "text": "Breitbart: Mike Waltz: Trump Was 'Spot On' Banning CNN, MS NOW, Politico from White House (September 20, 2026)",
+              "url": "https://www.breitbart.com/clips/2026/09/20/mike-waltz-trump-was-spot-on-banning-cnn-ms-now-politico-from-white-house/"
+            }
+          ]
+        },
+        {
+          "actor": "congress",
+          "title": "Republican leaders in Congress, asked about it",
+          "body": [
+            "Sen. John Barrasso, asked on NBC whether the ban violated the Constitution: \"No. I believe the press has an obligation to report fairly.\" House Majority Leader Steve Scalise told ABC: \"Well, I don't know why he did it. I don't know what the background is.\""
+          ],
+          "sources": [
+            {
+              "text": "NBC News: Meet the Press transcript (September 20, 2026)",
+              "url": "https://www.nbcnews.com/meet-the-press/transcripts/meet-press-september-20-2026-rcna598793"
+            },
+            {
+              "text": "Washington Examiner: Scalise says 'I don't know' why Trump banned three news outlets from White House (September 20, 2026)",
+              "url": "https://www.washingtonexaminer.com/news/house/4735159/steve-scalise-trump-media-ban-white-house/"
+            }
+          ]
+        },
+        {
+          "time": "10:55 p.m.",
+          "actor": "wh",
+          "title": "The White House pulls CNN from the television pool",
+          "body": [
+            "The daily guidance removed CNN from the next day's schedule. CNN had been the assigned pool network for Monday and Tuesday, including Trump's address to the U.N. General Assembly. Pool footage goes to the other networks and to \"the more than 1,000 local affiliate television stations across the United States that receive the pool feed through CNN.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. et al. v. Donald J. Trump et al.: Complaint for Declaratory and Injunctive Relief, as released to media (September 21, 2026)",
+              "url": "https://variety.com/wp-content/uploads/2026/09/CNN-MS-NOW-Politico-vs.-Trump-et-al.pdf"
+            },
+            {
+              "text": "Cable News Network, Inc. v. Trump: Declaration of David Vigilante, ECF 2-5 (September 21, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.2.5.pdf"
+            },
+            {
+              "text": "CNN: Major TV networks stand with CNN, decline to replace its White House pool crew (September 20-21, 2026)",
+              "url": "https://www.cnn.com/2026/09/20/media/cnn-trump-white-house-pool-ban"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "events": [
+        {
+          "time": "7:53 a.m.",
+          "actor": "wh",
+          "title": "A new reason appears: national security",
+          "body": [
+            "Trump posted: \"The White House is not instituting an assault on the Free Press, something which I cherish. It is instituting an assault on the FAKE NEWS... It is a threat to our National Security, and must be stopped, NOW!\" CNBC noted that he had not cited national security before."
+          ],
+          "sources": [
+            {
+              "text": "Trump's Truth archive: September 21, 2026 post calling the press 'a threat to our National Security'",
+              "url": "https://www.trumpstruth.org/statuses/41826"
+            },
+            {
+              "text": "CNBC: Trump to be sued by MS NOW, CNN, Politico to reverse White House ban (September 21, 2026)",
+              "url": "https://www.cnbc.com/2026/09/21/trump-lawsuit-white-house-ban-ms-now-cnn-politico.html"
+            }
+          ]
+        },
+        {
+          "time": "Morning",
+          "actor": "press",
+          "title": "The networks refuse to replace CNN",
+          "body": [
+            "Fox News's Washington bureau chief, Bryan Boughton, who chairs the television pool, told subscribers that \"effective today, the TV pool will not be covering events designated as pool coverage of the President,\" and that \"There will be no replacement pool put in place.\"",
+            "Fox News, ABC, CBS, CNN and NBC said jointly: \"The public has a vital interest in receiving accurate, independent information about its government. No administration should restrict a news organization because it objects to its reporting.\""
+          ],
+          "sources": [
+            {
+              "text": "Politico: Major TV networks decline White House pool duties (September 21, 2026)",
+              "url": "https://www.politico.com/news/2026/09/21/networks-white-house-pool-duty-01086044"
+            },
+            {
+              "text": "Fox News: White House TV pool to suspend coverage of Trump events (September 21, 2026)",
+              "url": "https://www.foxnews.com/media/white-house-tv-pool-to-suspend-coverage-of-trump-events"
+            },
+            {
+              "text": "Washington Examiner: White House TV pool announces suspension in solidarity with banned outlets (September 21, 2026)",
+              "url": "https://www.washingtonexaminer.com/news/white-house/4735685/white-house-tv-pool-boycott-solidarity-cnn/"
+            }
+          ]
+        },
+        {
+          "actor": "court",
+          "title": "The outlets sue",
+          "body": [
+            "Cable News Network, Inc. v. Trump was filed in federal court in Washington, pleading Fifth Amendment due process, First Amendment retaliation and viewpoint discrimination. The complaint opens: \"This ban could not be a more direct assault on the First Amendment nor a more blatant violation of our most fundamental constitutional principles.\"",
+            "It was assigned to Judge Timothy J. Kelly, whom Trump appointed in 2017. In 2018 Kelly heard CNN's suit over Jim Acosta's revoked pass and, as ABC reported, \"ruled in Acosta's favor after finding that the Trump White House did not afford him proper due process.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. et al. v. Donald J. Trump et al.: Complaint for Declaratory and Injunctive Relief, as released to media (September 21, 2026)",
+              "url": "https://variety.com/wp-content/uploads/2026/09/CNN-MS-NOW-Politico-vs.-Trump-et-al.pdf"
+            },
+            {
+              "text": "CourtListener: Cable News Network, Inc. v. Trump, No. 1:26-cv-03287 (D.D.C.), docket and minute order setting the TRO hearing (September 21, 2026)",
+              "url": "https://www.courtlistener.com/docket/74823502/cable-news-network-inc-v-trump/"
+            },
+            {
+              "text": "ABC News: 'Blatant violation' of rights: News outlets file lawsuit over Trump ban (September 21, 2026)",
+              "url": "https://abcnews.com/US/cnn-ms-now-politico-sue-trump-admin-white/story?id=136613147"
+            }
+          ]
+        },
+        {
+          "time": "3:39 p.m.",
+          "actor": "wh",
+          "title": "Before any ruling, Trump promises an appeal",
+          "body": [
+            "He posted that the judge \"was, sadly, appointed by 'TRUMP.' In other words, almost without question and, as usual, we'll go for appeal.\"",
+            "The White House published a defense titled \"White House Access Is a Privilege, Not a Right,\" which says: \"The First Amendment protects their right to publish; it does not entitle them to a hard pass, briefing room seat, or place in the press pool.\""
+          ],
+          "sources": [
+            {
+              "text": "Trump's Truth archive: September 21, 2026, 3:39 p.m. post on the lawsuit and Judge Kelly",
+              "url": "https://www.trumpstruth.org/statuses/41836"
+            },
+            {
+              "text": "The White House: White House Access Is a Privilege, Not a Right (September 21, 2026)",
+              "url": "https://www.whitehouse.gov/releases/2026/09/white-house-access-is-a-privilege-not-a-right/"
+            },
+            {
+              "text": "Deadline: Donald Trump Vows To Appeal Ruling In Networks' Lawsuit Over His Ban (September 21, 2026)",
+              "url": "https://deadline.com/2026/09/trump-white-house-ban-judge-appeal-1237109563/"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "Photographers hold their pictures, and NPR stops using White House audio",
+          "body": [
+            "The Washington Post said it would \"not publish any photographs of today's presidential events... until midnight Eastern Time,\" and Mediaite reported that the New York Times, the Associated Press, Reuters, Getty Images and AFP joined. NPR, a member of the White House radio pool, declined to broadcast audio of Trump."
+          ],
+          "sources": [
+            {
+              "text": "Mediaite: Washington Post Joins 'Collective Effort' with 'Other Newsrooms,' Will Not Immediately Publish Photos of Presidential Events (September 21, 2026)",
+              "url": "https://www.mediaite.com/media/news/washington-post-joins-collective-effort-with-other-newsrooms-will-not-immediately-publish-photos-of-presidential-events/"
+            },
+            {
+              "text": "NPR via Houston Public Media: Major news outlets banned by Trump will have their day in court (September 23, 2026)",
+              "url": "https://www.houstonpublicmedia.org/npr/2026/09/23/nx-s1-5978069/major-news-outlets-banned-by-trump-will-have-their-day-in-court/"
+            },
+            {
+              "text": "CNN: Trump's press ban prompts widespread solidarity, and fewer images of the president (September 22, 2026)",
+              "url": "https://www.cnn.com/2026/09/22/media/trump-cnn-msnow-politico-white-house-ban-solidarity-media"
+            }
+          ]
+        },
+        {
+          "actor": "congress",
+          "title": "The first Republican in Congress breaks with the ban",
+          "body": [
+            "Rep. Mike Simpson of Idaho, a senior appropriator: \"You should never ban the press. The press is what keeps us honest.\""
+          ],
+          "sources": [
+            {
+              "text": "CBS2 Idaho: Idaho Rep. Mike Simpson criticizes Trump ban on news organizations (September 21, 2026)",
+              "url": "https://idahonews.com/news/local/idaho-rep-mike-simpson-criticizes-trump-ban-on-news-organizations"
+            }
+          ]
+        },
+        {
+          "time": "Evening",
+          "actor": "wh",
+          "title": "The White House launches its own channel",
+          "body": [
+            "It launched \"Trump TV,\" a 24-hour stream of past official clips on the White House's YouTube channel and app. NOTUS reported that its first livestream was a two-month-old clip of the president at Mount Rushmore."
+          ],
+          "sources": [
+            {
+              "text": "NOTUS: Days After Press Ban, White House Launches 'Trump TV', a 24/7 Clip Show (September 21, 2026)",
+              "url": "https://www.notus.org/trump-white-house/white-house-announces-trump-tv"
+            },
+            {
+              "text": "Time: White House Launches 'Trump TV' Amid Feud With Press (September 22, 2026)",
+              "url": "https://time.com/article/2026/09/22/trump-tv-white-house-press-pool-ban-boycott-state-media/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "At the U.N., Trump tells CNN it should not be there",
+          "body": [
+            "Covering him on U.N. credentials, CNN's Kaitlan Collins was told: \"You should not be here covering me. You said you weren't going to cover me.\" Collins said on air that CNN had never said that.",
+            "Asked whether he would let the outlets back in if he lost in court, he said the judge would probably rule against him, and: \"I think we have a right to clean out fake news.\""
+          ],
+          "sources": [
+            {
+              "text": "Associated Press via U.S. News: 'You Should Not Be Here,' Trump Tells CNN at UN as Standoff With Media Outlets Persists (September 22, 2026)",
+              "url": "https://www.usnews.com/news/business/articles/2026-09-22/you-should-not-be-here-trump-tells-cnn-at-un-as-standoff-with-media-outlets-persists"
+            },
+            {
+              "text": "The Hill: Trump deflects on whether White House will follow court decision on banned media (September 22, 2026)",
+              "url": "https://thehill.com/homenews/administration/6104767-trump-deflects-media-ban-legal-fight/"
+            },
+            {
+              "text": "Washington Examiner: Trump says he will 'probably' lift media ban if judge rules against him (September 22, 2026)",
+              "url": "https://www.washingtonexaminer.com/news/white-house/4737780/trump-probably-lift-media-ban-judge-lawsuit-cnn-politico-ms-now/"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "Rubio: 'We're not closing CNN'",
+          "body": [
+            "\"We're not closing CNN,\" Secretary of State Marco Rubio said on NBC. \"There aren't a bunch of police officers or soldiers kicking down the doors of MSNBC or MS NOW, whatever it's called, and arresting people and unplugging it from the grid. They're just not allowed to work from the workspace at the White House.\""
+          ],
+          "sources": [
+            {
+              "text": "Al Jazeera: Rubio defends Trump's White House ban on CNN, MS NOW and Politico (September 22, 2026)",
+              "url": "https://www.aljazeera.com/news/2026/9/22/rubio-defends-trumps-white-house-ban-on-cnn-ms-now-and-politico"
+            },
+            {
+              "text": "NBC News live blog: Trump addresses the U.N. General Assembly, including Rubio on the ban (September 22, 2026)",
+              "url": "https://www.nbcnews.com/politics/trump-administration/live-blog/trump-un-speech-iran-gaza-ukraine-congress-2026-election-live-updates-rcna599086"
+            }
+          ]
+        },
+        {
+          "time": "Night",
+          "actor": "wh",
+          "title": "The Justice Department asks the court to discard the precedent",
+          "body": [
+            "The government's opposition opens: \"After all, access to the White House is a privilege—not a right.\" On the 1977 case that governs press credentials it does not argue compliance. It argues \"that decision is wrong and should be overruled,\" and says the same of the 2020 appeals-court decision that built on it.",
+            "It adds: \"At the very least, no injunction may run against the President.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+            },
+            {
+              "text": "CNN: Defending reporter ban, Justice Department argues stories on Trump's ballroom project, Iran war threaten national security (September 22, 2026)",
+              "url": "https://www.cnn.com/2026/09/22/politics/trump-admin-responds-press-lawsuit-white-house-access"
+            },
+            {
+              "text": "CBS News: DOJ defends Trump White House media ban, citing national security and \"professionalism and decorum\" (September 23, 2026)",
+              "url": "https://www.cbsnews.com/news/doj-defends-trump-white-house-media-ban/"
+            },
+            {
+              "text": "Reason, The Volokh Conspiracy: President Trump's Legal Argument in Support of Excluding CNN, MS NOW, and Politico from the White House (September 23, 2026)",
+              "url": "https://reason.com/volokh/2026/09/23/president-trumps-legal-argument-in-support-of-excluding-cnn-ms-now-and-politico-from-the-white-house/"
+            }
+          ]
+        },
+        {
+          "time": "10:30 p.m.",
+          "actor": "wh",
+          "title": "Four days after the ban, the letters",
+          "body": [
+            "The White House emailed each outlet a letter dated that day, one day after the lawsuit. CNN's arrived at 10:30 p.m. Each says: \"This letter is to provide notice that the President has made the determination to revoke hard passes for members of your organization,\" and sets a deadline: \"please submit a written response to us in writing via email by 5:00 p.m. on Friday, September 25, 2026.\"",
+            "No individual signed them. They close \"White House Press Office,\" and they are addressed to the organizations, not to the reporters whose passes were taken. The government's brief calls this \"sufficient post-deprivation process.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to CNN, ECF 16-1 (September 22, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.1_6.pdf"
+            },
+            {
+              "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to MS NOW, ECF 16-2 (September 22, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.2_5.pdf"
+            },
+            {
+              "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to Politico, ECF 16-3 (September 22, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.3_6.pdf"
+            },
+            {
+              "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+            }
+          ]
+        },
+        {
+          "time": "11:53 p.m.",
+          "actor": "wh",
+          "title": "Trump calls the judge 'totally disloyal'",
+          "body": [
+            "He posted that the outlets are \"sick, treasonous, and demented\" and that they have \"a great, for them, and totally disloyal Judge.\" Judge Kelly is a Trump appointee."
+          ],
+          "sources": [
+            {
+              "text": "Trump's Truth (Defending Democracy Together archive of Truth Social posts): post of September 22, 2026, 11:53 p.m.",
+              "url": "https://www.trumpstruth.org/statuses/41844"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "events": [
+        {
+          "actor": "press",
+          "title": "Fifty-one news organizations file against the White House",
+          "body": [
+            "The Reporters Committee for Freedom of the Press, the White House Correspondents' Association and 49 news organizations asked the court to restore access. Fox News Network is among them. The brief calls the stated reasons \"transparently viewpoint discriminatory\" and says \"unassailable First Amendment law makes any viewpoint-based decision to bar reporters from a nonpublic forum constitutionally repugnant.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Brief of Amici Curiae Reporters Committee for Freedom of the Press, White House Correspondents' Association and 49 Media Organizations, ECF 18-1 (September 23, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.18.1.pdf"
+            },
+            {
+              "text": "Associated Press: Trump administration will defend its ban of three prominent news outlets in court hearing (September 23, 2026)",
+              "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
+            }
+          ]
+        },
+        {
+          "time": "3:30 p.m.",
+          "actor": "court",
+          "title": "The hearing: 'I have to apply them'",
+          "body": [
+            "Judge Kelly told the government he is bound by the cases it wanted discarded: \"Maybe they were, maybe they weren't, but currently as a district judge I have to apply them.\" On the record before him, due process \"wasn't followed here.\" On the letters: \"I don't know [that] a letter they got after the pass was revoked could provide them with the kind of standards that they'd have to conform their conduct to.\"",
+            "He did not rule from the bench, and said he would decide \"as soon as I can.\""
+          ],
+          "sources": [
+            {
+              "text": "The Hill: Judge skeptical of White House press ban on Politico, MS NOW, CNN: Due process 'wasn't followed' (September 23, 2026)",
+              "url": "https://thehill.com/regulation/court-battles/6107336-trump-admin-media-access-lawsuit/"
+            },
+            {
+              "text": "Associated Press: Trump administration will defend its ban of three prominent news outlets in court hearing (September 23, 2026)",
+              "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
+            },
+            {
+              "text": "CourtListener: Cable News Network, Inc. v. Trump, No. 1:26-cv-03287 (D.D.C.), docket and minute order setting the TRO hearing (September 21, 2026)",
+              "url": "https://www.courtlistener.com/docket/74823502/cable-news-network-inc-v-trump/"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "Two of the accusations come apart",
+          "body": [
+            "The Associated Press reported that an anonymous-source story cited against Politico \"appeared to reference a background briefing set up by the White House, where an official briefed reporters on condition of anonymity under ground rules set by the White House itself.\" The Washington Post, which reviewed a recording of the call, reported: \"The Associated Press, Bloomberg and CNBC were among several outlets who reported on the call, citing a senior administration official, but were not banned from the White House.\"",
+            "MS NOW's Washington bureau chief swore that of the three MS NOW articles the letter cites, only one was written by a journalist who held a White House hard pass, and that pass was renewed a week after the story now cited against the network."
+          ],
+          "sources": [
+            {
+              "text": "Associated Press: Trump administration will defend its ban of three prominent news outlets in court hearing (September 23, 2026)",
+              "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
+            },
+            {
+              "text": "Washington Post via The Spokesman-Review: The White House banned Politico, citing anonymous sources. It provided the quotes. (September 23, 2026)",
+              "url": "https://www.spokesman.com/stories/2026/sep/23/the-white-house-banned-politico-citing-anonymous-s/"
+            },
+            {
+              "text": "Cable News Network, Inc. v. Trump: Supplemental Declaration of Sudeep Reddy, ECF 21 (September 23, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.21.0_3.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "events": [
+        {
+          "time": "Early hours",
+          "actor": "court",
+          "title": "The order: 'full stop'",
+          "body": [
+            "Judge Kelly granted the temporary restraining order and directed that the passes be restored immediately. To the argument that Sherrill and Karem were wrongly decided, the order answers: \"Maybe—but this Court is bound by D.C. Circuit precedent, full stop.\"",
+            "He found the government's only standard \"is so vague it hardly does the trick,\" and that \"[N]othing in the record that predates this suit suggests that the revocation of Plaintiffs' hard passes was motivated by national security concerns.\" The order runs fourteen days, binds the defendants \"except for President Trump,\" and was not stayed."
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+            },
+            {
+              "text": "BBC: Judge temporarily overturns Trump White House media ban (September 24, 2026)",
+              "url": "https://www.bbc.com/news/articles/cqm2mg34x2v7o"
+            }
+          ]
+        },
+        {
+          "time": "9 a.m.",
+          "actor": "wh",
+          "title": "Turned away at the gate anyway",
+          "body": [
+            "Journalists from all three outlets were refused entry. Betsy Klein was denied at 9 a.m., and her request to have her pass back was refused. The outlets filed an emergency notice: \"Defendants have already repeatedly violated the Court's Order,\" adding that the government's lawyers had not responded to a request to call the judge together."
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Corrected Notice of Defendants' Non-Compliance with Temporary Restraining Order and Request for Immediate Hearing, ECF 26 (September 24, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.26.0.pdf"
+            },
+            {
+              "text": "CNN: CNN, MS NOW and Politico go back to court after reporters were denied access to the White House despite judge's order (September 24, 2026)",
+              "url": "https://www.cnn.com/2026/09/24/politics/trump-press-lawsuit-ruling-white-house-access"
+            }
+          ]
+        },
+        {
+          "time": "Noon",
+          "actor": "court",
+          "title": "The passes come back",
+          "body": [
+            "Kelly ordered the government to answer by 12:30 p.m. The White House's press operations director, Micah Stopperich, filed a sworn timeline: her team was told shortly after 7 a.m. to turn the badges back on, and the Secret Service indicated shortly after 9 a.m. that the passes were \"back on.\" CNN and MS NOW journalists were admitted at noon. Politico said its access came that afternoon.",
+            "The judge accepted the explanation and declined to hold an emergency hearing. He set the next stage, with a motion for a preliminary injunction due September 28, and said the court \"intends to rule expeditiously.\""
+          ],
+          "sources": [
+            {
+              "text": "Cable News Network, Inc. v. Trump: Declaration of Micah Stopperich, ECF 28 (September 24, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.28.0_1.pdf"
+            },
+            {
+              "text": "NBC News: CNN, MS NOW and Politico allowed back at the White House after judge blocked Trump's ban (September 24, 2026)",
+              "url": "https://www.nbcnews.com/politics/trump-administration/judge-ruling-white-house-restore-access-media-ban-cnn-politico-ms-now-rcna599391"
+            },
+            {
+              "text": "CNBC: White House allows blocked reporters in after judge lifts Trump ban (September 24, 2026)",
+              "url": "https://www.cnbc.com/2026/09/24/judge-lifts-trumps-white-house-ban-on-cnn-ms-now-and-politico.html"
+            },
+            {
+              "text": "Politico: Politico granted White House access after being denied earlier Thursday (September 24, 2026)",
+              "url": "https://www.politico.com/news/2026/09/24/politico-granted-white-house-access-after-being-denied-earlier-thursday-01091766"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "In the Oval Office with Xi, photographers only",
+          "body": [
+            "The meeting with Xi Jinping had been scheduled as closed press. At the last minute the White House admitted still photographers only and \"denied requests from the rest of the pool, including reporters who would be asking questions, to join.\" In front of the photographers, Trump remarked that Xi has the friendliest press corps in the world. The Associated Press added: \"China is one of the most oppressive environments for journalists in the world.\""
+          ],
+          "sources": [
+            {
+              "text": "Associated Press via Bangor Daily News: The Latest: Trump hails 'truly great friendship' with China's Xi Jinping as summit begins (September 24, 2026)",
+              "url": "https://www.bangordailynews.com/2026/09/24/nation/the-latest-trump-hails-truly-great-friendship-with-chinas-xi-jinping-as-summit-begins/"
+            },
+            {
+              "text": "CNN: Live updates: Trump hosts Xi for US-China summit in Washington, DC (September 24, 2026)",
+              "url": "https://www.cnn.com/2026/09/24/politics/live-news/trump-meeting-china-xi-us-visit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim": "After all, access to the White House is a privilege—not a right.",
+      "who": "Justice Department opposition, September 22",
+      "found": "Two appeals-court decisions say a reporter’s pass is protected, and a district judge is bound by them.",
+      "detail": "Sherrill v. Knight (1977) treats a correspondent’s interest in a White House pass as a liberty interest that cannot be denied without due process, and Karem v. Trump (2020) holds that a pass already issued cannot be suspended without it. The government asked the court to treat both as wrongly decided. The judge: \"Maybe—but this Court is bound by D.C. Circuit precedent, full stop.\"",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    },
+    {
+      "claim": "trafficking in verifiable falsehoods about national security and other issues, and publishing sensitive or classified information",
+      "who": "White House letters to the three outlets, September 22",
+      "found": "Nothing that predates the lawsuit points to national security as the motive.",
+      "detail": "Trump’s announcement cited \"FAKE NEWS,\" and asked what set it off he said \"it's really just cumulative stories over the last two years.\" He first invoked national security on September 21, the morning the outlets announced their suit, and CNBC noted he had not cited it before. The order: \"[N]othing in the record that predates this suit suggests that the revocation of Plaintiffs' hard passes was motivated by national security concerns.\"",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to CNN, ECF 16-1 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.1_6.pdf"
+        },
+        {
+          "text": "Roll Call Factbase: Transcript of Donald Trump remarks in the Oval Office (September 18, 2026)",
+          "url": "https://rollcall.com/factbase/trump/transcript/donald-trump-remarks-healthcare-drug-prices-oval-office-september-18-2026/"
+        },
+        {
+          "text": "Trump's Truth archive: September 21, 2026 post calling the press 'a threat to our National Security'",
+          "url": "https://www.trumpstruth.org/statuses/41826"
+        },
+        {
+          "text": "CNBC: Trump to be sued by MS NOW, CNN, Politico to reverse White House ban (September 21, 2026)",
+          "url": "https://www.cnbc.com/2026/09/21/trump-lawsuit-white-house-ban-ms-now-cnn-politico.html"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    },
+    {
+      "claim": "sufficient post-deprivation process",
+      "who": "Justice Department opposition, describing the letters",
+      "found": "The letters came after the badges were taken and after the suit, unsigned, with no standard anyone could have followed.",
+      "detail": "They are dated September 22, four days after the ban and one day after the lawsuit, and they close \"White House Press Office,\" with no signer. The judge found the circumstances were not so \"extraordinary\" as to excuse notice in advance, and that the only standard offered, about professionalism and decorum, \"is so vague it hardly does the trick.\"",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to CNN, ECF 16-1 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.1_6.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    },
+    {
+      "claim": "In September 2026, CNN falsely reported an Iranian school was struck because of 'outdated intelligence, when the United States attacked a neighboring Islamic Revolutionary Guard Corps naval base.'",
+      "who": "White House letter to CNN",
+      "found": "CNN was reporting the government’s own preliminary finding.",
+      "detail": "The CNN article says \"early evidence suggests the military accidentally hit the school due to outdated intelligence,\" attributed to sources briefed on the internal investigation.",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to CNN, ECF 16-1 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.1_6.pdf"
+        },
+        {
+          "text": "CNN: Deadly US strike on Iran school may have been a war crime, UN report finds (September 18, 2026)",
+          "url": "https://www.cnn.com/2026/09/18/middleeast/us-strike-iran-school-war-crime-un-intl-hnk"
+        }
+      ]
+    },
+    {
+      "claim": "A CNN story disclosed a \"top-secret\" project beneath the East Wing.",
+      "who": "White House letter to CNN, paraphrased",
+      "found": "The words \"top-secret\" came from a White House official, on the record, at a public meeting.",
+      "detail": "The White House’s own director of management and administration told a public planning-commission meeting: \"There are some things regarding this project that are, frankly, of top-secret nature that we are currently working on.\" Betsy Klein’s pass was renewed in June 2026, months after that January story.",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to CNN, ECF 16-1 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.1_6.pdf"
+        },
+        {
+          "text": "CNN: Inside plans to rebuild the 'top-secret' bunker beneath the White House East Wing (January 19, 2026)",
+          "url": "https://www.cnn.com/2026/01/19/politics/east-wing-secret-bunker-construction-details"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Declaration of Betsy Klein, ECF 2-3 (September 21, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.2.3.pdf"
+        }
+      ]
+    },
+    {
+      "claim": "Politico cited a \"senior administration official … granted anonymity\" on the odds of an Iran deal.",
+      "who": "White House letter to Politico, paraphrased",
+      "found": "The White House set up that call and its ground rules. Other outlets reported the same official and were not banned.",
+      "detail": "The Washington Post reviewed a recording in which a White House aide opens: \"The contents of this call are on background, attributable to a senior administration official.\" And: \"The Associated Press, Bloomberg and CNBC were among several outlets who reported on the call, citing a senior administration official, but were not banned from the White House.\"",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Exhibit, White House Press Office letter to Politico, ECF 16-3 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.3_6.pdf"
+        },
+        {
+          "text": "Washington Post via The Spokesman-Review: The White House banned Politico, citing anonymous sources. It provided the quotes. (September 23, 2026)",
+          "url": "https://www.spokesman.com/stories/2026/sep/23/the-white-house-banned-politico-citing-anonymous-s/"
+        },
+        {
+          "text": "Associated Press: Trump administration will defend its ban of three prominent news outlets in court hearing (September 23, 2026)",
+          "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
+        }
+      ]
+    },
+    {
+      "claim": "The release or publication of purported national security information - whether accurate, incorrect, or misleading - can cause risk to the national security of the United States.",
+      "who": "Sworn declaration filed by the government",
+      "found": "Both declarants were Pentagon officials, neither said any story here was classified, and most cited authors held no pass.",
+      "detail": "The order: the declarants \"have no direct knowledge of how reporters operate in the White House, or about any of the facts at issue here,\" and the plaintiffs’ declarations \"show that, in most cases, the reporters who authored the stories Defendants identify in their letters did not even hold hard passes.\"",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Declaration of Timothy D. Brown, ECF 16-4 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.4_4.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Declaration of Kingsley Wilson, ECF 16-5 (September 22, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.5_4.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Supplemental Declaration of Sudeep Reddy, ECF 21 (September 23, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.21.0_3.pdf"
+        },
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    }
+  ],
+  "voices": {
+    "objected": [
+      {
+        "who": "White House Correspondents' Association",
+        "role": "Its president is Fox News’s senior White House correspondent",
+        "quote": "The WHCA stands in defense of our colleagues at CNN, MSNOW, and POLITICO who are being singled out for doing their jobs.",
+        "sources": [
+          {
+            "text": "White House Correspondents' Association: Statement on White House position on CNN, MSNOW and POLITICO (September 18, 2026)",
+            "url": "https://whca.press/2026/09/18/statement-on-white-house-position-on-cnn-msnow-and-politico/"
+          },
+          {
+            "text": "NBC News: CNN, Politico and MS NOW denied White House access after Trump announces ban (September 19, 2026)",
+            "url": "https://www.nbcnews.com/politics/white-house/ms-now-journalists-denied-access-white-house-trump-announced-ban-rcna598677"
+          }
+        ]
+      },
+      {
+        "who": "Ari Fleischer",
+        "role": "Press secretary to George W. Bush",
+        "quote": "Banning them from the WH is not the solution... Don't ban them. Or one day they'll ban us.",
+        "sources": [
+          {
+            "text": "Newsweek: Trump Says CNN, MS NOW, Politico Barred From White House Access (September 18, 2026)",
+            "url": "https://www.newsweek.com/donald-trump-cnn-banned-white-house-access-politico-12462184"
+          }
+        ]
+      },
+      {
+        "who": "Rep. Mike Simpson",
+        "role": "Republican of Idaho",
+        "quote": "You should never ban the press. The press is what keeps us honest.",
+        "sources": [
+          {
+            "text": "CBS2 Idaho: Idaho Rep. Mike Simpson criticizes Trump ban on news organizations (September 21, 2026)",
+            "url": "https://idahonews.com/news/local/idaho-rep-mike-simpson-criticizes-trump-ban-on-news-organizations"
+          }
+        ]
+      },
+      {
+        "who": "Erick Erickson",
+        "role": "Conservative commentator, on ABC",
+        "quote": "beat him with the arguments. Don't throw him out of the White House",
+        "sources": [
+          {
+            "text": "ABC News: 'This Week' Transcript 9-20-26 (September 20, 2026)",
+            "url": "https://abcnews.com/Politics/week-transcript-9-20-26-illinois-gov-jb/story?id=136584944"
+          }
+        ]
+      },
+      {
+        "who": "The five television pool networks",
+        "role": "Fox News, ABC, CBS, CNN and NBC, jointly",
+        "quote": "No administration should restrict a news organization because it objects to its reporting.",
+        "sources": [
+          {
+            "text": "Fox News: White House TV pool to suspend coverage of Trump events (September 21, 2026)",
+            "url": "https://www.foxnews.com/media/white-house-tv-pool-to-suspend-coverage-of-trump-events"
+          },
+          {
+            "text": "Politico: Major TV networks decline White House pool duties (September 21, 2026)",
+            "url": "https://www.politico.com/news/2026/09/21/networks-white-house-pool-duty-01086044"
+          }
+        ]
+      },
+      {
+        "who": "Katie Fallow",
+        "role": "Knight First Amendment Institute",
+        "quote": "No president has taken this explicit of a step",
+        "sources": [
+          {
+            "text": "Associated Press: Trump administration will defend its ban of three prominent news outlets in court hearing (September 23, 2026)",
+            "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
+          }
+        ]
+      }
+    ],
+    "defended": [
+      {
+        "who": "Mike Waltz",
+        "role": "U.N. Ambassador, on CNN",
+        "quote": "the president is absolutely within his rights to limit journalists to government facilities",
+        "sources": [
+          {
+            "text": "CNN Transcripts: State of the Union (September 20, 2026)",
+            "url": "https://transcripts.cnn.com/show/sotu/date/2026-09-20/segment/01"
+          },
+          {
+            "text": "Breitbart: Mike Waltz: Trump Was 'Spot On' Banning CNN, MS NOW, Politico from White House (September 20, 2026)",
+            "url": "https://www.breitbart.com/clips/2026/09/20/mike-waltz-trump-was-spot-on-banning-cnn-ms-now-politico-from-white-house/"
+          }
+        ]
+      },
+      {
+        "who": "Sen. John Barrasso",
+        "role": "Republican of Wyoming, asked whether the ban violates the Constitution",
+        "quote": "No. I believe the press has an obligation to report fairly.",
+        "sources": [
+          {
+            "text": "NBC News: Meet the Press transcript (September 20, 2026)",
+            "url": "https://www.nbcnews.com/meet-the-press/transcripts/meet-press-september-20-2026-rcna598793"
+          }
+        ]
+      },
+      {
+        "who": "JD Vance",
+        "role": "Vice President",
+        "quote": "He's not banning media outlets. What he's doing is saying we're not going to give you special access to the White House if you engage in what is effectively propaganda.",
+        "sources": [
+          {
+            "text": "ABC News: 'Blatant violation' of rights: News outlets file lawsuit over Trump ban (September 21, 2026)",
+            "url": "https://abcnews.com/US/cnn-ms-now-politico-sue-trump-admin-white/story?id=136613147"
+          }
+        ]
+      },
+      {
+        "who": "Marco Rubio",
+        "role": "Secretary of State, on NBC",
+        "quote": "We're not closing CNN.",
+        "sources": [
+          {
+            "text": "Al Jazeera: Rubio defends Trump's White House ban on CNN, MS NOW and Politico (September 22, 2026)",
+            "url": "https://www.aljazeera.com/news/2026/9/22/rubio-defends-trumps-white-house-ban-on-cnn-ms-now-and-politico"
+          }
+        ]
+      },
+      {
+        "who": "The White House",
+        "role": "In a published defense",
+        "quote": "The First Amendment protects their right to publish; it does not entitle them to a hard pass, briefing room seat, or place in the press pool.",
+        "sources": [
+          {
+            "text": "The White House: White House Access Is a Privilege, Not a Right (September 21, 2026)",
+            "url": "https://www.whitehouse.gov/releases/2026/09/white-house-access-is-a-privilege-not-a-right/"
+          }
+        ]
+      },
+      {
+        "who": "The Justice Department",
+        "role": "In its brief",
+        "quote": "After all, access to the White House is a privilege—not a right.",
+        "sources": [
+          {
+            "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
+            "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "amici": {
+    "sources": [
+      {
+        "text": "Cable News Network, Inc. v. Trump: Brief of Amici Curiae Reporters Committee for Freedom of the Press, White House Correspondents' Association and 49 Media Organizations, ECF 18-1 (September 23, 2026)",
+        "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.18.1.pdf"
+      }
+    ],
+    "lead": [
+      "Reporters Committee for Freedom of the Press",
+      "White House Correspondents' Association"
+    ],
+    "highlight": "Fox News",
+    "names": [
+      "Advance Local",
+      "ABC",
+      "The Associated Press",
+      "The Atlantic",
+      "Axios",
+      "Bloomberg News",
+      "Boston Globe",
+      "CBS",
+      "Center for Investigative Reporting",
+      "Chicago Public Media",
+      "Condé Nast",
+      "Courthouse News Service",
+      "The Daily Beast",
+      "Dow Jones",
+      "E.W. Scripps",
+      "Financial Times",
+      "Forbes",
+      "Fox News",
+      "The Guardian US",
+      "Hearst",
+      "HuffPost",
+      "The Intercept",
+      "Knight First Amendment Institute",
+      "KQED",
+      "LAist",
+      "Los Angeles Times",
+      "McClatchy",
+      "MediaNews Group",
+      "Minnesota Public Radio",
+      "National Press Club",
+      "NPR",
+      "NBCUniversal",
+      "The New Republic",
+      "New York Public Radio",
+      "The New York Times",
+      "News/Media Alliance",
+      "Newsday",
+      "Open Vallejo",
+      "Penguin Random House",
+      "ProPublica",
+      "Reuters",
+      "The Seattle Times",
+      "Slate",
+      "USA Today",
+      "Vox Media",
+      "WAMU",
+      "The Washington Post",
+      "WBUR",
+      "WNET"
+    ]
+  },
+  "precedent": [
+    {
+      "year": 1977,
+      "name": "Sherrill v. Knight",
+      "court": "D.C. Circuit",
+      "holding": "A correspondent’s interest in a White House press pass is a liberty interest that cannot be denied without due process of law.",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "name": "CNN v. Trump, the Acosta case",
+      "court": "U.S. District Court, Judge Kelly",
+      "holding": "The same judge restored Jim Acosta’s pass after finding the White House had not given him proper due process.",
+      "sources": [
+        {
+          "text": "ABC News: 'Blatant violation' of rights: News outlets file lawsuit over Trump ban (September 21, 2026)",
+          "url": "https://abcnews.com/US/cnn-ms-now-politico-sue-trump-admin-white/story?id=136613147"
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "name": "Karem v. Trump",
+      "court": "D.C. Circuit",
+      "holding": "A pass already issued cannot be suspended without due process, and a reporter must have fair notice both of the conduct that would be punished and of the sanction.",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "name": "AP v. Budowich",
+      "court": "D.C. Circuit",
+      "holding": "The ruling the government leans on still reaffirmed, citing Sherrill: \"When the White House opens its facilities to the press generally, as it does in the Brady Briefing Room, it cannot exclude journalists based on viewpoint.\"",
+      "sources": [
+        {
+          "text": "Reason, The Volokh Conspiracy: President Trump's Legal Argument in Support of Excluding CNN, MS NOW, and Politico from the White House (September 23, 2026)",
+          "url": "https://reason.com/volokh/2026/09/23/president-trumps-legal-argument-in-support-of-excluding-cnn-ms-now-and-politico-from-the-white-house/"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "name": "Mahoney v. U.S. Capitol Police Board",
+      "court": "D.C. Circuit, opinion by Judge Neomi Rao",
+      "holding": "Decided the day before the hearing, it cites the court’s own White House precedent: \"it would be unreasonable to control access to White House press facilities through standardless discretion.\"",
+      "sources": [
+        {
+          "text": "Mahoney v. United States Capitol Police Board, No. 24-5207 (D.C. Cir. September 22, 2026), slip opinion",
+          "url": "https://media.cadc.uscourts.gov/opinions/docs/2026/09/24-5207-2194324.pdf"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "name": "CNN v. Trump",
+      "court": "U.S. District Court, Judge Kelly",
+      "holding": "Restraining order granted September 24 on the due-process claim. The First Amendment claims have not yet been decided.",
+      "sources": [
+        {
+          "text": "Cable News Network, Inc. v. Trump: Temporary Restraining Order, ECF 24 (September 24, 2026)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.24.0_2.pdf"
+        }
+      ]
+    }
+  ],
+  "watch": [
+    {
+      "date": "2026-09-25",
+      "when": "Fri Sept 25, 5 p.m.",
+      "title": "The White House’s own deadline",
+      "text": "The letters gave each outlet until 5 p.m. to respond by email. The record does not say what the White House will do with the responses, or whether that process continues now that the passes are back under court order."
+    },
+    {
+      "date": "2026-09-28",
+      "when": "Mon Sept 28",
+      "title": "Motion for a preliminary injunction due",
+      "text": "The outlets ask for a longer order, one that would keep the ban blocked while the lawsuit continues.",
+      "sources": [
+        {
+          "text": "CNBC: White House allows blocked reporters in after judge lifts Trump ban (September 24, 2026)",
+          "url": "https://www.cnbc.com/2026/09/24/judge-lifts-trumps-white-house-ban-on-cnn-ms-now-and-politico.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "when": "Fri Oct 2",
+      "title": "The government responds",
+      "text": "The government’s response to the motion is due."
+    },
+    {
+      "date": "2026-10-05",
+      "when": "Mon Oct 5",
+      "title": "The reply, then a hearing",
+      "text": "The court will set a hearing date and says it \"intends to rule expeditiously.\""
+    },
+    {
+      "date": "2026-10-08",
+      "when": "Thu Oct 8",
+      "title": "The fourteen days run out",
+      "text": "The restraining order runs fourteen days from September 24. The briefing schedule is set inside that window."
+    },
+    {
+      "when": "Open",
+      "title": "An appeal",
+      "text": "Trump promised an appeal on September 21, before there was a ruling to appeal. The judge noted that restraining orders are generally unappealable."
+    },
+    {
+      "when": "Open",
+      "title": "\"Other Fake News Media Outlets to follow\"",
+      "text": "On the day of the ban Trump also called the New York Times and the Washington Post \"fake news,\" without banning them. As of this update no further outlet has been banned."
+    }
+  ],
+  "take": [
+    "The government’s case came down to one request: that a trial judge treat two appeals-court decisions as wrongly decided. A district judge cannot do that, as this one said at the hearing and again in his order, so the argument was addressed to a higher court from its first page.",
+    "What the six days exposed matters more than the ruling. The stated reason moved from fake news, to national security, to decorum, each arriving after the one before it had been tried. When the cited stories were checked, the list included the government’s own preliminary finding, the words of its own official at a public meeting, and a background call the White House set up itself.",
+    "A press office that cannot name the rule a reporter broke has not enforced a rule. It has chosen who is allowed in the room, which is the thing the First Amendment exists to prevent. It is worth noticing who signed the brief saying so: Fox News."
+  ],
+  "corrections": [
+    {
+      "date": "2026-09-24",
+      "text": "An earlier version of the tracker entry this page draws on described Karem v. Trump as a 2019 decision. It is the D.C. Circuit’s 2020 opinion; the 2019 ruling in that case was the district court’s. The same entry said reporters were turned away on September 24 \"in defiance\" of the order. The record supports \"despite\": the White House filed a sworn timeline and the judge accepted it."
+    }
+  ]
+}
