@@ -19,9 +19,9 @@ the batch workflow).
   `src/lib/fmt.js` (dates, outlet labels, source counts), `src/styles/global.css`.
 - **The stylesheet is election-rigging's, copied, with additions below a marked line.** Keep the
   shared half in step with that repo when either changes. The additions deliberately override a
-  few shared values rather than editing the shared half: `--text-3` (the shared gray fails the
-  4.5:1 contrast floor for small text), several small mono sizes, and the purple take block.
-  Election-rigging still carries the old values.
+  few shared values rather than editing the shared half: several small mono sizes and the purple
+  take block. (The shared `--text-3` was lightened in both repos on 2026-09-24 to clear the 4.5:1
+  contrast floor for small text.)
 - **Quotes are curly on the page and straight in the data.** `smartAll()` in `src/lib/fmt.js`
   converts every data string except identifiers, dates and `sources` (whose headlines are matched
   as written). Type curly quotes and apostrophes directly in template prose.
