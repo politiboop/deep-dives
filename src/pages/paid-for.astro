@@ -1,0 +1,445 @@
+---
+import Base from '../layouts/Base.astro';
+import Sources from '../components/Sources.astro';
+import raw from '../data/paid-for.json';
+import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
+
+// The data keeps straight quotes; the page renders typographer's quotes.
+const dive = smartAll(raw);
+const { meta, hero, ledger, days, claims, voices, rules, watch, take, corrections } = dive;
+
+const ACTORS = {
+  wh:       { label: 'The administration', color: 'var(--ac-wh)' },
+  court:    { label: 'The courts',         color: 'var(--ac-court)' },
+  press:    { label: 'Press and watchdogs', color: 'var(--ac-press)' },
+  congress: { label: 'Congress',           color: 'var(--ac-congress)' },
+};
+
+// Every number on the page is computed from the data file.
+const sum = (kind) => ledger.filter((r) => r.kind === kind && r.amount).reduce((n, r) => n + r.amount, 0);
+const bannerTotal = sum('image');
+const ballroomReleased = sum('ballroom');
+const adBuy = sum('channel');
+const noem = sum('comparison');
+const events = days.flatMap((d) => d.events.map((e) => ({ ...e, date: d.date })));
+const eventCount = events.length;
+const sources = sourceCount(dive);
+const seedCount = dive.trackerIds.length;
+const paraphrased = (c) => /paraphrased/i.test(c.who);
+const whoLabel = (c) => c.who.replace(/,\s*paraphrased/i, '');
+
+// The record spans a year, so it is grouped by month rather than by day.
+const months = [];
+for (const e of events) {
+  const key = e.date.slice(0, 7);
+  let m = months.find((x) => x.key === key);
+  if (!m) months.push((m = { key, first: e.date, events: [] }));
+  m.events.push(e);
+}
+
+// The ledger is read in groups, each in date order.
+const GROUPS = [
+  { kinds: ['image'], label: 'The banners', total: true },
+  { kinds: ['channel'], label: 'The channels' },
+  { kinds: ['attempt', 'ballroom'], label: 'The ballroom' },
+  { kinds: ['comparison'], label: 'For comparison' },
+].map((g) => {
+  const rows = ledger.filter((r) => g.kinds.includes(r.kind));
+  return { ...g, rows, sum: rows.reduce((n, r) => n + (r.kind === 'attempt' ? 0 : r.amount || 0), 0) };
+});
+
+const stats = [
+  { n: money(bannerTotal, true), label: 'In banner contracts found so far' },
+  { n: money(ballroomReleased, true), label: 'Released for ballroom security' },
+  { n: money(adBuy, true), label: 'The ad buy, as AdImpact estimates it' },
+  { n: money(noem, true), label: 'The DHS campaign that ended with Noem’s firing' },
+];
+
+const NAV = [
+  { href: '#ledger', label: 'The Ledger' },
+  { href: '#record', label: 'The Record' },
+  { href: '#claims', label: 'Claims' },
+  { href: '#voices', label: 'Who Spoke' },
+  { href: '#rules', label: 'The Rules' },
+  { href: '#take', label: 'Our Take' },
+  { href: '#watch', label: 'Watch' },
+  { href: '#method', label: 'Method' },
+];
+
+const description = `${meta.dek} ${eventCount} documented events, ${claims.length} explanations set against the record, and ${sources} sources.`;
+---
+
+<Base title={`${meta.title}: Public Money and the President’s Image | Deep Dives`} ogTitle={`${meta.title}: Public Money and the President’s Image`} description={description} nav={NAV}>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Deep Dives · {meta.kicker} · Updated {longDate(dive.updated)} · {sources} sources</p>
+      <h1>Paid <span class="accent">for</span>.</h1>
+      <a class="status-strip" href="#stand">
+        <span class="ss-lbl">Where it stands</span>
+        <span class="ss-status">{meta.status}</span>
+        <span class="ss-more">As of {shortDate(dive.updated)} ↓</span>
+      </a>
+
+      <div class="hero-body">
+        <div>{hero.deck.map((p) => <p class="deck">{p}</p>)}</div>
+        <blockquote class="hero-quote">
+          <p class="lead">{hero.quote.lead}</p>
+          <p>“{hero.quote.text}”</p>
+          <cite>{hero.quote.cite}</cite>
+          <Sources sources={hero.quote.sources} />
+        </blockquote>
+      </div>
+
+      <div class="statrow is-dive" style={`--n:${stats.length}`}>
+        {stats.map((s) => <div class="stat"><div class="num">{s.n}</div><div class="lbl">{s.label}</div></div>)}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW TO READ ──────────────────────────────────────────────────── -->
+  <section id="readme" aria-label="How to read this page">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">How to read this page</p>
+        <h2>Facts and takes are separated. On purpose.</h2>
+      </div>
+      <div class="readme-grid">
+        <div class="readme-card facts">
+          <h3>The facts</h3>
+          <p>
+            Everything outside the labeled take is reporting: contracts, dates, names, direct quotations
+            and court rulings, each linked to where it came from. {sources} sources in all, including
+            right-leaning outlets where they covered the story. Every quotation on this page has been
+            checked word for word against its source.
+          </p>
+        </div>
+        <div class="readme-card take">
+          <h3>Our take</h3>
+          <p>
+            When we give an opinion it is labeled, set apart, and easy to skip. Ours is near the end
+            of the page. You do not have to share it to use everything else here: the record is laid
+            out so you can check it and decide for yourself.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHERE IT STANDS ──────────────────────────────────────────────── -->
+  <section id="stand" aria-label="Where it stands">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">As of {longDate(dive.updated)}</p>
+        <h2>Where it stands</h2>
+      </div>
+      <div class="stand">
+        <div class="stand-now">
+          <p class="stand-lbl">Status</p>
+          <p class="stand-status">{meta.status}</p>
+          <p>{meta.statusText}</p>
+        </div>
+        <ul class="stand-dates">
+          {watch.map((w) => (
+            <li><span class="d">{w.date ? shortDate(w.date) : w.when}</span><span><strong>{w.title}.</strong></span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE LEDGER ───────────────────────────────────────────────────── -->
+  <section id="ledger" aria-label="The ledger">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Who pays, and how much</p>
+        <h2>The ledger</h2>
+        <p class="sub">
+          Each item, the part of the government paying for it, and the amount where one has been
+          made public. Amounts are contract values and releases as reported, not necessarily what has
+          been spent.
+        </p>
+      </div>
+      <div class="ledger" role="table" aria-label="Public money for the president's image, item by item">
+        <div class="lg-row lg-head" role="row">
+          <span role="columnheader">When</span>
+          <span role="columnheader">What</span>
+          <span role="columnheader">Paid by</span>
+          <span role="columnheader" class="lg-amt">Amount</span>
+        </div>
+        {GROUPS.map((g) => [
+          <div class="lg-row lg-group" role="row">
+            <span role="cell" class="lg-group-name">{g.label}</span>
+            <span role="cell" class="lg-amt">{g.total && g.rows.length > 1 && `${money(g.sum)} in contracts`}</span>
+          </div>,
+          ...g.rows.map((r) => (
+          <div class={`lg-row is-${r.kind}`} role="row">
+            <span class="lg-when" role="cell">{r.when}</span>
+            <span class="lg-item" role="cell">
+              {r.kind === 'attempt' && <span class="lg-tag">Attempted</span>}
+              <strong>{r.item}</strong>
+              <span class="lg-note">{r.note}</span>
+              <Sources sources={r.sources} />
+            </span>
+            <span class="lg-payer" role="cell"><span class="cell-lbl">Paid by</span>{r.payer}</span>
+            <span class="lg-amt" role="cell">{r.amount ? money(r.amount) : r.kind === 'attempt' ? '$1 billion, struck' : 'Not disclosed'}</span>
+          </div>
+          )),
+        ])}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE RECORD ───────────────────────────────────────────────────── -->
+  <section id="record" aria-label="The record, in order">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">In order</p>
+        <h2>The record</h2>
+        <p class="sub">
+          {eventCount} documented events over {months.length} months, from the first banners to the ad.
+          Each links to its sources; each has its own address, so you can send someone a single moment.
+        </p>
+      </div>
+      <div class="actor-legend" aria-hidden="true">
+        {Object.values(ACTORS).map((a) => <span><i style={`background:${a.color}`}></i>{a.label}</span>)}
+      </div>
+
+      <!-- The year at a glance: one cell per month, a dot per event in the actor's
+           color, and the month's first headline. Each cell jumps to its month. -->
+      <nav class="daystrip is-months" aria-label="Jump to a month">
+        {months.map((m) => (
+          <a class="ds-cell" href={`#m-${m.key}`}>
+            <span class="ds-date">{shortMonthYear(m.first)}</span>
+            <span class="ds-count">
+              <span class="ds-dots" aria-hidden="true">{m.events.map((e) => <i style={`background:${ACTORS[e.actor].color}`}></i>)}</span>
+              <span class="ds-cnt">{m.events.length} {m.events.length === 1 ? 'event' : 'events'}</span>
+            </span>
+            <span class="ds-lead">{m.events[0].title}</span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="days">
+        {months.map((m) => (
+          <div class="day" id={`m-${m.key}`}>
+            <h3 class="day-head"><span class="dow">{monthYear(m.first)}</span> <span class="cnt">{m.events.length} {m.events.length === 1 ? 'event' : 'events'}</span></h3>
+            <ol class="events">
+              {m.events.map((e) => (
+                <li class="ev" data-actor={e.actor} id={`${e.date}-${slug(e.title)}`}>
+                  <div class="ev-meta">
+                    <span class="ev-date">{weekday(e.date).slice(0, 3)} {shortDate(e.date)}</span>
+                    {e.time && <span class="ev-time">{e.time}</span>}
+                    <span class="actor-chip">{ACTORS[e.actor].label}</span>
+                  </div>
+                  <h3>{e.title}</h3>
+                  <div class="ev-body">{e.body.map((p) => <p>{p}</p>)}</div>
+                  <Sources sources={e.sources} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE CLAIM AND THE RECORD ─────────────────────────────────────── -->
+  <section id="claims" aria-label="The explanation and the record">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Checked against the record</p>
+        <h2>The explanation and the record</h2>
+        <p class="sub">
+          What the administration, its allies and the ad itself say, in their own words wherever they
+          put it that way, next to what the documents and the reporting show.
+        </p>
+      </div>
+
+      <div class="ev-table is-compare" role="table" aria-label="The explanations and the record">
+        <div class="ev-row ev-head" role="row">
+          <span role="columnheader">What was said</span>
+          <span role="columnheader">What the record shows</span>
+        </div>
+        {claims.map((c) => (
+          <div class="ev-row" role="row">
+            <span class="ev-claim" role="cell">
+              <span class="cell-lbl">What was said</span>
+              {paraphrased(c)
+                ? <strong class="unquoted">{c.claim}</strong>
+                : <strong>“{c.claim}”</strong>}
+              <span class="ev-when">{whoLabel(c)}</span>
+              {paraphrased(c) && <span class="para-note">{c.note || 'Paraphrased'}</span>}
+            </span>
+            <span class="ev-found" role="cell">
+              <span class="cell-lbl">What the record shows</span>
+              <strong>{c.found}</strong>
+              <span class="ev-detail">{c.detail}</span>
+              <Sources sources={c.sources} />
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO SPOKE ────────────────────────────────────────────────────── -->
+  <section id="voices" aria-label="Who objected and who defended it">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Both sides, in their own words</p>
+        <h2>Who objected, and who defended it</h2>
+        <p class="sub">
+          The strongest version of each side, quoted. Two of the objections to the ad came from
+          Republican senators.
+        </p>
+      </div>
+      <div class="voices">
+        <div class="voice-col is-objected">
+          <h3>Objected</h3>
+          {voices.objected.map((v) => (
+            <div class="voice">
+              <blockquote>“{v.quote}”</blockquote>
+              <p class="who">{v.who}<span class="role">{v.role}</span></p>
+              <Sources sources={v.sources} />
+            </div>
+          ))}
+        </div>
+        <div class="voice-col is-defended">
+          <h3>Defended</h3>
+          {voices.defended.map((v) => (
+            <div class="voice">
+              <blockquote>“{v.quote}”</blockquote>
+              <p class="who">{v.who}<span class="role">{v.role}</span></p>
+              <Sources sources={v.sources} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE RULES ────────────────────────────────────────────────────── -->
+  <section id="rules" aria-label="The rules that apply">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">What governs the money</p>
+        <h2>The rules</h2>
+        <p class="sub">
+          The restrictions that apply to public money spent on a president's image, and where each has
+          and has not been tested. No finding of illegality exists on the ad or the banners.
+        </p>
+      </div>
+      <ol class="precedent is-rules">
+        {rules.map((r) => (
+          <li>
+            <span class="yr">{r.label}</span>
+            <div>
+              <p class="case">{r.name}</p>
+              <p class="holding">{r.body}</p>
+              <Sources sources={r.sources} />
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── OUR TAKE ─────────────────────────────────────────────────────── -->
+  <section id="take" aria-label="Our take">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Reading the record</p>
+        <h2>Our take</h2>
+      </div>
+      <div class="ev-take">
+        <p class="take-lbl">Our take — opinion, not reporting</p>
+        {take.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT TO WATCH ────────────────────────────────────────────────── -->
+  <section id="watch" aria-label="What to watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Dated triggers</p>
+        <h2>What to watch</h2>
+        <p class="sub">The record above is history. These are the dates and open questions where the story continues.</p>
+      </div>
+      <ul class="watch-list">
+        {watch.map((w) => (
+          <li>
+            <span class="watch-when">{w.when}</span>
+            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── METHOD ───────────────────────────────────────────────────────── -->
+  <section id="method" aria-label="Method">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Standards</p>
+        <h2>Method</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>Where this comes from</h3>
+          <ul>
+            <li>This page is built from {seedCount} Trump Tracker entries, each through the tracker’s validation protocol: two independent sources for any core claim, primary documents preferred, single-sourced claims labeled.</li>
+            <li>For the catalog of Trump’s name and face on government, from the passport to the $250 bill, see the research site’s Government as Brand page. This page follows the money on the part that is paid for with public funds.</li>
+            <li>Right-leaning outlets are cited where they covered the story, including Breitbart and the Washington Examiner.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>How it is checked</h3>
+          <ul>
+            <li>An automated check runs on every change: every link on this page must appear in a seed entry’s sources, and every quotation must appear word for word in a seed entry. Either failure blocks the page.</li>
+            <li>Before publishing, each quotation and figure was also checked against the saved text of the specific source attached to it. That check found errors in four of the underlying tracker entries, which were corrected there first and are listed under Corrections.</li>
+            <li>One source, a paywalled Washington Post article on the ad, could not be read in full. Nothing on this page rests on it alone.</li>
+            <li>Where an account rests on anonymous sources, the page says so where it appears.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>What we mean by the record</h3>
+          <ul>
+            <li>It means what the documents say: contracts, releases, rulings, sworn testimony and the text of what was published. It does not mean our reading of them.</li>
+            <li>An amount in the ledger is a contract value or a release of funds as reported. It is not necessarily what has been paid out.</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Corrections</h3>
+          <ul>
+            <li>Corrections are made openly. This log covers the page and the tracker entries it draws on.</li>
+          </ul>
+          {corrections.length
+            ? <ul class="corrections">{corrections.map((c) => <li><span class="d">{longDate(c.date)}</span>{c.text}</li>)}</ul>
+            : <p class="corr-none">None so far.</p>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ── scroll-spy on the section nav (the topbar's, and the phone rail's) ──
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.topnav a, .subnav a')];
+    const rail = document.querySelector<HTMLElement>('.subnav-inner');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id));
+        const on = rail?.querySelector<HTMLElement>(`a[href="#${e.target.id}"]`);
+        if (rail && on && rail.offsetParent) rail.scrollTo({ left: on.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    ['ledger', 'record', 'claims', 'voices', 'rules', 'take', 'watch', 'method'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  </script>
+</Base>

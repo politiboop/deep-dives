@@ -1,5 +1,13 @@
 [
   {
+    "slug": "paid-for",
+    "kicker": "Public money",
+    "title": "Paid For",
+    "dek": "A Trump ad aired on Fox News with a line at the bottom: \"paid for by the U.S. government.\" The banners, the stream, the app and the ballroom, and what the public is paying for.",
+    "updated": "2026-09-24",
+    "status": "Nobody has said which agency paid for the ad"
+  },
+  {
     "slug": "press-ban",
     "kicker": "The press",
     "title": "Shut Out",

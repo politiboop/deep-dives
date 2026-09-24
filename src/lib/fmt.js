@@ -11,10 +11,22 @@ export const longDate = (d) => { const [y, m, day] = parts(d); return `${MONTHS_
 export const shortDate = (d) => { const [, m, day] = parts(d); return `${MONTHS[m - 1]} ${day}`; };
 export const weekday = (d) => DOW[new Date(utc(d)).getUTCDay()];
 export const daysBetween = (a, b) => Math.round((utc(b) - utc(a)) / 86400000);
+export const monthYear = (d) => { const [y, m] = parts(d); return `${MONTHS_LONG[m - 1]} ${y}`; };
+export const shortMonthYear = (d) => { const [y, m] = parts(d); return `${MONTHS[m - 1]} ${y}`; };
+
+// Dollars. `short` gives the stat-card form ($351.6M, $1.16M); otherwise whole
+// dollars with separators ($946,960). Cents are dropped, never rounded up past a unit.
+export const money = (n, short = false) => {
+  if (!short) return '$' + Math.floor(n).toLocaleString('en-US');
+  if (n >= 1e9) return '$' + +(n / 1e9).toFixed(2) + 'B';
+  if (n >= 1e6) return '$' + +(n / 1e6).toFixed(n >= 1e8 ? 1 : 2) + 'M';
+  return '$' + Math.floor(n).toLocaleString('en-US');
+};
 
 // "CNN: Headline (date)" -> "CNN". Court filings keep a short, readable label.
 export const outlet = (t) => {
-  const head = t.split(':')[0].trim();
+  // Most tracker headlines read "Outlet: Headline"; some older ones use "Outlet - Headline".
+  const head = t.split(/:| - /)[0].trim();
   const ecf = t.match(/ECF \d+(-\d+)?/);
   if (/: Temporary Restraining Order, ECF/.test(t)) return `The order, ${ecf[0]}`;
   if (/Defendants' Opposition/.test(t)) return `Government's brief, ${ecf[0]}`;
