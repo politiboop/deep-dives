@@ -16,8 +16,8 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "Nobody has said which agency paid for the ad",
-    "statusText": "As of September 24, no agency, contract or appropriation had been identified for the ad. The White House defended it as one of its \"public service announcements\" but did not say what agency paid. No complaint, inspector general review or request for a GAO opinion was on the record. The FAA banner contract runs through 2027."
+    "status": "Nobody has said which agency paid for the ads",
+    "statusText": "As of September 25, no agency, contract or appropriation had been identified for the ads. CBS News reported that the government produced them and bought the air time through an ad agency; the White House calls them \"public service announcements.\" Democrats in Congress have asked the White House for the cost and demanded the ads be pulled. No complaint, inspector general review or request for a GAO opinion was on the record. The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
@@ -34,7 +34,7 @@
       }
     ],
     "deck": [
-      "The newest example aired on the night of September 23, 2026: a thirty-second spot during conservative shows on Fox News and Newsmax. Images of the president, the \"largest tax cuts in history,\" a promise that \"America will never be a communist country,\" and a line of small text at the bottom: \"paid for by the U.S. government.\" The White House calls it a public service announcement. Two Republican senators objected.",
+      "The newest example aired on the night of September 23, 2026: a thirty-second spot during conservative shows on Fox News and Newsmax. Images of the president, the \"largest tax cuts in history,\" a promise that \"America will never be a communist country,\" and a line of small text at the bottom: \"paid for by the U.S. government.\" The White House calls it a public service announcement. Two Republican senators objected. The next evening a second government-paid ad was on CBS and other networks.",
       "Below: what each item cost and who paid, the record in order, the explanations set against the documents, who objected and who defended it, the rules that apply, and what to watch. Every fact is sourced. Every opinion is labeled."
     ],
     "quote": {
@@ -152,15 +152,19 @@
     },
     {
       "when": "Sept 2026",
-      "item": "The television ad",
+      "item": "The television ads",
       "payer": "\"the U.S. government,\" agency unnamed",
       "amount": 14000,
-      "note": "The buy as estimated by AdImpact",
+      "note": "AdImpact's estimate of the first buy, on Fox News and Newsmax. The ads have since run on CBS and other national networks, in at least two versions; that cost has not been disclosed",
       "kind": "channel",
       "sources": [
         {
           "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
           "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+        },
+        {
+          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
         }
       ]
     },
@@ -400,6 +404,42 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-09-24",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "A second ad, on the national networks",
+          "body": [
+            "CBS News reported that the ad began running on national networks, CBS among them, and that a second government-paid ad, recounting the U.S. capture of former Venezuelan President Nicolás Maduro and featuring Trump and his top Cabinet officials, aired on CBS stations and other networks that evening. There are 30- and 60-second versions. The government produced the content and paid for the air time through an ad agency, CBS reported.",
+            "The musician JMSN said he never licensed the song: \"I would never authorize my music to be used for ANY political agenda or campaign.\" A White House official told CBS the ads \"are clearly not political.\""
+          ],
+          "sources": [
+            {
+              "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+              "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+            },
+            {
+              "text": "The Atlantic: Trump's Public Service Announcement: 'Love Me' (September 2026)",
+              "url": "https://www.theatlantic.com/politics/2026/09/trump-ad-white-house-psa/688778/"
+            }
+          ]
+        },
+        {
+          "actor": "congress",
+          "title": "Democrats demand the cost, then that the ads come down",
+          "body": [
+            "Sen. Maggie Hassan asked chief of staff Susie Wiles for the cost, the contractors, the source of the funding and whether money was diverted from federal agencies. The top Democratic appropriators, Sens. Patty Murray and Jack Reed and Reps. Rosa DeLauro and Steny Hoyer, demanded that it be pulled: \"This is the sort of government propaganda one might expect in North Korea, not the United States of America, and it is an egregious and illegal misuse of Americans' hard-earned tax dollars.\""
+          ],
+          "sources": [
+            {
+              "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+              "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -471,11 +511,27 @@
       "claim": "paid for by the U.S. government",
       "who": "The ad's own disclaimer",
       "found": "No agency, contract or appropriation has been named.",
-      "detail": "The White House did not say what agency paid for the spot, and no appropriation, contract or producer has been identified by anyone. AdImpact, which tracks media spending, estimates the buy at $14,000.",
+      "detail": "The White House has not said what agency paid. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact, which tracks media spending, estimated the first buy at $14,000.",
       "sources": [
         {
           "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
           "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+        },
+        {
+          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+        }
+      ]
+    },
+    {
+      "claim": "The President is not on the ballot and the ads don't have a call to action.",
+      "who": "A White House official, to CBS News",
+      "found": "Experts told CBS the ads likely do not break election law. The propaganda restriction is a separate question.",
+      "detail": "Columbia law professor Richard Briffault: \"It doesn't appear to be supporting or endorsing a candidate for public office.\" He agreed with Sen. Maggie Hassan, though, that there are questions under the propaganda law. Hassan wrote that the ad \"appears to run afoul of federal prohibitions against the use of appropriated funds as part of 'a general propaganda effort designed to aid a political party or candidates'\".",
+      "sources": [
+        {
+          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
         }
       ]
     },
@@ -543,6 +599,17 @@
         ]
       },
       {
+        "who": "Sens. Patty Murray and Jack Reed, Reps. Rosa DeLauro and Steny Hoyer",
+        "role": "The top Democratic appropriators, on the ads",
+        "quote": "This is the sort of government propaganda one might expect in North Korea, not the United States of America",
+        "sources": [
+          {
+            "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+            "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+          }
+        ]
+      },
+      {
         "who": "Weijia Jiang",
         "role": "CBS News, former president of the White House Correspondents' Association",
         "quote": "America cannot have state TV",
@@ -563,6 +630,17 @@
           {
             "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
             "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+          }
+        ]
+      },
+      {
+        "who": "A White House official",
+        "role": "To CBS News, on the ads",
+        "quote": "The President is not on the ballot and the ads don't have a call to action.",
+        "sources": [
+          {
+            "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+            "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
           }
         ]
       },
@@ -616,7 +694,7 @@
     {
       "label": "Since 1951",
       "name": "The propaganda restriction",
-      "body": "Federal spending laws have barred taxpayer spending \"for publicity or propaganda purposes\" since 1951, according to Schiff's report. The statutes do not define propaganda, the report notes, but \"prior prohibited uses of funds have been classified as self-aggrandizement, purely partisan materials, or covert propaganda.\" As of September 24 nobody had asked the Government Accountability Office for an opinion on the ad, at least not on the record.",
+      "body": "Federal spending laws have barred taxpayer spending \"for publicity or propaganda purposes\" since 1951, according to Schiff's report. The statutes do not define propaganda, the report notes, but \"prior prohibited uses of funds have been classified as self-aggrandizement, purely partisan materials, or covert propaganda.\" As of September 25 nobody had asked the Government Accountability Office for an opinion on the ads, at least not on the record; Democrats' letters went to the White House chief of staff.",
       "sources": [
         {
           "text": "Sen. Schiff - Exposes propaganda banners, illegal federal spending",
@@ -625,6 +703,10 @@
         {
           "text": "Washington Examiner - Thousands spent on Trump posters",
           "url": "https://www.washingtonexaminer.com/news/senate/3808370/adam-schiff-trump-posters-tax-money-federal-buildings-propaganda/"
+        },
+        {
+          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
         }
       ]
     },
@@ -672,8 +754,19 @@
     },
     {
       "when": "Open",
+      "title": "Hassan's questions",
+      "text": "The cost, the contractors, the source of the funding and whether money was diverted from federal agencies. No answer is on the record.",
+      "sources": [
+        {
+          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
+          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+        }
+      ]
+    },
+    {
+      "when": "Open",
       "title": "A GAO opinion or an inspector general",
-      "text": "Either would test the propaganda restriction directly. As of September 24 neither had been asked, at least not on the record."
+      "text": "Either would test the propaganda restriction directly. As of September 25 neither had been asked, at least not on the record."
     },
     {
       "when": "Through 2027",
