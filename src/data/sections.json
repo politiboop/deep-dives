@@ -13,8 +13,7 @@
         "n": "01",
         "q": "Is he profiting from the office?",
         "text": "Money reaching the president and his family while he holds office: crypto ventures, stock trades, foreign deals and spending at his own properties.",
-        "dive": null,
-        "research": { "label": "The research site's corruption section", "url": "https://research.thetrumptracker.com/corruption/" }
+        "dive": "his-own-account"
       },
       {
         "n": "02",

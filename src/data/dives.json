@@ -1,5 +1,14 @@
 [
   {
+    "slug": "his-own-account",
+    "kicker": "Profit",
+    "title": "By His Own Account",
+    "dek": "Is he profiting from the office? His own financial disclosure answers most of it: what came in during his first year back, where it came from, and who was paying.",
+    "updated": "2026-09-25",
+    "status": "His next disclosure is due May 15, 2027",
+    "section": "corruption"
+  },
+  {
     "slug": "the-ballroom",
     "kicker": "Access",
     "title": "The Ballroom",
@@ -14,7 +23,7 @@
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
     "updated": "2026-09-25",
-    "status": "Nobody has said which agency paid for the ad",
+    "status": "Nobody has said which agency paid for the ads",
     "section": "corruption"
   },
   {

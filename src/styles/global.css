@@ -690,6 +690,7 @@ footer { padding: 44px 0 60px; }
   --ac-court: var(--st-court);
   --ac-press: var(--st-record);
   --ac-congress: var(--st-threat);
+  --ac-payer: var(--st-blocked);
   /* Height of the sticky header: the topbar, plus the section rail below 1000px. */
   --head-h: 54px;
 }
@@ -792,6 +793,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .ev[data-actor="court"] { --ev-c: var(--ac-court); }
 .ev[data-actor="press"] { --ev-c: var(--ac-press); }
 .ev[data-actor="congress"] { --ev-c: var(--ac-congress); }
+.ev[data-actor="payer"] { --ev-c: var(--ac-payer); }
 .ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; }
 .ev-time { color: var(--text-3); text-transform: uppercase; }
 .actor-chip {
@@ -1034,6 +1036,11 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 /* An attempt that failed and a comparison row are context, not spending on Trump's image. */
 .lg-row.is-attempt .lg-amt, .lg-row.is-comparison .lg-amt { color: var(--text-2); }
 .lg-row.is-comparison { border-top: 1px dashed var(--line); }
+/* A filing line reference, and money shown for context but never added to a total. */
+.lg-line { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
+.lg-recip { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
+.lg-row.is-around .lg-amt { color: var(--text-2); font-size: 20px; }
+.lg-group-note { display: block; margin-top: 4px; font-family: var(--font-body); font-size: 13.5px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--text-2); }
 @media (max-width: 800px) {
   .lg-row { grid-template-columns: 1fr auto; gap: 4px 14px; }
   .lg-row.lg-head { display: none; }
