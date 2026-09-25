@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
@@ -17,7 +17,7 @@
     "restored": "2026-09-24",
     "orderEnds": "2026-10-08",
     "status": "Passes restored under a 14-day court order",
-    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. The order is temporary: it runs fourteen days. The outlets' motion for a longer one is due September 28, and the court has said it \"intends to rule expeditiously.\""
+    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. That evening CNN and MS NOW reporters were kept out of Xi's state-dinner arrival, an event the order does not clearly cover. The network pool, idle since September 21, resumed on September 25. The order is temporary: it runs fourteen days. The outlets' motion for a longer one is due September 28, and the court has said it \"intends to rule expeditiously.\""
   },
   "hero": {
     "deck": [
@@ -604,6 +604,83 @@
               "url": "https://www.cnn.com/2026/09/24/politics/live-news/trump-meeting-china-xi-us-visit"
             }
           ]
+        },
+        {
+          "time": "Afternoon",
+          "actor": "wh",
+          "title": "'They refused to be there'",
+          "body": [
+            "Trump posted that CNN and \"MSDNC\" \"refused to cover one of the Biggest and Most Beautiful Events to take place in many years,\" Xi's morning arrival. CNN called the claim false. Xi arrived at about 10 a.m.; CNN's Betsy Klein was not let back onto the grounds until around noon, and both networks covered the arrival on their digital platforms. The television pool, CNN included, did not film it because the networks were still waiting for the White House to confirm that CNN could take its turn."
+          ],
+          "sources": [
+            {
+              "text": "Newsweek: Donald Trump Lashes Out at Boycott After Media Ban: 'No Credibility' (September 25, 2026)",
+              "url": "https://www.newsweek.com/donald-trump-lashes-out-at-boycott-after-media-ban-cnn-politico-ms-now-12486758"
+            },
+            {
+              "text": "CNN: CNN, MS NOW White House reporters denied access to Xi's state dinner arrival (September 24, 2026)",
+              "url": "https://www.cnn.com/2026/09/24/politics/live-news/white-house-press-ban-lawsuit"
+            }
+          ]
+        },
+        {
+          "time": "Evening",
+          "actor": "wh",
+          "title": "Kept out of the state dinner arrival",
+          "body": [
+            "Xi's evening arrival was open to pre-credentialed media, a wider group than the pool. About an hour before he was due, CNN reported, the White House said it could cover the arrival with a photojournalist and an audio technician only, while other networks were permitted reporters and producers. MS NOW's Laura Barrón-López said she was told she could not be let in.",
+            "The White House's rapid-response account wrote, \"contrary to what the Fake News wants you to believe, they don't just get to have free rein into every part of the White House, every event, and every press call.\" The restraining order restored the hard passes; whether it reaches event credentials is unsettled, and Deadline noted that the evening exclusion \"does not appear to be addressed in Kelly's order.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN: CNN, MS NOW White House reporters denied access to Xi's state dinner arrival (September 24, 2026)",
+              "url": "https://www.cnn.com/2026/09/24/politics/live-news/white-house-press-ban-lawsuit"
+            },
+            {
+              "text": "Deadline: CNN & MS Now Say They Were Denied White House Access To Cover Trump's State Dinner For Chinese President Xi Jinping (September 24, 2026)",
+              "url": "https://deadline.com/2026/09/trump-state-dinner-cnn-coverage-1237113326/"
+            },
+            {
+              "text": "BBC News: Media outlets banned by Trump resume White House coverage after judge's order (September 25, 2026)",
+              "url": "https://www.bbc.com/news/articles/cqe8ek7608mlo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "events": [
+        {
+          "time": "Morning",
+          "actor": "press",
+          "title": "The pool comes back",
+          "body": [
+            "The network television pool, paused since September 21, resumed. CBS had the White House duty and CNN the in-town pool at the National Archives, where the networks carried its feed of Trump and Xi. CNN anchor Pamela Brown: \"CNN's access to the White House has been restored, and the TV pool appears to be functioning as normal.\" The outlets' lawyer, Ted Boutrous, said they believe pool access \"is covered by the temporary restraining order.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN: White House TV pool resumes coverage after CNN's access is restored (September 25, 2026)",
+              "url": "https://www.cnn.com/2026/09/25/media/trump-white-house-pool-media-cnn-cbs"
+            },
+            {
+              "text": "BBC News: Media outlets banned by Trump resume White House coverage after judge's order (September 25, 2026)",
+              "url": "https://www.bbc.com/news/articles/cqe8ek7608mlo"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "'It's been very fair'",
+          "body": [
+            "At a tea meeting with Xi and the two first ladies, Trump said, \"And we appreciate the fair coverage. It's been very fair.\""
+          ],
+          "sources": [
+            {
+              "text": "The Independent: Trump's scowl says it all as CNN and MS NOW return to White House for Xi's final day (September 25, 2026)",
+              "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-xi-china-cnn-white-house-b3056522.html"
+            }
+          ]
         }
       ]
     }
@@ -1078,6 +1155,11 @@
       "when": "Thu Oct 8",
       "title": "The fourteen days run out",
       "text": "The restraining order runs fourteen days from September 24. The briefing schedule is set inside that window."
+    },
+    {
+      "when": "Open",
+      "title": "Events and the pool",
+      "text": "The order restored the hard passes. The outlets' lawyer says it also covers pool access; after the state-dinner exclusion, the White House said they do not get \"free rein\" to every event."
     },
     {
       "when": "Open",
