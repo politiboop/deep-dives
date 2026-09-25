@@ -1,0 +1,33 @@
+{
+  "corruption": {
+    "slug": "corruption",
+    "title": "Corruption",
+    "updated": "2026-09-25",
+    "dek": "Three plain questions about public power and private benefit, each answered by its own deep dive.",
+    "intro": [
+      "Corruption, as these pages use the word, means public power used for private or personal benefit. That is a definition, not a verdict. Each dive below takes one question, lays out the record in order, sets the explanations against the documents, and keeps its opinion in a labeled take.",
+      "A policy you disagree with is not corruption. Neither is a building you dislike. The question in each case is who benefits, who pays, and whether the rules meant to keep those apart were followed."
+    ],
+    "questions": [
+      {
+        "n": "01",
+        "q": "Is he profiting from the office?",
+        "text": "Money reaching the president and his family while he holds office: crypto ventures, stock trades, foreign deals and spending at his own properties.",
+        "dive": null,
+        "research": { "label": "The research site's corruption section", "url": "https://research.thetrumptracker.com/corruption/" }
+      },
+      {
+        "n": "02",
+        "q": "Is access being sold?",
+        "text": "Companies with business before the government paying for the president's own projects, and what they have received from the government since.",
+        "dive": "the-ballroom"
+      },
+      {
+        "n": "03",
+        "q": "Is public money promoting him?",
+        "text": "Taxpayer money spent to put the president's face and message in front of the public.",
+        "dive": "paid-for"
+      }
+    ]
+  }
+}

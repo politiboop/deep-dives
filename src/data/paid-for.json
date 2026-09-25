@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -9,39 +9,42 @@
     "trump-face-federal-building-banners",
     "trump-banner-doj-building",
     "schiff-trump-banners-153k-propaganda-contracts",
-    "white-house-ballroom-donor-funded",
-    "ballroom-architect-mccrery-quit-fire-exits-i-am-the-code",
-    "gop-taxpayer-funding-trump-ballroom-graham-schmitt-britt",
-    "republican-72-billion-ice-bill-1-billion-trump-ballroom",
-    "senate-parliamentarian-strikes-1-billion-ballroom-security-funding-byrd-rule",
-    "ballroom-donors-50-billion-federal-contracts-public-citizen",
-    "trump-monuments-nobody-will-do-it-once-im-gone",
     "noem-fired-dhs-ad-scandal"
   ],
+  "section": "corruption",
   "meta": {
     "kicker": "Public money",
     "title": "Paid For",
-    "dek": "A Trump ad aired on Fox News with a line at the bottom: \"paid for by the U.S. government.\" The banners, the stream, the app and the ballroom, and what the public is paying for.",
+    "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
     "status": "Nobody has said which agency paid for the ad",
-    "statusText": "As of September 24, no agency, contract or appropriation had been identified for the ad. The White House defended it as one of its \"public service announcements\" but did not say what agency paid. No complaint, inspector general review or request for a GAO opinion was on the record. The ballroom, which the administration says is about 65 percent complete, is expected by summer 2028. The FAA banner contract runs through 2027."
+    "statusText": "As of September 24, no agency, contract or appropriation had been identified for the ad. The White House defended it as one of its \"public service announcements\" but did not say what agency paid. No complaint, inspector general review or request for a GAO opinion was on the record. The FAA banner contract runs through 2027."
   },
   "hero": {
+    "question": "Is public money being used to promote the president himself?",
+    "answer": "The government has put the president's face or message in front of the public in at least four ways: banners of his face paid for by five federal agencies, a television ad carrying his message under the line \"paid for by the U.S. government,\" a 24-hour White House stream of its own highlights, and a White House app pushed onto federal employees' work phones.",
+    "rule": "Federal spending laws have barred taxpayer spending \"for publicity or propaganda purposes\" since 1951. Whether any of this crosses that line has not been tested; no ruling on it is on the record.",
+    "ruleSources": [
+      {
+        "text": "Sen. Schiff - Exposes propaganda banners, illegal federal spending",
+        "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-exposes-plans-for-additional-propaganda-banners-details-illegal-federal-spending-in-new-report/"
+      },
+      {
+        "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
+        "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+      }
+    ],
     "deck": [
-      "On the night of September 23, 2026, a thirty-second spot ran on Fox News and Newsmax. Images of the president, the \"largest tax cuts in history,\" a promise that \"America will never be a communist country,\" and a line of small text at the bottom: \"paid for by the U.S. government.\" Two days earlier the White House had launched a round-the-clock stream of its own highlights, called Trump TV. Its app is pushed onto federal employees' work phones. Banners of the president's face hang on federal buildings under contracts worth more than a million dollars. And the ballroom he said private donors would pay for has drawn $351.6 million in Secret Service money released for \"White House Security Measures.\"",
-      "Below: what each of these costs and who pays, the record in order, the explanations set against the documents, who objected and who defended it, the rules that apply, and what to watch. Every fact is sourced. Every opinion is labeled."
+      "The newest example aired on the night of September 23, 2026: a thirty-second spot during conservative shows on Fox News and Newsmax. Images of the president, the \"largest tax cuts in history,\" a promise that \"America will never be a communist country,\" and a line of small text at the bottom: \"paid for by the U.S. government.\" The White House calls it a public service announcement. Two Republican senators objected.",
+      "Below: what each item cost and who paid, the record in order, the explanations set against the documents, who objected and who defended it, the rules that apply, and what to watch. Every fact is sourced. Every opinion is labeled."
     ],
     "quote": {
-      "lead": "Asked by New York Magazine whether he is building monuments to himself, Trump said, \"That's true,\" and:",
-      "text": "Nobody will do it once I'm gone. When I leave here, nobody will.",
-      "cite": "President Trump, September 2026",
+      "lead": "A Republican senator, on the ad:",
+      "text": "It's inappropriate. It's not like they need a GoFundMe page to have the dollars to do that sort of ad and they could do it. But using taxpayer dollars, it feels like Viktor Orban.",
+      "cite": "Sen. Thom Tillis of North Carolina, September 2026",
       "sources": [
         {
-          "text": "CNN: Trump says 'nobody will' build monuments for him once he's gone (Molly English, September 4, 2026)",
-          "url": "https://www.cnn.com/2026/09/04/politics/trump-monuments-ballroom-arch"
-        },
-        {
-          "text": "The New Republic: Trump reveals why he keeps launching new vanity projects",
-          "url": "https://newrepublic.com/post/215130/donald-trump-reveals-vanity-projects-monuments-to-himself"
+          "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
+          "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
         }
       ]
     }
@@ -51,6 +54,7 @@
       "when": "Sept 2025",
       "item": "Banners at Agriculture and Labor",
       "payer": "Agriculture Department, Labor Department",
+      "agencies": 2,
       "amount": 22400,
       "note": "Agriculture $16,400 for two banners of Trump and Lincoln; Labor about $6,000, including Trump's portrait over \"American Workers First.\" A third contract, $33,726 at HHS, paid for \"Make America Healthy Again\" signs rather than the president's face.",
       "kind": "image",
@@ -73,6 +77,7 @@
       "when": "Feb 2026",
       "item": "Banners at Justice Department headquarters",
       "payer": "Justice Department",
+      "agencies": 1,
       "amount": 946960.07,
       "note": "A $892,192.07 base contract plus $54,768 added later, in records Politico obtained",
       "kind": "image",
@@ -91,6 +96,7 @@
       "when": "June 2026",
       "item": "Banner at the Interior Department",
       "payer": "Interior Department",
+      "agencies": 1,
       "amount": 39000,
       "note": "Contract found by Schiff",
       "kind": "image",
@@ -105,6 +111,7 @@
       "when": "July 2026",
       "item": "Banners for the FAA",
       "payer": "Federal Aviation Administration",
+      "agencies": 1,
       "amount": 114020,
       "note": "Contract found by Schiff; runs through 2027",
       "kind": "image",
@@ -154,46 +161,6 @@
         {
           "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
           "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
-        },
-        {
-          "text": "Washington Post: Trump ad airing with government funding despite law against 'propaganda' (September 24, 2026)",
-          "url": "https://www.washingtonpost.com/politics/2026/09/24/ad-boosting-trump-paid-by-taxpayers-airing-la-chicago/"
-        }
-      ]
-    },
-    {
-      "when": "May 2026",
-      "item": "Ballroom security, attempted",
-      "payer": "Proposed in the DHS funding bill",
-      "amount": null,
-      "note": "$1 billion, struck by the Senate parliamentarian",
-      "kind": "attempt",
-      "sources": [
-        {
-          "text": "HuffPost: Republicans push $72 billion bill for ICE — and Trump's ballroom (May 5, 2026)",
-          "url": "https://www.huffpost.com/entry/republicans-bill-72-billion-ice-trump-ballroom_n_69fa0082e4b055e1a496eff0"
-        },
-        {
-          "text": "BBC News: Trump's White House ballroom loses federal funding proposed by Senate Republicans (May 17, 2026)",
-          "url": "https://www.bbc.com/news/articles/cp3px2x96eeo"
-        }
-      ]
-    },
-    {
-      "when": "June 2026",
-      "item": "Ballroom security, released",
-      "payer": "Secret Service, released by the budget office",
-      "amount": 351600000,
-      "note": "Released June 16 for \"White House Security Measures\"",
-      "kind": "ballroom",
-      "sources": [
-        {
-          "text": "Roll Call: Secret Service disbursements raise questions on ballroom funding (June 16, 2026)",
-          "url": "https://rollcall.com/2026/06/16/secret-service-disbursements-raise-questions-on-ballroom-funding/"
-        },
-        {
-          "text": "Washington Post: Tracking Trump's White House ballroom promises as taxpayer costs mount (June 16, 2026)",
-          "url": "https://www.washingtonpost.com/investigations/interactive/2026/06/16/tracking-trumps-white-house-ballroom-promises-taxpayer-costs-more/"
         }
       ]
     },
@@ -222,9 +189,10 @@
       "events": [
         {
           "actor": "congress",
-          "title": "Schiff reports banners of Trump on three federal buildings",
+          "title": "Schiff reports banners of Trump on federal buildings",
           "body": [
-            "Sen. Adam Schiff's office reported that the Agriculture Department spent $16,400 on two banners of Trump and Abraham Lincoln, and the Labor Department about $6,000 on banners including Trump's portrait over the words \"American Workers First.\" A third contract, $33,726 at Health and Human Services, paid for \"Make America Healthy Again\" signs. Schiff called the spending illegal, citing prohibitions in federal spending laws since 1951 on taxpayer spending \"for publicity or propaganda purposes.\""
+            "Sen. Adam Schiff's office reported that the Agriculture Department spent $16,400 on two banners of Trump and Abraham Lincoln, and the Labor Department about $6,000 on banners including Trump's portrait over the words \"American Workers First.\" A third contract, $33,726 at Health and Human Services, paid for \"Make America Healthy Again\" signs. Schiff called the spending illegal, citing prohibitions in federal spending laws since 1951 on taxpayer spending \"for publicity or propaganda purposes.\"",
+            "The Labor Department said its banners were made for Labor Day and the country's 250th anniversary. The White House called Schiff a \"serial liar.\""
           ],
           "sources": [
             {
@@ -248,39 +216,13 @@
       ]
     },
     {
-      "date": "2025-10-20",
-      "events": [
-        {
-          "actor": "wh",
-          "title": "The East Wing comes down, and the first architect steps aside",
-          "body": [
-            "Demolition of the East Wing began in the week of October 20. The ballroom's first architect, James McCrery II, withdrew that week. That month the White House released a list of 37 donors, without the amounts."
-          ],
-          "sources": [
-            {
-              "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-              "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
-            },
-            {
-              "text": "CNN: White House releases list of donors for Trump's multi-million-dollar ballroom",
-              "url": "https://www.cnn.com/2025/10/23/politics/ballroom-donors-white-house-trump"
-            },
-            {
-              "text": "NBC News: Trump vowed to identify more of the donors to his ballroom project. That hasn't happened yet.",
-              "url": "https://www.nbcnews.com/politics/white-house/trump-vowed-identify-donors-ballroom-project-hasnt-happened-yet-rcna596852"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "date": "2026-02-19",
       "events": [
         {
           "actor": "wh",
           "title": "A banner of the president goes up on the Justice Department",
           "body": [
-            "Work crews hung a banner with Trump's portrait and the words \"Make America Safe Again\" on the headquarters of the Justice Department. Former Republican Rep. Barbara Comstock: \"Nothing says Justice is Blind like hanging a Dear Leader Banner at DOJ.\""
+            "Work crews hung a banner with Trump's portrait and the words \"Make America Safe Again\" on the headquarters of the Justice Department. A department spokesperson: \"We are proud at this Department of Justice to celebrate 250 years of our great country and our historic work to make America safe again at President Trump's direction.\" Former Republican Rep. Barbara Comstock: \"Nothing says Justice is Blind like hanging a Dear Leader Banner at DOJ.\""
           ],
           "sources": [
             {
@@ -348,112 +290,6 @@
       ]
     },
     {
-      "date": "2026-03-31",
-      "events": [
-        {
-          "actor": "court",
-          "title": "A judge halts the ballroom: \"He is not, however, the owner!\"",
-          "body": [
-            "Judge Richard J. Leon, a George W. Bush appointee, halted construction: \"The President of the United States is the steward of the White House for future generations of First Families. He is not, however, the owner!\" He found the National Trust for Historic Preservation likely to win because \"no statute comes close to giving the President the authority he claims to have,\" and ordered: \"Unless and until Congress blesses this project through statutory authorization, construction has to stop!\""
-          ],
-          "sources": [
-            {
-              "text": "Al Jazeera (Reuters): Judge temporarily halts Trump's $400m White House ballroom project (April 1, 2026)",
-              "url": "https://www.aljazeera.com/news/2026/4/1/judge-temporarily-halts-trumps-400m-white-house-ballroom-project"
-            },
-            {
-              "text": "Spectrum News (Associated Press): Judge orders White House ballroom construction to halt in a ruling that leaves Trump seething (March 31, 2026)",
-              "url": "https://spectrumlocalnews.com/us/snplus/politics/2026/03/31/judge-trump-admnistration-white-house-ballroom-project-halt-congressional-approval-"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-04-11",
-      "events": [
-        {
-          "actor": "court",
-          "title": "An appeals court lets construction continue",
-          "body": [
-            "A federal appeals court in Washington allowed construction of the ballroom to continue while the case goes on."
-          ],
-          "sources": [
-            {
-              "text": "NPR: D.C. appeals court allows White House ballroom construction to continue (April 11, 2026)",
-              "url": "https://www.npr.org/2026/04/11/nx-s1-5782084/dc-appeals-court-trump-ballroom-bunker"
-            },
-            {
-              "text": "CNN: Appeals court allows construction to continue on Trump White House ballroom (April 11, 2026)",
-              "url": "https://www.cnn.com/2026/04/11/politics/trump-ballroom-construction-judge-continue"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-04-28",
-      "events": [
-        {
-          "actor": "congress",
-          "title": "Republican senators propose paying for it with customs and park fees",
-          "body": [
-            "Sens. Lindsey Graham, Eric Schmitt and Katie Britt pushed a bill to pay for the ballroom with customs and national park user fees, and Graham said the White House supports it. In the House, Rep. Lauren Boebert said \"hardly any\" taxpayer money would be involved."
-          ],
-          "sources": [
-            {
-              "text": "The Independent: Republicans now plan for taxpayers to cover Trump's $400 million 'privately funded' ballroom (April 28, 2026)",
-              "url": "https://www.independent.co.uk/news/world/americas/us-politics/taxpayer-fund-trump-ballroom-correspondents-dinner-shooting-b2966078.html"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-05-05",
-      "events": [
-        {
-          "actor": "congress",
-          "title": "A billion dollars for ballroom security goes into an immigration bill",
-          "body": [
-            "A $72 billion Republican package for immigration enforcement included $1 billion for the ballroom, which, HuffPost reported, the package specifies is \"for the Secret Service to use for security-related aspects.\""
-          ],
-          "sources": [
-            {
-              "text": "HuffPost: Republicans push $72 billion bill for ICE — and Trump's ballroom (May 5, 2026)",
-              "url": "https://www.huffpost.com/entry/republicans-bill-72-billion-ice-trump-ballroom_n_69fa0082e4b055e1a496eff0"
-            },
-            {
-              "text": "BBC News: Trump's White House ballroom loses federal funding proposed by Senate Republicans (May 17, 2026)",
-              "url": "https://www.bbc.com/news/articles/cp3px2x96eeo"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-05-17",
-      "events": [
-        {
-          "actor": "congress",
-          "title": "The Senate parliamentarian strikes the billion dollars",
-          "body": [
-            "Parliamentarian Elizabeth MacDonough ruled that the provision failed the Byrd rule, which keeps extraneous items out of budget bills. A spokesman for Majority Leader John Thune: \"Redraft. Refine. Resubmit. None of this is abnormal during a Byrd process.\""
-          ],
-          "sources": [
-            {
-              "text": "BBC News: Trump's White House ballroom loses federal funding proposed by Senate Republicans (May 17, 2026)",
-              "url": "https://www.bbc.com/news/articles/cp3px2x96eeo"
-            },
-            {
-              "text": "Politico: Ballroom won't be funded after Senate GOP drops $1 billion Trump security request (May 20, 2026)",
-              "url": "https://www.politico.com/news/2026/05/20/ballroom-security-funding-reconciliation-00930193"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "date": "2026-05-22",
       "events": [
         {
@@ -480,61 +316,14 @@
       ]
     },
     {
-      "date": "2026-06-04",
-      "events": [
-        {
-          "actor": "press",
-          "title": "Ballroom donors won $50 billion in contracts, a watchdog finds",
-          "body": [
-            "Public Citizen found that 14 of the 27 publicly identified corporate donors to the ballroom had won new or expanded federal contracts worth more than $50 billion in the six months after its fundraising began, about $43.8 billion of it to Lockheed Martin."
-          ],
-          "sources": [
-            {
-              "text": "Washington Post: Ballroom donors won $50B in contracts after giving to Trump project, watchdog group finds (Jonathan Edwards, June 4, 2026)",
-              "url": "https://www.washingtonpost.com/politics/2026/06/04/donors-won-50b-contracts-after-giving-trump-ballroom-project-report-says/"
-            },
-            {
-              "text": "Mediaite: Corporate Donors to Trump's Ballroom Reap $50B in Government Contracts, Watchdog Finds",
-              "url": "https://www.mediaite.com/media/news/corporate-donors-to-trumps-ballroom-reap-50b-in-government-contracts-watchdog-finds/"
-            },
-            {
-              "text": "The New Republic: Trump's Ballroom Donors Are Already Cashing In",
-              "url": "https://newrepublic.com/post/211423/donald-trump-ballroom-donors-government-contracts"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-06-16",
-      "events": [
-        {
-          "actor": "wh",
-          "title": "The budget office releases $351.6 million for \"White House Security Measures\"",
-          "body": [
-            "The Office of Management and Budget released $351.6 million to the Secret Service, drawn from a roughly $1.17 billion Secret Service appropriation in the reconciliation package. The construction contractor had estimated roughly $300 million of the project's cost would come from taxpayers."
-          ],
-          "sources": [
-            {
-              "text": "Roll Call: Secret Service disbursements raise questions on ballroom funding (June 16, 2026)",
-              "url": "https://rollcall.com/2026/06/16/secret-service-disbursements-raise-questions-on-ballroom-funding/"
-            },
-            {
-              "text": "Washington Post: Tracking Trump's White House ballroom promises as taxpayer costs mount (June 16, 2026)",
-              "url": "https://www.washingtonpost.com/investigations/interactive/2026/06/16/tracking-trumps-white-house-ballroom-promises-taxpayer-costs-more/"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "date": "2026-07-16",
       "events": [
         {
           "actor": "congress",
           "title": "Schiff finds more banner contracts, and the Justice Department's bill nears $1 million",
           "body": [
-            "Schiff found $39,000 in contracts for a banner at the Interior Department and $114,020 for the FAA, running through 2027. Records Politico obtained showed the Justice Department paid a $892,192.07 base contract for its banners and $54,768 more. Schiff: \"an eight-story high Donald Trump head certainly qualifies as propaganda.\""
+            "Schiff found $39,000 in contracts for a banner at the Interior Department and $114,020 for the FAA, running through 2027. Records Politico obtained showed the Justice Department paid a $892,192.07 base contract for its banners and $54,768 more. Schiff: \"an eight-story high Donald Trump head certainly qualifies as propaganda.\"",
+            "The White House did not respond directly to questions about the contracts' legality. Its spokesman said Schiff was willing \"to trash the United States of America during its semiquincentennial celebration simply because he hates President Trump.\""
           ],
           "sources": [
             {
@@ -548,28 +337,6 @@
             {
               "text": "The Daily Beast: Jaw-Dropping Cost of DOJ's Trump Banner Project Revealed",
               "url": "https://www.thedailybeast.com/jaw-dropping-cost-of-dojs-trump-banner-project-revealed/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-04",
-      "events": [
-        {
-          "actor": "wh",
-          "title": "Trump on monuments to himself: \"That's true\"",
-          "body": [
-            "Asked by New York Magazine whether he is building monuments to himself, Trump said, \"That's true,\" and \"Nobody will do it once I'm gone.\" Of the ballroom, he said \"the people should be thankful.\""
-          ],
-          "sources": [
-            {
-              "text": "CNN: Trump says 'nobody will' build monuments for him once he's gone (Molly English, September 4, 2026)",
-              "url": "https://www.cnn.com/2026/09/04/politics/trump-monuments-ballroom-arch"
-            },
-            {
-              "text": "The New Republic: Trump reveals why he keeps launching new vanity projects",
-              "url": "https://newrepublic.com/post/215130/donald-trump-reveals-vanity-projects-monuments-to-himself"
             }
           ]
         }
@@ -631,50 +398,52 @@
               "url": "https://www.whitehouse.gov/videos/america-will-never-be-a-communist-country/"
             }
           ]
-        },
-        {
-          "actor": "press",
-          "title": "A report: the ballroom's first architect warned about fire exits",
-          "body": [
-            "The Washington Post reported that McCrery had warned the design gave most guests no way out through the main entrance in an emergency, and that Trump answered, \"I am the code.\" That line rests on two unnamed people; the White House denies that his departure had anything to do with codes. The documents the Post reviewed show a White House official's note from a September 30, 2025 meeting: \"Life safety — big concern.\""
-          ],
-          "sources": [
-            {
-              "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-              "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
-            },
-            {
-              "text": "People: Architect on Trump's Ballroom Project Allegedly Left Last Year Over Construction Safety Concerns (September 23, 2026)",
-              "url": "https://people.com/architect-on-trumps-ballroom-project-allegedly-left-last-year-over-safety-concerns-report-12136256"
-            },
-            {
-              "text": "The Real Deal: Trump's first ballroom architect quit over safety fears (September 23, 2026)",
-              "url": "https://therealdeal.com/national/2026/09/23/trumps-first-ballroom-architect-quit-over-safety-fears/"
-            }
-          ]
         }
       ]
     }
   ],
   "claims": [
     {
-      "claim": "The ballroom would be paid for by private donors.",
-      "who": "Trump, on the ballroom, paraphrased",
-      "note": "His promise, in paraphrase",
-      "found": "The public is paying part of it.",
-      "detail": "On June 16 the budget office released $351.6 million to the Secret Service for \"White House Security Measures.\" The construction contractor had estimated roughly $300 million of the cost would come from taxpayers, through the Secret Service, the White House Military Office and the Executive Residence. Republicans tried three routes to add public money; the Senate parliamentarian struck one.",
+      "claim": "We are proud at this Department of Justice to celebrate 250 years of our great country and our historic work to make America safe again at President Trump's direction.",
+      "who": "A Justice Department spokesperson, on its banner",
+      "found": "The banners carry the sitting president's portrait and his slogans.",
+      "detail": "The Justice Department's banners show Trump's official portrait above \"MAKE AMERICA SAFE AGAIN,\" under $946,960 in contracts. Labor's put him over \"American Workers First.\" The FAA's banner contract runs through 2027.",
       "sources": [
         {
-          "text": "Roll Call: Secret Service disbursements raise questions on ballroom funding (June 16, 2026)",
-          "url": "https://rollcall.com/2026/06/16/secret-service-disbursements-raise-questions-on-ballroom-funding/"
+          "text": "CNN: Giant banner of Donald Trump hung at Justice Department headquarters (February 19, 2026)",
+          "url": "https://www.cnn.com/2026/02/19/politics/trump-banner-justice-department-building"
         },
         {
-          "text": "Washington Post: Tracking Trump's White House ballroom promises as taxpayer costs mount (June 16, 2026)",
-          "url": "https://www.washingtonpost.com/investigations/interactive/2026/06/16/tracking-trumps-white-house-ballroom-promises-taxpayer-costs-more/"
+          "text": "Politico / E&E News: Trump's Justice Department decorations came with a hefty price tag (FOIA records, July 2026)",
+          "url": "https://www.eenews.net/articles/trumps-justice-department-decorations-came-with-a-hefty-price-tag/"
         },
         {
-          "text": "BBC News: Trump's White House ballroom loses federal funding proposed by Senate Republicans (May 17, 2026)",
-          "url": "https://www.bbc.com/news/articles/cp3px2x96eeo"
+          "text": "CNN - Massive banners with Trump's face",
+          "url": "https://www.cnn.com/2025/09/20/politics/trump-banners-schiff"
+        },
+        {
+          "text": "The Independent: Trump's giant banners of himself around DC are being paid for by taxpayers, Democrat reveals (July 17, 2026)",
+          "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
+        }
+      ]
+    },
+    {
+      "claim": "we're reinforcing the material at no charge to taxpayers, so our big, beautiful banners can securely stay up in celebration of America's 250th birthday",
+      "who": "Courtney Parella, Labor Department spokesperson",
+      "found": "The banners themselves were bought with public money.",
+      "detail": "The department confirmed it spent roughly $6,000 on its banners. Contracts for banners of the president found so far, across five agencies, total $1.12 million.",
+      "sources": [
+        {
+          "text": "CNN - Massive banners with Trump's face",
+          "url": "https://www.cnn.com/2025/09/20/politics/trump-banners-schiff"
+        },
+        {
+          "text": "The Independent: Trump's giant banners of himself around DC are being paid for by taxpayers, Democrat reveals (July 17, 2026)",
+          "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
+        },
+        {
+          "text": "Politico / E&E News: Trump's Justice Department decorations came with a hefty price tag (FOIA records, July 2026)",
+          "url": "https://www.eenews.net/articles/trumps-justice-department-decorations-came-with-a-hefty-price-tag/"
         }
       ]
     },
@@ -725,33 +494,10 @@
           "url": "https://www.huffpost.com/entry/trump-government-funded-love-me-ad_n_6ab49f98e4b07f4bd795878e"
         }
       ]
-    },
-    {
-      "claim": "life safety issues have been addressed and resolved continuously as the design has evolved",
-      "who": "A White House spokesman, on the architect's departure",
-      "found": "The White House's own notes flagged safety, and still needed the president's sign-off after the architect left.",
-      "detail": "A White House official's notes from a September 30, 2025 meeting read \"Life safety — big concern,\" and notes from November 6 read \"Life safety — needs POTUS buy in.\" The Post could not tell from the records whether the problems have been fixed. The project runs through the Executive Residence, which is not a federal agency, and the District of Columbia cannot enforce building codes on federal property.",
-      "sources": [
-        {
-          "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-          "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
-        }
-      ]
     }
   ],
   "voices": {
     "objected": [
-      {
-        "who": "Sen. Thom Tillis",
-        "role": "Republican of North Carolina, on the ad",
-        "quote": "It's inappropriate. It's not like they need a GoFundMe page to have the dollars to do that sort of ad and they could do it. But using taxpayer dollars, it feels like Viktor Orban.",
-        "sources": [
-          {
-            "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
-            "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
-          }
-        ]
-      },
       {
         "who": "Sen. John Kennedy",
         "role": "Republican of Louisiana, on the ad",
@@ -760,6 +506,28 @@
           {
             "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
             "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+          }
+        ]
+      },
+      {
+        "who": "Sen. Adam Schiff",
+        "role": "Democrat of California, on the banners",
+        "quote": "Not only is this a terrible waste of Americans' hard-earned money, it is clearly against the law",
+        "sources": [
+          {
+            "text": "The Independent: Trump's giant banners of himself around DC are being paid for by taxpayers, Democrat reveals (July 17, 2026)",
+            "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
+          }
+        ]
+      },
+      {
+        "who": "Barbara Comstock",
+        "role": "Former Republican congresswoman, on the Justice Department banner",
+        "quote": "Nothing says Justice is Blind like hanging a Dear Leader Banner at DOJ.",
+        "sources": [
+          {
+            "text": "Mediaite: '1930s Germany Vibes' — Critics Slam White House for Installing Trump Banner on DOJ Building (February 2026)",
+            "url": "https://www.mediaite.com/media/news/1930s-germany-vibes-critics-slam-white-house-for-installing-trump-banner-on-doj-building/"
           }
         ]
       },
@@ -784,64 +552,9 @@
             "url": "https://time.com/article/2026/09/22/trump-tv-white-house-press-pool-ban-boycott-state-media/"
           }
         ]
-      },
-      {
-        "who": "Sen. Adam Schiff",
-        "role": "Democrat of California, on the banners",
-        "quote": "Not only is this a terrible waste of Americans' hard-earned money, it is clearly against the law",
-        "sources": [
-          {
-            "text": "The Independent: Trump's giant banners of himself around DC are being paid for by taxpayers, Democrat reveals (July 17, 2026)",
-            "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
-          }
-        ]
-      },
-      {
-        "who": "Kevin Kampschroer",
-        "role": "Fifty years overseeing federal construction at the General Services Administration, on the ballroom",
-        "quote": "bottom line is, I don't know any commercial building owner that would cheat on the fire code, because the risk is too great.",
-        "sources": [
-          {
-            "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-            "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
-          }
-        ]
       }
     ],
     "defended": [
-      {
-        "who": "Kaelan Dorr",
-        "role": "White House head of digital strategy, on Trump TV",
-        "quote": "a livestream of the Administration's greatest hits, unfiltered",
-        "sources": [
-          {
-            "text": "NOTUS: Days After Press Ban, White House Launches 'Trump TV', a 24/7 Clip Show (September 21, 2026)",
-            "url": "https://www.notus.org/trump-white-house/white-house-announces-trump-tv"
-          }
-        ]
-      },
-      {
-        "who": "President Trump",
-        "role": "On the ballroom, to New York Magazine",
-        "quote": "the people should be thankful",
-        "sources": [
-          {
-            "text": "CNN: Trump says 'nobody will' build monuments for him once he's gone (Molly English, September 4, 2026)",
-            "url": "https://www.cnn.com/2026/09/04/politics/trump-monuments-ballroom-arch"
-          }
-        ]
-      },
-      {
-        "who": "Sen. Lindsey Graham",
-        "role": "Republican of South Carolina, on public money for ballroom security",
-        "quote": "It's very difficult to have a bunch of important people in the same place unless it's really, really secure.",
-        "sources": [
-          {
-            "text": "The Independent: Republicans now plan for taxpayers to cover Trump's $400 million 'privately funded' ballroom (April 28, 2026)",
-            "url": "https://www.independent.co.uk/news/world/americas/us-politics/taxpayer-fund-trump-ballroom-correspondents-dinner-shooting-b2966078.html"
-          }
-        ]
-      },
       {
         "who": "The White House",
         "role": "In a statement on the ad",
@@ -854,24 +567,46 @@
         ]
       },
       {
-        "who": "Shalom Baranes",
-        "role": "The ballroom's current architect",
-        "quote": "I can unequivocally state that the ballroom complex has been designed to conform to applicable national building code standards.",
+        "who": "A Justice Department spokesperson",
+        "role": "On the banner at its headquarters",
+        "quote": "We are proud at this Department of Justice to celebrate 250 years of our great country",
         "sources": [
           {
-            "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-            "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
+            "text": "CNN: Giant banner of Donald Trump hung at Justice Department headquarters (February 19, 2026)",
+            "url": "https://www.cnn.com/2026/02/19/politics/trump-banner-justice-department-building"
           }
         ]
       },
       {
-        "who": "A person close to Trump",
-        "role": "To CNN, on why he builds",
-        "quote": "Look at Donald Trump's life, look at what he's done: Built things that no one will ever tear down.",
+        "who": "Courtney Parella",
+        "role": "Labor Department spokesperson, on its banners",
+        "quote": "The banners were originally displayed for Labor Day. After tremendous positive response, we're reinforcing the material at no charge to taxpayers",
         "sources": [
           {
-            "text": "CNN: Trump says 'nobody will' build monuments for him once he's gone (Molly English, September 4, 2026)",
-            "url": "https://www.cnn.com/2026/09/04/politics/trump-monuments-ballroom-arch"
+            "text": "CNN - Massive banners with Trump's face",
+            "url": "https://www.cnn.com/2025/09/20/politics/trump-banners-schiff"
+          }
+        ]
+      },
+      {
+        "who": "Kaelan Dorr",
+        "role": "White House head of digital strategy, on Trump TV",
+        "quote": "a livestream of the Administration's greatest hits, unfiltered",
+        "sources": [
+          {
+            "text": "NOTUS: Days After Press Ban, White House Launches 'Trump TV', a 24/7 Clip Show (September 21, 2026)",
+            "url": "https://www.notus.org/trump-white-house/white-house-announces-trump-tv"
+          }
+        ]
+      },
+      {
+        "who": "Davis Ingle",
+        "role": "White House spokesman, on Schiff's banner findings",
+        "quote": "It's a complete disgrace that Pencil-Neck Adam Schiff is willing to trash the United States of America during its semiquincentennial celebration simply because he hates President Trump.",
+        "sources": [
+          {
+            "text": "The Independent: Trump's giant banners of himself around DC are being paid for by taxpayers, Democrat reveals (July 17, 2026)",
+            "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
           }
         ]
       }
@@ -913,55 +648,6 @@
       ]
     },
     {
-      "label": "Byrd rule",
-      "name": "The Senate's budget rule",
-      "body": "Budget reconciliation bills pass with 51 votes but may not carry extraneous items. The parliamentarian struck the $1 billion for ballroom security because the spending fell outside the jurisdiction of the Senate Judiciary Committee, which brought the bill.",
-      "sources": [
-        {
-          "text": "BBC News: Trump's White House ballroom loses federal funding proposed by Senate Republicans (May 17, 2026)",
-          "url": "https://www.bbc.com/news/articles/cp3px2x96eeo"
-        },
-        {
-          "text": "Politico: Ballroom won't be funded after Senate GOP drops $1 billion Trump security request (May 20, 2026)",
-          "url": "https://www.politico.com/news/2026/05/20/ballroom-security-funding-reconciliation-00930193"
-        }
-      ]
-    },
-    {
-      "label": "Mar 2026",
-      "name": "Judge Leon's injunction",
-      "body": "He found the National Trust for Historic Preservation \"likely to succeed on the merits,\" because \"no statute comes close to giving the President the authority he claims to have.\" An appeals court let construction continue on April 11.",
-      "sources": [
-        {
-          "text": "Al Jazeera (Reuters): Judge temporarily halts Trump's $400m White House ballroom project (April 1, 2026)",
-          "url": "https://www.aljazeera.com/news/2026/4/1/judge-temporarily-halts-trumps-400m-white-house-ballroom-project"
-        },
-        {
-          "text": "Spectrum News (Associated Press): Judge orders White House ballroom construction to halt in a ruling that leaves Trump seething (March 31, 2026)",
-          "url": "https://spectrumlocalnews.com/us/snplus/politics/2026/03/31/judge-trump-admnistration-white-house-ballroom-project-halt-congressional-approval-"
-        },
-        {
-          "text": "NPR: D.C. appeals court allows White House ballroom construction to continue (April 11, 2026)",
-          "url": "https://www.npr.org/2026/04/11/nx-s1-5782084/dc-appeals-court-trump-ballroom-bunker"
-        },
-        {
-          "text": "CNN: Appeals court allows construction to continue on Trump White House ballroom (April 11, 2026)",
-          "url": "https://www.cnn.com/2026/04/11/politics/trump-ballroom-construction-judge-continue"
-        }
-      ]
-    },
-    {
-      "label": "Residence",
-      "name": "Outside the agency rules",
-      "body": "The ballroom is being built through the Executive Residence, a small office that is not a federal agency and so falls outside the rules that bind agencies. The District of Columbia cannot enforce its building codes on federal property. The construction contract does require compliance with codes, as determined by a White House contracting officer.",
-      "sources": [
-        {
-          "text": "Washington Post: 'I am the code': Trump clashed with ballroom architect over safety issues (September 23, 2026)",
-          "url": "https://www.washingtonpost.com/investigations/2026/09/23/i-am-code-trump-clashed-with-ballroom-architect-over-safety-issues/"
-        }
-      ]
-    },
-    {
       "label": "Mar 2026",
       "name": "The administration's own precedent",
       "body": "A $220 million taxpayer-funded ad campaign featuring a cabinet secretary ended with her firing. DHS had invoked a national emergency declaration to skip competitive bidding.",
@@ -990,17 +676,6 @@
       "text": "Either would test the propaganda restriction directly. As of September 24 neither had been asked, at least not on the record."
     },
     {
-      "when": "Open",
-      "title": "The donor names",
-      "text": "In August Trump promised to name more ballroom donors: \"I'll give you names.\" As of mid-September, NBC News reported, none had been added to the list of 37.",
-      "sources": [
-        {
-          "text": "NBC News: Trump vowed to identify more of the donors to his ballroom project. That hasn't happened yet.",
-          "url": "https://www.nbcnews.com/politics/white-house/trump-vowed-identify-donors-ballroom-project-hasnt-happened-yet-rcna596852"
-        }
-      ]
-    },
-    {
       "when": "Through 2027",
       "title": "The FAA banners",
       "text": "The FAA's banner contract runs through 2027.",
@@ -1010,36 +685,21 @@
           "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
         }
       ]
-    },
-    {
-      "when": "Summer 2028",
-      "title": "The ballroom",
-      "text": "The administration says the roughly $400 million project is about 65 percent complete and expected by summer 2028.",
-      "sources": [
-        {
-          "text": "NBC News: Trump vowed to identify more of the donors to his ballroom project. That hasn't happened yet.",
-          "url": "https://www.nbcnews.com/politics/white-house/trump-vowed-identify-donors-ballroom-project-hasnt-happened-yet-rcna596852"
-        }
-      ]
     }
   ],
   "take": [
-    "Each item here has a defense on its own terms. A president may publish video. An agency may decorate its building. The Secret Service has to protect whatever gets built. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician's face and message in front of the public, most visibly in the weeks before an election.",
+    "Each item here has a defense on its own terms. A president may publish video, and agencies may mark an anniversary. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician's face and message in front of the public, most visibly in the weeks before an election.",
     "The ad is the smallest line in the ledger and the plainest. It uses the president's campaign themes, a convention clip and a song that repeats \"love me,\" and it carries a government disclaimer. Two Republican senators saw the problem at once. That no agency will say it paid is not a detail. Spending its sponsor will not own is spending nobody can be held to account for.",
-    "The ballroom shows the same thing at scale. It was promised as a gift and is being finished partly with public money routed through security budgets, by an office outside the rules that bind agencies. Trump has said plainly why he builds: nobody will do it once he is gone. That is a reason for a private fortune to pay. It is not a reason for the public to."
+    "The anniversary defense deserves a fair hearing, and the banners answer it themselves. They carry the sitting president's portrait and his own slogans, one of them on the headquarters of the department meant to be independent of him, and one contract runs into 2027."
   ],
   "corrections": [
     {
       "date": "2026-09-24",
-      "text": "Before this page was published, the quotations and figures in its seed entries were checked against the saved text of their sources, and four entries were corrected. The ballroom entry quoted Judge Leon as calling the donor funding a \"Rube Goldberg machine\"; as Reason reported it, he described it as a \"Rube Goldberg contraption,\" and a quotation of his finding on presidential authority had been cut short before \"to have.\""
+      "text": "Before this page was published, its sources were checked against the saved text of each article. The 2025 banner entry it draws on described the Labor Department's banner as 88 feet long. The 88-foot signs were Health and Human Services' \"Make America Healthy Again\" banners, which this page does not count as spending on the president's image. The ad entry has also been brought up to date with the White House's statement defending the ad."
     },
     {
-      "date": "2026-09-24",
-      "text": "The entry on the $72 billion bill put \"ballroom security-related aspects\" in quotation marks as the bill's wording; the phrase was HuffPost's description of the package. The architect entry said the November 6 notes came \"five weeks\" after McCrery left; the Post does not say so, and the gap was a little over two weeks."
-    },
-    {
-      "date": "2026-09-24",
-      "text": "The 2025 banner entry described the Labor Department's banner as 88 feet long. The 88-foot signs were Health and Human Services' \"Make America Healthy Again\" banners, which this page does not count as spending on the president's image. The ad entry has also been brought up to date with the White House's statement defending the ad."
+      "date": "2026-09-25",
+      "text": "This page was narrowed to one question, whether public money is promoting the president himself. The White House ballroom, which it first included, now has its own page, since its story is about donors and access. The administration's answers on the banners were added."
     }
   ]
 }

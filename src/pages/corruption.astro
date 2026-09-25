@@ -1,0 +1,84 @@
+---
+// A section page: three questions about public power and private benefit, each
+// answered by its own dive. The questions and their framing live in
+// src/data/sections.json; the dive cards read the dives' own data for their counts.
+import Base from '../layouts/Base.astro';
+import sections from '../data/sections.json';
+import dives from '../data/dives.json';
+import { longDate, sourceCount } from '../lib/fmt.js';
+
+const section = sections.corruption;
+const files = import.meta.glob('../data/*.json', { eager: true });
+const card = (slug) => {
+  const d = dives.find((x) => x.slug === slug);
+  const x = files[`../data/${slug}.json`]?.default;
+  if (!d || !x) return null;
+  return { ...d, events: x.days.reduce((n, day) => n + day.events.length, 0), sources: sourceCount(x) };
+};
+const questions = section.questions.map((q) => ({ ...q, card: q.dive ? card(q.dive) : null }));
+const answered = questions.filter((q) => q.card).length;
+---
+
+<Base title="Corruption | Deep Dives" ogTitle="Corruption: Three Questions" description={section.dek}>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/">Deep Dives</a> · A section · Updated {longDate(section.updated)}</p>
+      <h1><span class="accent">Corruption</span>.</h1>
+      {section.intro.map((p) => <p class="deck">{p}</p>)}
+      <p class="sec-count">{questions.length} questions · {answered} answered so far</p>
+    </div>
+  </div>
+
+  <section id="questions" aria-label="The questions">
+    <div class="wrap">
+      <ol class="q-list">
+        {questions.map((q) => (
+          <li class="q-item">
+            <div class="q-head">
+              <span class="q-n">{q.n}</span>
+              <div>
+                <h2 class="q-q">{q.q}</h2>
+                <p class="q-text">{q.text}</p>
+              </div>
+            </div>
+            {q.card ? (
+              <a class="dive-card" href={`/${q.card.slug}`}>
+                <div>
+                  <p class="kicker">{q.card.kicker}</p>
+                  <h3>{q.card.title}</h3>
+                  <p class="dek">{q.card.dek}</p>
+                  <p class="meta"><strong>{q.card.status}</strong> · {q.card.events} events · {q.card.sources} sources · Updated {longDate(q.card.updated)}</p>
+                </div>
+                <span class="go">Read the dive →</span>
+              </a>
+            ) : (
+              <div class="q-pending">
+                <p><strong>No dive yet.</strong> This one is next in line.</p>
+                {q.research && <a href={q.research.url} target="_blank" rel="noopener noreferrer">Until then: {q.research.label} ↗</a>}
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="standards" aria-label="How these are built">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Standards</p>
+        <h2>How these are built</h2>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>From the record</h3>
+          <ul><li>Every dive is written from Trump Tracker entries that have already been through its validation protocol, with court filings and contracts linked directly wherever they exist.</li></ul>
+        </div>
+        <div class="method-card">
+          <h3>Overlap is not proof</h3>
+          <ul><li>When donors later win government business, the pages say so and say what it does and does not show. A pattern is reported as a pattern, not as a bribe.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

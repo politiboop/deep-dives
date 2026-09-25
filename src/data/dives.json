@@ -1,11 +1,21 @@
 [
   {
+    "slug": "the-ballroom",
+    "kicker": "Access",
+    "title": "The Ballroom",
+    "dek": "Who is paying for the president's ballroom, and what have they gotten since? The donors, the public money, the contracts, and a court fight the Supreme Court paused without deciding.",
+    "updated": "2026-09-25",
+    "status": "Construction continues under a Supreme Court stay",
+    "section": "corruption"
+  },
+  {
     "slug": "paid-for",
     "kicker": "Public money",
     "title": "Paid For",
-    "dek": "A Trump ad aired on Fox News with a line at the bottom: \"paid for by the U.S. government.\" The banners, the stream, the app and the ballroom, and what the public is paying for.",
-    "updated": "2026-09-24",
-    "status": "Nobody has said which agency paid for the ad"
+    "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
+    "updated": "2026-09-25",
+    "status": "Nobody has said which agency paid for the ad",
+    "section": "corruption"
   },
   {
     "slug": "press-ban",

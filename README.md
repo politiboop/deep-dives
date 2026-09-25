@@ -4,8 +4,12 @@ One story at a time, taken all the way down. Each dive follows a single episode 
 to the latest ruling, sets what was claimed against what the record shows, and links every fact to
 its source.
 
-- **Paid For**, public money and the president's image: a ledger of who pays for the banners,
-  the app, Trump TV, the government-paid ad and the ballroom, 18 events over a year, and 49 sources.
+- **Corruption**, a section of three questions: is he profiting from the office, is access being
+  sold, and is public money promoting him. Each is answered by its own dive:
+  - **The Ballroom** (access): who is paying for it, what the donors have won since, the public
+    money added, and a Supreme Court stay that left its legality undecided.
+  - **Paid For** (public money): banners of his face, an app on federal phones, Trump TV and a
+    government-paid ad, what each cost and who paid.
 - **Shut Out**, the White House press ban: 26 events over six days, seven of the government's
   claims set against the court record, and 68 sources.
 - Built on The Trump Tracker. Every link and every quotation traces to a verified tracker entry,

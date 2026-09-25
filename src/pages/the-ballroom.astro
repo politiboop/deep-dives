@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
-import raw from '../data/paid-for.json';
+import raw from '../data/the-ballroom.json';
 import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
 
 // The data keeps straight quotes; the page renders typographer's quotes.
@@ -11,17 +11,14 @@ const { meta, hero, ledger, days, claims, voices, rules, watch, take, correction
 const ACTORS = {
   wh:       { label: 'The administration', color: 'var(--ac-wh)' },
   court:    { label: 'The courts',         color: 'var(--ac-court)' },
-  press:    { label: 'Press and watchdogs', color: 'var(--ac-press)' },
+  press:    { label: 'Critics and watchdogs', color: 'var(--ac-press)' },
   congress: { label: 'Congress',           color: 'var(--ac-congress)' },
 };
 
 // Every number on the page is computed from the data file.
 const sum = (kind) => ledger.filter((r) => r.kind === kind && r.amount).reduce((n, r) => n + r.amount, 0);
-const bannerTotal = sum('image');
-const bannerAgencies = ledger.filter((r) => r.kind === 'image').reduce((n, r) => n + (r.agencies || 0), 0);
-const adBuy = sum('channel');
-const ruleYear = (rules[0].label.match(/\d{4}/) || [''])[0];
-const events = days.flatMap((d) => d.events.map((e) => ({ ...e, date: d.date })));
+const row = (id) => ledger.find((r) => r.id === id);
+const events = days.flatMap((d) => d.events.map((e) => ({ ...e, date: d.date, month: d.month })));
 const eventCount = events.length;
 const sources = sourceCount(dive);
 const seedCount = dive.trackerIds.length;
@@ -37,21 +34,20 @@ for (const e of events) {
   m.events.push(e);
 }
 
-// The ledger is read in groups, each in date order.
-const GROUPS = [
-  { kinds: ['image'], label: 'The banners', total: true },
-  { kinds: ['channel'], label: 'The channels' },
-  { kinds: ['comparison'], label: 'For comparison' },
-].map((g) => {
-  const rows = ledger.filter((r) => g.kinds.includes(r.kind));
-  return { ...g, rows, sum: rows.reduce((n, r) => n + (r.kind === 'attempt' ? 0 : r.amount || 0), 0) };
-});
+// The ledger is read in the groups the data gives it, in order.
+const GROUPS = [];
+for (const r of ledger) {
+  let g = GROUPS.find((x) => x.label === r.group);
+  if (!g) GROUPS.push((g = { label: r.group, rows: [] }));
+  g.rows.push(r);
+}
+const amount = (r) => r.amount ? money(r.amount, r.amount >= 1e8) : r.label || 'Not disclosed';
 
 const stats = [
-  { n: money(bannerTotal, true), label: 'In contracts for banners of the president, found so far' },
-  { n: String(bannerAgencies), label: 'Federal agencies paying for those banners' },
-  { n: money(adBuy, true), label: 'The ad buy, as AdImpact estimates it; no agency has claimed it' },
-  { n: ruleYear, label: 'The year spending laws first barred “publicity or propaganda”' },
+  { n: String(row('donors').count), label: 'Donors named; most amounts never disclosed' },
+  { n: money(row('won').amount, true) + '+', label: 'In new or expanded federal contracts to 14 donors in six months, per Public Citizen' },
+  { n: money(row('released').amount, true), label: 'Released to the Secret Service for “White House Security Measures”' },
+  { n: meta.vote, label: 'The Supreme Court vote letting construction continue, legality undecided' },
 ];
 
 const NAV = [
@@ -68,13 +64,13 @@ const NAV = [
 const description = `${meta.dek} ${eventCount} documented events, ${claims.length} explanations set against the record, and ${sources} sources.`;
 ---
 
-<Base title={`${meta.title}: Public Money and the President’s Image | Deep Dives`} ogTitle={`${meta.title}: Public Money and the President’s Image`} description={description} nav={NAV}>
+<Base title={`${meta.title}: Who Is Paying for the President’s Ballroom | Deep Dives`} ogTitle={`${meta.title}: Who Is Paying for the President’s Ballroom`} description={description} nav={NAV}>
 
   <!-- ── HERO ─────────────────────────────────────────────────────────── -->
   <div class="hero">
     <div class="wrap">
       <p class="eyebrow"><a href="/corruption">Corruption</a> · {meta.kicker} · Updated {longDate(dive.updated)} · {sources} sources</p>
-      <h1>Paid <span class="accent">for</span>.</h1>
+      <h1>The <span class="accent">ballroom</span>.</h1>
 
       <!-- The one question this page answers, answered in a sentence, with the rule that
            makes it matter. Everything below is the evidence. -->
@@ -167,22 +163,23 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <p class="kicker">Who pays, and how much</p>
         <h2>The ledger</h2>
         <p class="sub">
-          Each item, the part of the government paying for it, and the amount where one has been
-          made public. Amounts are contract values and releases as reported, not necessarily what has
-          been spent.
+          The project's cost, who is paying for it, and what the donors have won from the government
+          since. Amounts are estimates, releases and contract values as reported, not necessarily what
+          has been spent. The contracts show overlap between donors and government business, not that
+          any contract was awarded because of a gift.
         </p>
       </div>
-      <div class="ledger" role="table" aria-label="Public money for the president's image, item by item">
+      <div class="ledger" role="table" aria-label="Who is paying for the ballroom, item by item">
         <div class="lg-row lg-head" role="row">
           <span role="columnheader">When</span>
           <span role="columnheader">What</span>
-          <span role="columnheader">Paid by</span>
+          <span role="columnheader">Details</span>
           <span role="columnheader" class="lg-amt">Amount</span>
         </div>
         {GROUPS.map((g) => [
           <div class="lg-row lg-group" role="row">
             <span role="cell" class="lg-group-name">{g.label}</span>
-            <span role="cell" class="lg-amt">{g.total && g.rows.length > 1 && `${money(g.sum)} in contracts`}</span>
+            <span role="cell" class="lg-amt"></span>
           </div>,
           ...g.rows.map((r) => (
           <div class={`lg-row is-${r.kind}`} role="row">
@@ -193,8 +190,8 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
               <span class="lg-note">{r.note}</span>
               <Sources sources={r.sources} />
             </span>
-            <span class="lg-payer" role="cell"><span class="cell-lbl">Paid by</span>{r.payer}</span>
-            <span class="lg-amt" role="cell">{r.amount ? money(r.amount, r.amount >= 1e8) : 'Not disclosed'}</span>
+            <span class="lg-payer" role="cell"><span class="cell-lbl">Details</span>{r.payer}</span>
+            <span class="lg-amt" role="cell">{amount(r)}</span>
           </div>
           )),
         ])}
@@ -209,7 +206,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <p class="kicker">In order</p>
         <h2>The record</h2>
         <p class="sub">
-          {eventCount} documented events over {months.length} months, from the first banners to the ad.
+          {eventCount} documented events over {months.length} months, from the announcement to the Supreme Court.
           Each links to its sources; each has its own address, so you can send someone a single moment.
         </p>
       </div>
@@ -240,7 +237,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
               {m.events.map((e) => (
                 <li class="ev" data-actor={e.actor} id={`${e.date}-${slug(e.title)}`}>
                   <div class="ev-meta">
-                    <span class="ev-date">{weekday(e.date).slice(0, 3)} {shortDate(e.date)}</span>
+                    <span class="ev-date">{e.month ? monthYear(e.date) : `${weekday(e.date).slice(0, 3)} ${shortDate(e.date)}`}</span>
                     {e.time && <span class="ev-time">{e.time}</span>}
                     <span class="actor-chip">{ACTORS[e.actor].label}</span>
                   </div>
@@ -263,8 +260,8 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <p class="kicker">Checked against the record</p>
         <h2>The explanation and the record</h2>
         <p class="sub">
-          What the administration, its allies and the ad itself say, in their own words wherever they
-          put it that way, next to what the documents and the reporting show.
+          What the president, his lawyers and his spokesmen have said about the ballroom, in their own
+          words wherever they put it that way, next to what the documents and the rulings show.
         </p>
       </div>
 
@@ -302,8 +299,8 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         <p class="kicker">Both sides, in their own words</p>
         <h2>Who objected, and who defended it</h2>
         <p class="sub">
-          The strongest version of each side, quoted. Republicans are among the objectors: a senator
-          and a former congresswoman, and a second senator is quoted at the top of this page.
+          The strongest version of each side, quoted: the lawmakers on both sides of the money, the
+          preservation group that sued and the government that answered it, and the architects.
         </p>
       </div>
       <div class="voices">
@@ -335,11 +332,11 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
   <section id="rules" aria-label="The rules that apply">
     <div class="wrap">
       <div class="sec-head">
-        <p class="kicker">What governs the money</p>
+        <p class="kicker">What governs the building</p>
         <h2>The rules</h2>
         <p class="sub">
-          The restrictions that apply to public money spent on a president's image. None has been tested
-          against any of this; no ruling on it is on the record.
+          The law on building on White House grounds, and the ruling that let construction continue
+          without deciding whether it was followed.
         </p>
       </div>
       <ol class="precedent is-rules">
@@ -402,16 +399,16 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           <h3>Where this comes from</h3>
           <ul>
             <li>This page is built from {seedCount} Trump Tracker entries, each through the tracker’s validation protocol: two independent sources for any core claim, primary documents preferred, single-sourced claims labeled.</li>
-            <li>This page answers one question, about public money promoting the president. The White House ballroom, which raises a different one, about donors and access, has <a href="/the-ballroom">its own page</a>. For the wider catalog of Trump’s name and face on government, from the passport to the $250 bill, see the research site’s <a href="https://research.thetrumptracker.com/corruption/government-as-brand/" target="_blank" rel="noopener noreferrer">Government as Brand</a> page.</li>
-            <li>Right-leaning outlets are cited where they covered the story, including Breitbart and the Washington Examiner.</li>
+            <li>This page answers one question, about who is paying for the ballroom and what they have received. Public money spent to promote the president has its own page, <a href="/paid-for">Paid For</a>.</li>
+            <li>The contract figures come from Public Citizen’s analysis, as reported by the Washington Post and others. They show overlap between donors and government business. They do not show, and this page does not claim, that any contract was awarded because of a donation.</li>
+            <li>Right-leaning and libertarian outlets are cited where they covered the story, including Legal Insurrection and Reason.</li>
           </ul>
         </div>
         <div class="method-card">
           <h3>How it is checked</h3>
           <ul>
             <li>An automated check runs on every change: every link on this page must appear in a seed entry’s sources, and every quotation must appear word for word in a seed entry. Either failure blocks the page.</li>
-            <li>Before publishing, each quotation and figure was also checked against the saved text of the specific source attached to it. That check found errors in four of the underlying tracker entries, which were corrected there first and are listed under Corrections.</li>
-            <li>One source, a paywalled Washington Post article on the ad, could not be read in full. Nothing on this page rests on it alone.</li>
+            <li>Before publishing, each quotation was also checked against the saved text of the specific source attached to it. That check, and the one for Paid For, found errors in the underlying tracker entries, which were corrected there first and are listed under Corrections.</li>
             <li>Where an account rests on anonymous sources, the page says so where it appears.</li>
           </ul>
         </div>

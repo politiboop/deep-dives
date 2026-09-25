@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import dives from '../data/dives.json';
+import sections from '../data/sections.json';
 import { longDate, sourceCount } from '../lib/fmt.js';
 
 // Load each dive's data file so the front door can show real counts.
@@ -13,6 +14,10 @@ const list = [...dives]
     const events = x ? x.days.reduce((n, day) => n + day.events.length, 0) : 0;
     return { ...d, events, sources: x ? sourceCount(x) : 0 };
   });
+
+// Sections group dives under a set of questions (src/data/sections.json).
+const sectionList = Object.values(sections).map((s) => ({ ...s, answered: s.questions.filter((q) => q.dive && dives.some((d) => d.slug === q.dive)).length }));
+const sectionTitle = (slug) => sections[slug]?.title;
 
 const description = 'One story at a time, taken all the way down. Each deep dive follows a single episode from the first post to the latest ruling, sets what was claimed against what the record shows, and links every fact to its source.';
 ---
@@ -34,17 +39,39 @@ const description = 'One story at a time, taken all the way down. Each deep dive
     </div>
   </div>
 
+  <section id="sections" aria-label="Sections">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Start with a question</p>
+        <h2>Sections</h2>
+      </div>
+      <div class="dive-list">
+        {sectionList.map((s) => (
+          <a class="section-card" href={`/${s.slug}`}>
+            <div>
+              <p class="kicker">{s.questions.length} questions · {s.answered} answered so far</p>
+              <h3>{s.title}</h3>
+              <p class="dek">{s.dek}</p>
+              <ol>{s.questions.map((q) => <li><b>{q.n}</b>{q.q}</li>)}</ol>
+            </div>
+            <span class="go">See the section →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section id="dives" aria-label="The deep dives">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Read one</p>
-        <h2>The dives</h2>
+        <h2>Every dive</h2>
       </div>
       <div class="dive-list">
         {list.map((d) => (
           <a class="dive-card" href={`/${d.slug}`}>
             <div>
-              <p class="kicker">{d.kicker}</p>
+              <p class="kicker">{d.section && <span class="sec-tag">{sectionTitle(d.section)} · </span>}{d.kicker}</p>
               <h3>{d.title}</h3>
               <p class="dek">{d.dek}</p>
               <p class="meta"><strong>{d.status}</strong> · {d.events} events · {d.sources} sources · Updated {longDate(d.updated)}</p>
