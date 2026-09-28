@@ -515,6 +515,7 @@
         {
           "actor": "wh",
           "title": "World Liberty Financial debuts",
+          "kind": "crypto",
           "trackerIds": [
             "world-liberty-financial-crypto"
           ],
@@ -544,6 +545,7 @@
         {
           "actor": "payer",
           "title": "Justin Sun buys $30 million of World Liberty tokens",
+          "kind": "crypto",
           "trackerIds": [
             "world-liberty-financial-crypto",
             "trump-meme-coin-dinner-top-holders-virginia-club"
@@ -570,6 +572,7 @@
         {
           "actor": "payer",
           "title": "ABC settles for $15 million toward his library",
+          "kind": "settlements",
           "trackerIds": [
             "media-tech-settlements-86-million-trump-library-ballroom"
           ],
@@ -599,6 +602,7 @@
         {
           "actor": "payer",
           "title": "A UAE-backed firm buys 49% of World Liberty",
+          "kind": "crypto",
           "trackerIds": [
             "uae-royal-crypto-investment"
           ],
@@ -628,6 +632,7 @@
         {
           "actor": "wh",
           "title": "Three days before the inauguration, the $TRUMP coin",
+          "kind": "crypto",
           "trackerIds": [
             "trump-meme-coin"
           ],
@@ -657,6 +662,7 @@
         {
           "actor": "wh",
           "title": "Inauguration, without a blind trust",
+          "kind": "oversight",
           "trackerIds": [
             "trump-2025-financial-disclosure-2-billion-crypto-earnings"
           ],
@@ -682,6 +688,7 @@
         {
           "actor": "payer",
           "title": "Meta settles for $25 million",
+          "kind": "settlements",
           "trackerIds": [
             "media-tech-settlements-86-million-trump-library-ballroom"
           ],
@@ -707,6 +714,7 @@
         {
           "actor": "payer",
           "title": "X settles",
+          "kind": "settlements",
           "trackerIds": [
             "media-tech-settlements-86-million-trump-library-ballroom"
           ],
@@ -728,6 +736,7 @@
         {
           "actor": "wh",
           "title": "The SEC asks to pause its case against Justin Sun",
+          "kind": "official-acts",
           "trackerIds": [
             "trump-meme-coin-dinner-top-holders-virginia-club"
           ],
@@ -753,6 +762,7 @@
         {
           "actor": "wh",
           "title": "The Justice Department shuts its crypto enforcement team",
+          "kind": "official-acts",
           "trackerIds": [
             "world-liberty-financial-crypto"
           ],
@@ -774,6 +784,7 @@
         {
           "actor": "payer",
           "title": "An Emirati fund's $2 billion Binance deal closes in World Liberty's coin",
+          "kind": "crypto",
           "trackerIds": [
             "uae-royal-crypto-investment"
           ],
@@ -799,6 +810,7 @@
         {
           "actor": "wh",
           "title": "The UAE gets its AI campus",
+          "kind": "official-acts",
           "trackerIds": [
             "uae-royal-crypto-investment"
           ],
@@ -828,6 +840,7 @@
         {
           "actor": "wh",
           "title": "A 747 from Qatar's government",
+          "kind": "gifts",
           "trackerIds": [
             "qatar-plane-bribe"
           ],
@@ -853,6 +866,7 @@
         {
           "actor": "wh",
           "title": "Dinner for the coin's biggest buyers",
+          "kind": "crypto",
           "trackerIds": [
             "trump-meme-coin-dinner-top-holders-virginia-club"
           ],
@@ -882,6 +896,7 @@
         {
           "actor": "wh",
           "title": "The SEC drops its Binance case",
+          "kind": "official-acts",
           "trackerIds": [
             "trump-pardons-binance-founder-changpeng-zhao"
           ],
@@ -903,6 +918,7 @@
         {
           "actor": "payer",
           "title": "Paramount settles, with its merger before the FCC",
+          "kind": "settlements",
           "trackerIds": [
             "media-tech-settlements-86-million-trump-library-ballroom"
           ],
@@ -940,6 +956,7 @@
         {
           "actor": "payer",
           "title": "YouTube settles, and the money goes to the ballroom",
+          "kind": "settlements",
           "trackerIds": [
             "media-tech-settlements-86-million-trump-library-ballroom"
           ],
@@ -968,6 +985,7 @@
         {
           "actor": "payer",
           "title": "A $1 billion Trump tower in Jeddah",
+          "kind": "licensing",
           "trackerIds": [
             "trump-organization-dar-global-saudi-qatar-gulf-deals"
           ],
@@ -993,6 +1011,7 @@
         {
           "actor": "wh",
           "title": "He pardons Binance's founder",
+          "kind": "official-acts",
           "trackerIds": [
             "trump-pardons-binance-founder-changpeng-zhao"
           ],
@@ -1035,6 +1054,7 @@
         {
           "actor": "wh",
           "title": "A $620 million Pentagon loan commitment to a company Trump Jr.'s firm backs",
+          "kind": "official-acts",
           "trackerIds": [
             "trump-jr-vulcan-elements-620m-pentagon-loan-navarro"
           ],
@@ -1060,6 +1080,7 @@
         {
           "actor": "wh",
           "title": "The disclosure",
+          "kind": "oversight",
           "trackerIds": [
             "trump-2025-financial-disclosure-2-billion-crypto-earnings"
           ],
@@ -1089,6 +1110,7 @@
         {
           "actor": "wh",
           "title": "\"The blind account\"",
+          "kind": "oversight",
           "trackerIds": [
             "trump-2025-financial-disclosure-2-billion-crypto-earnings",
             "qatar-plane-bribe"
@@ -1115,6 +1137,7 @@
         {
           "actor": "wh",
           "title": "A trust bank charter for his family's crypto company",
+          "kind": "official-acts",
           "trackerIds": [
             "world-liberty-financial-occ-bank-charter-bid-usd1-ufc"
           ],
@@ -1148,6 +1171,7 @@
         {
           "actor": "congress",
           "title": "The Senate stalls the crypto bill over ethics limits",
+          "kind": "oversight",
           "trackerIds": [
             "world-liberty-financial-occ-bank-charter-bid-usd1-ufc"
           ],

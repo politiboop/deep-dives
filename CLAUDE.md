@@ -19,9 +19,23 @@ the batch workflow).
   read from the dive's data file, so the front door can never lag the page it links to.
 - **Sections group dives under plain questions.** `src/data/sections.json` defines each section
   (so far, `corruption`: is he profiting from the office, is access being sold, is public money
-  promoting him) and which dive answers each question; `src/pages/corruption.astro` renders it,
-  and a question with no dive yet says so and points to the research site. A dive joins a section
-  with `section` in its data and its `dives.json` entry.
+  promoting him) and which dive answers each question. A dive joins a section with `section` in
+  its data and its `dives.json` entry.
+- **A section page is one timeline.** `src/pages/corruption.astro` puts every event from the
+  section's dives on a single timeline, filtered by the question it answers (`key` and `short`
+  on each question in `sections.json`), by what the act was about (the `kind` tag on each event,
+  see the table below) and by who acted. Nothing is written or sourced on that page: every line
+  is a dive's event, and links to its own address in the dive. The figures at the top are the
+  dives' own. A new dive under a section question joins the timeline automatically; a question
+  with no dive yet shows as pending. Filters live in the query string, so a view can be sent.
+
+  | `kind` | Label | Used by |
+  |---|---|---|
+  | `crypto`, `licensing`, `settlements`, `gifts`, `official-acts`, `oversight` | Crypto, Licensing his name, Settlements, Gifts, Official acts, Disclosure and oversight | By His Own Account |
+  | `donors`, `contracts`, `building`, `security-money` | Donors, Contracts to donors, The building, Security money | The Ballroom |
+  | `banners`, `ads`, `channels` | Banners, Ads, The app and Trump TV | Paid For |
+
+  The labels live in `corruption.astro`; an event with a kind the page does not know fails the build.
 - **Every dive answers one question, stated at the top.** Dives in a section open with a question
   card (`hero.question`, `hero.answer`, `hero.rule` with `ruleSources`): the question, what the
   record shows in a sentence or two of fact, and the rule that makes it matter. If you cannot

@@ -1,70 +1,285 @@
 ---
-// A section page: three questions about public power and private benefit, each
-// answered by its own dive. The questions and their framing live in
-// src/data/sections.json; the dive cards read the dives' own data for their counts.
+// The corruption section as one page: every documented act from the section's dives on a
+// single timeline, filtered by the question it answers, the kind of act, and who acted.
+// The dives stay underneath as the deep layer, where the ledgers, the claims and the voices
+// live; every act here links to its own address in the dive it came from, so nothing on this
+// page is written or sourced separately.
 import Base from '../layouts/Base.astro';
+import Sources from '../components/Sources.astro';
 import sections from '../data/sections.json';
 import dives from '../data/dives.json';
-import { longDate, sourceCount } from '../lib/fmt.js';
+import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
 
 const section = sections.corruption;
 const files = import.meta.glob('../data/*.json', { eager: true });
-const card = (slug) => {
-  const d = dives.find((x) => x.slug === slug);
-  const x = files[`../data/${slug}.json`]?.default;
-  if (!d || !x) return null;
-  return { ...d, updated: x.updated, status: x.meta.status, events: x.days.reduce((n, day) => n + day.events.length, 0), sources: sourceCount(x) };
+const load = (s) => { const x = files[`../data/${s}.json`]?.default; return x ? smartAll(x) : null; };
+
+// The questions, each with the dive that answers it, or nothing yet.
+const QUESTIONS = section.questions.map((q) => {
+  const reg = dives.find((d) => d.slug === q.dive) || null;
+  const x = q.dive ? load(q.dive) : null;
+  return {
+    ...q, reg, x,
+    title: reg?.title || x?.meta?.title || '',
+    events: x ? x.days.reduce((n, d) => n + d.events.length, 0) : 0,
+    sources: x ? sourceCount(x) : 0,
+  };
+});
+const answered = QUESTIONS.filter((q) => q.x);
+const byKey = (k) => answered.find((q) => q.key === k)?.x || null;
+
+// What each act is about. The keys are the `kind` tags on the events in the dives' build scripts.
+const KINDS = {
+  'crypto': 'Crypto',
+  'licensing': 'Licensing his name',
+  'settlements': 'Settlements',
+  'gifts': 'Gifts',
+  'official-acts': 'Official acts',
+  'oversight': 'Disclosure and oversight',
+  'donors': 'Donors',
+  'contracts': 'Contracts to donors',
+  'building': 'The building',
+  'security-money': 'Security money',
+  'banners': 'Banners',
+  'ads': 'Ads',
+  'channels': 'The app and Trump TV',
 };
-const questions = section.questions.map((q) => ({ ...q, card: q.dive ? card(q.dive) : null }));
-const answered = questions.filter((q) => q.card).length;
-// The section is as current as its newest dive.
-const updated = questions.reduce((m, q) => (q.card && q.card.updated > m ? q.card.updated : m), '');
+// Who acted. The colors are the dives' actor palette; nothing editorial uses them.
+const ACTORS = {
+  wh:       { label: 'The president and his administration', color: 'var(--ac-wh)' },
+  payer:    { label: 'Buyers, donors and payers', color: 'var(--ac-payer)' },
+  court:    { label: 'The courts',      color: 'var(--ac-court)' },
+  press:    { label: 'Press and watchdogs', color: 'var(--ac-press)' },
+  congress: { label: 'Congress',        color: 'var(--ac-congress)' },
+};
+
+// Every act, oldest first, with the question it answers and its address in its dive. The
+// address is computed exactly as the dive page computes it, from the same date and title.
+const acts = answered.flatMap((q) => q.x.days.flatMap((day) => day.events.map((e) => ({
+  ...e, date: day.date, monthOnly: !!day.month, q: q.key, n: q.n, qLabel: q.short, dive: q.dive, diveTitle: q.title,
+  anchor: `${day.date}-${slug(e.title)}`,
+})))).sort((a, b) => a.date.localeCompare(b.date));
+for (const a of acts) {
+  if (!KINDS[a.kind]) throw new Error(`corruption: ${a.dive} event has no known kind: ${a.title}`);
+  if (!ACTORS[a.actor]) throw new Error(`corruption: unknown actor ${a.actor} on ${a.title}`);
+}
+const ids = new Set();
+for (const a of acts) { if (ids.has(a.anchor)) throw new Error(`corruption: two acts share an address: ${a.anchor}`); ids.add(a.anchor); }
+
+const months = [];
+for (const a of acts) {
+  const key = a.date.slice(0, 7);
+  let m = months.find((x) => x.key === key);
+  if (!m) months.push((m = { key, first: a.date, acts: [] }));
+  m.acts.push(a);
+}
+const kindsUsed = Object.keys(KINDS).filter((k) => acts.some((a) => a.kind === k));
+const actorsUsed = Object.keys(ACTORS).filter((k) => acts.some((a) => a.actor === k));
+const countBy = (attr, v) => acts.filter((a) => a[attr] === v).length;
+
+// The figures are the dives' own, computed the way each dive computes them.
+const profit = byKey('profit'), access = byKey('access'), promo = byKey('public-money');
+const moneyIn = profit ? profit.ledger.filter((r) => r.form).reduce((n, r) => n + (r.amount || 0), 0) : 0;
+const won = access?.ledger.find((r) => r.id === 'won') || null;
+const bannerRows = promo ? promo.ledger.filter((r) => r.kind === 'image' && r.amount) : [];
+const banners = bannerRows.reduce((n, r) => n + r.amount, 0);
+const bannerAgencies = bannerRows.reduce((n, r) => n + (r.agencies || 0), 0);
+const updated = answered.reduce((m, q) => (q.x.updated > m ? q.x.updated : m), '');
+const sources = sourceCount(answered.map((q) => q.x));
+const first = acts[0]?.date, last = acts[acts.length - 1]?.date;
+
+const NAV = [
+  { href: '#questions', label: 'Questions' },
+  { href: '#timeline', label: 'Timeline' },
+  { href: '#dives', label: 'The dives' },
+  { href: '#standards', label: 'Standards' },
+];
+const description = `${section.dek} ${acts.length} documented acts on one timeline, from ${monthYear(first)} to ${monthYear(last)}, filtered by question, kind and who acted.`;
 ---
 
-<Base title="Corruption | Deep Dives" ogTitle="Corruption: Three Questions" description={section.dek}>
+<Base title="Corruption | Deep Dives" ogTitle="Corruption: every documented act, on one timeline" description={description} nav={NAV}>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────── -->
   <div class="hero">
     <div class="wrap">
-      <p class="eyebrow"><a href="/">Deep Dives</a> · A section{updated && ` · Updated ${longDate(updated)}`}</p>
+      <p class="eyebrow"><a href="/">Deep Dives</a> · A section · Updated {longDate(updated)} · {sources} sources</p>
       <h1><span class="accent">Corruption</span>.</h1>
-      {section.intro.map((p) => <p class="deck">{p}</p>)}
-      <p class="sec-count">{questions.length} questions · {answered} answered so far</p>
+
+      <div class="question-card">
+        <p class="qc-lbl">The question</p>
+        <p class="qc-q">{section.question}</p>
+        <p class="qc-lbl">What the record shows</p>
+        <p class="qc-a">
+          {acts.length} documented acts between {monthYear(first)} and {monthYear(last)}, each answering one of
+          {['no', 'one', 'two', 'three', 'four', 'five'][QUESTIONS.length] || QUESTIONS.length} plainer questions: {QUESTIONS.map((q) => q.q.replace(/\?$/, '').toLowerCase()).join(', ')}.
+          Every act below links to the deep dive that documents it, where the money, the explanations and both
+          sides are laid out in full.
+        </p>
+        <p class="qc-rule">{section.intro[0]}</p>
+      </div>
+
+      <div class="hero-body"><div>{section.intro.slice(1).map((p) => <p class="deck">{p}</p>)}</div></div>
+
+      <div class="statrow is-dive" style="--n:4">
+        <div class="stat"><div class="num js-acts-count">{acts.length}</div><div class="lbl">Documented acts, {shortMonthYear(first)} to {shortMonthYear(last)}, matching the filters below</div></div>
+        {profit && <div class="stat"><div class="num">{money(moneyIn, true)}</div><div class="lbl">Came in during 2025, by the exact figures on his own disclosure</div></div>}
+        {won && <div class="stat"><div class="num">{money(won.amount, true)}+</div><div class="lbl">In new or expanded federal contracts to 14 ballroom donors in six months, per Public Citizen</div></div>}
+        {promo && <div class="stat"><div class="num">{money(banners, true)}</div><div class="lbl">In contracts for banners of the president at {bannerAgencies} federal agencies, found so far</div></div>}
+      </div>
+
+      <p class="readme-line">
+        Everything on this page is reporting drawn from the dives beneath it: {sources} sources, each fact linked
+        to where it came from, every quotation checked word for word. Opinion lives only in each dive’s labeled
+        take. <a href="#standards">How these are built ↓</a>
+      </p>
     </div>
   </div>
 
+  <!-- ── THE QUESTIONS ────────────────────────────────────────────────── -->
   <section id="questions" aria-label="The questions">
     <div class="wrap">
-      <ol class="q-list">
-        {questions.map((q) => (
-          <li class="q-item">
-            <div class="q-head">
-              <span class="q-n">{q.n}</span>
-              <div>
-                <h2 class="q-q">{q.q}</h2>
-                <p class="q-text">{q.text}</p>
-              </div>
-            </div>
-            {q.card ? (
-              <a class="dive-card" href={`/${q.card.slug}`}>
-                <div>
-                  <p class="kicker">{q.card.kicker}</p>
-                  <h3>{q.card.title}</h3>
-                  <p class="dek">{q.card.dek}</p>
-                  <p class="meta"><strong>{q.card.status}</strong> · {q.card.events} events · {q.card.sources} sources · Updated {longDate(q.card.updated)}</p>
-                </div>
-                <span class="go">Read the dive →</span>
-              </a>
-            ) : (
-              <div class="q-pending">
-                <p><strong>No dive yet.</strong> This one is next in line.</p>
-                {q.research && <a href={q.research.url} target="_blank" rel="noopener noreferrer">Until then: {q.research.label} ↗</a>}
-              </div>
-            )}
-          </li>
+      <div class="sec-head">
+        <p class="kicker">Start with a question</p>
+        <h2>{QUESTIONS.length} questions</h2>
+        <p class="sub">Each is answered by its own deep dive. Pick one to show only its acts on the timeline.</p>
+      </div>
+      <div class="q-tiles">
+        {QUESTIONS.map((q) => (
+          <div class={`q-tile${q.x ? '' : ' is-pending'}`}>
+            <button type="button" class="q-tile-btn" data-goto-q={q.key} disabled={!q.x}>
+              <span class="q-tile-n">{q.n}</span>
+              <span class="q-tile-q">{q.q}</span>
+              <span class="q-tile-count">{q.x ? `${q.events} ${q.events === 1 ? 'act' : 'acts'} · ${q.sources} sources` : 'No dive yet'}</span>
+            </button>
+            <p class="q-tile-text">{q.text}</p>
+            {q.x
+              ? <a class="q-tile-dive" href={`/${q.dive}`}>{q.title}: the dive →</a>
+              : <span class="q-tile-dive is-pending">Next in line</span>}
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
   </section>
 
+  <!-- ── THE TIMELINE ─────────────────────────────────────────────────── -->
+  <section id="timeline" aria-label="The timeline" class="timeline-page">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Every act, in order</p>
+        <h2>The timeline</h2>
+        <p class="sub">
+          One line per act. Filter by question, by what the act was about, and by who acted; open a line for
+          the account and its sources, or follow it into the dive. The filters live in the address, so a view
+          can be sent to someone.
+        </p>
+      </div>
+      <div class="actor-legend" aria-hidden="true">
+        {actorsUsed.map((k) => <span><i style={`background:${ACTORS[k].color}`}></i>{ACTORS[k].label}</span>)}
+      </div>
+    </div>
+
+    <div class="filterbar" id="filterbar">
+      <div class="wrap">
+        <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="true" aria-controls="filter-rows">
+          <span class="ft-label">Filters</span>
+          <span class="ft-summary" id="filter-summary">All</span>
+          <span class="ft-count"><span class="js-acts-count">{acts.length}</span> shown</span>
+          <span class="ft-caret" aria-hidden="true"></span>
+        </button>
+        <div class="filter-rows" id="filter-rows">
+          <div class="filter-rows-inner">
+            <div class="chiprow">
+              <span class="rowlbl">Question</span>
+              <button class="chip is-on" data-q="all">All</button>
+              {answered.map((q) => <button class="chip" data-q={q.key}>{q.n} {q.short} ({q.events})</button>)}
+              <span class="result-count"><span class="js-acts-count">{acts.length}</span> / {acts.length} shown</span>
+            </div>
+            <div class="chiprow">
+              <span class="rowlbl">About</span>
+              <button class="chip is-on" data-kind="all">All</button>
+              {kindsUsed.map((k) => <button class="chip" data-kind={k}>{KINDS[k]} ({countBy('kind', k)})</button>)}
+            </div>
+            <div class="chiprow">
+              <span class="rowlbl">Who acted</span>
+              <button class="chip is-on" data-who="all">All</button>
+              {actorsUsed.map((k) => <button class="chip" data-who={k} style={`--chip-c:${ACTORS[k].color}`}>{ACTORS[k].label} ({countBy('actor', k)})</button>)}
+              <button type="button" id="mode-toggle" class="mode-toggle in-bar" aria-pressed="true">Show everything</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <!-- The two years at a glance: one cell per month, a dot per act in its actor's color. -->
+      <nav class="daystrip is-months" aria-label="Jump to a month">
+        {months.map((m) => (
+          <a class="ds-cell" href={`#m-${m.key}`} data-month={m.key}>
+            <span class="ds-date">{shortMonthYear(m.first)}</span>
+            <span class="ds-count">
+              <span class="ds-dots" aria-hidden="true">{m.acts.map((a) => <i data-q={a.q} data-kind={a.kind} data-actor={a.actor} style={`background:${ACTORS[a.actor].color}`}></i>)}</span>
+              <span class="ds-cnt"><span class="ds-n">{m.acts.length}</span> <span class="ds-u">{m.acts.length === 1 ? 'act' : 'acts'}</span></span>
+            </span>
+            <span class="ds-lead">{m.acts[0].title}</span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="days" id="acts">
+        {months.map((m) => (
+          <div class="day" id={`m-${m.key}`} data-month={m.key}>
+            <h3 class="day-head"><span class="dow">{monthYear(m.first)}</span> <span class="cnt"><span class="cnt-n">{m.acts.length}</span> <span class="cnt-u">{m.acts.length === 1 ? 'act' : 'acts'}</span></span></h3>
+            <ol class="events">
+              {m.acts.map((a) => (
+                <li class="ev is-closed" id={a.anchor} data-q={a.q} data-kind={a.kind} data-actor={a.actor} data-date={a.date}>
+                  <div class="ev-meta">
+                    <span class="ev-date">{a.monthOnly ? monthYear(a.date) : `${weekday(a.date).slice(0, 3)} ${shortDate(a.date)}`}</span>
+                    <span class="actor-chip">{ACTORS[a.actor].label}</span>
+                    <span class="q-tag">{a.n} {a.qLabel}</span>
+                    <span class="kind-tag">{KINDS[a.kind]}</span>
+                    <a class="ev-dive" href={`/${a.dive}#${a.anchor}`} title={`This act in ${a.diveTitle}`}>In the dive ↗</a>
+                  </div>
+                  <h3><button type="button" class="ev-t" aria-expanded="false">{a.title}</button></h3>
+                  <div class="ev-body">
+                    {a.body.map((p) => <p>{p}</p>)}
+                    <Sources sources={a.sources} />
+                    <p class="ev-more"><a href={`/${a.dive}#${a.anchor}`}>Read this in {a.diveTitle} →</a></p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+      <p class="filter-empty" id="filter-empty" hidden>No act matches those filters. <button type="button" class="linklike" id="filter-reset">Show all {acts.length}</button></p>
+    </div>
+  </section>
+
+  <!-- ── THE DIVES ────────────────────────────────────────────────────── -->
+  <section id="dives" aria-label="The deep dives">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Go deeper</p>
+        <h2>The dives</h2>
+        <p class="sub">Each question has its own page: the ledger of who paid what, the explanations set against the documents, who objected and who defended it, the rules, and a labeled take.</p>
+      </div>
+      <div class="dive-list">
+        {answered.map((q) => (
+          <a class="dive-card" href={`/${q.dive}`}>
+            <div>
+              <p class="kicker"><span class="q-num">{q.n}</span>{q.q}</p>
+              <h3>{q.title}</h3>
+              <p class="dek">{q.reg?.dek}</p>
+              <p class="meta"><strong>{q.x.meta.status}</strong> · {q.events} events · {q.sources} sources · Updated {longDate(q.x.updated)}</p>
+            </div>
+            <span class="go">Read the dive →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STANDARDS ────────────────────────────────────────────────────── -->
   <section id="standards" aria-label="How these are built">
     <div class="wrap">
       <div class="sec-head">
@@ -74,13 +289,182 @@ const updated = questions.reduce((m, q) => (q.card && q.card.updated > m ? q.car
       <div class="method-grid">
         <div class="method-card">
           <h3>From the record</h3>
-          <ul><li>Every dive is written from Trump Tracker entries that have already been through its validation protocol, with court filings and contracts linked directly wherever they exist.</li></ul>
+          <ul><li>Every act on this page is an event from one of the dives, written from Trump Tracker entries that have already been through its validation protocol, with court filings and contracts linked directly wherever they exist. Nothing is added here that is not in a dive.</li></ul>
         </div>
         <div class="method-card">
           <h3>Overlap is not proof</h3>
-          <ul><li>When donors later win government business, the pages say so and say what it does and does not show. A pattern is reported as a pattern, not as a bribe.</li></ul>
+          <ul><li>When donors later win government business, the pages say so and say what it does and does not show. A pattern is reported as a pattern, not as a bribe. The word corruption is used as the section defines it above: public power used for private benefit. That is a definition, not a verdict on any one act.</li></ul>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const acts = [...document.querySelectorAll<HTMLElement>('.days .ev')];
+    const dots = [...document.querySelectorAll<HTMLElement>('.daystrip i[data-q]')];
+    const counts = [...document.querySelectorAll<HTMLElement>('.js-acts-count')];
+    const summary = document.getElementById('filter-summary');
+    const empty = document.getElementById('filter-empty');
+    const timeline = document.getElementById('timeline')!;
+    type Key = 'q' | 'kind' | 'who';
+    const KEYS: Key[] = ['q', 'kind', 'who'];
+    const ATTR: Record<Key, string> = { q: 'q', kind: 'kind', who: 'actor' };
+    const state: Record<Key, string> = { q: 'all', kind: 'all', who: 'all' };
+    const chips = (k: Key) => [...document.querySelectorAll<HTMLElement>(`.chip[data-${k}]`)];
+
+    const matches = (el: HTMLElement) => KEYS.every((k) => state[k] === 'all' || el.dataset[ATTR[k]] === state[k]);
+    const plural = (n: number) => (n === 1 ? 'act' : 'acts');
+
+    // ── the filters ──
+    // Chips set the state; the state hides acts, empties months, dims the month
+    // strip, updates every count, and writes itself into the address.
+    const apply = () => {
+      let shown = 0;
+      acts.forEach((a) => { const ok = matches(a); a.classList.toggle('is-hidden', !ok); if (ok) shown++; });
+      document.querySelectorAll<HTMLElement>('.days .day').forEach((d) => {
+        const n = d.querySelectorAll('.ev:not(.is-hidden)').length;
+        d.classList.toggle('is-hidden', n === 0);
+        const c = d.querySelector('.cnt-n'), u = d.querySelector('.cnt-u');
+        if (c) c.textContent = String(n);
+        if (u) u.textContent = plural(n);
+      });
+      dots.forEach((i) => i.classList.toggle('is-hidden', !matches(i)));
+      document.querySelectorAll<HTMLElement>('.daystrip .ds-cell').forEach((cell) => {
+        const n = cell.querySelectorAll('i:not(.is-hidden)').length;
+        cell.classList.toggle('is-empty', n === 0);
+        const c = cell.querySelector('.ds-n'), u = cell.querySelector('.ds-u');
+        if (c) c.textContent = String(n);
+        if (u) u.textContent = plural(n);
+      });
+      counts.forEach((el) => { el.textContent = String(shown); });
+      if (empty) empty.hidden = shown > 0;
+      KEYS.forEach((k) => chips(k).forEach((c) => c.classList.toggle('is-on', c.dataset[k] === state[k])));
+      const p = new URLSearchParams();
+      KEYS.forEach((k) => { if (state[k] !== 'all') p.set(k, state[k]); });
+      const qs = p.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+      if (summary) {
+        const on = KEYS.map((k) => (state[k] === 'all' ? null : chips(k).find((c) => c.dataset[k] === state[k])?.textContent?.replace(/\s*\(\d+\)$/, '').trim())).filter(Boolean);
+        summary.textContent = on.length === 0 ? 'All' : on.length === 1 ? on[0]! : on.length + ' filters';
+      }
+    };
+    KEYS.forEach((k) => chips(k).forEach((c) => c.addEventListener('click', () => { state[k] = c.dataset[k]!; apply(); })));
+    const reset = () => { KEYS.forEach((k) => { state[k] = 'all'; }); apply(); };
+    document.getElementById('filter-reset')?.addEventListener('click', reset);
+
+    // A question tile filters to that question and goes to the timeline.
+    document.querySelectorAll<HTMLElement>('[data-goto-q]').forEach((tile) => tile.addEventListener('click', () => {
+      state.q = tile.dataset.gotoQ!; state.kind = 'all'; state.who = 'all';
+      apply();
+      timeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    }));
+
+    // Filters arrive in the address.
+    const params = new URLSearchParams(location.search);
+    KEYS.forEach((k) => { const v = params.get(k); if (v && chips(k).some((c) => c.dataset[k] === v)) state[k] = v; });
+
+    // ── headlines only, or everything ──
+    // Every act starts closed: this is a timeline, so the titles are the reading.
+    const mode = document.getElementById('mode-toggle');
+    const paint = () => {
+      const allClosed = acts.every((a) => a.classList.contains('is-closed'));
+      if (mode) { mode.textContent = allClosed ? 'Show everything' : 'Headlines only'; mode.setAttribute('aria-pressed', String(allClosed)); }
+      acts.forEach((a) => a.querySelector('.ev-t')?.setAttribute('aria-expanded', String(!a.classList.contains('is-closed'))));
+    };
+    mode?.addEventListener('click', () => {
+      const open = acts.every((a) => a.classList.contains('is-closed'));
+      acts.forEach((a) => a.classList.toggle('is-closed', !open));
+      paint();
+    });
+    acts.forEach((a) => a.querySelector('.ev-t')?.addEventListener('click', () => { a.classList.toggle('is-closed'); paint(); }));
+
+    // An act someone was sent a link to is shown and open, whatever the filters were.
+    // On arrival the jump is instant (the page scrolls smoothly by default, and a smooth
+    // scroll started during loading can be cut short) and is repeated once the fonts are
+    // in, because the browser's own jump happens while the filters may still be hiding
+    // the act.
+    const openFromHash = (smooth = true) => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const el = id && document.getElementById(id);
+      if (!el || !el.classList.contains('ev')) return;
+      if (!matches(el)) reset();
+      el.classList.remove('is-closed');
+      paint();
+      const html = document.documentElement;
+      if (!smooth) html.style.scrollBehavior = 'auto';
+      el.scrollIntoView({ block: 'start' });
+      if (!smooth) html.style.scrollBehavior = '';
+    };
+    addEventListener('hashchange', () => openFromHash());
+
+    apply();
+    paint();
+    if (location.hash) {
+      openFromHash(false);
+      addEventListener('load', () => openFromHash(false), { once: true });
+      document.fonts?.ready.then(() => openFromHash(false));
+    }
+
+    // ── the filter bar ──
+    // It is sticky, and its three wrapping rows are most of a viewport. Collapse it to
+    // one line once the reader scrolls into the acts; a click reopens it, and it opens
+    // again by itself above the acts.
+    (() => {
+      const bar = document.getElementById('filterbar');
+      const toggle = document.getElementById('filter-toggle');
+      const rows = document.getElementById('filter-rows');
+      const record = document.getElementById('acts');
+      if (!bar || !toggle || !record) return;
+      let pinnedOpen = false;
+      let lastY = window.scrollY;
+      const setCollapsed = (collapsed: boolean) => {
+        bar.classList.toggle('is-collapsed', collapsed);
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+        if (rows) (rows as any).inert = collapsed;
+      };
+      toggle.addEventListener('click', () => {
+        const nowCollapsed = !bar.classList.contains('is-collapsed');
+        setCollapsed(nowCollapsed);
+        pinnedOpen = !nowCollapsed;
+      });
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        const scrollingDown = y > lastY + 4;
+        lastY = y;
+        if (record.getBoundingClientRect().top > -120) { pinnedOpen = false; setCollapsed(false); return; }
+        if (scrollingDown && !pinnedOpen) setCollapsed(true);
+      }, { passive: true });
+      // A month link collapses the bar first, so the month lands under the one-line bar
+      // rather than under three rows that are about to fold away.
+      document.querySelectorAll<HTMLAnchorElement>('.daystrip .ds-cell').forEach((a) => a.addEventListener('click', (ev) => {
+        const target = document.getElementById(a.getAttribute('href')!.slice(1));
+        if (!target) return;
+        ev.preventDefault();
+        pinnedOpen = false; setCollapsed(true);
+        setTimeout(() => { history.pushState(null, '', a.getAttribute('href')); target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }, reduce ? 0 : 240);
+      }));
+      // The sticky month headings and the jump targets sit under the bar, whose
+      // height changes as its rows wrap and collapse. Publish it.
+      const publish = () => document.documentElement.style.setProperty('--filter-h', bar.offsetHeight + 'px');
+      publish();
+      new ResizeObserver(publish).observe(bar, { box: 'border-box' });
+    })();
+
+    // ── scroll-spy on the section nav (the topbar's, and the phone rail's) ──
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.topnav a, .subnav a')];
+    const rail = document.querySelector<HTMLElement>('.subnav-inner');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id));
+        const on = rail?.querySelector<HTMLElement>(`a[href="#${e.target.id}"]`);
+        if (rail && on && rail.offsetParent) rail.scrollTo({ left: on.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    [...new Set(links.map((l) => l.getAttribute('href') || '').filter((h) => h.startsWith('#')).map((h) => h.slice(1)))].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  </script>
 </Base>

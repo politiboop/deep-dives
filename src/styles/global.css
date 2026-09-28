@@ -1126,6 +1126,82 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 .question-card .ev-src { margin-top: 8px; }
 .question-card + .status-strip { margin-top: 18px; }
 
+/* ── the corruption page: every act on one timeline, filtered ──────────── */
+.q-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 900px) { .q-tiles { grid-template-columns: 1fr; } }
+.q-tile {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--surface); border: 1px solid var(--line-soft); border-top: 3px solid var(--text-2);
+  border-radius: 8px; padding: 18px 20px 20px;
+}
+.q-tile.is-pending { border-style: dashed; }
+.q-tile-btn { all: unset; display: block; cursor: pointer; }
+.q-tile-btn:disabled { cursor: default; }
+.q-tile-btn:focus-visible { outline: 2px solid var(--st-court); outline-offset: 4px; border-radius: 4px; }
+.q-tile-n { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--text-3); }
+.q-tile-q {
+  display: block; margin-top: 6px;
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(24px, 2.6vw, 30px); line-height: 1.05; color: var(--text);
+}
+.q-tile-btn:not(:disabled):hover .q-tile-q { color: var(--brand-bright); }
+.q-tile-count { display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--brand-bright); }
+.q-tile.is-pending .q-tile-count { color: var(--text-3); }
+.q-tile-text { font-size: 14.5px; line-height: 1.55; color: var(--text-2); }
+.q-tile-dive {
+  margin-top: auto; align-self: flex-start;
+  font-family: var(--font-mono); font-size: 12px; color: var(--text); text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.q-tile-dive:hover { border-color: var(--text-2); }
+.q-tile-dive.is-pending { color: var(--text-3); border-color: transparent; }
+
+/* The shared filter bar, under this site's taller header, opaque, and collapsible at
+   every width: three wrapping rows of chips are most of a viewport, and the reader is
+   scrolling a timeline. The shared half only collapses it on a phone. */
+.timeline-page .filterbar { top: var(--head-h); background: var(--bg); padding: 10px 0; transition: padding 0.22s ease; }
+.timeline-page .chip, .timeline-page .chiprow .rowlbl, .timeline-page .result-count { font-size: 12px; }
+.timeline-page .filter-toggle {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  background: none; border: 0; padding: 2px 0; cursor: pointer;
+  font-family: var(--font-mono); font-size: 12px; text-align: left; color: var(--text-2);
+}
+.timeline-page .ft-label { letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); flex-shrink: 0; }
+.timeline-page .ft-summary { color: var(--text); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.timeline-page .ft-count { margin-left: auto; color: var(--text-3); flex-shrink: 0; }
+.timeline-page .ft-caret {
+  flex-shrink: 0; width: 9px; height: 9px; margin-left: 2px;
+  border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3);
+  transform: rotate(45deg) translate(-2px, -2px); transition: transform 0.22s ease;
+}
+.timeline-page .filterbar:not(.is-collapsed) .ft-caret { transform: rotate(-135deg) translate(-2px, -2px); }
+.timeline-page .filterbar:not(.is-collapsed) .ft-summary, .timeline-page .filterbar:not(.is-collapsed) .ft-count { display: none; }
+.timeline-page .filter-rows-inner { padding-top: 10px; }
+.timeline-page .filterbar.is-collapsed .filter-rows { grid-template-rows: 0fr; }
+.timeline-page .filterbar.is-collapsed .filter-rows-inner { overflow: hidden; padding-top: 0; }
+.chip[data-who].is-on { background: var(--chip-c, var(--text)); border-color: var(--chip-c, var(--text)); color: #0b0d10; }
+.filterbar .mode-toggle.in-bar { margin: 0 0 0 auto; }
+.filter-empty { margin: 10px 0 30px; font-size: 15px; color: var(--text-2); }
+.timeline-page .daystrip { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+
+/* Each line carries the question it answers and what it is about, as text. */
+.q-tag {
+  color: var(--text); text-transform: uppercase; font-weight: 500;
+  border: 1px solid var(--line); border-radius: 3px; padding: 2px 7px;
+}
+.kind-tag { color: var(--text-2); text-transform: uppercase; }
+.ev-dive { margin-left: auto; color: var(--text-2); text-decoration: none; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.ev-dive:hover { color: var(--text); border-color: var(--text-2); }
+.ev-more { margin-top: 12px; font-size: 14.5px; }
+.ev-more a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
+.ev-more a:hover { border-color: var(--text-2); }
+.ev.is-hidden, .day.is-hidden, .daystrip i.is-hidden { display: none; }
+.ds-cell.is-empty { opacity: 0.4; }
+/* Jump targets and the sticky month heading clear the filter bar where there is one. */
+.timeline-page .day-head { top: calc(var(--head-h) + var(--filter-h, 0px)); }
+.timeline-page .day { scroll-margin-top: calc(var(--head-h) + var(--filter-h, 0px)); }
+.timeline-page .ev { scroll-margin-top: calc(var(--head-h) + var(--filter-h, 0px) + 56px); }
+
 /* ── section pages: a set of questions, each answered by a dive ─────────── */
 .sec-count { margin-top: 18px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
 .q-list { list-style: none; display: grid; gap: 34px; }

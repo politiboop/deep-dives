@@ -206,6 +206,7 @@
         {
           "actor": "congress",
           "title": "Schiff reports banners of Trump on federal buildings",
+          "kind": "banners",
           "body": [
             "Sen. Adam Schiff's office reported that the Agriculture Department spent $16,400 on two banners of Trump and Abraham Lincoln, and the Labor Department about $6,000 on banners including Trump's portrait over the words \"American Workers First.\" A third contract, $33,726 at Health and Human Services, paid for \"Make America Healthy Again\" signs. Schiff called the spending illegal, citing prohibitions in federal spending laws since 1951 on taxpayer spending \"for publicity or propaganda purposes.\"",
             "The Labor Department said its banners were made for Labor Day and the country's 250th anniversary. The White House called Schiff a \"serial liar.\""
@@ -237,6 +238,7 @@
         {
           "actor": "wh",
           "title": "A banner of the president goes up on the Justice Department",
+          "kind": "banners",
           "body": [
             "Work crews hung a banner with Trump's portrait and the words \"Make America Safe Again\" on the headquarters of the Justice Department. A department spokesperson: \"We are proud at this Department of Justice to celebrate 250 years of our great country and our historic work to make America safe again at President Trump's direction.\" Former Republican Rep. Barbara Comstock: \"Nothing says Justice is Blind like hanging a Dear Leader Banner at DOJ.\""
           ],
@@ -263,6 +265,7 @@
         {
           "actor": "wh",
           "title": "Noem is fired after a $220 million ad campaign that starred her",
+          "kind": "ads",
           "body": [
             "Trump fired Homeland Security Secretary Kristi Noem after a scandal over a $220 million taxpayer-funded advertising campaign that featured her on horseback. The biggest no-bid contract went to a firm incorporated days before it was awarded. Noem had testified that Trump approved the campaign. A White House spokesperson told NBC News: \"POTUS did not sign off on a $220 MILLION dollar ad campaign. Absolutely not.\""
           ],
@@ -289,6 +292,7 @@
         {
           "actor": "wh",
           "title": "The White House launches an app",
+          "kind": "channels",
           "body": [
             "After cryptic teaser videos on its official accounts, the White House released an app with live-streamed briefings, press releases presented as news and an ICE tip line. CNBC reported that it \"curates favorable news articles\" and left out unfavorable data, such as rising oil prices."
           ],
@@ -311,6 +315,7 @@
         {
           "actor": "wh",
           "title": "The app goes onto federal employees' work phones",
+          "kind": "channels",
           "body": [
             "The federal chief information officer asked agencies to push the app onto government-issued phones. The FAA told its staff it \"will automatically install 'The White House' application on all FAA-issued iPhones and iPads, as mandated by the White House.\" David Nesting, a former deputy chief information officer at the Office of Personnel Management: \"It's just making sure all federal employees are forced to see the same propaganda they push.\""
           ],
@@ -337,6 +342,7 @@
         {
           "actor": "congress",
           "title": "Schiff finds more banner contracts, and the Justice Department's bill nears $1 million",
+          "kind": "banners",
           "body": [
             "Schiff found $39,000 in contracts for a banner at the Interior Department and $114,020 for the FAA, running through 2027. Records Politico obtained showed the Justice Department paid a $892,192.07 base contract for its banners and $54,768 more. Schiff: \"an eight-story high Donald Trump head certainly qualifies as propaganda.\"",
             "The White House did not respond directly to questions about the contracts' legality. Its spokesman said Schiff was willing \"to trash the United States of America during its semiquincentennial celebration simply because he hates President Trump.\""
@@ -365,6 +371,7 @@
           "time": "7 p.m.",
           "actor": "wh",
           "title": "The White House launches Trump TV",
+          "kind": "channels",
           "body": [
             "Three days after banning three news organizations, the White House launched \"Trump TV: The Essentials Station,\" a 24-hour stream of its own past video. Its head of digital strategy, Kaelan Dorr, called it \"a livestream of the Administration's greatest hits, unfiltered.\" It opened, NOTUS reported, \"with a two-month-old clip of the president speaking at Mount Rushmore.\""
           ],
@@ -392,6 +399,7 @@
           "time": "Overnight",
           "actor": "wh",
           "title": "An ad airs: \"paid for by the U.S. government\"",
+          "kind": "ads",
           "body": [
             "A thirty-second spot of the president's record and message ran during conservative shows on Fox News and Newsmax, closing with the line \"paid for by the U.S. government.\" AdImpact put the buy at $14,000. The White House had posted a 15-second version on its official YouTube channel on September 13. It called the ad \"educational and unapologetically patriotic\" and did not say what agency paid for it.",
             "Two Republican senators objected. Thom Tillis: \"using taxpayer dollars, it feels like Viktor Orban.\" John Kennedy: \"I don't generally like to see politicians use public money to pay for their own campaign ads.\""
@@ -423,6 +431,7 @@
         {
           "actor": "wh",
           "title": "A second ad, on the national networks",
+          "kind": "ads",
           "body": [
             "CBS News reported that the ad began running on national networks, CBS among them, and that a second government-paid ad, recounting the U.S. capture of former Venezuelan President Nicolás Maduro and featuring Trump and his top Cabinet officials, aired on CBS stations and other networks that evening. There are 30- and 60-second versions. The government produced the content and paid for the air time through an ad agency, CBS reported.",
             "The musician JMSN said he never licensed the song: \"I would never authorize my music to be used for ANY political agenda or campaign.\" A White House official told CBS the ads \"are clearly not political.\""
@@ -441,6 +450,7 @@
         {
           "actor": "congress",
           "title": "Democrats demand the cost, then that the ads come down",
+          "kind": "ads",
           "body": [
             "Sen. Maggie Hassan asked chief of staff Susie Wiles for the cost, the contractors, the source of the funding and whether money was diverted from federal agencies. The top Democratic appropriators, Sens. Patty Murray and Jack Reed and Reps. Rosa DeLauro and Steny Hoyer, demanded that it be pulled: \"This is the sort of government propaganda one might expect in North Korea, not the United States of America, and it is an egregious and illegal misuse of Americans' hard-earned tax dollars.\""
           ],
@@ -459,6 +469,7 @@
         {
           "actor": "wh",
           "title": "A third spot, and a defense: \"Nothing New\"",
+          "kind": "ads",
           "body": [
             "A minute-long ad began airing on Newsmax with video of Mount Rushmore at night and clips of Trump's Fourth of July speech there: \"This is only the beginning of the golden age of America.\" The White House published \"Presidential Public Service Announcements Are Nothing New,\" calling the criticism \"highly dishonest\" and citing a Bush-era Medicare campaign, Obama's EPA and Biden's vaccination drive. NBC News noted that the Government Accountability Office had faulted the Bush campaign for not disclosing the government as its source and the Obama one for violating \"publicity or propaganda and anti-lobbying provisions.\""
           ],
@@ -480,6 +491,7 @@
         {
           "actor": "press",
           "title": "A watchdog asks GAO and the Office of Special Counsel to rule",
+          "kind": "ads",
           "body": [
             "Public Citizen filed a complaint alleging the ads violate the laws against using government resources for propaganda and, for the staff involved, the Hatch Act. Co-president Lisa Gilbert: \"Taxpayer funds cannot pay for partisan political propaganda.\""
           ],
@@ -498,6 +510,7 @@
         {
           "actor": "wh",
           "title": "A 2024 campaign ad airs during NFL games, now \"Paid for by the U.S. Government\"",
+          "kind": "ads",
           "body": [
             "A thirty-second black-and-white spot of Trump walking down a hallway, which the Associated Press called \"virtually identical to one that aired in 2024,\" ran during Fox's broadcasts of two NFL games, CNN reported. Trump in it: \"We will throw off the sick political class that hates our country. We will rout the fake news media, and we will liberate America from these villains once and for all.\" NBC News reported that the government version drops the campaign ending and adds \"Paid for by the U.S. government.\" AdImpact put spending on the ads at more than $1.7 million."
           ],
@@ -519,6 +532,7 @@
         {
           "actor": "congress",
           "title": "Republicans object, on camera",
+          "kind": "ads",
           "body": [
             "Sen. John Kennedy of Louisiana, on CBS's \"Face the Nation\": \"I don't think any public official, including President Trump or Kristi Noem or John Kennedy, should spend public money on private ads for themselves.\" Rep. Thomas Massie of Kentucky: \"Don't worry, using taxpayer dollars to run ominous campaign ads of the President has been done before and is completely legal… in banana republics.\""
           ],

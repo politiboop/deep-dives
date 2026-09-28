@@ -117,37 +117,37 @@ const dive = {
 
   days: [
     { date: '2025-07-31', month: true, events: [
-      { actor: 'wh', title: 'The White House announces a ballroom, paid for by private donors',
+      { actor: 'wh', title: 'The White House announces a ballroom, paid for by private donors', kind: 'donors',
         body: ['The White House announced it would demolish the historic East Wing and replace it with a ballroom funded entirely by private corporate donors. Cost estimates later rose from $200 million to $300 million and then to $400 million.'],
         sources: srcs(WH_REL, TIME_B, ABC_DONORS) },
     ] },
     { date: '2025-10-20', events: [
-      { actor: 'wh', title: 'The East Wing comes down, and the first architect steps aside',
+      { actor: 'wh', title: 'The East Wing comes down, and the first architect steps aside', kind: 'building',
         body: ['Demolition of the East Wing began in the week of October 20. The ballroom\'s first architect, James McCrery II, a Trump appointee to the Commission of Fine Arts, withdrew that week.'],
         sources: srcs(WAPO_ARCH, NBC_LIST) },
     ] },
     { date: '2025-10-23', events: [
-      { actor: 'wh', title: 'The donor list: 37 names, no amounts',
+      { actor: 'wh', title: 'The donor list: 37 names, no amounts', kind: 'donors',
         body: ['The White House released the names of 37 donors, among them Apple, Amazon, Google, Microsoft and Meta and defense contractors such as Lockheed Martin, but refused to disclose how much each gave. Alphabet pledged $22 million of a settlement. Ethics watchdogs warned that private funding gives wealthy donors unfair access to the president.'],
         sources: srcs(CNN_LIST, NBC_LIST, FORTUNE) },
     ] },
     { date: '2025-12-15', month: true, events: [
-      { actor: 'press', title: 'The National Trust for Historic Preservation sues',
+      { actor: 'press', title: 'The National Trust for Historic Preservation sues', kind: 'building',
         body: ['The Trust sued in December, a week after the White House finished demolishing the East Wing, arguing that the Constitution and federal statutes require Congress to authorize construction on White House grounds.'],
         sources: srcs(CNBC_WHCD, AP_WHCD) },
     ] },
     { date: '2026-03-31', events: [
-      { actor: 'court', title: 'A judge blocks the ballroom: "He is not, however, the owner!"',
+      { actor: 'court', title: 'A judge blocks the ballroom: "He is not, however, the owner!"', kind: 'building',
         body: ['Judge Richard J. Leon, a George W. Bush appointee, blocked above-ground construction while allowing underground work and anything "strictly necessary" for security. "The President of the United States is the steward of the White House for future generations of First Families. He is not, however, the owner!" He found that "no statute comes close to giving the President the authority he claims to have" and ordered: "Unless and until Congress blesses this project through statutory authorization, construction has to stop!"'],
         sources: srcs(AJ_LEON, SPECTRUM, ABC_LEON) },
     ] },
     { date: '2026-04-11', events: [
-      { actor: 'court', title: 'An appeals court lets construction continue',
+      { actor: 'court', title: 'An appeals court lets construction continue', kind: 'building',
         body: ['A federal appeals court in Washington paused the injunction before it took effect, and construction went on while the case proceeded.'],
         sources: srcs(NPR_APPEAL, CNN_APPEAL) },
     ] },
     { date: '2026-04-26', events: [
-      { actor: 'wh', title: 'After a shooting, the Justice Department asks the Trust to drop the suit',
+      { actor: 'wh', title: 'After a shooting, the Justice Department asks the Trust to drop the suit', kind: 'building',
         body: [
           'Within a day of the shooting at the White House Correspondents\' Dinner, Assistant Attorney General Brett Shumate wrote that the suit "puts the lives of the President, his family, and his staff at great risk" and asked the Trust to dismiss it.',
           'The Trust refused on April 27. Its lawyer, Gregory Craig: "Simply put, this case does not jeopardize the President\'s safety in any way." He added: "And nothing prevents you from asking Congress at any time for the necessary authorization required by the Constitution and federal law."',
@@ -155,47 +155,47 @@ const dive = {
         sources: srcs(CNBC_WHCD, AP_WHCD) },
     ] },
     { date: '2026-04-28', events: [
-      { actor: 'congress', title: 'Republican senators propose paying for it with customs and park fees',
+      { actor: 'congress', title: 'Republican senators propose paying for it with customs and park fees', kind: 'security-money',
         body: ['Sens. Lindsey Graham, Eric Schmitt and Katie Britt pushed a bill to fund the ballroom with customs and national park user fees, and Graham said the White House supports it. In the House, Rep. Lauren Boebert said "hardly any" taxpayer money would be involved.'],
         sources: srcs(INDY_GOP) },
     ] },
     { date: '2026-05-05', events: [
-      { actor: 'congress', title: 'A billion dollars for ballroom security goes into an immigration bill',
+      { actor: 'congress', title: 'A billion dollars for ballroom security goes into an immigration bill', kind: 'security-money',
         body: ['A $72 billion Republican package for immigration enforcement included $1 billion for the ballroom, which, HuffPost reported, the package specifies is "for the Secret Service to use for security-related aspects."'],
         sources: srcs(HUFF_ICE, BBC_BYRD) },
     ] },
     { date: '2026-05-17', events: [
-      { actor: 'congress', title: 'The Senate parliamentarian strikes the billion dollars',
+      { actor: 'congress', title: 'The Senate parliamentarian strikes the billion dollars', kind: 'security-money',
         body: ['Parliamentarian Elizabeth MacDonough ruled that the provision failed the Byrd rule, which keeps extraneous items out of budget bills. A spokesman for Majority Leader John Thune: "Redraft. Refine. Resubmit. None of this is abnormal during a Byrd process."'],
         sources: srcs(BBC_BYRD, POL_BYRD) },
     ] },
     { date: '2026-06-04', events: [
-      { actor: 'press', title: 'Ballroom donors won $50 billion in contracts, a watchdog finds',
+      { actor: 'press', title: 'Ballroom donors won $50 billion in contracts, a watchdog finds', kind: 'contracts',
         body: ['Public Citizen found that 14 of the 27 publicly identified corporate donors had won new or expanded federal contracts worth more than $50 billion in the six months after fundraising began, about $43.8 billion of it to Lockheed Martin. It also noted that many of the same companies face federal enforcement actions, or have had them suspended, under this administration.'],
         sources: srcs(WAPO_PC, MEDIAITE_PC, TNR_PC) },
     ] },
     { date: '2026-06-05', events: [
-      { actor: 'court', title: 'In the appeals court: "nothing can be done?"',
+      { actor: 'court', title: 'In the appeals court: "nothing can be done?"', kind: 'building',
         body: ['Judge Patricia Millett asked a Justice Department lawyer, as Politico transcribed it: "If the government decides very quickly to bulldoze the Statue of Liberty, the people whose ancestors—that was the first thing they saw coming to this country, but the government moved too fast—nothing can be done?" He answered, "I think that\'s right, yes."'],
         sources: srcs(TNR_BULL, ABC_BULL, LC_BULL) },
     ] },
     { date: '2026-06-16', events: [
-      { actor: 'wh', title: 'The budget office releases $351.6 million for "White House Security Measures"',
+      { actor: 'wh', title: 'The budget office releases $351.6 million for "White House Security Measures"', kind: 'security-money',
         body: ['The Office of Management and Budget released $351.6 million to the Secret Service, drawn from a roughly $1.17 billion Secret Service appropriation in the reconciliation package. The construction contractor had estimated roughly $300 million of the project\'s cost would come from taxpayers.'],
         sources: srcs(RC_SS, WAPO_TRACK) },
     ] },
     { date: '2026-08-07', events: [
-      { actor: 'court', title: 'The appeals court upholds the injunction, 2-1',
+      { actor: 'court', title: 'The appeals court upholds the injunction, 2-1', kind: 'building',
         body: ['"Whether or not a massive ballroom should be constructed is for Congress to decide and is not a matter for Executive self-help," the court wrote. It gave the government 14 days to seek relief from the Supreme Court.'],
         sources: srcs(REUTERS7, CNN31, SB31) },
     ] },
     { date: '2026-08-21', events: [
-      { actor: 'court', title: 'The chief justice issues a temporary stay',
+      { actor: 'court', title: 'The chief justice issues a temporary stay', kind: 'building',
         body: ['On the day the injunction would have taken effect, Chief Justice John Roberts put it on hold while the Court considered the government\'s request.'],
         sources: srcs(SB21, CNBC21) },
     ] },
     { date: '2026-08-31', events: [
-      { actor: 'court', title: 'The Supreme Court lets it continue, 5-4, without deciding if it is legal',
+      { actor: 'court', title: 'The Supreme Court lets it continue, 5-4, without deciding if it is legal', kind: 'building',
         body: [
           'The unsigned order found the Trust likely lacks standing: "we have repeatedly held that mere offense, disagreement, or distaste does not qualify as a concrete and particularized injury under Article III." It added, "Today, we do not pass upon the legality of the government\'s East Wing project."',
           'Roberts, joined by Justices Sotomayor, Kagan and Jackson, dissented: "That construction is likely unlawful." He wrote that an appropriation "of a couple million dollars for ordinary Executive Residence maintenance and repairs likely does not authorize the President to use hundreds of millions of dollars in private donations to tear down the East Wing and construct a ballroom in its stead." Trump posted that the Court "has just ruled in favor of the Ballroom/Military Complex being built without any further contingency, doubt, or threat."',
@@ -203,12 +203,12 @@ const dive = {
         sources: srcs(ORDER, SB31, CNN31, NBC31, CNBC31, LI) },
     ] },
     { date: '2026-09-04', events: [
-      { actor: 'wh', title: 'Trump on monuments to himself: "That\'s true"',
+      { actor: 'wh', title: 'Trump on monuments to himself: "That\'s true"', kind: 'building',
         body: ['Asked by New York Magazine whether he is building monuments to himself, Trump said, "That\'s true," and "Nobody will do it once I\'m gone." Of the ballroom, he said "the people should be thankful."'],
         sources: srcs(CNN_MON, TNR_MON) },
     ] },
     { date: '2026-09-23', events: [
-      { actor: 'press', title: 'A report: the first architect warned about fire exits',
+      { actor: 'press', title: 'A report: the first architect warned about fire exits', kind: 'building',
         body: ['The Washington Post reported that McCrery had warned the design gave most guests no way out through the main entrance in an emergency, and that Trump answered, "I am the code." That line rests on two unnamed people; the White House denies that his departure had anything to do with codes. The documents the Post reviewed show a White House official\'s note from a September 30, 2025 meeting: "Life safety — big concern."'],
         sources: srcs(WAPO_ARCH, PEOPLE_ARCH, RD_ARCH) },
     ] },
