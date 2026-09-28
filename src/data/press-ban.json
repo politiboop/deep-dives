@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-09-25",
+  "updated": "2026-09-28",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
@@ -16,8 +16,8 @@
     "bannedFrom": "2026-09-18",
     "restored": "2026-09-24",
     "orderEnds": "2026-10-08",
-    "status": "Passes restored under a 14-day court order",
-    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. That evening CNN and MS NOW reporters were kept out of Xi's state-dinner arrival, an event the order does not clearly cover. The network pool, idle since September 21, resumed on September 25. The order is temporary: it runs fourteen days. The outlets' motion for a longer one is due September 28, and the court has said it \"intends to rule expeditiously.\""
+    "status": "Passes restored under a court order, but CNN kept off Air Force One",
+    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. Since then the White House has kept CNN and MS NOW out of Xi's state-dinner arrival and, on September 26, left CNN off Air Force One when it was the scheduled television pool network. The networks resumed pool coverage on September 27, leaving CNN's slot unfilled when the White House blocks it. The attorney general defended the ban on television as a matter of privilege and national security. The restraining order runs to October 8; the outlets' motion for a longer one was due September 28, and the court has said it \"intends to rule expeditiously.\""
   },
   "hero": {
     "deck": [
@@ -683,6 +683,95 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "events": [
+        {
+          "time": "Overnight",
+          "actor": "wh",
+          "title": "CNN is left off Air Force One",
+          "body": [
+            "Guidance issued the night before left CNN, the scheduled television pool network, off the plane for Trump's trip to a college football game in Knoxville. The seat \"has long been saved for a member of the U.S. network video pool,\" the Associated Press reported, and the guidance \"included Real America's Voice,\" which is not part of that group. CNN reported that \"No outlet was listed as replacing CNN.\" Aboard, Real America's Voice's correspondent said, \"CNN is not here; we have taken over that responsibility.\" The restraining order \"said nothing directly about Air Force One,\" the AP noted."
+          ],
+          "sources": [
+            {
+              "text": "AP: CNN says it was left off Air Force One for Trump's Saturday trip to a college football game (September 26, 2026)",
+              "url": "https://apnews.com/article/trump-press-ban-white-house-cnn-pool-b46558a5dd0d957f378f56747929f475"
+            },
+            {
+              "text": "CNN: White House bars CNN from covering Trump on behalf of major TV networks as he travels to Tennessee (September 25, 2026)",
+              "url": "https://www.cnn.com/2026/09/25/politics/white-house-blocks-cnn-air-force-one-travel-pool"
+            },
+            {
+              "text": "The Guardian: White House blocks CNN from Air Force One in latest escalation with news media (September 26, 2026)",
+              "url": "https://www.theguardian.com/us-news/2026/sep/25/white-house-cnn-air-force-one"
+            }
+          ]
+        },
+        {
+          "time": "Morning",
+          "actor": "wh",
+          "title": "\"FAKE NEWS SHOULD NOT BE ALLOWED IN THE WHITE HOUSE!!!\"",
+          "body": [
+            "Trump posted: \"Why should perpetrators of FAKE NEWS, like CNN and MSDNC, be allowed access to a very sacred place, the White House?\" An hour and a half later: \"FAKE NEWS SHOULD NOT BE ALLOWED IN THE WHITE HOUSE!!! IT HAS GONE ON FAR TOO LONG, AT A TREMENDOUS COST TO OUR COUNTRY.\" A third post, about coverage of his endorsement of Byron Donalds, named eight news organizations and said they \"should not be allowed to enter the White House premises, or Press Room, because they are CORRUPT and DISHONEST!\"",
+            "Leaving for Knoxville, he was asked by MS NOW's Akayla Gardner, \"Do you only want outlets that support you to be a part of the press pool?\" He answered, \"No, no, no. I want real news, not fake news — like you.\" When she asked whether he did not want tough questions, he cut her off. In the transcript Gardner published: \"Wait, wait. Quiet.\""
+          ],
+          "sources": [
+            {
+              "text": "Trump on Truth Social: \"Why should perpetrators of FAKE NEWS...\" (September 26, 2026, archived)",
+              "url": "https://www.trumpstruth.org/statuses/41923"
+            },
+            {
+              "text": "Trump on Truth Social: \"FAKE NEWS SHOULD NOT BE ALLOWED IN THE WHITE HOUSE!!!\" (September 26, 2026, archived)",
+              "url": "https://www.trumpstruth.org/statuses/41926"
+            },
+            {
+              "text": "Trump on Truth Social: post on Byron Donalds and the \"Fake News Media\" (September 26, 2026, archived)",
+              "url": "https://www.trumpstruth.org/statuses/41945"
+            },
+            {
+              "text": "Mediaite: Trump Claims He 'Loves an Open, Free Press' While Calling Out Reporter and Telling Her to Be 'Quiet' in Tense Exchange (September 26, 2026)",
+              "url": "https://www.mediaite.com/media/trump-claims-he-loves-an-open-free-press-while-calling-out-reporter-and-telling-her-to-be-quiet-in-tense-exchange/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "events": [
+        {
+          "actor": "press",
+          "title": "The networks go back to work, around CNN",
+          "body": [
+            "The New York Times, citing four people briefed on the decision, reported that the networks were \"set to resume their collective television coverage\" even though the White House blocked CNN: \"Each time that CNN came up in the pool rotation, the group of networks would decide whether to provide a substitute crew. Otherwise, CNN's slot would be left unfilled.\""
+          ],
+          "sources": [
+            {
+              "text": "New York Times via Philadelphia Inquirer: Networks to resume Trump coverage, even as White House excludes CNN (September 27, 2026)",
+              "url": "https://www.inquirer.com/news/nation-world/trump-media-ban-cnn-tv-pool-coverage-resume-court-20260927.html"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "The attorney general: \"a privilege and not a right\"",
+          "body": [
+            "On ABC's \"This Week,\" Attorney General Todd Blanche said, \"Well, the president hasn't denied access. That's not the right way to describe it,\" and, \"It is a privilege and not a right to be there.\" Asked by Martha Raddatz for an example of CNN reporting inaccurately: \"You cannot be asking me that.\" Raddatz: \"The president said nothing about national security when he announced this ban.\""
+          ],
+          "sources": [
+            {
+              "text": "ABC News: 'This Week' Transcript 9-27-26: Attorney General Todd Blanche & Sen. Mark Kelly (September 27, 2026)",
+              "url": "https://abcnews.com/Politics/week-transcript-9-27-26-attorney-general-todd/story?id=136781292"
+            },
+            {
+              "text": "Daily Caller: Attorney General Todd Blanche Pushes Back On ABC News Host Martha Raddatz's 'Extraordinarily Disingenuous' Comments About Press Freedom Under Trump (September 27, 2026)",
+              "url": "https://dailycaller.com/2026/09/27/todd-blanche-pushes-back-abc-news-this-week-martha-raddatz-comments-press-access-freedom-donald-trump/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -906,6 +995,17 @@
             "url": "https://apnews.com/article/news-media-ban-cnn-white-house-access-a3471270b8db89f6067c54528ed0a340"
           }
         ]
+      },
+      {
+        "who": "Bill Clinton",
+        "role": "Former president, at the Clinton Global Initiative",
+        "quote": "But I'm glad I never did, and I'm glad I couldn't. And these people shouldn't. The law should be what it is.",
+        "sources": [
+          {
+            "text": "The Guardian: Blanche defends Trump's White House media ban: 'It is a privilege, not a right' (September 27, 2026)",
+            "url": "https://www.theguardian.com/us-news/2026/sep/27/todd-blanche-trump-white-house-media"
+          }
+        ]
       }
     ],
     "defended": [
@@ -976,6 +1076,17 @@
           {
             "text": "Cable News Network, Inc. v. Trump: Defendants' Opposition to Plaintiffs' Motion for a Temporary Restraining Order, ECF 16 (September 22, 2026)",
             "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.16.0_1.pdf"
+          }
+        ]
+      },
+      {
+        "who": "Todd Blanche",
+        "role": "Attorney general, on ABC’s \"This Week\"",
+        "quote": "It is a privilege and not a right to be there.",
+        "sources": [
+          {
+            "text": "ABC News: 'This Week' Transcript 9-27-26: Attorney General Todd Blanche & Sen. Mark Kelly (September 27, 2026)",
+            "url": "https://abcnews.com/Politics/week-transcript-9-27-26-attorney-general-todd/story?id=136781292"
           }
         ]
       }
@@ -1121,12 +1232,6 @@
   ],
   "watch": [
     {
-      "date": "2026-09-25",
-      "when": "Fri Sept 25, 5 p.m.",
-      "title": "The White House’s own deadline",
-      "text": "The letters gave each outlet until 5 p.m. to respond by email. The record does not say what the White House will do with the responses, or whether that process continues now that the passes are back under court order."
-    },
-    {
       "date": "2026-09-28",
       "when": "Mon Sept 28",
       "title": "Motion for a preliminary injunction due",
@@ -1159,7 +1264,7 @@
     {
       "when": "Open",
       "title": "Events and the pool",
-      "text": "The order restored the hard passes. The outlets' lawyer says it also covers pool access; after the state-dinner exclusion, the White House said they do not get \"free rein\" to every event."
+      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open."
     },
     {
       "when": "Open",
@@ -1169,7 +1274,13 @@
     {
       "when": "Open",
       "title": "\"Other Fake News Media Outlets to follow\"",
-      "text": "On the day of the ban Trump also called the New York Times and the Washington Post \"fake news,\" without banning them. As of this update no further outlet has been banned."
+      "text": "On the day of the ban Trump also called the New York Times and the Washington Post \"fake news,\" without banning them. On September 26 he named eight outlets, the Times and the Post among them, and said the \"Fake News Media\" should not be allowed onto White House premises. As of this update no further outlet has been banned.",
+      "sources": [
+        {
+          "text": "Trump on Truth Social: post on Byron Donalds and the \"Fake News Media\" (September 26, 2026, archived)",
+          "url": "https://www.trumpstruth.org/statuses/41945"
+        }
+      ]
     }
   ],
   "take": [

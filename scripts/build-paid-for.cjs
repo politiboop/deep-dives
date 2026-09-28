@@ -58,6 +58,18 @@ const BEAST_BAN = 'The Daily Beast: Jaw-Dropping';
 const NBC_NOEM = 'NBC News: Trump fires Kristi Noem';
 const PP_NOEM = 'ProPublica: Kristi Noem-Tied Firm';
 const HILL_NOEM = 'The Hill: Noem faces GOP heat';
+const AP_RERUN = 'AP: Trump administration begins airing 2024 Trump campaign ad';
+const AP_GROWS = 'AP: Taxpayer-funded pro-Trump TV ad campaign grows';
+const NBC_FB = 'NBC News: White House releases new taxpayer-funded ad';
+const CNN_FB = 'CNN: White House airs another government-funded ad';
+const CNBC_FB = 'CNBC: Taxpayer-funded Trump ads draw';
+const CBS_KENNEDY = 'CBS News: Sen. Kennedy urges Trump';
+const WH_PSA = 'The White House: Presidential Public Service Announcements';
+const PC_COMPLAINT = 'Public Citizen: Taxpayer-Funded Trump Ad Violates';
+const AXIOS_PSA = 'Axios: White House defends Trump video ad';
+const TIME_BIPART = "Time: Trump's Taxpayer-Funded Ads Draw";
+const USPTO_TV = 'USPTO: TRUMP TV';
+const NEWSWEEK_TM = "Newsweek: Trump Company Files Trademark";
 
 // ── The ledger. amount is in dollars when known; agencies counts the agencies paying.
 const ledger = [
@@ -66,22 +78,22 @@ const ledger = [
   { when: 'June 2026', item: 'Banner at the Interior Department', payer: 'Interior Department', agencies: 1, amount: 39000, note: 'Contract found by Schiff', kind: 'image', sources: srcs(INDY_BAN) },
   { when: 'July 2026', item: 'Banners for the FAA', payer: 'Federal Aviation Administration', agencies: 1, amount: 114020, note: 'Contract found by Schiff; runs through 2027', kind: 'image', sources: srcs(INDY_BAN) },
   { when: 'May 2026', item: 'The White House app, pushed onto federal work phones', payer: 'Every executive-branch agency\'s phones', amount: null, note: 'Cost not disclosed', kind: 'channel', sources: srcs(GOVEXEC_APP) },
-  { when: 'Sept 2026', item: 'Trump TV, a 24-hour stream', payer: 'The White House', amount: null, note: 'Cost not disclosed', kind: 'channel', sources: srcs(NOTUS_TV) },
-  { when: 'Sept 2026', item: 'The television ads', payer: '"the U.S. government," agency unnamed', amount: 14000, note: 'AdImpact\'s estimate of the first buy, on Fox News and Newsmax. The ads have since run on CBS and other national networks, in at least two versions; that cost has not been disclosed', kind: 'channel', sources: srcs(AP_AD, CBS_AD) },
+  { when: 'Sept 2026', item: 'Trump TV, a 24-hour stream', payer: 'The White House', amount: null, note: 'Cost not disclosed. On September 24 the Trump Organization\'s trademark company applied to register TRUMP TV for news broadcasting and streaming', kind: 'channel', sources: srcs(NOTUS_TV, USPTO_TV) },
+  { when: 'Sept 2026', item: 'The television ads', payer: '"the U.S. government," agency unnamed', amount: 1700000, note: 'More than $1.7 million by AdImpact\'s count as of September 28, which it says misses some cable airings. The first buy, on Fox News and Newsmax, was about $14,000. At least four spots have run, on Fox, Newsmax, CBS and NFL broadcasts', kind: 'channel', sources: srcs(NBC_FB, CNBC_FB, AP_AD, CBS_AD) },
   { when: 'Mar 2026', item: 'The DHS ad campaign featuring Secretary Noem', payer: 'Homeland Security', amount: 220000000, note: 'Ended with her firing', kind: 'comparison', sources: srcs(NBC_NOEM, PP_NOEM) },
 ];
 
 const dive = {
   slug: 'paid-for',
-  updated: '2026-09-25',
+  updated: '2026-09-28',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
     kicker: 'Public money',
     title: 'Paid For',
     dek: 'Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.',
-    status: 'Nobody has said which agency paid for the ads',
-    statusText: 'As of September 25, no agency, contract or appropriation had been identified for the ads. CBS News reported that the government produced them and bought the air time through an ad agency; the White House calls them "public service announcements." Democrats in Congress have asked the White House for the cost and demanded the ads be pulled. No complaint, inspector general review or request for a GAO opinion was on the record. The FAA banner contract runs through 2027.',
+    status: 'The ads now include a rerun of a 2024 campaign spot, and nobody has said which agency pays',
+    statusText: 'As of September 28, no agency, contract or appropriation had been identified for the ads, which AdImpact estimates have cost more than $1.7 million. The newest is virtually identical to a 2024 Trump campaign ad, the Associated Press reported. The White House calls them "public service announcements." Public Citizen has asked the Government Accountability Office and the Office of Special Counsel to find them illegal; neither has acted. Democrats in Congress have asked for the cost and demanded the ads be pulled, and Republican senators and a Republican congressman have objected. The FAA banner contract runs through 2027.',
   },
   hero: {
     question: 'Is public money being used to promote the president himself?',
@@ -89,7 +101,7 @@ const dive = {
     rule: 'Federal spending laws have barred taxpayer spending "for publicity or propaganda purposes" since 1951. Whether any of this crosses that line has not been tested; no ruling on it is on the record.',
     ruleSources: srcs(SCHIFF_BAN, AP_AD),
     deck: [
-      'The newest example aired on the night of September 23, 2026: a thirty-second spot during conservative shows on Fox News and Newsmax. Images of the president, the "largest tax cuts in history," a promise that "America will never be a communist country," and a line of small text at the bottom: "paid for by the U.S. government." The White House calls it a public service announcement. Two Republican senators objected. The next evening a second government-paid ad was on CBS and other networks.',
+      'The newest examples began on the night of September 23, 2026: a thirty-second spot during conservative shows on Fox News and Newsmax. Images of the president, the "largest tax cuts in history," a promise that "America will never be a communist country," and a line of small text at the bottom: "paid for by the U.S. government." The White House calls it a public service announcement. Within five days there were at least four spots, one of them a rerun of a 2024 Trump campaign ad, airing during NFL games.',
       'Below: what each item cost and who paid, the record in order, the explanations set against the documents, who objected and who defended it, the rules that apply, and what to watch. Every fact is sourced. Every opinion is labeled.',
     ],
     quote: {
@@ -174,6 +186,30 @@ const dive = {
         ],
         sources: srcs(CBS_AD) },
     ] },
+    { date: '2026-09-25', events: [
+      { actor: 'wh', title: 'A third spot, and a defense: "Nothing New"',
+        body: [
+          'A minute-long ad began airing on Newsmax with video of Mount Rushmore at night and clips of Trump\'s Fourth of July speech there: "This is only the beginning of the golden age of America." The White House published "Presidential Public Service Announcements Are Nothing New," calling the criticism "highly dishonest" and citing a Bush-era Medicare campaign, Obama\'s EPA and Biden\'s vaccination drive. NBC News noted that the Government Accountability Office had faulted the Bush campaign for not disclosing the government as its source and the Obama one for violating "publicity or propaganda and anti-lobbying provisions."',
+        ],
+        sources: srcs(AP_GROWS, WH_PSA, NBC_FB) },
+      { actor: 'press', title: 'A watchdog asks GAO and the Office of Special Counsel to rule',
+        body: [
+          'Public Citizen filed a complaint alleging the ads violate the laws against using government resources for propaganda and, for the staff involved, the Hatch Act. Co-president Lisa Gilbert: "Taxpayer funds cannot pay for partisan political propaganda."',
+        ],
+        sources: srcs(PC_COMPLAINT) },
+    ] },
+    { date: '2026-09-27', events: [
+      { actor: 'wh', title: 'A 2024 campaign ad airs during NFL games, now "Paid for by the U.S. Government"',
+        body: [
+          'A thirty-second black-and-white spot of Trump walking down a hallway, which the Associated Press called "virtually identical to one that aired in 2024," ran during Fox\'s broadcasts of two NFL games, CNN reported. Trump in it: "We will throw off the sick political class that hates our country. We will rout the fake news media, and we will liberate America from these villains once and for all." NBC News reported that the government version drops the campaign ending and adds "Paid for by the U.S. government." AdImpact put spending on the ads at more than $1.7 million.',
+        ],
+        sources: srcs(AP_RERUN, CNN_FB, NBC_FB) },
+      { actor: 'congress', title: 'Republicans object, on camera',
+        body: [
+          'Sen. John Kennedy of Louisiana, on CBS\'s "Face the Nation": "I don\'t think any public official, including President Trump or Kristi Noem or John Kennedy, should spend public money on private ads for themselves." Rep. Thomas Massie of Kentucky: "Don\'t worry, using taxpayer dollars to run ominous campaign ads of the President has been done before and is completely legal… in banana republics."',
+        ],
+        sources: srcs(CBS_KENNEDY, TIME_BIPART, CNN_FB) },
+    ] },
   ],
 
   claims: [
@@ -191,8 +227,12 @@ const dive = {
       sources: srcs(NOTUS_TV, TIME_TV, BARRETT_TV) },
     { claim: 'paid for by the U.S. government', who: 'The ad\'s own disclaimer',
       found: 'No agency, contract or appropriation has been named.',
-      detail: 'The White House has not said what agency paid. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact, which tracks media spending, estimated the first buy at $14,000.',
-      sources: srcs(AP_AD, CBS_AD) },
+      detail: 'The White House has not said what agency paid. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact, which tracks media spending, estimated the first buy at $14,000 and the campaign at more than $1.7 million by September 28.',
+      sources: srcs(AP_AD, CBS_AD, NBC_FB) },
+    { claim: 'Patriotism isn\'t partisan.', who: 'The White House, "Presidential Public Service Announcements Are Nothing New"',
+      found: 'The precedents it cites were campaigns about policies, and GAO faulted two of them.',
+      detail: 'The Associated Press noted that the earlier campaigns promoted particular policies, not the president in office. NBC News noted GAO faulted the Bush Medicare campaign for not disclosing the government as its source and Obama\'s EPA campaign for violating "publicity or propaganda and anti-lobbying provisions." In the White House\'s favor, Axios noted that "GAO has said concealment of the government\'s role is central to a finding of covert propaganda," and these spots label themselves.',
+      sources: srcs(WH_PSA, AP_RERUN, NBC_FB, AXIOS_PSA) },
     { claim: 'The President is not on the ballot and the ads don\'t have a call to action.', who: 'A White House official, to CBS News',
       found: 'Experts told CBS the ads likely do not break election law. The propaganda restriction is a separate question.',
       detail: 'Columbia law professor Richard Briffault: "It doesn\'t appear to be supporting or endorsing a candidate for public office." He agreed with Sen. Maggie Hassan, though, that there are questions under the propaganda law. Hassan wrote that the ad "appears to run afoul of federal prohibitions against the use of appropriated funds as part of \'a general propaganda effort designed to aid a political party or candidates\'".',
@@ -205,7 +245,8 @@ const dive = {
 
   voices: {
     objected: [
-      { who: 'Sen. John Kennedy', role: 'Republican of Louisiana, on the ad', quote: 'I don\'t generally like to see politicians use public money to pay for their own campaign ads.', sources: srcs(AP_AD) },
+      { who: 'Sen. John Kennedy', role: 'Republican of Louisiana, on "Face the Nation"', quote: 'I don\'t think any public official, including President Trump or Kristi Noem or John Kennedy, should spend public money on private ads for themselves.', sources: srcs(CBS_KENNEDY) },
+      { who: 'Rep. Thomas Massie', role: 'Republican of Kentucky, on the campaign-ad rerun', quote: 'Don\'t worry, using taxpayer dollars to run ominous campaign ads of the President has been done before and is completely legal… in banana republics.', sources: srcs(CNN_FB) },
       { who: 'Sen. Adam Schiff', role: 'Democrat of California, on the banners', quote: 'Not only is this a terrible waste of Americans\' hard-earned money, it is clearly against the law', sources: srcs(INDY_BAN) },
       { who: 'Barbara Comstock', role: 'Former Republican congresswoman, on the Justice Department banner', quote: 'Nothing says Justice is Blind like hanging a Dear Leader Banner at DOJ.', sources: srcs(MEDIAITE_DOJBAN) },
       { who: 'Stephanie Grisham', role: 'Trump\'s press secretary in his first term, on Trump TV', quote: 'You know who else does this? Russia, China, and Iran to name a few.', sources: srcs(TIME_TV) },
@@ -215,6 +256,7 @@ const dive = {
     defended: [
       { who: 'The White House', role: 'In a statement on the ad', quote: 'educational and unapologetically patriotic', sources: srcs(AP_AD) },
       { who: 'A White House official', role: 'To CBS News, on the ads', quote: 'The President is not on the ballot and the ads don\'t have a call to action.', sources: srcs(CBS_AD) },
+      { who: 'Steven Cheung', role: 'White House communications director', quote: 'Don\'t let the Fake News get away with their lies about our epic Public Service Announcements that have been running on tv.', sources: srcs(NBC_FB) },
       { who: 'A Justice Department spokesperson', role: 'On the banner at its headquarters', quote: 'We are proud at this Department of Justice to celebrate 250 years of our great country', sources: srcs(CNN_DOJBAN) },
       { who: 'Courtney Parella', role: 'Labor Department spokesperson, on its banners', quote: 'The banners were originally displayed for Labor Day. After tremendous positive response, we\'re reinforcing the material at no charge to taxpayers', sources: srcs(CNN_BAN25) },
       { who: 'Kaelan Dorr', role: 'White House head of digital strategy, on Trump TV', quote: 'a livestream of the Administration\'s greatest hits, unfiltered', sources: srcs(NOTUS_TV) },
@@ -223,7 +265,7 @@ const dive = {
   },
 
   rules: [
-    { label: 'Since 1951', name: 'The propaganda restriction', body: 'Federal spending laws have barred taxpayer spending "for publicity or propaganda purposes" since 1951, according to Schiff\'s report. The statutes do not define propaganda, the report notes, but "prior prohibited uses of funds have been classified as self-aggrandizement, purely partisan materials, or covert propaganda." As of September 25 nobody had asked the Government Accountability Office for an opinion on the ads, at least not on the record; Democrats\' letters went to the White House chief of staff.', sources: srcs(SCHIFF_BAN, WEX_BAN, CBS_AD) },
+    { label: 'Since 1951', name: 'The propaganda restriction', body: 'Federal spending laws have barred taxpayer spending "for publicity or propaganda purposes" since 1951, according to Schiff\'s report. The statutes do not define propaganda, the report notes, but "prior prohibited uses of funds have been classified as self-aggrandizement, purely partisan materials, or covert propaganda." On September 25 Public Citizen asked the Government Accountability Office to find that the ads violate it; GAO has not responded publicly.', sources: srcs(SCHIFF_BAN, WEX_BAN, PC_COMPLAINT) },
     { label: 'Hatch Act', name: 'Limits on federal employees', body: 'The Hatch Act limits partisan political activity by federal employees. It does not apply to the president. Rep. Jamie Raskin\'s point about the ad is that it would be a violation "for any government employees who worked on it or used government resources to make it."', sources: srcs(MEDIAITE_AD, WAPO_AD, HUFF_AD) },
     { label: 'Mar 2026', name: 'The administration\'s own precedent', body: 'A $220 million taxpayer-funded ad campaign featuring a cabinet secretary ended with her firing. DHS had invoked a national emergency declaration to skip competitive bidding.', sources: srcs(NBC_NOEM, PP_NOEM) },
   ],
@@ -231,18 +273,19 @@ const dive = {
   watch: [
     { date: '2026-11-03', when: 'Nov 3, 2026', title: 'Election Day', text: 'The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether any agency says it paid.' },
     { when: 'Open', title: 'Hassan\'s questions', text: 'The cost, the contractors, the source of the funding and whether money was diverted from federal agencies. No answer is on the record.', sources: srcs(CBS_AD) },
-    { when: 'Open', title: 'A GAO opinion or an inspector general', text: 'Either would test the propaganda restriction directly. As of September 25 neither had been asked, at least not on the record.' },
+    { when: 'Open', title: 'Public Citizen\'s complaint', text: 'Filed September 25 with the Government Accountability Office and the Office of Special Counsel. A GAO opinion would test the propaganda restriction directly. Neither office has acted.', sources: srcs(PC_COMPLAINT) },
     { when: 'Through 2027', title: 'The FAA banners', text: 'The FAA\'s banner contract runs through 2027.', sources: srcs(INDY_BAN) },
   ],
 
   take: [
     'Each item here has a defense on its own terms. A president may publish video, and agencies may mark an anniversary. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician\'s face and message in front of the public, most visibly in the weeks before an election.',
-    'The ad is the smallest line in the ledger and the plainest. It uses the president\'s campaign themes, a convention clip and a song that repeats "love me," and it carries a government disclaimer. Two Republican senators saw the problem at once. That no agency will say it paid is not a detail. Spending its sponsor will not own is spending nobody can be held to account for.',
+    'The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president\'s campaign themes, a convention clip and a song that repeats "love me"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. That no agency will say it paid is not a detail. Spending its sponsor will not own is spending nobody can be held to account for.',
     'The anniversary defense deserves a fair hearing, and the banners answer it themselves. They carry the sitting president\'s portrait and his own slogans, one of them on the headquarters of the department meant to be independent of him, and one contract runs into 2027.',
   ],
 
   corrections: [
     { date: '2026-09-24', text: 'Before this page was published, its sources were checked against the saved text of each article. The 2025 banner entry it draws on described the Labor Department\'s banner as 88 feet long. The 88-foot signs were Health and Human Services\' "Make America Healthy Again" banners, which this page does not count as spending on the president\'s image. The ad entry has also been brought up to date with the White House\'s statement defending the ad.' },
+    { date: '2026-09-28', text: 'Earlier versions of this page said that, as of September 25, no complaint or request for a GAO opinion was on the record. Public Citizen had filed one with GAO and the Office of Special Counsel that day. The ledger\'s figure for the ads, $14,000, was AdImpact\'s estimate of the first buy; it has been replaced with AdImpact\'s running estimate, more than $1.7 million.' },
     { date: '2026-09-25', text: 'This page was narrowed to one question, whether public money is promoting the president himself. The White House ballroom, which it first included, now has its own page, since its story is about donors and access. The administration\'s answers on the banners were added.' },
   ],
 };
