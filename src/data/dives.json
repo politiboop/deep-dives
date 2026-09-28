@@ -4,8 +4,6 @@
     "kicker": "Profit",
     "title": "By His Own Account",
     "dek": "Is he profiting from the office? His own financial disclosure answers most of it: what came in during his first year back, where it came from, and who was paying.",
-    "updated": "2026-09-25",
-    "status": "His next disclosure is due May 15, 2027",
     "section": "corruption"
   },
   {
@@ -13,8 +11,6 @@
     "kicker": "Access",
     "title": "The Ballroom",
     "dek": "Who is paying for the president's ballroom, and what have they gotten since? The donors, the public money, the contracts, and a court fight the Supreme Court paused without deciding.",
-    "updated": "2026-09-25",
-    "status": "Construction continues under a Supreme Court stay",
     "section": "corruption"
   },
   {
@@ -22,16 +18,12 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "updated": "2026-09-25",
-    "status": "Nobody has said which agency paid for the ads",
     "section": "corruption"
   },
   {
     "slug": "press-ban",
     "kicker": "The press",
     "title": "Shut Out",
-    "dek": "Trump banned three news organizations from the White House. Six days later a judge he appointed ordered them back in. The claims, the record, and what comes next.",
-    "updated": "2026-09-24",
-    "status": "Passes restored under a 14-day court order"
+    "dek": "Trump banned three news organizations from the White House. Six days later a judge he appointed ordered them back in. The claims, the record, and what comes next."
   }
 ]

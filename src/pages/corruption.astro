@@ -13,16 +13,18 @@ const card = (slug) => {
   const d = dives.find((x) => x.slug === slug);
   const x = files[`../data/${slug}.json`]?.default;
   if (!d || !x) return null;
-  return { ...d, events: x.days.reduce((n, day) => n + day.events.length, 0), sources: sourceCount(x) };
+  return { ...d, updated: x.updated, status: x.meta.status, events: x.days.reduce((n, day) => n + day.events.length, 0), sources: sourceCount(x) };
 };
 const questions = section.questions.map((q) => ({ ...q, card: q.dive ? card(q.dive) : null }));
 const answered = questions.filter((q) => q.card).length;
+// The section is as current as its newest dive.
+const updated = questions.reduce((m, q) => (q.card && q.card.updated > m ? q.card.updated : m), '');
 ---
 
 <Base title="Corruption | Deep Dives" ogTitle="Corruption: Three Questions" description={section.dek}>
   <div class="hero">
     <div class="wrap">
-      <p class="eyebrow"><a href="/">Deep Dives</a> · A section · Updated {longDate(section.updated)}</p>
+      <p class="eyebrow"><a href="/">Deep Dives</a> · A section{updated && ` · Updated ${longDate(updated)}`}</p>
       <h1><span class="accent">Corruption</span>.</h1>
       {section.intro.map((p) => <p class="deck">{p}</p>)}
       <p class="sec-count">{questions.length} questions · {answered} answered so far</p>

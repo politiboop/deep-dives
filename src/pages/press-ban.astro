@@ -133,15 +133,15 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     </div>
   </section>
 
-  <!-- ── THE SIX DAYS ─────────────────────────────────────────────────── -->
-  <section id="days" aria-label="The six days">
+  <!-- ── DAY BY DAY ───────────────────────────────────────────────────── -->
+  <section id="days" aria-label="Day by day">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">In order</p>
-        <h2>The six days</h2>
+        <h2>Day by day</h2>
         <p class="sub">
-          {eventCount} documented events from the first post to the restored passes. Each links to its
-          sources; each has its own address, so you can send someone a single moment.
+          {eventCount} documented events over {days.length} days, from the first post to the latest
+          turn. Each links to its sources; each has its own address, so you can send someone a single moment.
         </p>
       </div>
       <div class="actor-legend" aria-hidden="true">
@@ -326,7 +326,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
       <div class="sec-head">
         <p class="kicker">Dated triggers</p>
         <h2>What to watch</h2>
-        <p class="sub">The six days above are history. These are the dates where the story continues.</p>
+        <p class="sub">The days above are history. These are the dates where the story continues.</p>
       </div>
       <ul class="watch-list">
         {watch.map((w) => (

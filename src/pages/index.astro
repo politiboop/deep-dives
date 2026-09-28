@@ -4,16 +4,18 @@ import dives from '../data/dives.json';
 import sections from '../data/sections.json';
 import { longDate, sourceCount } from '../lib/fmt.js';
 
-// Load each dive's data file so the front door can show real counts.
+// Load each dive's data file so the front door can show real counts. The status and
+// the updated date come from there too, never from the registry, so a card can never
+// lag the page it links to.
 const files = import.meta.glob('../data/*.json', { eager: true });
 const data = (slug) => files[`../data/${slug}.json`]?.default;
 const list = [...dives]
-  .sort((a, b) => b.updated.localeCompare(a.updated))
   .map((d) => {
     const x = data(d.slug);
     const events = x ? x.days.reduce((n, day) => n + day.events.length, 0) : 0;
-    return { ...d, events, sources: x ? sourceCount(x) : 0 };
-  });
+    return { ...d, updated: x?.updated ?? '', status: x?.meta?.status ?? '', events, sources: x ? sourceCount(x) : 0 };
+  })
+  .sort((a, b) => b.updated.localeCompare(a.updated));
 
 // Sections group dives under a set of questions (src/data/sections.json).
 const sectionList = Object.values(sections).map((s) => ({ ...s, answered: s.questions.filter((q) => q.dive && dives.some((d) => d.slug === q.dive)).length }));
