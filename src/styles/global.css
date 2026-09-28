@@ -697,6 +697,10 @@ footer { padding: 44px 0 60px; }
 @media (max-width: 1000px) { :root { --head-h: 95px; } }
 section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .topnav a.is-home { color: var(--text); }
+/* The shared header is 3% transparent with no blur behind it, so on a phone,
+   where the header is two rows tall, the page's large type ghosts through it.
+   Opaque here; the sticky day headings below get the same treatment. */
+.topbar, .day-head { background: var(--bg); }
 
 /* ── front door ────────────────────────────────────────────────────────── */
 .dive-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
