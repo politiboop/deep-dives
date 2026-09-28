@@ -212,6 +212,11 @@ the status itself still has to be updated by hand.
 - Hero figures are about the story, not the page. The source count goes in the eyebrow.
 - Below 1000px the section links move to a second, sideways-scrolling row of the topbar
   (`.subnav` in `Base.astro`). Sticky offsets use `--head-h`, which grows to match.
+- **Nothing a reader is expected to read is set below 12px.** The shared half of the
+  stylesheet puts several labels at 10 to 11.5px; the "readable floor" block in the Deep Dives
+  half raises them, and source links go to 13px on a phone, where they are tap targets. To
+  check, scan every visible element's computed font size in the browser and list anything
+  under 12px; the answer should be nothing.
 - Titles follow the tracker's headline rules: organic, newspaper-style, no em dashes.
 - No emojis. Arrows and typographic marks are fine.
 - Links to sibling sites use their configured domains only if they resolve. At creation,

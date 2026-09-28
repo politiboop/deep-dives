@@ -713,7 +713,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 }
 .dive-card:hover { transform: translateY(-2px); border-color: var(--text-3); border-left-color: var(--brand-bright); }
 .dive-card .kicker {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--brand-bright); margin-bottom: 8px;
 }
 .dive-card h3 {
@@ -721,7 +721,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
   font-size: clamp(30px, 4vw, 42px); line-height: 0.95;
 }
 .dive-card .dek { margin-top: 12px; color: var(--text-2); max-width: 640px; font-size: 16px; }
-.dive-card .meta { margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+.dive-card .meta { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
 .dive-card .meta strong { color: var(--text-2); font-weight: 500; }
 .dive-card .go {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
@@ -735,7 +735,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .sec-group + .sec-group { margin-top: 44px; padding-top: 40px; border-top: 1px solid var(--line-soft); }
 .sg-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 16px; }
 .sg-head .kicker {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--text-2); margin-bottom: 8px;
 }
 .sg-head h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(28px, 4vw, 40px); line-height: 0.95; }
@@ -748,7 +748,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 @media (max-width: 640px) { .sg-head { grid-template-columns: 1fr; } .sg-head .go { justify-self: start; } }
 .q-num { font-family: var(--font-mono); color: var(--text-3); margin-right: 10px; }
 .dive-list .q-pending .kicker {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--brand-bright); margin-bottom: 8px;
 }
 
@@ -775,7 +775,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .stand-sub::after { content: ""; flex: 1; height: 1px; background: var(--line-soft); }
 .watch-list li.is-past .watch-when { color: var(--text-3); }
 .stand-now .stand-lbl {
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--st-court);
 }
 .stand-now .stand-status {
@@ -813,7 +813,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .ev[data-actor="press"] { --ev-c: var(--ac-press); }
 .ev[data-actor="congress"] { --ev-c: var(--ac-congress); }
 .ev[data-actor="payer"] { --ev-c: var(--ac-payer); }
-.ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; }
+.ev-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; }
 .ev-time { color: var(--text-3); text-transform: uppercase; }
 .actor-chip {
   color: var(--ev-c); text-transform: uppercase; font-weight: 500;
@@ -839,7 +839,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
    closes its own event against that default. */
 .mode-toggle {
   margin-top: 16px; cursor: pointer;
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
   color: var(--text-2); background: var(--surface);
   border: 1px solid var(--line); border-radius: 4px; padding: 7px 12px;
   transition: color 0.12s, border-color 0.12s;
@@ -854,7 +854,7 @@ html.dd-headlines .ev:not(.is-open) .ev-body { display: none; }
 .ev.is-closed h3 .ev-t::after,
 html.dd-headlines .ev:not(.is-open) h3 .ev-t::after { content: " +"; color: var(--text-3); font-weight: 400; }
 html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
-.actor-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: -12px 0 18px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-2); }
+.actor-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: -12px 0 18px; font-family: var(--font-mono); font-size: 12px; color: var(--text-2); }
 .actor-legend span { display: inline-flex; align-items: center; gap: 7px; }
 .actor-legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
 @media (max-width: 640px) { .ev h3 { font-size: 21px; } }
@@ -862,7 +862,7 @@ html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
 /* ── the claim and the record ──────────────────────────────────────────── */
 .ev-claim .unquoted { font-style: normal; font-family: var(--font-body); }
 .ev-claim .para-note {
-  display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px;
+  display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 12px;
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3);
 }
 
@@ -896,7 +896,7 @@ html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
 .amici-copy strong { color: var(--text); font-weight: 600; }
 .roster { display: flex; flex-wrap: wrap; gap: 6px; }
 .roster span {
-  font-family: var(--font-mono); font-size: 11.5px; color: var(--text-2);
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-2);
   border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px;
 }
 .roster span.is-lead { color: var(--text); border-color: var(--text-3); }
@@ -924,7 +924,7 @@ html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
 .corrections .d { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* the hero quote on a dive carries a lead-in line */
-.hero-quote .lead { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); margin-bottom: 8px; font-style: normal; }
+.hero-quote .lead { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); margin-bottom: 8px; font-style: normal; }
 
 
 /* A dive's section nav has more items than the rigging page's, so it must never
@@ -939,10 +939,17 @@ html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
 /* A dive's take runs several paragraphs; the shared block was built for one. */
 .ev-take p:not(.take-lbl) + p { margin-top: 14px; }
 
-/* ── small text the shared half sets below the readable size ───────────── */
-.stat .lbl { font-size: 11px; }
-.ev-row.ev-head { font-size: 11px; }
-.ev-when { font-size: 12px; }
+/* ── the readable floor ─────────────────────────────────────────────────
+   Nothing a reader is expected to read is set below 12px. The shared half puts
+   several labels at 10 to 11.5px, so they are raised here rather than there.
+   Source links are tap targets on a phone and go to 13px with more padding;
+   the eyebrow keeps its size but loses tracking so it wraps quietly. */
+.stat .lbl, .ev-row.ev-head, .ev-when, .sec-head .kicker, .topnav a, .countdown-chip,
+.hero-quote cite, .ev-take .take-lbl { font-size: 12px; }
+@media (max-width: 640px) {
+  .ev-src a { font-size: 13px; padding: 4px 0; }
+  .eyebrow { letter-spacing: 0.08em; }
+}
 
 /* ── the status strip, under the headline ─────────────────────────────── */
 /* A returning reader's first question is where things stand now, so the
@@ -956,14 +963,14 @@ html.dd-headlines .ev:not(.is-open) { padding-top: 10px; padding-bottom: 10px; }
 }
 .status-strip:hover { border-color: var(--line); border-left-color: var(--st-court); }
 .status-strip .ss-lbl {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--st-court);
 }
 .status-strip .ss-status {
   font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.15;
   text-transform: uppercase; letter-spacing: 0.01em; color: var(--text);
 }
-.status-strip .ss-more { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+.status-strip .ss-more { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
 .status-strip:hover .ss-more { color: var(--text-2); }
 
 /* ── hero: the deck and the quote side by side on a wide screen ──────── */
@@ -1007,12 +1014,12 @@ a.countdown-chip:hover { border-color: var(--text-3); }
   padding: 12px 12px 14px; text-decoration: none; color: inherit; transition: border-color 0.15s;
 }
 .ds-cell:hover { border-color: var(--text-3); }
-.ds-date { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-bright); }
+.ds-date { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-bright); }
 .ds-dow { color: var(--text); }
 .ds-count { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
 .ds-dots { display: flex; flex-wrap: wrap; gap: 3px; }
 .ds-dots i { width: 8px; height: 8px; border-radius: 50%; display: block; }
-.ds-cnt { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); }
+.ds-cnt { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
 .ds-lead { font-size: 13.5px; line-height: 1.38; color: var(--text-2); }
 .ds-cell:hover .ds-lead { color: var(--text); }
 @media (max-width: 900px) {
@@ -1030,7 +1037,7 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 @media (max-width: 800px) {
   .cell-lbl {
     display: block; margin-bottom: 5px;
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--text-3);
   }
   .ev-found .cell-lbl { margin-top: 12px; }
@@ -1053,7 +1060,7 @@ a.countdown-chip:hover { border-color: var(--text-3); }
   padding: 16px 0; border-bottom: 1px solid var(--line-soft); align-items: start;
 }
 .lg-row.lg-head {
-  padding: 10px 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  padding: 10px 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--text-3);
 }
 .lg-when { font-family: var(--font-mono); font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 2px; }
@@ -1065,10 +1072,10 @@ a.countdown-chip:hover { border-color: var(--text-3); }
   text-align: right; font-family: var(--font-display); font-weight: 700; font-size: 24px;
   line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums;
 }
-.lg-head .lg-amt { font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--text-3); }
+.lg-head .lg-amt { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--text-3); }
 .lg-row.is-channel .lg-amt, .lg-row.is-attempt .lg-amt { font-size: 18px; }
 .lg-tag {
-  display: inline-block; margin-bottom: 5px; font-family: var(--font-mono); font-size: 11px;
+  display: inline-block; margin-bottom: 5px; font-family: var(--font-mono); font-size: 12px;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2);
   border: 1px solid var(--line); border-radius: 3px; padding: 1px 6px;
 }
@@ -1076,8 +1083,8 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 .lg-row.is-attempt .lg-amt, .lg-row.is-comparison .lg-amt { color: var(--text-2); }
 .lg-row.is-comparison { border-top: 1px dashed var(--line); }
 /* A filing line reference, and money shown for context but never added to a total. */
-.lg-line { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
-.lg-recip { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
+.lg-line { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
+.lg-recip { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
 .lg-row.is-around .lg-amt { color: var(--text-2); font-size: 20px; }
 .lg-group-note { display: block; margin-top: 4px; font-family: var(--font-body); font-size: 13.5px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--text-2); }
 @media (max-width: 800px) {
@@ -1112,7 +1119,7 @@ a.countdown-chip:hover { border-color: var(--text-3); }
   background: var(--surface); border: 1px solid var(--line-soft); border-left: 3px solid var(--text);
   border-radius: 0 8px 8px 0;
 }
-.qc-lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+.qc-lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
 .qc-q { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.05; color: var(--text); margin: 6px 0 16px; }
 .qc-a { font-size: 17px; line-height: 1.6; color: var(--text); margin-top: 6px; }
 .qc-rule { font-size: 15px; line-height: 1.6; color: var(--text-2); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
