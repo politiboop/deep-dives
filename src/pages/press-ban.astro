@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
+import RecordToggle from '../components/RecordToggle.astro';
 import raw from '../data/press-ban.json';
 import { longDate, shortDate, weekday, daysBetween, slug, sourceCount, smartAll } from '../lib/fmt.js';
 
@@ -21,7 +22,6 @@ const banDays = daysBetween(meta.bannedFrom, meta.restored);
 const eventCount = days.reduce((n, d) => n + d.events.length, 0);
 const amiciCount = amici.lead.length + amici.names.length;
 const sources = sourceCount(dive);
-const datedWatch = watch.filter((w) => w.date);
 const isPast = (d) => d && d < dive.updated;
 const paraphrased = (c) => /paraphrased/i.test(c.who);
 const whoLabel = (c) => c.who.replace(/,\s*paraphrased/i, '');
@@ -38,13 +38,14 @@ const stats = [
 // order is replaced and both the chip and the stat disappear.
 const orderEnd = meta.orderEnds && shortDate(meta.orderEnds);
 
+// Every dive shares this vocabulary, so a reader who has read one can find their way around the next.
 const NAV = [
-  { href: '#days', label: 'The Days' },
+  { href: '#stand', label: 'Status' },
+  { href: '#record', label: 'Record' },
   { href: '#claims', label: 'Claims' },
-  { href: '#voices', label: 'Who Spoke' },
-  { href: '#precedent', label: 'Precedent' },
+  { href: '#voices', label: 'Voices' },
+  { href: '#rules', label: 'Rules' },
   { href: '#take', label: 'Our Take' },
-  { href: '#watch', label: 'Watch' },
   { href: '#method', label: 'Method' },
 ];
 
@@ -79,70 +80,50 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         {stats.map((s) => <div class="stat"><div class="num" data-count={s.n}>{s.n}</div><div class="lbl">{s.label}</div></div>)}
         {orderEnd && <div class="stat"><div class="num" id="order-num">{orderEnd}</div><div class="lbl" id="order-lbl">Scheduled end of the court order</div></div>}
       </div>
+
+      <p class="readme-line">
+        Everything outside the labeled take is reporting: {sources} sources, each fact linked to where it
+        came from, every quotation checked word for word. Our opinion comes near the end, set apart and
+        easy to skip. <a href="#method">How this page is built ↓</a>
+      </p>
     </div>
   </div>
 
-  <!-- ── HOW TO READ ──────────────────────────────────────────────────── -->
-  <section id="readme" aria-label="How to read this page">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">How to read this page</p>
-        <h2>Facts and takes are separated. On purpose.</h2>
-      </div>
-      <div class="readme-grid">
-        <div class="readme-card facts">
-          <h3>The facts</h3>
-          <p>
-            Everything outside the labeled take is reporting: dates, names, direct quotations and
-            court filings, each linked to where it came from. {sources} sources in all, including
-            the court record itself and right-leaning outlets where they covered the story. Every
-            quotation on this page has been checked word for word against its source.
-          </p>
-        </div>
-        <div class="readme-card take">
-          <h3>Our take</h3>
-          <p>
-            When we give an opinion it is labeled, set apart, and easy to skip. Ours is near the end
-            of the page. You do not have to share it to use everything else here: the record is laid
-            out so you can check it and decide for yourself.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── WHERE IT STANDS ──────────────────────────────────────────────── -->
-  <section id="stand" aria-label="Where it stands">
+  <section id="stand" aria-label="Where it stands, and what to watch">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">As of {longDate(dive.updated)}</p>
         <h2>Where it stands</h2>
       </div>
-      <div class="stand">
-        <div class="stand-now">
-          <p class="stand-lbl">Status</p>
-          <p class="stand-status">{meta.status}</p>
-          <p>{meta.statusText}</p>
-        </div>
-        <ul class="stand-dates">
-          {datedWatch.map((w) => (
-            <li class={isPast(w.date) ? 'is-past' : ''}><span class="d">{shortDate(w.date)}</span><span><strong>{w.title}.</strong></span></li>
-          ))}
-        </ul>
+      <div class="stand-now">
+        <p class="stand-lbl">Status</p>
+        <p class="stand-status">{meta.status}</p>
+        <p>{meta.statusText}</p>
       </div>
+      <h3 class="stand-sub">What to watch</h3>
+      <ul class="watch-list">
+        {watch.map((w) => (
+          <li class={isPast(w.date) ? 'is-past' : ''}>
+            <span class="watch-when">{w.when}</span>
+            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
-  <!-- ── DAY BY DAY ───────────────────────────────────────────────────── -->
-  <section id="days" aria-label="Day by day">
+  <!-- ── THE RECORD ───────────────────────────────────────────────────── -->
+  <section id="record" aria-label="The record, in order">
     <div class="wrap">
       <div class="sec-head">
-        <p class="kicker">In order</p>
-        <h2>Day by day</h2>
+        <p class="kicker">Day by day</p>
+        <h2>The record</h2>
         <p class="sub">
           {eventCount} documented events over {days.length} days, from the first post to the latest
           turn. Each links to its sources; each has its own address, so you can send someone a single moment.
         </p>
+        <RecordToggle />
       </div>
       <div class="actor-legend" aria-hidden="true">
         {Object.values(ACTORS).map((a) => <span><i style={`background:${a.color}`}></i>{a.label}</span>)}
@@ -174,7 +155,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
                     {e.time && <span class="ev-time">{e.time}</span>}
                     <span class="actor-chip">{ACTORS[e.actor].label}</span>
                   </div>
-                  <h3>{e.title}</h3>
+                  <h3><button type="button" class="ev-t" aria-expanded="true">{e.title}</button></h3>
                   <div class="ev-body">{e.body.map((p) => <p>{p}</p>)}</div>
                   <Sources sources={e.sources} />
                 </li>
@@ -187,11 +168,11 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
   </section>
 
   <!-- ── THE CLAIM AND THE RECORD ─────────────────────────────────────── -->
-  <section id="claims" aria-label="The claim and the record">
+  <section id="claims" aria-label="The claims and the record">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Checked against the record</p>
-        <h2>The claim and the record</h2>
+        <h2>The claims and the record</h2>
         <p class="sub">
           The government’s case, in its own words wherever it put the point in writing, next to what
           the filings, the transcripts and the cited stories themselves show.
@@ -279,12 +260,12 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     </div>
   </section>
 
-  <!-- ── THE PRECEDENT ────────────────────────────────────────────────── -->
-  <section id="precedent" aria-label="The precedent">
+  <!-- ── THE RULES ────────────────────────────────────────────────────── -->
+  <section id="rules" aria-label="The rules the case turns on">
     <div class="wrap">
       <div class="sec-head">
-        <p class="kicker">What the case turns on</p>
-        <h2>The precedent</h2>
+        <p class="kicker">The precedent the case turns on</p>
+        <h2>The rules</h2>
         <p class="sub">
           The government asked the court to treat the first and third of these as wrongly decided.
           A trial judge is bound by the appeals court above it, and the order says so in as many
@@ -320,25 +301,6 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     </div>
   </section>
 
-  <!-- ── WHAT TO WATCH ────────────────────────────────────────────────── -->
-  <section id="watch" aria-label="What to watch">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Dated triggers</p>
-        <h2>What to watch</h2>
-        <p class="sub">The days above are history. These are the dates where the story continues.</p>
-      </div>
-      <ul class="watch-list">
-        {watch.map((w) => (
-          <li>
-            <span class="watch-when">{w.when}</span>
-            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- ── METHOD ───────────────────────────────────────────────────────── -->
   <section id="method" aria-label="Method">
     <div class="wrap">
@@ -367,6 +329,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           <h3>What we mean by the record</h3>
           <ul>
             <li>It means what the documents say: the court’s findings, sworn statements, transcripts and the text of the stories the government cited. It does not mean our reading of them.</li>
+            <li>Our opinion is confined to the labeled take near the end of the page. It is set apart and easy to skip; you do not have to share it to use the rest.</li>
             <li>A finding in a temporary restraining order is a finding of likelihood at an early stage, not a final judgment. The page treats it that way.</li>
           </ul>
         </div>
@@ -438,7 +401,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         if (rail && on && rail.offsetParent) rail.scrollTo({ left: on.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
       });
     }, { rootMargin: '-30% 0px -60% 0px' });
-    ['days', 'claims', 'voices', 'precedent', 'take', 'watch', 'method'].forEach((id) => {
+    [...new Set(links.map((l) => l.getAttribute('href') || '').filter((h) => h.startsWith('#')).map((h) => h.slice(1)))].forEach((id) => {
       const el = document.getElementById(id);
       if (el) spy.observe(el);
     });

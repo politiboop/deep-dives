@@ -1,0 +1,49 @@
+---
+// The headlines-only switch for a dive's record. Every event is expanded by default;
+// the switch collapses each to its title, chip and sources so a long record can be
+// scanned, and any title reopens its own event. The choice is remembered per browser.
+// Base.astro applies a remembered choice before the page paints, via a class on <html>.
+---
+<button type="button" id="mode-toggle" class="mode-toggle" aria-pressed="false">Headlines only</button>
+
+<script>
+  const KEY = 'dd-headlines';
+  const root = document.documentElement;
+  const btn = document.getElementById('mode-toggle');
+  const evs = [...document.querySelectorAll<HTMLElement>('.days .ev')];
+  const titles = (e: HTMLElement) => e.querySelector<HTMLButtonElement>('.ev-t');
+  const collapsed = () => root.classList.contains('dd-headlines');
+  const isOpen = (e: HTMLElement) => (collapsed() ? e.classList.contains('is-open') : !e.classList.contains('is-closed'));
+
+  const paint = () => {
+    if (btn) {
+      btn.textContent = collapsed() ? 'Show everything' : 'Headlines only';
+      btn.setAttribute('aria-pressed', String(collapsed()));
+    }
+    evs.forEach((e) => titles(e)?.setAttribute('aria-expanded', String(isOpen(e))));
+  };
+
+  // The switch sets the default for every event and clears any per-event choice.
+  btn?.addEventListener('click', () => {
+    root.classList.toggle('dd-headlines');
+    evs.forEach((e) => e.classList.remove('is-open', 'is-closed'));
+    try { localStorage.setItem(KEY, collapsed() ? '1' : '0'); } catch {}
+    paint();
+  });
+
+  // A title toggles its own event against the current default.
+  evs.forEach((e) => titles(e)?.addEventListener('click', () => {
+    e.classList.toggle(collapsed() ? 'is-open' : 'is-closed');
+    paint();
+  }));
+
+  // An event someone was sent a link to is always open when they arrive.
+  const openTarget = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const t = id && document.getElementById(id);
+    if (t && t.classList.contains('ev')) { t.classList.add('is-open'); t.classList.remove('is-closed'); paint(); }
+  };
+  openTarget();
+  addEventListener('hashchange', openTarget);
+  paint();
+</script>

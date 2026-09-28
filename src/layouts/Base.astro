@@ -33,6 +33,9 @@ const { title, description, ogTitle = title, nav = [] } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- A reader who chose headlines-only on a dive gets it before the page paints,
+         so a long record never flashes open and then collapses. -->
+    <script is:inline>try { if (localStorage.getItem('dd-headlines') === '1') document.documentElement.classList.add('dd-headlines'); } catch (e) {}</script>
     <script>
       import { inject } from '@vercel/analytics';
       inject();

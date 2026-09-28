@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
+import RecordToggle from '../components/RecordToggle.astro';
 import raw from '../data/his-own-account.json';
 import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
 
@@ -33,6 +34,7 @@ const sources = sourceCount(dive);
 const seedCount = dive.trackerIds.length;
 const paraphrased = (c) => /paraphrased/i.test(c.who);
 const whoLabel = (c) => c.who.replace(/,\s*paraphrased/i, '');
+const isPast = (d) => d && d < dive.updated;
 const pct = (a, b) => Math.round((a / b) * 100);
 
 // The record spans two years, so it is grouped by month.
@@ -64,14 +66,15 @@ const stats = [
   { n: money(licensing, true), label: 'From licensing his name to foreign developers, including in the UAE, Saudi Arabia and Qatar' },
 ];
 
+// Every dive shares this vocabulary, so a reader who has read one can find their way around the next.
 const NAV = [
-  { href: '#ledger', label: 'The Ledger' },
-  { href: '#record', label: 'The Record' },
+  { href: '#stand', label: 'Status' },
+  { href: '#ledger', label: 'Ledger' },
+  { href: '#record', label: 'Record' },
   { href: '#claims', label: 'Claims' },
-  { href: '#voices', label: 'Who Spoke' },
-  { href: '#rules', label: 'The Rules' },
+  { href: '#voices', label: 'Voices' },
+  { href: '#rules', label: 'Rules' },
   { href: '#take', label: 'Our Take' },
-  { href: '#watch', label: 'Watch' },
   { href: '#method', label: 'Method' },
 ];
 
@@ -116,57 +119,36 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
       <div class="statrow is-dive" style={`--n:${stats.length}`}>
         {stats.map((s) => <div class="stat"><div class="num">{s.n}</div><div class="lbl">{s.label}</div></div>)}
       </div>
+
+      <p class="readme-line">
+        Everything outside the labeled take is reporting: {sources} sources, each fact linked to where it
+        came from, every quotation checked word for word. Our opinion comes near the end, set apart and
+        easy to skip. <a href="#method">How this page is built ↓</a>
+      </p>
     </div>
   </div>
 
-  <!-- ── HOW TO READ ──────────────────────────────────────────────────── -->
-  <section id="readme" aria-label="How to read this page">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">How to read this page</p>
-        <h2>Facts and takes are separated. On purpose.</h2>
-      </div>
-      <div class="readme-grid">
-        <div class="readme-card facts">
-          <h3>The facts</h3>
-          <p>
-            Everything outside the labeled take is reporting: contracts, dates, names, direct quotations
-            and court rulings, each linked to where it came from. {sources} sources in all, including
-            right-leaning outlets where they covered the story. Every quotation on this page has been
-            checked word for word against its source.
-          </p>
-        </div>
-        <div class="readme-card take">
-          <h3>Our take</h3>
-          <p>
-            When we give an opinion it is labeled, set apart, and easy to skip. Ours is near the end
-            of the page. You do not have to share it to use everything else here: the record is laid
-            out so you can check it and decide for yourself.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── WHERE IT STANDS ──────────────────────────────────────────────── -->
-  <section id="stand" aria-label="Where it stands">
+  <section id="stand" aria-label="Where it stands, and what to watch">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">As of {longDate(dive.updated)}</p>
         <h2>Where it stands</h2>
       </div>
-      <div class="stand">
-        <div class="stand-now">
-          <p class="stand-lbl">Status</p>
-          <p class="stand-status">{meta.status}</p>
-          <p>{meta.statusText}</p>
-        </div>
-        <ul class="stand-dates">
-          {watch.map((w) => (
-            <li><span class="d">{w.date ? shortDate(w.date) : w.when}</span><span><strong>{w.title}.</strong></span></li>
-          ))}
-        </ul>
+      <div class="stand-now">
+        <p class="stand-lbl">Status</p>
+        <p class="stand-status">{meta.status}</p>
+        <p>{meta.statusText}</p>
       </div>
+      <h3 class="stand-sub">What to watch</h3>
+      <ul class="watch-list">
+        {watch.map((w) => (
+          <li class={isPast(w.date) ? 'is-past' : ''}>
+            <span class="watch-when">{w.when}</span>
+            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -222,6 +204,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           {eventCount} documented events over {months.length} months, from the launch of his family’s crypto company to the Senate vote on the bill that would regulate it.
           Each links to its sources; each has its own address, so you can send someone a single moment.
         </p>
+        <RecordToggle />
       </div>
       <div class="actor-legend" aria-hidden="true">
         {Object.values(ACTORS).map((a) => <span><i style={`background:${a.color}`}></i>{a.label}</span>)}
@@ -254,7 +237,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
                     {e.time && <span class="ev-time">{e.time}</span>}
                     <span class="actor-chip">{ACTORS[e.actor].label}</span>
                   </div>
-                  <h3>{e.title}</h3>
+                  <h3><button type="button" class="ev-t" aria-expanded="true">{e.title}</button></h3>
                   <div class="ev-body">{e.body.map((p) => <p>{p}</p>)}</div>
                   <Sources sources={e.sources} />
                 </li>
@@ -267,11 +250,11 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
   </section>
 
   <!-- ── THE CLAIM AND THE RECORD ─────────────────────────────────────── -->
-  <section id="claims" aria-label="The explanation and the record">
+  <section id="claims" aria-label="The claims and the record">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Checked against the record</p>
-        <h2>The explanation and the record</h2>
+        <h2>The claims and the record</h2>
         <p class="sub">
           What the president, the White House, his family business and its partners say, in their own words,
           next to what the documents and the reporting show.
@@ -381,25 +364,6 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
     </div>
   </section>
 
-  <!-- ── WHAT TO WATCH ────────────────────────────────────────────────── -->
-  <section id="watch" aria-label="What to watch">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Dated triggers</p>
-        <h2>What to watch</h2>
-        <p class="sub">The record above is history. These are the dates and open questions where the story continues.</p>
-      </div>
-      <ul class="watch-list">
-        {watch.map((w) => (
-          <li>
-            <span class="watch-when">{w.when}</span>
-            <span class="watch-what"><strong>{w.title}.</strong> {w.text}{w.sources && <Sources sources={w.sources} />}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- ── METHOD ───────────────────────────────────────────────────────── -->
   <section id="method" aria-label="Method">
     <div class="wrap">
@@ -429,6 +393,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           <h3>What we mean by the record</h3>
           <ul>
             <li>It means what the documents say: contracts, releases, rulings, sworn testimony and the text of what was published. It does not mean our reading of them.</li>
+            <li>Our opinion is confined to the labeled take near the end of the page. It is set apart and easy to skip; you do not have to share it to use the rest.</li>
             <li>The filing reports gross revenue for his businesses, so the total is money coming in, not profit. Settlement money is counted where the filing lists it, and the ledger shows where the filing says it was paid.</li><li>Timing is not proof. Where money arrived near a government decision, the page says what happened in what order and what, if anything, links them.</li>
           </ul>
         </div>
@@ -458,7 +423,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
         if (rail && on && rail.offsetParent) rail.scrollTo({ left: on.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
       });
     }, { rootMargin: '-30% 0px -60% 0px' });
-    ['ledger', 'record', 'claims', 'voices', 'rules', 'take', 'watch', 'method'].forEach((id) => {
+    [...new Set(links.map((l) => l.getAttribute('href') || '').filter((h) => h.startsWith('#')).map((h) => h.slice(1)))].forEach((id) => {
       const el = document.getElementById(id);
       if (el) spy.observe(el);
     });

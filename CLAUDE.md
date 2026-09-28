@@ -28,7 +28,20 @@ the batch workflow).
   ballroom too; readers could not tell what it was for, so the ballroom became its own dive.)
 - **Shared pieces:** `src/layouts/Base.astro` (fonts, analytics, topbar, footer),
   `src/components/Sources.astro` (a row of source links labeled by outlet),
+  `src/components/RecordToggle.astro` (the headlines-only switch on a record),
   `src/lib/fmt.js` (dates, outlet labels, source counts), `src/styles/global.css`.
+- **Every dive is laid out the same way, in the same words.** The section nav reads
+  Status · Ledger (where there is one) · Record · Claims · Voices · Rules · Our Take · Method, and
+  the headings match: Where it stands (which holds What to watch), The ledger, The record, The
+  claims and the record, Who objected and who defended it, The rules, Our take, Method. A reader
+  who has read one dive should be able to find their way around the next without looking. The
+  scroll-spy reads the nav, so a new section only needs a nav entry.
+- **Method stays out of the way.** One line under the hero figures says how the page works and
+  links to Method at the bottom; nothing about method sits between the headline and the story.
+- **The record can be skimmed.** Every event is expanded by default. The switch above the
+  record collapses each to its title, chip and sources; a title reopens its own event; the
+  choice is remembered in the browser and applied before first paint (a class on `<html>`,
+  set by an inline script in `Base.astro`). An event someone was sent a link to is always open.
 - **The stylesheet is election-rigging's, copied, with additions below a marked line.** Keep the
   shared half in step with that repo when either changes. The additions deliberately override a
   few shared values rather than editing the shared half: several small mono sizes and the purple
