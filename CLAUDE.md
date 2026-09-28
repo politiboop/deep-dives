@@ -13,7 +13,8 @@ the batch workflow).
 - **Astro 6**, static output, the Vercel adapter for web analytics (as on election-rigging).
 - **One data file and one page per dive.** `src/data/<slug>.json` holds everything a dive says;
   `src/pages/<slug>.astro` renders it. `src/data/dives.json` is the registry the front door
-  (`src/pages/index.astro`) lists, newest first. An entry carries only what the page itself
+  (`src/pages/index.astro`) lists: each section first, its questions in order with the dive that
+  answers each, then the dives outside any section, newest first. An entry carries only what the page itself
   does not: slug, kicker, title, dek and section. A card's status, updated date and counts are
   read from the dive's data file, so the front door can never lag the page it links to.
 - **Sections group dives under plain questions.** `src/data/sections.json` defines each section

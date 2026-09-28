@@ -9,17 +9,19 @@ import { longDate, sourceCount } from '../lib/fmt.js';
 // lag the page it links to.
 const files = import.meta.glob('../data/*.json', { eager: true });
 const data = (slug) => files[`../data/${slug}.json`]?.default;
-const list = [...dives]
-  .map((d) => {
-    const x = data(d.slug);
-    const events = x ? x.days.reduce((n, day) => n + day.events.length, 0) : 0;
-    return { ...d, updated: x?.updated ?? '', status: x?.meta?.status ?? '', events, sources: x ? sourceCount(x) : 0 };
-  })
-  .sort((a, b) => b.updated.localeCompare(a.updated));
+const cards = dives.map((d) => {
+  const x = data(d.slug);
+  const events = x ? x.days.reduce((n, day) => n + day.events.length, 0) : 0;
+  return { ...d, updated: x?.updated ?? '', status: x?.meta?.status ?? '', events, sources: x ? sourceCount(x) : 0 };
+});
+const bySlug = (slug) => cards.find((c) => c.slug === slug) || null;
 
-// Sections group dives under a set of questions (src/data/sections.json).
-const sectionList = Object.values(sections).map((s) => ({ ...s, answered: s.questions.filter((q) => q.dive && dives.some((d) => d.slug === q.dive)).length }));
-const sectionTitle = (slug) => sections[slug]?.title;
+// One list. Each section comes first, its questions in order with the dive that answers
+// each; the dives outside any section follow, newest first.
+const groups = Object.values(sections)
+  .map((s) => ({ ...s, questions: s.questions.map((q) => ({ ...q, card: q.dive ? bySlug(q.dive) : null })) }))
+  .map((s) => ({ ...s, answered: s.questions.filter((q) => q.card).length }));
+const standalone = cards.filter((c) => !c.section).sort((a, b) => b.updated.localeCompare(a.updated));
 
 const description = 'One story at a time, taken all the way down. Each deep dive follows a single episode from the first post to the latest ruling, sets what was claimed against what the record shows, and links every fact to its source.';
 ---
@@ -34,78 +36,75 @@ const description = 'One story at a time, taken all the way down. Each deep dive
         post to the latest ruling, sets <strong>what was claimed</strong> against <strong>what the record
         shows</strong>, and links every fact to its source.
       </p>
-      <p class="deck">
+      <p class="readme-line">
         Facts and opinions are kept apart. Every link and every quotation traces to a verified entry in
         The Trump Tracker, and a check that runs on every change will not let a page through otherwise.
+        <a href="#standards">How these are built ↓</a>
       </p>
     </div>
   </div>
-
-  <section id="sections" aria-label="Sections">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Start with a question</p>
-        <h2>Sections</h2>
-      </div>
-      <div class="dive-list">
-        {sectionList.map((s) => (
-          <a class="section-card" href={`/${s.slug}`}>
-            <div>
-              <p class="kicker">{s.questions.length} questions · {s.answered} answered so far</p>
-              <h3>{s.title}</h3>
-              <p class="dek">{s.dek}</p>
-              <ol>{s.questions.map((q) => <li><b>{q.n}</b>{q.q}</li>)}</ol>
-            </div>
-            <span class="go">See the section →</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <section id="dives" aria-label="The deep dives">
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Read one</p>
-        <h2>Every dive</h2>
+        <h2>The dives</h2>
       </div>
-      <div class="dive-list">
-        {list.map((d) => (
-          <a class="dive-card" href={`/${d.slug}`}>
-            <div>
-              <p class="kicker">{d.section && <span class="sec-tag">{sectionTitle(d.section)} · </span>}{d.kicker}</p>
-              <h3>{d.title}</h3>
-              <p class="dek">{d.dek}</p>
-              <p class="meta"><strong>{d.status}</strong> · {d.events} events · {d.sources} sources · Updated {longDate(d.updated)}</p>
-            </div>
-            <span class="go">Read the dive →</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <section id="family" aria-label="The rest of the work">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">The rest of the work</p>
-        <h2>Where these come from</h2>
-        <p class="sub">The dives sit on top of three sites. Each goes deeper in its own way.</p>
-      </div>
-      <div class="family">
-        <a href="https://thetrumptracker.com" target="_blank" rel="noopener noreferrer">
-          <p class="fam-name">The Trump Tracker ↗</p>
-          <p class="fam-what">The sourced record every dive is built from, entry by entry.</p>
-        </a>
-        <a href="https://research.thetrumptracker.com" target="_blank" rel="noopener noreferrer">
-          <p class="fam-name">The research site ↗</p>
-          <p class="fam-what">Long-form analysis that connects the entries into patterns.</p>
-        </a>
-        <a href="https://thecivicsdesk.com" target="_blank" rel="noopener noreferrer">
-          <p class="fam-name">The Civics Desk ↗</p>
-          <p class="fam-what">Plain-language explainers for readers who have not been following closely.</p>
-        </a>
-      </div>
+      {groups.map((s) => (
+        <div class="sec-group">
+          <div class="sg-head">
+            <div>
+              <p class="kicker">A section · {s.questions.length} questions · {s.answered} answered so far</p>
+              <h3>{s.title}</h3>
+              <p class="dek">{s.dek}</p>
+            </div>
+            <a class="go" href={`/${s.slug}`}>The section →</a>
+          </div>
+          <div class="dive-list">
+            {s.questions.map((q) => q.card ? (
+              <a class="dive-card" href={`/${q.card.slug}`}>
+                <div>
+                  <p class="kicker"><span class="q-num">{q.n}</span>{q.q}</p>
+                  <h3>{q.card.title}</h3>
+                  <p class="dek">{q.card.dek}</p>
+                  <p class="meta"><strong>{q.card.status}</strong> · {q.card.events} events · {q.card.sources} sources · Updated {longDate(q.card.updated)}</p>
+                </div>
+                <span class="go">Read the dive →</span>
+              </a>
+            ) : (
+              <div class="q-pending">
+                <p class="kicker"><span class="q-num">{q.n}</span>{q.q}</p>
+                <p><strong>No dive yet.</strong> This one is next in line.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {standalone.length > 0 && (
+        <div class="sec-group">
+          <div class="sg-head">
+            <div>
+              <p class="kicker">One story each</p>
+              <h3>More dives</h3>
+            </div>
+          </div>
+          <div class="dive-list">
+            {standalone.map((d) => (
+              <a class="dive-card" href={`/${d.slug}`}>
+                <div>
+                  <p class="kicker">{d.kicker}</p>
+                  <h3>{d.title}</h3>
+                  <p class="dek">{d.dek}</p>
+                  <p class="meta"><strong>{d.status}</strong> · {d.events} events · {d.sources} sources · Updated {longDate(d.updated)}</p>
+                </div>
+                <span class="go">Read the dive →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 

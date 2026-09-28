@@ -718,7 +718,7 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 }
 .dive-card h3 {
   font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-  font-size: clamp(34px, 5vw, 52px); line-height: 0.95;
+  font-size: clamp(30px, 4vw, 42px); line-height: 0.95;
 }
 .dive-card .dek { margin-top: 12px; color: var(--text-2); max-width: 640px; font-size: 16px; }
 .dive-card .meta { margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
@@ -730,16 +730,27 @@ section { scroll-margin-top: calc(var(--head-h) - 14px); }
 .dive-card:hover .go { border-color: var(--brand-bright); color: var(--brand-bright); }
 @media (max-width: 640px) { .dive-card { grid-template-columns: 1fr; } .dive-card .go { justify-self: start; } }
 
-.family { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-@media (max-width: 900px) { .family { grid-template-columns: 1fr; } }
-@media (max-width: 520px) { .family { grid-template-columns: 1fr; } }
-.family a {
-  display: block; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 6px;
-  padding: 16px 18px; text-decoration: none; color: inherit; transition: border-color 0.15s;
+/* The front door's one list: a section, then the dives that answer its questions;
+   the dives outside any section follow. */
+.sec-group + .sec-group { margin-top: 44px; padding-top: 40px; border-top: 1px solid var(--line-soft); }
+.sg-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 16px; }
+.sg-head .kicker {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-2); margin-bottom: 8px;
 }
-.family a:hover { border-color: var(--text-3); }
-.family .fam-name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 19px; line-height: 1.1; }
-.family .fam-what { font-size: 13px; color: var(--text-2); margin-top: 6px; line-height: 1.5; }
+.sg-head h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(28px, 4vw, 40px); line-height: 0.95; }
+.sg-head .dek { margin-top: 8px; color: var(--text-2); max-width: 640px; font-size: 15.5px; }
+.sg-head .go {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text); text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 9px 14px; white-space: nowrap;
+}
+.sg-head .go:hover { border-color: var(--text-2); }
+@media (max-width: 640px) { .sg-head { grid-template-columns: 1fr; } .sg-head .go { justify-self: start; } }
+.q-num { font-family: var(--font-mono); color: var(--text-3); margin-right: 10px; }
+.dive-list .q-pending .kicker {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--brand-bright); margin-bottom: 8px;
+}
 
 /* ── how to read, in one line under the hero figures ───────────────────── */
 .readme-line {
@@ -1124,22 +1135,3 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 .q-pending a:hover { border-color: var(--text-2); }
 @media (max-width: 560px) { .q-head { grid-template-columns: 1fr; gap: 6px; } .q-n { font-size: 32px; } }
 
-/* front door: the sections, and a dive's section on its card */
-.section-card {
-  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end;
-  background: var(--surface); border: 1px solid var(--line-soft); border-left: 3px solid var(--text-2);
-  border-radius: 8px; padding: 24px 28px; text-decoration: none; color: inherit; transition: border-color 0.15s;
-}
-.section-card:hover { border-color: var(--text-3); border-left-color: var(--text); }
-.section-card h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(30px, 4.5vw, 44px); line-height: 0.95; }
-.section-card .dek { margin-top: 10px; color: var(--text-2); max-width: 640px; font-size: 16px; }
-.section-card ol { list-style: none; margin-top: 12px; display: grid; gap: 4px; }
-.section-card li { font-size: 14.5px; color: var(--text-2); }
-.section-card li b { font-family: var(--font-mono); font-weight: 400; font-size: 12px; color: var(--brand-bright); margin-right: 8px; }
-.section-card .go { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 9px 14px; white-space: nowrap; }
-@media (max-width: 640px) { .section-card { grid-template-columns: 1fr; } .section-card .go { justify-self: start; } }
-.dive-card .kicker a, .dive-card .sec-tag { color: var(--text-2); }
-.section-card .kicker {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--text-2); margin-bottom: 8px;
-}
