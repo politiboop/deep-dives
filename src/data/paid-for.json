@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -16,8 +16,8 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "The ads now include a rerun of a 2024 campaign spot, and nobody has said which agency pays",
-    "statusText": "As of September 28, no agency, contract or appropriation had been identified for the ads, which AdImpact estimates have cost more than $1.7 million. The newest is virtually identical to a 2024 Trump campaign ad, the Associated Press reported. The White House calls them \"public service announcements.\" Public Citizen has asked the Government Accountability Office and the Office of Special Counsel to find them illegal; neither has acted. Democrats in Congress have asked for the cost and demanded the ads be pulled, and Republican senators and a Republican congressman have objected. The FAA banner contract runs through 2027."
+    "status": "The ads are paid for with border-security money, a Republican senator confirms, and DHS still has not said so",
+    "statusText": "On September 29 the source of the money came out: Customs and Border Protection funds from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed. DHS referred questions to the White House, which has not confirmed it. Democratic senators say DHS appears to have dedicated $20 million; AdImpact counts more than $2.5 million in airtime so far. Public Citizen has complaints before GAO, the Office of Special Counsel, the FCC and the FTC; none has acted. The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
@@ -157,26 +157,30 @@
     {
       "when": "Sept 2026",
       "item": "The television ads",
-      "payer": "\"the U.S. government,\" agency unnamed",
-      "amount": 1700000,
-      "note": "More than $1.7 million by AdImpact's count as of September 28, which it says misses some cable airings. The first buy, on Fox News and Newsmax, was about $14,000. At least four spots have run, on Fox, Newsmax, CBS and NFL broadcasts",
+      "payer": "Customs and Border Protection funds, confirmed by Sen. Susan Collins",
+      "amount": 2500000,
+      "note": "More than $2.5 million by AdImpact's count for three ads over seven days, the AP reported September 29; AdImpact misses some cable airings, and the first buy was about $14,000. Sens. Murray and Murphy say DHS appears to have dedicated $20 million; a $20 million CBP \"National Media Campaign\" contract awarded September 20 has not been tied to the ads",
       "kind": "channel",
       "sources": [
         {
-          "text": "NBC News: White House releases new taxpayer-funded ad describing 'final battle' (September 28, 2026)",
-          "url": "https://www.nbcnews.com/politics/trump-administration/white-house-releases-new-taxpayer-funded-ad-describing-final-battle-rcna600171"
+          "text": "AP: Homeland Security taps $20M in taxpayer funds for pro-Trump ads (September 29, 2026)",
+          "url": "https://apnews.com/article/trump-ads-taxpayer-money-homeland-security-b869294503c8454db4109ae175ee9e5c"
         },
         {
-          "text": "CNBC: Taxpayer-funded Trump ads draw bipartisan scrutiny ahead of midterms (September 27, 2026)",
-          "url": "https://www.cnbc.com/2026/09/27/trump-government-funded-ads-midterms.html"
+          "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
+          "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
         },
         {
-          "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
-          "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+          "text": "CNBC: Trump government ads were funded by Homeland Security, WSJ reports (September 29, 2026)",
+          "url": "https://www.cnbc.com/2026/09/29/trump-ads-cbp-dhs-taxpayer-funding-election.html"
         },
         {
-          "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
-          "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
+          "text": "Senate Appropriations Committee: Letter from Sens. Murray and Murphy to Secretary Mullin on DHS-funded ads (September 29, 2026)",
+          "url": "https://www.appropriations.senate.gov/imo/media/doc/dhs_letter_on_trump_ads.pdf"
+        },
+        {
+          "text": "USAspending.gov: CBP award 70B06C26F00001137 to LMD Agency, National Media Campaign, $20,000,000 (September 20, 2026)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_70B06C26F00001137_7014_70Z02323ACGRC0001_7008"
         }
       ]
     },
@@ -552,6 +556,103 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-09-29",
+      "events": [
+        {
+          "actor": "congress",
+          "title": "The money turns out to be border funds, and a Republican chairman confirms it",
+          "kind": "ads",
+          "body": [
+            "The Wall Street Journal reported, and NBC News, the Associated Press and CNBC confirmed, that the ads are paid for with Customs and Border Protection money from the 2025 reconciliation law rather than annual appropriations. Sen. Susan Collins of Maine, who chairs the Senate Appropriations Committee, confirmed it on the record, saying \"it was taken out of funding that was supposed to be for Customs and Border Protection.\" DHS referred questions to the White House. Sens. Patty Murray and Chris Murphy wrote that \"it appears DHS has dedicated $20 million to this outrageous scheme\" and asked for answers within 48 hours. CNBC found a $20 million CBP contract for a \"National Media Campaign\" awarded September 20, one day after the budget office released $20 million to CBP under a \"Commemorative Events\" line; the public record does not yet tie that contract to these ads."
+          ],
+          "sources": [
+            {
+              "text": "Wall Street Journal: Homeland Security Money Financed Pro-Trump Television Ads (September 29, 2026)",
+              "url": "https://www.wsj.com/politics/policy/homeland-security-money-financed-pro-trump-television-ads-54ac33bb"
+            },
+            {
+              "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
+              "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
+            },
+            {
+              "text": "AP: Homeland Security taps $20M in taxpayer funds for pro-Trump ads (September 29, 2026)",
+              "url": "https://apnews.com/article/trump-ads-taxpayer-money-homeland-security-b869294503c8454db4109ae175ee9e5c"
+            },
+            {
+              "text": "CNBC: Trump government ads were funded by Homeland Security, WSJ reports (September 29, 2026)",
+              "url": "https://www.cnbc.com/2026/09/29/trump-ads-cbp-dhs-taxpayer-funding-election.html"
+            },
+            {
+              "text": "Senate Appropriations Committee: Letter from Sens. Murray and Murphy to Secretary Mullin on DHS-funded ads (September 29, 2026)",
+              "url": "https://www.appropriations.senate.gov/imo/media/doc/dhs_letter_on_trump_ads.pdf"
+            },
+            {
+              "text": "USAspending.gov: CBP award 70B06C26F00001137 to LMD Agency, National Media Campaign, $20,000,000 (September 20, 2026)",
+              "url": "https://www.usaspending.gov/award/CONT_AWD_70B06C26F00001137_7014_70Z02323ACGRC0001_7008"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "CNN: the president drove the ads himself",
+          "kind": "ads",
+          "body": [
+            "CNN, citing one source familiar with the matter, reported that Trump personally drove the ads, including helping select the imagery and videos, and two Trump advisers told CNN they are made in-house by the White House video team. The Journal, citing people familiar, reported he pushed for them. Both accounts rest on anonymous sources."
+          ],
+          "sources": [
+            {
+              "text": "CNN: Trump personally helped orchestrate taxpayer-funded ads promoting himself and his policies, source says (September 29, 2026)",
+              "url": "https://www.cnn.com/2026/09/28/politics/trump-ads-taxpayer-funds"
+            },
+            {
+              "text": "CNBC: Trump government ads were funded by Homeland Security, WSJ reports (September 29, 2026)",
+              "url": "https://www.cnbc.com/2026/09/29/trump-ads-cbp-dhs-taxpayer-funding-election.html"
+            }
+          ]
+        },
+        {
+          "actor": "congress",
+          "title": "The Senate majority leader objects",
+          "kind": "ads",
+          "body": [
+            "Majority Leader John Thune: \"It's a great message. I like the message, but it shouldn't be paid for with taxpayer dollars.\" Sen. Thom Tillis: \"I hate it. I tell you, it feels like Viktor Orbán talking to the Hungarian people.\" White House spokesperson Davis Ingle answered the criticism by calling Trump \"the unequivocal leader, best messenger, and unmatched motivator for the Republican Party.\""
+          ],
+          "sources": [
+            {
+              "text": "The Hill: GOP senators push back on Trump's taxpayer-funded ad (September 2026)",
+              "url": "https://thehill.com/homenews/senate/6116565-senate-gop-criticize-government-ads/"
+            },
+            {
+              "text": "Politico: Trump controversies pile on Senate Republicans as they seek midterm escape (September 28, 2026)",
+              "url": "https://www.politico.com/news/2026/09/28/trump-taxpayer-ads-senate-gop-01096502"
+            },
+            {
+              "text": "The Independent: Trump trolled by fellow Republican over 'ominous' TV ads (September 28, 2026)",
+              "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-midterms-ads-thomas-massie-b3057502.html"
+            },
+            {
+              "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
+              "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "A second complaint asks regulators to have broadcasters pull the ads",
+          "kind": "ads",
+          "body": [
+            "Public Citizen asked the Federal Communications Commission and the Federal Trade Commission to \"direct broadcasters to stop broadcasting\" the ads, arguing that because Trump is not a candidate, stations are free to refuse them."
+          ],
+          "sources": [
+            {
+              "text": "Public Citizen: Complaint to the FCC and FTC on government-funded Trump ads (September 29, 2026)",
+              "url": "https://www.citizen.org/wp-content/uploads/FCC-FTC-complaint-final.pdf"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -622,8 +723,8 @@
     {
       "claim": "paid for by the U.S. government",
       "who": "The ad's own disclaimer",
-      "found": "No agency, contract or appropriation has been named.",
-      "detail": "The White House has not said what agency paid. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact, which tracks media spending, estimated the first buy at $14,000 and the campaign at more than $1.7 million by September 28.",
+      "found": "The money is Customs and Border Protection funding, a Republican senator confirmed; the administration still has not said so.",
+      "detail": "The Wall Street Journal reported, and Sen. Susan Collins confirmed, that the money came from Customs and Border Protection funds in the 2025 reconciliation law. DHS referred questions to the White House. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact estimated the first buy at $14,000 and more than $2.5 million over the first week of three ads.",
       "sources": [
         {
           "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
@@ -634,8 +735,12 @@
           "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
         },
         {
-          "text": "NBC News: White House releases new taxpayer-funded ad describing 'final battle' (September 28, 2026)",
-          "url": "https://www.nbcnews.com/politics/trump-administration/white-house-releases-new-taxpayer-funded-ad-describing-final-battle-rcna600171"
+          "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
+          "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
+        },
+        {
+          "text": "AP: Homeland Security taps $20M in taxpayer funds for pro-Trump ads (September 29, 2026)",
+          "url": "https://apnews.com/article/trump-ads-taxpayer-money-homeland-security-b869294503c8454db4109ae175ee9e5c"
         }
       ]
     },
@@ -694,6 +799,21 @@
   ],
   "voices": {
     "objected": [
+      {
+        "who": "Sen. John Thune",
+        "role": "Senate Majority Leader, Republican of South Dakota",
+        "quote": "It's a great message. I like the message, but it shouldn't be paid for with taxpayer dollars.",
+        "sources": [
+          {
+            "text": "The Hill: GOP senators push back on Trump's taxpayer-funded ad (September 2026)",
+            "url": "https://thehill.com/homenews/senate/6116565-senate-gop-criticize-government-ads/"
+          },
+          {
+            "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
+            "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
+          }
+        ]
+      },
       {
         "who": "Sen. John Kennedy",
         "role": "Republican of Louisiana, on \"Face the Nation\"",
@@ -773,6 +893,17 @@
       }
     ],
     "defended": [
+      {
+        "who": "Davis Ingle",
+        "role": "White House spokesperson, on the criticism of the ads",
+        "quote": "the unequivocal leader, best messenger, and unmatched motivator for the Republican Party",
+        "sources": [
+          {
+            "text": "The Independent: Trump trolled by fellow Republican over 'ominous' TV ads (September 28, 2026)",
+            "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-midterms-ads-thomas-massie-b3057502.html"
+          }
+        ]
+      },
       {
         "who": "The White House",
         "role": "In a statement on the ad",
@@ -912,13 +1043,17 @@
       "date": "2026-11-03",
       "when": "Nov 3, 2026",
       "title": "Election Day",
-      "text": "The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether any agency says it paid."
+      "text": "The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether DHS answers the senators' questions about the border money."
     },
     {
       "when": "Open",
-      "title": "Hassan's questions",
-      "text": "The cost, the contractors, the source of the funding and whether money was diverted from federal agencies. No answer is on the record.",
+      "title": "The senators' 48 hours",
+      "text": "Sens. Murray and Murphy asked DHS on September 29 for a breakdown of the funds, copies of the contracts and who directed them, within 48 hours, copying the department's inspector general. Hassan's earlier questions on cost and contractors are also unanswered.",
       "sources": [
+        {
+          "text": "Senate Appropriations Committee: Letter from Sens. Murray and Murphy to Secretary Mullin on DHS-funded ads (September 29, 2026)",
+          "url": "https://www.appropriations.senate.gov/imo/media/doc/dhs_letter_on_trump_ads.pdf"
+        },
         {
           "text": "CBS News: New Trump-focused \"Love Me\" ad campaign paid for by taxpayers hits airwaves (September 24, 2026)",
           "url": "https://www.cbsnews.com/news/trump-focused-ad-campaign-taxpayers/"
@@ -927,8 +1062,8 @@
     },
     {
       "when": "Open",
-      "title": "Public Citizen's complaint",
-      "text": "Filed September 25 with the Government Accountability Office and the Office of Special Counsel. A GAO opinion would test the propaganda restriction directly. Neither office has acted.",
+      "title": "Public Citizen's complaints",
+      "text": "Filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC. A GAO opinion would test the propaganda restriction directly. None has acted.",
       "sources": [
         {
           "text": "Public Citizen: Taxpayer-Funded Trump Ad Violates the Hatch Act (September 25, 2026)",
@@ -950,7 +1085,7 @@
   ],
   "take": [
     "Each item here has a defense on its own terms. A president may publish video, and agencies may mark an anniversary. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician's face and message in front of the public, most visibly in the weeks before an election.",
-    "The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president's campaign themes, a convention clip and a song that repeats \"love me\"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. That no agency will say it paid is not a detail. Spending its sponsor will not own is spending nobody can be held to account for.",
+    "The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president's campaign themes, a convention clip and a song that repeats \"love me\"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. The money turned out to be border-security funds, and the administration still will not say so; a Republican senator had to. Spending its sponsor will not own is spending nobody can be held to account for.",
     "The anniversary defense deserves a fair hearing, and the banners answer it themselves. They carry the sitting president's portrait and his own slogans, one of them on the headquarters of the department meant to be independent of him, and one contract runs into 2027."
   ],
   "corrections": [

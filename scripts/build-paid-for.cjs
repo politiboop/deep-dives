@@ -70,6 +70,18 @@ const AXIOS_PSA = 'Axios: White House defends Trump video ad';
 const TIME_BIPART = "Time: Trump's Taxpayer-Funded Ads Draw";
 const USPTO_TV = 'USPTO: TRUMP TV';
 const NEWSWEEK_TM = "Newsweek: Trump Company Files Trademark";
+const AP_DHS = 'AP: Homeland Security taps $20M';
+const WSJ_CBP = 'Wall Street Journal: Homeland Security Money';
+const NBC_CBP = 'NBC News: Pro-Trump TV ads paid for with Customs';
+const CNBC_CBP = 'CNBC: Trump government ads were funded';
+const CNN_ROLE = 'CNN: Trump personally helped orchestrate';
+const WEX_CBP = 'Washington Examiner: Trump administration using border money';
+const HILL_GOP = 'The Hill: GOP senators push back';
+const POLITICO_GOP = 'Politico: Trump controversies pile on';
+const INDY_MASSIE = 'The Independent: Trump trolled';
+const SEN_LETTER = 'Letter from Sens. Murray and Murphy';
+const USASPENDING = 'USAspending.gov: CBP award';
+const PC_FCC = 'Public Citizen: Complaint to the FCC and FTC';
 
 // ── The ledger. amount is in dollars when known; agencies counts the agencies paying.
 const ledger = [
@@ -79,21 +91,21 @@ const ledger = [
   { when: 'July 2026', item: 'Banners for the FAA', payer: 'Federal Aviation Administration', agencies: 1, amount: 114020, note: 'Contract found by Schiff; runs through 2027', kind: 'image', sources: srcs(INDY_BAN) },
   { when: 'May 2026', item: 'The White House app, pushed onto federal work phones', payer: 'Every executive-branch agency\'s phones', amount: null, note: 'Cost not disclosed', kind: 'channel', sources: srcs(GOVEXEC_APP) },
   { when: 'Sept 2026', item: 'Trump TV, a 24-hour stream', payer: 'The White House', amount: null, note: 'Cost not disclosed. On September 24 the Trump Organization\'s trademark company applied to register TRUMP TV for news broadcasting and streaming', kind: 'channel', sources: srcs(NOTUS_TV, USPTO_TV) },
-  { when: 'Sept 2026', item: 'The television ads', payer: '"the U.S. government," agency unnamed', amount: 1700000, note: 'More than $1.7 million by AdImpact\'s count as of September 28, which it says misses some cable airings. The first buy, on Fox News and Newsmax, was about $14,000. At least four spots have run, on Fox, Newsmax, CBS and NFL broadcasts', kind: 'channel', sources: srcs(NBC_FB, CNBC_FB, AP_AD, CBS_AD) },
+  { when: 'Sept 2026', item: 'The television ads', payer: 'Customs and Border Protection funds, confirmed by Sen. Susan Collins', amount: 2500000, note: 'More than $2.5 million by AdImpact\'s count for three ads over seven days, the AP reported September 29; AdImpact misses some cable airings, and the first buy was about $14,000. Sens. Murray and Murphy say DHS appears to have dedicated $20 million; a $20 million CBP "National Media Campaign" contract awarded September 20 has not been tied to the ads', kind: 'channel', sources: srcs(AP_DHS, NBC_CBP, CNBC_CBP, SEN_LETTER, USASPENDING) },
   { when: 'Mar 2026', item: 'The DHS ad campaign featuring Secretary Noem', payer: 'Homeland Security', amount: 220000000, note: 'Ended with her firing', kind: 'comparison', sources: srcs(NBC_NOEM, PP_NOEM) },
 ];
 
 const dive = {
   slug: 'paid-for',
-  updated: '2026-09-28',
+  updated: '2026-09-29',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
     kicker: 'Public money',
     title: 'Paid For',
     dek: 'Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.',
-    status: 'The ads now include a rerun of a 2024 campaign spot, and nobody has said which agency pays',
-    statusText: 'As of September 28, no agency, contract or appropriation had been identified for the ads, which AdImpact estimates have cost more than $1.7 million. The newest is virtually identical to a 2024 Trump campaign ad, the Associated Press reported. The White House calls them "public service announcements." Public Citizen has asked the Government Accountability Office and the Office of Special Counsel to find them illegal; neither has acted. Democrats in Congress have asked for the cost and demanded the ads be pulled, and Republican senators and a Republican congressman have objected. The FAA banner contract runs through 2027.',
+    status: 'The ads are paid for with border-security money, a Republican senator confirms, and DHS still has not said so',
+    statusText: 'On September 29 the source of the money came out: Customs and Border Protection funds from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed. DHS referred questions to the White House, which has not confirmed it. Democratic senators say DHS appears to have dedicated $20 million; AdImpact counts more than $2.5 million in airtime so far. Public Citizen has complaints before GAO, the Office of Special Counsel, the FCC and the FTC; none has acted. The FAA banner contract runs through 2027.',
   },
   hero: {
     question: 'Is public money being used to promote the president himself?',
@@ -210,6 +222,28 @@ const dive = {
         ],
         sources: srcs(CBS_KENNEDY, TIME_BIPART, CNN_FB) },
     ] },
+    { date: '2026-09-29', events: [
+      { actor: 'congress', title: 'The money turns out to be border funds, and a Republican chairman confirms it', kind: 'ads',
+        body: [
+          'The Wall Street Journal reported, and NBC News, the Associated Press and CNBC confirmed, that the ads are paid for with Customs and Border Protection money from the 2025 reconciliation law rather than annual appropriations. Sen. Susan Collins of Maine, who chairs the Senate Appropriations Committee, confirmed it on the record, saying "it was taken out of funding that was supposed to be for Customs and Border Protection." DHS referred questions to the White House. Sens. Patty Murray and Chris Murphy wrote that "it appears DHS has dedicated $20 million to this outrageous scheme" and asked for answers within 48 hours. CNBC found a $20 million CBP contract for a "National Media Campaign" awarded September 20, one day after the budget office released $20 million to CBP under a "Commemorative Events" line; the public record does not yet tie that contract to these ads.',
+        ],
+        sources: srcs(WSJ_CBP, NBC_CBP, AP_DHS, CNBC_CBP, SEN_LETTER, USASPENDING) },
+      { actor: 'press', title: 'CNN: the president drove the ads himself', kind: 'ads',
+        body: [
+          'CNN, citing one source familiar with the matter, reported that Trump personally drove the ads, including helping select the imagery and videos, and two Trump advisers told CNN they are made in-house by the White House video team. The Journal, citing people familiar, reported he pushed for them. Both accounts rest on anonymous sources.',
+        ],
+        sources: srcs(CNN_ROLE, CNBC_CBP) },
+      { actor: 'congress', title: 'The Senate majority leader objects', kind: 'ads',
+        body: [
+          'Majority Leader John Thune: "It\'s a great message. I like the message, but it shouldn\'t be paid for with taxpayer dollars." Sen. Thom Tillis: "I hate it. I tell you, it feels like Viktor Orbán talking to the Hungarian people." White House spokesperson Davis Ingle answered the criticism by calling Trump "the unequivocal leader, best messenger, and unmatched motivator for the Republican Party."',
+        ],
+        sources: srcs(HILL_GOP, POLITICO_GOP, INDY_MASSIE, NBC_CBP) },
+      { actor: 'press', title: 'A second complaint asks regulators to have broadcasters pull the ads', kind: 'ads',
+        body: [
+          'Public Citizen asked the Federal Communications Commission and the Federal Trade Commission to "direct broadcasters to stop broadcasting" the ads, arguing that because Trump is not a candidate, stations are free to refuse them.',
+        ],
+        sources: srcs(PC_FCC) },
+    ] },
   ],
 
   claims: [
@@ -226,9 +260,9 @@ const dive = {
       detail: 'It carries official video, not reporting, and the White House already streamed the president\'s events on the same channels. It launched the day the five television pool networks suspended pooled coverage, three days after the ban on CNN, MS NOW and Politico, and opened with a two-month-old clip.',
       sources: srcs(NOTUS_TV, TIME_TV, BARRETT_TV) },
     { claim: 'paid for by the U.S. government', who: 'The ad\'s own disclaimer',
-      found: 'No agency, contract or appropriation has been named.',
-      detail: 'The White House has not said what agency paid. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact, which tracks media spending, estimated the first buy at $14,000 and the campaign at more than $1.7 million by September 28.',
-      sources: srcs(AP_AD, CBS_AD, NBC_FB) },
+      found: 'The money is Customs and Border Protection funding, a Republican senator confirmed; the administration still has not said so.',
+      detail: 'The Wall Street Journal reported, and Sen. Susan Collins confirmed, that the money came from Customs and Border Protection funds in the 2025 reconciliation law. DHS referred questions to the White House. CBS News reported that the government produced the ads and bought the air time through an ad agency, which it did not name. AdImpact estimated the first buy at $14,000 and more than $2.5 million over the first week of three ads.',
+      sources: srcs(AP_AD, CBS_AD, NBC_CBP, AP_DHS) },
     { claim: 'Patriotism isn\'t partisan.', who: 'The White House, "Presidential Public Service Announcements Are Nothing New"',
       found: 'The precedents it cites were campaigns about policies, and GAO faulted two of them.',
       detail: 'The Associated Press noted that the earlier campaigns promoted particular policies, not the president in office. NBC News noted GAO faulted the Bush Medicare campaign for not disclosing the government as its source and Obama\'s EPA campaign for violating "publicity or propaganda and anti-lobbying provisions." In the White House\'s favor, Axios noted that "GAO has said concealment of the government\'s role is central to a finding of covert propaganda," and these spots label themselves.',
@@ -245,6 +279,7 @@ const dive = {
 
   voices: {
     objected: [
+      { who: 'Sen. John Thune', role: 'Senate Majority Leader, Republican of South Dakota', quote: 'It\'s a great message. I like the message, but it shouldn\'t be paid for with taxpayer dollars.', sources: srcs(HILL_GOP, NBC_CBP) },
       { who: 'Sen. John Kennedy', role: 'Republican of Louisiana, on "Face the Nation"', quote: 'I don\'t think any public official, including President Trump or Kristi Noem or John Kennedy, should spend public money on private ads for themselves.', sources: srcs(CBS_KENNEDY) },
       { who: 'Rep. Thomas Massie', role: 'Republican of Kentucky, on the campaign-ad rerun', quote: 'Don\'t worry, using taxpayer dollars to run ominous campaign ads of the President has been done before and is completely legal… in banana republics.', sources: srcs(CNN_FB) },
       { who: 'Sen. Adam Schiff', role: 'Democrat of California, on the banners', quote: 'Not only is this a terrible waste of Americans\' hard-earned money, it is clearly against the law', sources: srcs(INDY_BAN) },
@@ -254,6 +289,7 @@ const dive = {
       { who: 'Weijia Jiang', role: 'CBS News, former president of the White House Correspondents\' Association', quote: 'America cannot have state TV', sources: srcs(TIME_TV) },
     ],
     defended: [
+      { who: 'Davis Ingle', role: 'White House spokesperson, on the criticism of the ads', quote: 'the unequivocal leader, best messenger, and unmatched motivator for the Republican Party', sources: srcs(INDY_MASSIE) },
       { who: 'The White House', role: 'In a statement on the ad', quote: 'educational and unapologetically patriotic', sources: srcs(AP_AD) },
       { who: 'A White House official', role: 'To CBS News, on the ads', quote: 'The President is not on the ballot and the ads don\'t have a call to action.', sources: srcs(CBS_AD) },
       { who: 'Steven Cheung', role: 'White House communications director', quote: 'Don\'t let the Fake News get away with their lies about our epic Public Service Announcements that have been running on tv.', sources: srcs(NBC_FB) },
@@ -271,15 +307,15 @@ const dive = {
   ],
 
   watch: [
-    { date: '2026-11-03', when: 'Nov 3, 2026', title: 'Election Day', text: 'The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether any agency says it paid.' },
-    { when: 'Open', title: 'Hassan\'s questions', text: 'The cost, the contractors, the source of the funding and whether money was diverted from federal agencies. No answer is on the record.', sources: srcs(CBS_AD) },
-    { when: 'Open', title: 'Public Citizen\'s complaint', text: 'Filed September 25 with the Government Accountability Office and the Office of Special Counsel. A GAO opinion would test the propaganda restriction directly. Neither office has acted.', sources: srcs(PC_COMPLAINT) },
+    { date: '2026-11-03', when: 'Nov 3, 2026', title: 'Election Day', text: 'The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether DHS answers the senators\' questions about the border money.' },
+    { when: 'Open', title: 'The senators\' 48 hours', text: 'Sens. Murray and Murphy asked DHS on September 29 for a breakdown of the funds, copies of the contracts and who directed them, within 48 hours, copying the department\'s inspector general. Hassan\'s earlier questions on cost and contractors are also unanswered.', sources: srcs(SEN_LETTER, CBS_AD) },
+    { when: 'Open', title: 'Public Citizen\'s complaints', text: 'Filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC. A GAO opinion would test the propaganda restriction directly. None has acted.', sources: srcs(PC_COMPLAINT) },
     { when: 'Through 2027', title: 'The FAA banners', text: 'The FAA\'s banner contract runs through 2027.', sources: srcs(INDY_BAN) },
   ],
 
   take: [
     'Each item here has a defense on its own terms. A president may publish video, and agencies may mark an anniversary. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician\'s face and message in front of the public, most visibly in the weeks before an election.',
-    'The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president\'s campaign themes, a convention clip and a song that repeats "love me"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. That no agency will say it paid is not a detail. Spending its sponsor will not own is spending nobody can be held to account for.',
+    'The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president\'s campaign themes, a convention clip and a song that repeats "love me"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. The money turned out to be border-security funds, and the administration still will not say so; a Republican senator had to. Spending its sponsor will not own is spending nobody can be held to account for.',
     'The anniversary defense deserves a fair hearing, and the banners answer it themselves. They carry the sitting president\'s portrait and his own slogans, one of them on the headquarters of the department meant to be independent of him, and one contract runs into 2027.',
   ],
 

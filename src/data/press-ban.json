@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
@@ -17,7 +17,7 @@
     "restored": "2026-09-24",
     "orderEnds": "2026-10-08",
     "status": "Passes restored under a court order, but CNN kept off Air Force One",
-    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. Since then the White House has kept CNN and MS NOW out of Xi's state-dinner arrival and, on September 26, left CNN off Air Force One when it was the scheduled television pool network. The networks resumed pool coverage on September 27, leaving CNN's slot unfilled when the White House blocks it. The attorney general defended the ban on television as a matter of privilege and national security. The restraining order runs to October 8; the outlets' motion for a longer one was due September 28, and the court has said it \"intends to rule expeditiously.\""
+    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. Since then the White House has kept CNN and MS NOW out of Xi's state-dinner arrival and, on September 26, left CNN off Air Force One when it was the scheduled television pool network. The networks resumed pool coverage on September 27, leaving CNN's slot unfilled when the White House blocks it. The attorney general defended the ban on television as a matter of privilege and national security. The restraining order runs to October 8; the outlets filed their motion for a longer one on September 28, the government answers by October 2, and the court has said it \"intends to rule expeditiously.\""
   },
   "hero": {
     "deck": [
@@ -772,6 +772,32 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-09-28",
+      "events": [
+        {
+          "actor": "press",
+          "title": "The outlets ask for an order that lasts until the case is decided",
+          "body": [
+            "Late on September 28, CNN, MS NOW and Politico asked Judge Kelly for a preliminary injunction to replace the restraining order, which expires October 8. \"The White House's words and actions leave little doubt that it will immediately reinstitute a complete ban of CNN, MS NOW, and POLITICO if allowed the opportunity,\" the filing says. It adds that after the order the administration kept confiscating passes on September 24 \"before finally coming into compliance roughly 11 hours after this Court's order,\" and it puts the Air Force One exclusion before the court. The ACLU of D.C. filed in support the next day: \"The White House is the people's house, not the president's private golf club.\""
+          ],
+          "sources": [
+            {
+              "text": "U.S. District Court for the District of Columbia: Memorandum in support of motion for preliminary injunction, CNN v. Trump, No. 1:26-cv-03287, ECF 32-1 (September 28, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.32.1_1.pdf"
+            },
+            {
+              "text": "AP: CNN, MS NOW and Politico ask a court to block Trump from enforcing his White House media ban (September 29, 2026)",
+              "url": "https://apnews.com/article/trump-media-networks-pool-ea7fbf9c0a0506dde6f95738922640d4"
+            },
+            {
+              "text": "ACLU and ACLU of D.C.: Amicus brief, CNN v. Trump, ECF 33-2 (September 29, 2026)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.33.2.pdf"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1234,8 +1260,8 @@
     {
       "date": "2026-09-28",
       "when": "Mon Sept 28",
-      "title": "Motion for a preliminary injunction due",
-      "text": "The outlets ask for a longer order, one that would keep the ban blocked while the lawsuit continues.",
+      "title": "Motion for a preliminary injunction filed",
+      "text": "Filed September 28. The outlets ask for a longer order, one that would keep the ban blocked while the lawsuit continues.",
       "sources": [
         {
           "text": "CNBC: White House allows blocked reporters in after judge lifts Trump ban (September 24, 2026)",
