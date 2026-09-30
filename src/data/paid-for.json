@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -16,8 +16,8 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "The ads are paid for with border-security money, a Republican senator confirms, and DHS still has not said so",
-    "statusText": "On September 29 the source of the money came out: Customs and Border Protection funds from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed. DHS referred questions to the White House, which has not confirmed it. Democratic senators say DHS appears to have dedicated $20 million; AdImpact counts more than $2.5 million in airtime so far. Public Citizen has complaints before GAO, the Office of Special Counsel, the FCC and the FTC; none has acted. The FAA banner contract runs through 2027."
+    "status": "An administration official says DHS is paying, and the FCC chairman sees nothing to review",
+    "statusText": "The ads are paid for with Customs and Border Protection money from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins confirmed; on September 29 an administration official told Axios that DHS is placing the buys \"using money from an existing budget.\" AdImpact counts 2,766 airings in the first week and more than $2.5 million. FCC Chairman Brendan Carr said on September 30 that nothing in the ads merits review. Complaints are before GAO, the Office of Special Counsel, the FCC, the FTC and DHS's inspector general; none has acted. A Senate resolution against the ads was blocked. The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
@@ -651,6 +651,79 @@
               "url": "https://www.citizen.org/wp-content/uploads/FCC-FTC-complaint-final.pdf"
             }
           ]
+        },
+        {
+          "actor": "wh",
+          "title": "An administration official says DHS is paying",
+          "kind": "ads",
+          "body": [
+            "An administration official told Axios that \"The Department of Homeland Security is placing the ad buys using money from an existing budget,\" the first account from inside the administration of who pays. Axios reported that Trump \"is personally selecting which government-funded ads his administration is airing ahead of the midterms.\" AdImpact counted 2,766 airings from September 23 to 29 on Fox News and the four broadcast networks, CNN reported, about 30% of the spending during NFL and college football games."
+          ],
+          "sources": [
+            {
+              "text": "Axios: Scoop: Trump's hand-picked, taxpayer-funded ads about to ramp up (September 29, 2026)",
+              "url": "https://www.axios.com/2026/09/29/trump-ads-taxpayer-funds"
+            },
+            {
+              "text": "CNN: Trump's ads have cost taxpayers at least $2.5 million, with funding from Customs and Border Protection (September 29, 2026)",
+              "url": "https://www.cnn.com/2026/09/29/media/trump-ads-cost-millions-customs-border-protection-funding"
+            }
+          ]
+        },
+        {
+          "actor": "congress",
+          "title": "A Republican blocks the Senate's objection",
+          "kind": "ads",
+          "body": [
+            "Sen. Maggie Hassan asked the Senate to pass a resolution declaring that such ads \"should not be paid for by the United States government.\" Sen. Cynthia Lummis of Wyoming blocked it: \"When a Democratic president tells Americans what to do, it's a public service,\" she said. \"When this president tells Americans that liberty is worth defending, it's suddenly a problem.\""
+          ],
+          "sources": [
+            {
+              "text": "Washington Post: Republican blocks Senate resolution criticizing Trump's taxpayer-funded ads (September 29, 2026)",
+              "url": "https://www.washingtonpost.com/politics/2026/09/29/republican-blocks-senate-resolution-criticizing-trumps-taxpayer-funded-ads/"
+            },
+            {
+              "text": "Daily Caller: GOP Senator Blocks Toothless Resolution Denouncing Trump's Taxpayer-Funded Ads (September 30, 2026)",
+              "url": "https://dailycaller.com/2026/09/30/cynthia-lummis-resolution-trump-taxpayer-funded-campaign-ads/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "The FCC chairman sees nothing to review",
+          "kind": "ads",
+          "body": [
+            "FCC Chairman Brendan Carr, a Trump appointee, dismissed Public Citizen's complaint: \"There's nothing in there that strikes me to merit any sort of FCC review.\" He called the ads \"a normal PSA\" and said \"groups on the left\" have \"long worked and pushed to weaponize the FCC's license renewal process.\" Anna Gomez, the commission's only Democrat, said she \"highly\" doubts the FCC \"is going to do much to investigate it.\""
+          ],
+          "sources": [
+            {
+              "text": "Deadline: FCC Chairman Doesn't See Anything 'Out Of The Ordinary' About White House Airing Of Taxpayer-Funded Trump Ads (September 30, 2026)",
+              "url": "https://deadline.com/2026/09/trump-ads-taxpayer-funds-fcc-1237143444/"
+            },
+            {
+              "text": "Al Jazeera: US FCC head says controversial Trump ads do not raise concerns (September 30, 2026)",
+              "url": "https://www.aljazeera.com/news/2026/9/30/us-fcc-head-says-controversial-trump-ads-do-not-raise-concerns"
+            }
+          ]
+        },
+        {
+          "actor": "press",
+          "title": "A third complaint, to DHS's own inspector general",
+          "kind": "ads",
+          "body": [
+            "Citizens for Responsibility and Ethics in Washington asked the DHS inspector general to investigate possible violations of the Antideficiency Act, the Purpose Statute and the government-wide ban on \"publicity or propaganda\" in the 2026 appropriations law."
+          ],
+          "sources": [
+            {
+              "text": "CREW: complaint to the DHS Office of Inspector General re financing for pro-Trump television ads (September 30, 2026)",
+              "url": "https://www.citizensforethics.org/wp-content/uploads/2026/09/DHS-OIG-Complaint-Re-Financing-for-Pro-Trump-Television-Ads-09.30.2026.pdf"
+            }
+          ]
         }
       ]
     }
@@ -980,6 +1053,28 @@
             "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
           }
         ]
+      },
+      {
+        "who": "Brendan Carr",
+        "role": "FCC chairman, a Trump appointee",
+        "quote": "There's nothing in there that strikes me to merit any sort of FCC review.",
+        "sources": [
+          {
+            "text": "Al Jazeera: US FCC head says controversial Trump ads do not raise concerns (September 30, 2026)",
+            "url": "https://www.aljazeera.com/news/2026/9/30/us-fcc-head-says-controversial-trump-ads-do-not-raise-concerns"
+          }
+        ]
+      },
+      {
+        "who": "Sen. Cynthia Lummis",
+        "role": "Republican of Wyoming, blocking the Senate resolution",
+        "quote": "When this president tells Americans that liberty is worth defending, it's suddenly a problem.",
+        "sources": [
+          {
+            "text": "Washington Post: Republican blocks Senate resolution criticizing Trump's taxpayer-funded ads (September 29, 2026)",
+            "url": "https://www.washingtonpost.com/politics/2026/09/29/republican-blocks-senate-resolution-criticizing-trumps-taxpayer-funded-ads/"
+          }
+        ]
       }
     ]
   },
@@ -1061,13 +1156,33 @@
       ]
     },
     {
+      "date": "2026-10-07",
+      "when": "Oct 7, 2026",
+      "title": "The House Democrats' deadline",
+      "text": "Reps. Joe Morelle, Rosa DeLauro and Robert Garcia, the top Democrats on House Administration, Appropriations and Oversight, demanded on September 25 that the ad stop airing and asked for answers by October 7.",
+      "sources": [
+        {
+          "text": "House Administration Democrats: letter from Reps. Morelle, DeLauro and Garcia on the U.S. government-paid political ad (September 25, 2026)",
+          "url": "https://democrats-cha.house.gov/sites/evo-subsites/democrats-cha.house.gov/files/evo-media-document/-final-2026.09.25-letter-to-omb-re-us-gov-political-ad.pdf"
+        }
+      ]
+    },
+    {
       "when": "Open",
-      "title": "Public Citizen's complaints",
-      "text": "Filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC. A GAO opinion would test the propaganda restriction directly. None has acted.",
+      "title": "The complaints",
+      "text": "Public Citizen filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC; CREW filed September 30 with DHS's inspector general. FCC Chairman Brendan Carr said on September 30 that nothing in the ads merits review. GAO says its work is done at the request of congressional committees or as law requires. None has acted.",
       "sources": [
         {
           "text": "Public Citizen: Taxpayer-Funded Trump Ad Violates the Hatch Act (September 25, 2026)",
           "url": "https://www.citizen.org/news/taxpayer-funded-trump-ad-violates-the-hatch-act/"
+        },
+        {
+          "text": "CREW: complaint to the DHS Office of Inspector General re financing for pro-Trump television ads (September 30, 2026)",
+          "url": "https://www.citizensforethics.org/wp-content/uploads/2026/09/DHS-OIG-Complaint-Re-Financing-for-Pro-Trump-Television-Ads-09.30.2026.pdf"
+        },
+        {
+          "text": "Deadline: FCC Chairman Doesn't See Anything 'Out Of The Ordinary' About White House Airing Of Taxpayer-Funded Trump Ads (September 30, 2026)",
+          "url": "https://deadline.com/2026/09/trump-ads-taxpayer-funds-fcc-1237143444/"
         }
       ]
     },
