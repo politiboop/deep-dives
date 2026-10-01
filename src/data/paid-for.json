@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -16,8 +16,8 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "An administration official says DHS is paying, and the FCC chairman sees nothing to review",
-    "statusText": "The ads are paid for with Customs and Border Protection money from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins confirmed; on September 29 an administration official told Axios that DHS is placing the buys \"using money from an existing budget.\" AdImpact counts 2,766 airings in the first week and more than $2.5 million. FCC Chairman Brendan Carr said on September 30 that nothing in the ads merits review. Complaints are before GAO, the Office of Special Counsel, the FCC, the FTC and DHS's inspector general; none has acted. A Senate resolution against the ads was blocked. The FAA banner contract runs through 2027."
+    "status": "Trump defends the ads himself, a fourth spot airs, and House Democrats ask GAO for a ruling",
+    "statusText": "On September 30 Trump said of the ads, \"I'm not promoting myself because I'm not running for office,\" and a fourth government-paid spot, on the Iran war, began airing. The money for the first three is Customs and Border Protection funding from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed; an administration official told Axios that DHS is placing the buys \"using money from an existing budget.\" The FCC chairman has declined to review them. Reps. Jamie Raskin and George Whitesides have asked GAO and the Office of Special Counsel to investigate, the first request from members of Congress to GAO, which says it is deciding whether to take it up. The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
@@ -654,10 +654,10 @@
         },
         {
           "actor": "wh",
-          "title": "An administration official says DHS is paying",
+          "title": "An administration official confirms DHS is placing the buys",
           "kind": "ads",
           "body": [
-            "An administration official told Axios that \"The Department of Homeland Security is placing the ad buys using money from an existing budget,\" the first account from inside the administration of who pays. Axios reported that Trump \"is personally selecting which government-funded ads his administration is airing ahead of the midterms.\" AdImpact counted 2,766 airings from September 23 to 29 on Fox News and the four broadcast networks, CNN reported, about 30% of the spending during NFL and college football games."
+            "An administration official told Axios that \"The Department of Homeland Security is placing the ad buys using money from an existing budget,\" and Axios reported that Trump \"is personally selecting which government-funded ads his administration is airing ahead of the midterms,\" with more to come. AdImpact counted 2,766 airings from September 23 to 29 on Fox News and the four broadcast networks, CNN reported, with about 30% of the spending on NFL and college football games."
           ],
           "sources": [
             {
@@ -672,10 +672,10 @@
         },
         {
           "actor": "congress",
-          "title": "A Republican blocks the Senate's objection",
+          "title": "A Republican senator blocks a resolution against the ads",
           "kind": "ads",
           "body": [
-            "Sen. Maggie Hassan asked the Senate to pass a resolution declaring that such ads \"should not be paid for by the United States government.\" Sen. Cynthia Lummis of Wyoming blocked it: \"When a Democratic president tells Americans what to do, it's a public service,\" she said. \"When this president tells Americans that liberty is worth defending, it's suddenly a problem.\""
+            "On the Senate floor, Sen. Cynthia Lummis of Wyoming blocked Sen. Maggie Hassan's resolution declaring that such ads \"should not be paid for by the United States government.\" \"When a Democratic president tells Americans what to do, it's a public service,\" Lummis said. \"When this president tells Americans that liberty is worth defending, it's suddenly a problem.\""
           ],
           "sources": [
             {
@@ -695,10 +695,46 @@
       "events": [
         {
           "actor": "wh",
-          "title": "The FCC chairman sees nothing to review",
+          "title": "Trump defends the ads: \"I'm not promoting myself\"",
           "kind": "ads",
           "body": [
-            "FCC Chairman Brendan Carr, a Trump appointee, dismissed Public Citizen's complaint: \"There's nothing in there that strikes me to merit any sort of FCC review.\" He called the ads \"a normal PSA\" and said \"groups on the left\" have \"long worked and pushed to weaponize the FCC's license renewal process.\" Anna Gomez, the commission's only Democrat, said she \"highly\" doubts the FCC \"is going to do much to investigate it.\""
+            "In the Oval Office, Trump said, \"Now, if somebody said that that's wrong, I'll gladly pay the money, but these are ads for the country,\" and, \"I'm not promoting a candidate. I'm not promoting myself because I'm not running for office.\" It was his first comment on the campaign."
+          ],
+          "sources": [
+            {
+              "text": "The Hill: Trump defends government-funded ad campaigns: 'I'm not promoting a candidate' (September 30, 2026)",
+              "url": "https://thehill.com/homenews/administration/6121727-trump-government-ads-white-house/"
+            },
+            {
+              "text": "USA Today (via AOL): Trump says taxpayer-funded TV ads are 'for the country,' not himself",
+              "url": "https://www.aol.com/articles/trump-says-taxpayer-funded-tv-223458000.html"
+            },
+            {
+              "text": "Newsmax (via Yahoo): Trump: Federal Ads Promote 'Spirit of Our Country'",
+              "url": "https://www.yahoo.com/news/politics/articles/trump-federal-ads-promote-spirit-012012020.html"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "A fourth ad, on the Iran war",
+          "kind": "ads",
+          "body": [
+            "A fourth spot carrying the government disclaimer began airing. In it Trump says, \"This regime will soon learn that no one should challenge the strength and might of the United States,\" and Defense Secretary Pete Hegseth says, \"We didn't start this war, but under President Trump, we are finishing it.\" Which funds paid for it has not been confirmed."
+          ],
+          "sources": [
+            {
+              "text": "The Hill: Latest taxpayer-funded ad promotes Trump war with Iran",
+              "url": "https://thehill.com/homenews/administration/6122506-trump-airing-taxpayer-funded-ads/"
+            }
+          ]
+        },
+        {
+          "actor": "wh",
+          "title": "The FCC chairman declines to review the ads",
+          "kind": "ads",
+          "body": [
+            "FCC Chairman Brendan Carr, a Trump appointee, dismissed Public Citizen's complaint: \"There's nothing in there that strikes me to merit any sort of FCC review.\" Anna Gomez, the commission's only Democrat, said she \"highly\" doubts the FCC \"is going to do much to investigate it.\""
           ],
           "sources": [
             {
@@ -708,15 +744,19 @@
             {
               "text": "Al Jazeera: US FCC head says controversial Trump ads do not raise concerns (September 30, 2026)",
               "url": "https://www.aljazeera.com/news/2026/9/30/us-fcc-head-says-controversial-trump-ads-do-not-raise-concerns"
+            },
+            {
+              "text": "Ars Technica: Trump ads paid for by US government allegedly violate anti-propaganda laws",
+              "url": "https://arstechnica.com/tech-policy/2026/09/trump-ads-paid-for-by-us-government-allegedly-violate-anti-propaganda-laws/"
             }
           ]
         },
         {
           "actor": "press",
-          "title": "A third complaint, to DHS's own inspector general",
+          "title": "An ethics group asks DHS's inspector general to investigate",
           "kind": "ads",
           "body": [
-            "Citizens for Responsibility and Ethics in Washington asked the DHS inspector general to investigate possible violations of the Antideficiency Act, the Purpose Statute and the government-wide ban on \"publicity or propaganda\" in the 2026 appropriations law."
+            "Citizens for Responsibility and Ethics in Washington asked the inspector general to examine possible violations of the Antideficiency Act, the Purpose Statute and the government-wide ban on \"publicity or propaganda\" in the 2026 appropriations law."
           ],
           "sources": [
             {
@@ -726,9 +766,61 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-01",
+      "events": [
+        {
+          "actor": "congress",
+          "title": "House Democrats ask GAO and the Office of Special Counsel to investigate",
+          "kind": "ads",
+          "body": [
+            "Reps. Jamie Raskin, the top Democrat on the House Judiciary Committee, and George Whitesides asked GAO to identify the \"sources, accounts and total amount\" spent and to rule on legality, and the Office of Special Counsel to determine who should be held accountable. It is the first request from members of Congress to GAO, which had told Ars Technica that its \"work is done at the request of congressional committees or subcommittees or is statutorily required by public laws.\" The letter says \"stealing taxpayer dollars to pay for Mr. Trump's narcissistic ego trips is plainly illegal.\"",
+            "Both agencies confirmed receiving it, the Daily Beast reported. GAO spokesperson Sarah Kaczmarek: \"GAO has a process it goes through to determine whether we do work and when, which we are working through right now.\""
+          ],
+          "sources": [
+            {
+              "text": "Reuters (via U.S. News): Democratic Lawmakers Seek Probe of US Government Ads Featuring Trump (October 1, 2026)",
+              "url": "https://www.usnews.com/news/politics/articles/2026-10-01/democratic-lawmakers-seek-probe-of-us-government-ads-featuring-trump"
+            },
+            {
+              "text": "Washington Examiner: Top Judiciary Democrat demands investigation into taxpayer-funded Trump ads",
+              "url": "https://www.washingtonexaminer.com/news/campaigns/congressional/4748811/jamie-raskin-demands-investigation-trump-taxpayer-funded-ads/"
+            },
+            {
+              "text": "The Daily Beast: Democrats Demand Those Behind Trump Ads Face Legal Action",
+              "url": "https://www.thedailybeast.com/democrats-demand-those-behind-trump-ads-face-legal-action/"
+            },
+            {
+              "text": "Ars Technica: Trump ads paid for by US government allegedly violate anti-propaganda laws",
+              "url": "https://arstechnica.com/tech-policy/2026/09/trump-ads-paid-for-by-us-government-allegedly-violate-anti-propaganda-laws/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
+    {
+      "claim": "I'm not promoting a candidate. I'm not promoting myself because I'm not running for office.",
+      "who": "President Trump, September 30, 2026",
+      "found": "The ads feature him, and one is his own 2024 campaign spot with the government line added.",
+      "detail": "The Associated Press called one government-paid spot \"virtually identical to one that aired in 2024.\" Axios reported that Trump \"is personally selecting which government-funded ads his administration is airing ahead of the midterms.\" He is not on the ballot this year, which is the White House's argument that the ads are not campaign ads.",
+      "sources": [
+        {
+          "text": "The Hill: Trump defends government-funded ad campaigns: 'I'm not promoting a candidate' (September 30, 2026)",
+          "url": "https://thehill.com/homenews/administration/6121727-trump-government-ads-white-house/"
+        },
+        {
+          "text": "AP: Trump administration begins airing 2024 Trump campaign ad in latest taxpayer-funded messaging (September 27, 2026)",
+          "url": "https://apnews.com/article/trump-election-campaign-advertisements-bfa8e3c1c9e50de03092b4ec27055da9"
+        },
+        {
+          "text": "Axios: Scoop: Trump's hand-picked, taxpayer-funded ads about to ramp up (September 29, 2026)",
+          "url": "https://www.axios.com/2026/09/29/trump-ads-taxpayer-funds"
+        }
+      ]
+    },
     {
       "claim": "We are proud at this Department of Justice to celebrate 250 years of our great country and our historic work to make America safe again at President Trump's direction.",
       "who": "A Justice Department spokesperson, on its banner",
@@ -967,6 +1059,36 @@
     ],
     "defended": [
       {
+        "who": "President Trump",
+        "role": "In the Oval Office, September 30",
+        "quote": "Now, if somebody said that that's wrong, I'll gladly pay the money, but these are ads for the country",
+        "sources": [
+          {
+            "text": "The Hill: Trump defends government-funded ad campaigns: 'I'm not promoting a candidate' (September 30, 2026)",
+            "url": "https://thehill.com/homenews/administration/6121727-trump-government-ads-white-house/"
+          },
+          {
+            "text": "USA Today (via AOL): Trump says taxpayer-funded TV ads are 'for the country,' not himself",
+            "url": "https://www.aol.com/articles/trump-says-taxpayer-funded-tv-223458000.html"
+          }
+        ]
+      },
+      {
+        "who": "Sen. Cynthia Lummis",
+        "role": "Republican of Wyoming, blocking a resolution against the ads",
+        "quote": "When this president tells Americans that liberty is worth defending, it's suddenly a problem.",
+        "sources": [
+          {
+            "text": "Washington Post: Republican blocks Senate resolution criticizing Trump's taxpayer-funded ads (September 29, 2026)",
+            "url": "https://www.washingtonpost.com/politics/2026/09/29/republican-blocks-senate-resolution-criticizing-trumps-taxpayer-funded-ads/"
+          },
+          {
+            "text": "Daily Caller: GOP Senator Blocks Toothless Resolution Denouncing Trump's Taxpayer-Funded Ads (September 30, 2026)",
+            "url": "https://dailycaller.com/2026/09/30/cynthia-lummis-resolution-trump-taxpayer-funded-campaign-ads/"
+          }
+        ]
+      },
+      {
         "who": "Davis Ingle",
         "role": "White House spokesperson, on the criticism of the ads",
         "quote": "the unequivocal leader, best messenger, and unmatched motivator for the Republican Party",
@@ -1053,28 +1175,6 @@
             "url": "https://www.the-independent.com/news/world/americas/us-politics/trump-banner-washington-dc-cost-adam-schiff-b3016453.html"
           }
         ]
-      },
-      {
-        "who": "Brendan Carr",
-        "role": "FCC chairman, a Trump appointee",
-        "quote": "There's nothing in there that strikes me to merit any sort of FCC review.",
-        "sources": [
-          {
-            "text": "Al Jazeera: US FCC head says controversial Trump ads do not raise concerns (September 30, 2026)",
-            "url": "https://www.aljazeera.com/news/2026/9/30/us-fcc-head-says-controversial-trump-ads-do-not-raise-concerns"
-          }
-        ]
-      },
-      {
-        "who": "Sen. Cynthia Lummis",
-        "role": "Republican of Wyoming, blocking the Senate resolution",
-        "quote": "When this president tells Americans that liberty is worth defending, it's suddenly a problem.",
-        "sources": [
-          {
-            "text": "Washington Post: Republican blocks Senate resolution criticizing Trump's taxpayer-funded ads (September 29, 2026)",
-            "url": "https://www.washingtonpost.com/politics/2026/09/29/republican-blocks-senate-resolution-criticizing-trumps-taxpayer-funded-ads/"
-          }
-        ]
       }
     ]
   },
@@ -1156,10 +1256,25 @@
       ]
     },
     {
+      "when": "Open",
+      "title": "GAO",
+      "text": "Reps. Raskin and Whitesides asked GAO on October 1 to identify the money and rule on whether the ads are legal. GAO acts on congressional requests and says it is deciding whether to take this one. A GAO opinion would test the propaganda restriction directly.",
+      "sources": [
+        {
+          "text": "The Daily Beast: Democrats Demand Those Behind Trump Ads Face Legal Action",
+          "url": "https://www.thedailybeast.com/democrats-demand-those-behind-trump-ads-face-legal-action/"
+        },
+        {
+          "text": "Ars Technica: Trump ads paid for by US government allegedly violate anti-propaganda laws",
+          "url": "https://arstechnica.com/tech-policy/2026/09/trump-ads-paid-for-by-us-government-allegedly-violate-anti-propaganda-laws/"
+        }
+      ]
+    },
+    {
       "date": "2026-10-07",
       "when": "Oct 7, 2026",
       "title": "The House Democrats' deadline",
-      "text": "Reps. Joe Morelle, Rosa DeLauro and Robert Garcia, the top Democrats on House Administration, Appropriations and Oversight, demanded on September 25 that the ad stop airing and asked for answers by October 7.",
+      "text": "Reps. Joe Morelle, Rosa DeLauro and Robert Garcia demanded on September 25 that the ad stop airing and asked for answers by October 7.",
       "sources": [
         {
           "text": "House Administration Democrats: letter from Reps. Morelle, DeLauro and Garcia on the U.S. government-paid political ad (September 25, 2026)",
@@ -1169,12 +1284,16 @@
     },
     {
       "when": "Open",
-      "title": "The complaints",
-      "text": "Public Citizen filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC; CREW filed September 30 with DHS's inspector general. FCC Chairman Brendan Carr said on September 30 that nothing in the ads merits review. GAO says its work is done at the request of congressional committees or as law requires. None has acted.",
+      "title": "The other complaints",
+      "text": "Public Citizen's, filed September 25 with GAO and the Office of Special Counsel and September 29 with the FCC and FTC, and CREW's, filed September 30 with DHS's inspector general. The FCC chairman has said he sees no reason for review. None of the others has acted.",
       "sources": [
         {
           "text": "Public Citizen: Taxpayer-Funded Trump Ad Violates the Hatch Act (September 25, 2026)",
           "url": "https://www.citizen.org/news/taxpayer-funded-trump-ad-violates-the-hatch-act/"
+        },
+        {
+          "text": "Public Citizen: Complaint to the FCC and FTC on government-funded Trump ads (September 29, 2026)",
+          "url": "https://www.citizen.org/wp-content/uploads/FCC-FTC-complaint-final.pdf"
         },
         {
           "text": "CREW: complaint to the DHS Office of Inspector General re financing for pro-Trump television ads (September 30, 2026)",

@@ -82,6 +82,23 @@ const INDY_MASSIE = 'The Independent: Trump trolled';
 const SEN_LETTER = 'Letter from Sens. Murray and Murphy';
 const USASPENDING = 'USAspending.gov: CBP award';
 const PC_FCC = 'Public Citizen: Complaint to the FCC and FTC';
+const AXIOS_RAMP = "Axios: Scoop: Trump's hand-picked";
+const CNN_COST = "CNN: Trump's ads have cost taxpayers";
+const DEADLINE_FCC = 'Deadline: FCC Chairman';
+const AJ_FCC = 'Al Jazeera: US FCC head';
+const ARS_GAO = 'Ars Technica: Trump ads paid for';
+const CREW_IG = 'CREW: complaint to the DHS Office of Inspector General';
+const CHA_LETTER = 'House Administration Democrats: letter from Reps. Morelle';
+const WAPO_LUMMIS = 'Washington Post: Republican blocks Senate resolution';
+const DC_LUMMIS = 'Daily Caller: GOP Senator Blocks';
+const HILL_DEFEND = 'The Hill: Trump defends government-funded ad';
+const USAT_DEFEND = 'USA Today (via AOL)';
+const NEWSMAX_DEFEND = 'Newsmax (via Yahoo)';
+const HILL_IRAN = 'The Hill: Latest taxpayer-funded ad promotes';
+const REUTERS_PROBE = 'Reuters (via U.S. News)';
+const WEX_RASKIN = 'Washington Examiner: Top Judiciary Democrat';
+const BEAST_RASKIN = 'The Daily Beast: Democrats Demand';
+const SN_20M = 'Tennessee Lookout (States Newsroom)';
 
 // ── The ledger. amount is in dollars when known; agencies counts the agencies paying.
 const ledger = [
@@ -97,15 +114,15 @@ const ledger = [
 
 const dive = {
   slug: 'paid-for',
-  updated: '2026-09-29',
+  updated: '2026-10-01',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
     kicker: 'Public money',
     title: 'Paid For',
     dek: 'Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.',
-    status: 'The ads are paid for with border-security money, a Republican senator confirms, and DHS still has not said so',
-    statusText: 'On September 29 the source of the money came out: Customs and Border Protection funds from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed. DHS referred questions to the White House, which has not confirmed it. Democratic senators say DHS appears to have dedicated $20 million; AdImpact counts more than $2.5 million in airtime so far. Public Citizen has complaints before GAO, the Office of Special Counsel, the FCC and the FTC; none has acted. The FAA banner contract runs through 2027.',
+    status: 'Trump defends the ads himself, a fourth spot airs, and House Democrats ask GAO for a ruling',
+    statusText: 'On September 30 Trump said of the ads, "I\'m not promoting myself because I\'m not running for office," and a fourth government-paid spot, on the Iran war, began airing. The money for the first three is Customs and Border Protection funding from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed; an administration official told Axios that DHS is placing the buys "using money from an existing budget." The FCC chairman has declined to review them. Reps. Jamie Raskin and George Whitesides have asked GAO and the Office of Special Counsel to investigate, the first request from members of Congress to GAO, which says it is deciding whether to take it up. The FAA banner contract runs through 2027.',
   },
   hero: {
     question: 'Is public money being used to promote the president himself?',
@@ -243,10 +260,54 @@ const dive = {
           'Public Citizen asked the Federal Communications Commission and the Federal Trade Commission to "direct broadcasters to stop broadcasting" the ads, arguing that because Trump is not a candidate, stations are free to refuse them.',
         ],
         sources: srcs(PC_FCC) },
+      { actor: 'wh', title: 'An administration official confirms DHS is placing the buys', kind: 'ads',
+        body: [
+          'An administration official told Axios that "The Department of Homeland Security is placing the ad buys using money from an existing budget," and Axios reported that Trump "is personally selecting which government-funded ads his administration is airing ahead of the midterms," with more to come. AdImpact counted 2,766 airings from September 23 to 29 on Fox News and the four broadcast networks, CNN reported, with about 30% of the spending on NFL and college football games.',
+        ],
+        sources: srcs(AXIOS_RAMP, CNN_COST) },
+      { actor: 'congress', title: 'A Republican senator blocks a resolution against the ads', kind: 'ads',
+        body: [
+          'On the Senate floor, Sen. Cynthia Lummis of Wyoming blocked Sen. Maggie Hassan\'s resolution declaring that such ads "should not be paid for by the United States government." "When a Democratic president tells Americans what to do, it\'s a public service," Lummis said. "When this president tells Americans that liberty is worth defending, it\'s suddenly a problem."',
+        ],
+        sources: srcs(WAPO_LUMMIS, DC_LUMMIS) },
+    ] },
+    { date: '2026-09-30', events: [
+      { actor: 'wh', title: 'Trump defends the ads: "I\'m not promoting myself"', kind: 'ads',
+        body: [
+          'In the Oval Office, Trump said, "Now, if somebody said that that\'s wrong, I\'ll gladly pay the money, but these are ads for the country," and, "I\'m not promoting a candidate. I\'m not promoting myself because I\'m not running for office." It was his first comment on the campaign.',
+        ],
+        sources: srcs(HILL_DEFEND, USAT_DEFEND, NEWSMAX_DEFEND) },
+      { actor: 'wh', title: 'A fourth ad, on the Iran war', kind: 'ads',
+        body: [
+          'A fourth spot carrying the government disclaimer began airing. In it Trump says, "This regime will soon learn that no one should challenge the strength and might of the United States," and Defense Secretary Pete Hegseth says, "We didn\'t start this war, but under President Trump, we are finishing it." Which funds paid for it has not been confirmed.',
+        ],
+        sources: srcs(HILL_IRAN) },
+      { actor: 'wh', title: 'The FCC chairman declines to review the ads', kind: 'ads',
+        body: [
+          'FCC Chairman Brendan Carr, a Trump appointee, dismissed Public Citizen\'s complaint: "There\'s nothing in there that strikes me to merit any sort of FCC review." Anna Gomez, the commission\'s only Democrat, said she "highly" doubts the FCC "is going to do much to investigate it."',
+        ],
+        sources: srcs(DEADLINE_FCC, AJ_FCC, ARS_GAO) },
+      { actor: 'press', title: 'An ethics group asks DHS\'s inspector general to investigate', kind: 'ads',
+        body: [
+          'Citizens for Responsibility and Ethics in Washington asked the inspector general to examine possible violations of the Antideficiency Act, the Purpose Statute and the government-wide ban on "publicity or propaganda" in the 2026 appropriations law.',
+        ],
+        sources: srcs(CREW_IG) },
+    ] },
+    { date: '2026-10-01', events: [
+      { actor: 'congress', title: 'House Democrats ask GAO and the Office of Special Counsel to investigate', kind: 'ads',
+        body: [
+          'Reps. Jamie Raskin, the top Democrat on the House Judiciary Committee, and George Whitesides asked GAO to identify the "sources, accounts and total amount" spent and to rule on legality, and the Office of Special Counsel to determine who should be held accountable. It is the first request from members of Congress to GAO, which had told Ars Technica that its "work is done at the request of congressional committees or subcommittees or is statutorily required by public laws." The letter says "stealing taxpayer dollars to pay for Mr. Trump\'s narcissistic ego trips is plainly illegal."',
+          'Both agencies confirmed receiving it, the Daily Beast reported. GAO spokesperson Sarah Kaczmarek: "GAO has a process it goes through to determine whether we do work and when, which we are working through right now."',
+        ],
+        sources: srcs(REUTERS_PROBE, WEX_RASKIN, BEAST_RASKIN, ARS_GAO) },
     ] },
   ],
 
   claims: [
+    { claim: 'I\'m not promoting a candidate. I\'m not promoting myself because I\'m not running for office.', who: 'President Trump, September 30, 2026',
+      found: 'The ads feature him, and one is his own 2024 campaign spot with the government line added.',
+      detail: 'The Associated Press called one government-paid spot "virtually identical to one that aired in 2024." Axios reported that Trump "is personally selecting which government-funded ads his administration is airing ahead of the midterms." He is not on the ballot this year, which is the White House\'s argument that the ads are not campaign ads.',
+      sources: srcs(HILL_DEFEND, AP_RERUN, AXIOS_RAMP) },
     { claim: 'We are proud at this Department of Justice to celebrate 250 years of our great country and our historic work to make America safe again at President Trump\'s direction.', who: 'A Justice Department spokesperson, on its banner',
       found: 'The banners carry the sitting president\'s portrait and his slogans.',
       detail: 'The Justice Department\'s banners show Trump\'s official portrait above "MAKE AMERICA SAFE AGAIN," under $946,960 in contracts. Labor\'s put him over "American Workers First." The FAA\'s banner contract runs through 2027.',
@@ -289,6 +350,8 @@ const dive = {
       { who: 'Weijia Jiang', role: 'CBS News, former president of the White House Correspondents\' Association', quote: 'America cannot have state TV', sources: srcs(TIME_TV) },
     ],
     defended: [
+      { who: 'President Trump', role: 'In the Oval Office, September 30', quote: 'Now, if somebody said that that\'s wrong, I\'ll gladly pay the money, but these are ads for the country', sources: srcs(HILL_DEFEND, USAT_DEFEND) },
+      { who: 'Sen. Cynthia Lummis', role: 'Republican of Wyoming, blocking a resolution against the ads', quote: 'When this president tells Americans that liberty is worth defending, it\'s suddenly a problem.', sources: srcs(WAPO_LUMMIS, DC_LUMMIS) },
       { who: 'Davis Ingle', role: 'White House spokesperson, on the criticism of the ads', quote: 'the unequivocal leader, best messenger, and unmatched motivator for the Republican Party', sources: srcs(INDY_MASSIE) },
       { who: 'The White House', role: 'In a statement on the ad', quote: 'educational and unapologetically patriotic', sources: srcs(AP_AD) },
       { who: 'A White House official', role: 'To CBS News, on the ads', quote: 'The President is not on the ballot and the ads don\'t have a call to action.', sources: srcs(CBS_AD) },
@@ -309,7 +372,9 @@ const dive = {
   watch: [
     { date: '2026-11-03', when: 'Nov 3, 2026', title: 'Election Day', text: 'The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether DHS answers the senators\' questions about the border money.' },
     { when: 'Open', title: 'The senators\' 48 hours', text: 'Sens. Murray and Murphy asked DHS on September 29 for a breakdown of the funds, copies of the contracts and who directed them, within 48 hours, copying the department\'s inspector general. Hassan\'s earlier questions on cost and contractors are also unanswered.', sources: srcs(SEN_LETTER, CBS_AD) },
-    { when: 'Open', title: 'Public Citizen\'s complaints', text: 'Filed September 25 with the Government Accountability Office and the Office of Special Counsel, and September 29 with the FCC and FTC. A GAO opinion would test the propaganda restriction directly. None has acted.', sources: srcs(PC_COMPLAINT) },
+    { when: 'Open', title: 'GAO', text: 'Reps. Raskin and Whitesides asked GAO on October 1 to identify the money and rule on whether the ads are legal. GAO acts on congressional requests and says it is deciding whether to take this one. A GAO opinion would test the propaganda restriction directly.', sources: srcs(BEAST_RASKIN, ARS_GAO) },
+    { date: '2026-10-07', when: 'Oct 7, 2026', title: 'The House Democrats\' deadline', text: 'Reps. Joe Morelle, Rosa DeLauro and Robert Garcia demanded on September 25 that the ad stop airing and asked for answers by October 7.', sources: srcs(CHA_LETTER) },
+    { when: 'Open', title: 'The other complaints', text: 'Public Citizen\'s, filed September 25 with GAO and the Office of Special Counsel and September 29 with the FCC and FTC, and CREW\'s, filed September 30 with DHS\'s inspector general. The FCC chairman has said he sees no reason for review. None of the others has acted.', sources: srcs(PC_COMPLAINT, PC_FCC, CREW_IG, DEADLINE_FCC) },
     { when: 'Through 2027', title: 'The FAA banners', text: 'The FAA\'s banner contract runs through 2027.', sources: srcs(INDY_BAN) },
   ],
 
