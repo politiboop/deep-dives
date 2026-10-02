@@ -55,6 +55,9 @@ const DIN_NBC = "NBC News: Trump's crypto dinner cost";
 const SUN_PAUSE = 'CoinDesk: SEC, Justin Sun, Tron Ask Court to Pause';
 const SUN_SEC = 'Litigation Release No. 26496';
 const MAL = 'Reuters via CNBC: Trump hosts crypto contest winners';
+const GALA_SITE = '$TRUMP official site: Exclusive Dinner';
+const GALA_ABC = 'ABC News: Trump to host another gala';
+const GALA_POL = 'Politico: Trump meme coin org promises dinner';
 const WLF_CNBC = 'CNBC: New details of Trump family crypto project';
 const WLF_CBS = 'CBS News: Trump plans to announce the World Liberty';
 const WLF_DECRYPT = 'Decrypt: What Is World Liberty Financial';
@@ -174,7 +177,7 @@ const ledger = [
 
 const dive = {
   slug: 'his-own-account',
-  updated: '2026-09-25',
+  updated: '2026-10-02',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
@@ -322,6 +325,11 @@ const dive = {
         body: ['The Senate voted 49-50 against advancing the crypto market structure bill, with four Republicans opposed. Democrats wanted stricter enforcement and a requirement for the president to divest crypto holdings; last year\'s stablecoin law, the AP noted, "did not extend to Trump or his family."'],
         sources: srcs(ROLLCALL, AP_CRYPTO) },
     ] },
+    { date: '2026-10-01', events: [
+      { actor: 'wh', title: 'A third dinner for the coin\'s biggest holders', kind: 'crypto', trackerIds: ['trump-meme-coin-dinner-top-holders-virginia-club'],
+        body: ['The coin\'s official site announced a November 22 dinner with Trump at his Virginia club for the coin\'s top holders, ranked by their "time-weighted $TRUMP holdings as of Nov 12, 2026, 1 PM Eastern." ABC News reported that 185 top investors will attend, "the third such gathering since his return to office." The prizes include an 18-karat gold Trump watch. The White House referred Politico to the host organization, which did not respond.'],
+        sources: srcs(GALA_SITE, GALA_ABC, GALA_POL) },
+    ] },
   ],
 
   claims: [
@@ -371,6 +379,7 @@ const dive = {
   ],
 
   watch: [
+    { date: '2026-11-22', when: 'Nov 22, 2026', title: 'The third meme-coin dinner', text: 'Trump is to host the coin\'s top holders at his Virginia club. The ranking closes November 12.', sources: srcs(GALA_SITE, GALA_ABC) },
     { date: '2027-05-15', when: 'May 15, 2027', title: 'The next disclosure', text: 'His report for 2026 is due. It will show the year the family\'s crypto bank charter was approved and the second meme-coin event was held.', sources: srcs(BANKING_LETTER) },
     { when: 'Open', title: 'The crypto market structure bill', text: 'Stalled in the Senate on September 15, 2026, with Democrats seeking a requirement that the president divest crypto holdings.', sources: srcs(AP_CRYPTO) },
     { when: 'Open', title: 'World Liberty\'s bank', text: 'The OCC\'s approval is preliminary and conditional; the bank cannot open until it meets the conditions.', sources: srcs(OCC) },
