@@ -161,7 +161,7 @@
       "kind": "attempt",
       "sources": [
         {
-          "text": "HuffPost: Republicans push $72 billion bill for ICE — and Trump's ballroom (May 5, 2026)",
+          "text": "HuffPost: Republicans Unveil $72 Billion Package For ICE, Trump's Ballroom (May 5, 2026)",
           "url": "https://www.huffpost.com/entry/republicans-bill-72-billion-ice-trump-ballroom_n_69fa0082e4b055e1a496eff0"
         },
         {
@@ -406,10 +406,14 @@
           "title": "After a shooting, the Justice Department asks the Trust to drop the suit",
           "kind": "building",
           "body": [
-            "Within a day of the shooting at the White House Correspondents' Dinner, Assistant Attorney General Brett Shumate wrote that the suit \"puts the lives of the President, his family, and his staff at great risk\" and asked the Trust to dismiss it.",
+            "Within a day of the shooting at the White House Correspondents' Dinner, Assistant Attorney General Brett Shumate wrote that the suit \"puts the lives of the President, his family, and staff at grave risk\" and asked the Trust to dismiss it.",
             "The Trust refused on April 27. Its lawyer, Gregory Craig: \"Simply put, this case does not jeopardize the President's safety in any way.\" He added: \"And nothing prevents you from asking Congress at any time for the necessary authorization required by the Constitution and federal law.\""
           ],
           "sources": [
+            {
+              "text": "The Guardian: DoJ pressures group to drop lawsuit against Trump's ballroom after gala shooting (April 27, 2026)",
+              "url": "https://www.theguardian.com/us-news/2026/apr/27/doj-trump-ballroom-gala-security"
+            },
             {
               "text": "CNBC: Trump ballroom lawsuit plaintiff rejects DOJ demand to drop case after 'assassination attempt' (Dan Mangan, April 27, 2026)",
               "url": "https://www.cnbc.com/2026/04/27/trump-ballroom-whcd-doj-lawsuit.html"
@@ -453,7 +457,7 @@
           ],
           "sources": [
             {
-              "text": "HuffPost: Republicans push $72 billion bill for ICE — and Trump's ballroom (May 5, 2026)",
+              "text": "HuffPost: Republicans Unveil $72 Billion Package For ICE, Trump's Ballroom (May 5, 2026)",
               "url": "https://www.huffpost.com/entry/republicans-bill-72-billion-ice-trump-ballroom_n_69fa0082e4b055e1a496eff0"
             },
             {
@@ -740,7 +744,7 @@
       ]
     },
     {
-      "claim": "puts the lives of the President, his family, and his staff at great risk",
+      "claim": "puts the lives of the President, his family, and staff at grave risk",
       "who": "Brett Shumate, assistant attorney general, on the Trust's lawsuit",
       "found": "The injunction exempted security work.",
       "detail": "As the Supreme Court's order describes it, the injunction let the government keep building the underground military installation and blocked above-ground construction except as \"strictly necessary\" to protect the White House, the president and his staff.",
@@ -748,6 +752,10 @@
         {
           "text": "Supreme Court of the United States: National Park Service v. National Trust for Historic Preservation, No. 26A203, order granting stay and dissent (August 31, 2026)",
           "url": "https://www.supremecourt.gov/opinions/25pdf/26a203_2b8e.pdf"
+        },
+        {
+          "text": "The Guardian: DoJ pressures group to drop lawsuit against Trump's ballroom after gala shooting (April 27, 2026)",
+          "url": "https://www.theguardian.com/us-news/2026/apr/27/doj-trump-ballroom-gala-security"
         },
         {
           "text": "CNBC: Trump ballroom lawsuit plaintiff rejects DOJ demand to drop case after 'assassination attempt' (Dan Mangan, April 27, 2026)",
@@ -818,7 +826,7 @@
         "quote": "been lying to the public about the cost",
         "sources": [
           {
-            "text": "HuffPost: Republicans push $72 billion bill for ICE — and Trump's ballroom (May 5, 2026)",
+            "text": "HuffPost: Republicans Unveil $72 Billion Package For ICE, Trump's Ballroom (May 5, 2026)",
             "url": "https://www.huffpost.com/entry/republicans-bill-72-billion-ice-trump-ballroom_n_69fa0082e4b055e1a496eff0"
           }
         ]

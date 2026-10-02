@@ -57,10 +57,11 @@ const TNR_PC = "The New Republic: Trump's Ballroom Donors";
 const INDY_GOP = 'The Independent: Republicans now plan';
 const WAPO_TRACK = 'Washington Post: Tracking';
 const RC_SS = 'Roll Call: Secret Service disbursements';
-const HUFF_ICE = 'HuffPost: Republicans push $72 billion';
+const HUFF_ICE = 'HuffPost: Republicans Unveil $72 Billion Package';
 const BBC_BYRD = 'BBC News: Trump';
 const POL_BYRD = 'Politico: Ballroom won';
 const CNBC_WHCD = 'CNBC: Trump ballroom lawsuit plaintiff';
+const GUARDIAN_WHCD = 'The Guardian: DoJ pressures group to drop lawsuit';
 const AP_WHCD = 'AP News: National Trust says';
 const TNR_BULL = 'The New Republic: DOJ Declares';
 const ABC_BULL = "ABC News: DOJ argues Trump could 'bulldoze'";
@@ -149,10 +150,10 @@ const dive = {
     { date: '2026-04-26', events: [
       { actor: 'wh', title: 'After a shooting, the Justice Department asks the Trust to drop the suit', kind: 'building',
         body: [
-          'Within a day of the shooting at the White House Correspondents\' Dinner, Assistant Attorney General Brett Shumate wrote that the suit "puts the lives of the President, his family, and his staff at great risk" and asked the Trust to dismiss it.',
+          'Within a day of the shooting at the White House Correspondents\' Dinner, Assistant Attorney General Brett Shumate wrote that the suit "puts the lives of the President, his family, and staff at grave risk" and asked the Trust to dismiss it.',
           'The Trust refused on April 27. Its lawyer, Gregory Craig: "Simply put, this case does not jeopardize the President\'s safety in any way." He added: "And nothing prevents you from asking Congress at any time for the necessary authorization required by the Constitution and federal law."',
         ],
-        sources: srcs(CNBC_WHCD, AP_WHCD) },
+        sources: srcs(GUARDIAN_WHCD, CNBC_WHCD, AP_WHCD) },
     ] },
     { date: '2026-04-28', events: [
       { actor: 'congress', title: 'Republican senators propose paying for it with customs and park fees', kind: 'security-money',
@@ -223,10 +224,10 @@ const dive = {
       found: 'No new names were added.',
       detail: 'As of mid-September, NBC News reported, no donors had been added to the list of 37 released in October 2025, though Nvidia and Vantive Healthcare have acknowledged their own donations. The amounts most donors gave have never been disclosed.',
       sources: srcs(NBC_NAMES) },
-    { claim: 'puts the lives of the President, his family, and his staff at great risk', who: 'Brett Shumate, assistant attorney general, on the Trust\'s lawsuit',
+    { claim: 'puts the lives of the President, his family, and staff at grave risk', who: 'Brett Shumate, assistant attorney general, on the Trust\'s lawsuit',
       found: 'The injunction exempted security work.',
       detail: 'As the Supreme Court\'s order describes it, the injunction let the government keep building the underground military installation and blocked above-ground construction except as "strictly necessary" to protect the White House, the president and his staff.',
-      sources: srcs(ORDER, CNBC_WHCD) },
+      sources: srcs(ORDER, GUARDIAN_WHCD, CNBC_WHCD) },
     { claim: 'has just ruled in favor of the Ballroom/Military Complex being built without any further contingency, doubt, or threat', who: 'Trump, on the Supreme Court\'s order',
       found: 'The Court said it was not deciding whether the project is legal.',
       detail: 'The majority: "Today, we do not pass upon the legality of the government\'s East Wing project." It held only that the Trust likely lacks standing. The lawsuit continues in the lower courts, and four justices said the construction is likely unlawful.',
