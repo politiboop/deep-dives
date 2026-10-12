@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-10-01",
+  "updated": "2026-10-12",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -16,21 +16,21 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "Trump defends the ads himself, a fourth spot airs, and House Democrats ask GAO for a ruling",
-    "statusText": "On September 30 Trump said of the ads, \"I'm not promoting myself because I'm not running for office,\" and a fourth government-paid spot, on the Iran war, began airing. The money for the first three is Customs and Border Protection funding from the 2025 reconciliation law, as the Wall Street Journal reported and Sen. Susan Collins, the Republican who chairs Senate Appropriations, confirmed; an administration official told Axios that DHS is placing the buys \"using money from an existing budget.\" The FCC chairman has declined to review them. Reps. Jamie Raskin and George Whitesides have asked GAO and the Office of Special Counsel to investigate, the first request from members of Congress to GAO, which says it is deciding whether to take it up. The FAA banner contract runs through 2027."
+    "status": "A federal judge orders the taxpayer-funded ads off the air",
+    "statusText": "On October 11, Judge Jennifer L. Rochon of the Southern District of New York halted the ads for 14 days in a suit brought by Common Cause, staying CBP's $20 million purchase order and ordering remaining placements canceled. The Justice Department did not contest the merits; it argued the ads were ending anyway. By October 12, AdImpact counted $21,705,138 in government spending on five ads. Trump had said on October 5 that his super PAC would pay for future ads, and on October 6, asked about repaying what was spent, said, \"we'll decide.\" The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
     "answer": "The government has put the president's face or message in front of the public in at least four ways: banners of his face paid for by five federal agencies, a television ad carrying his message under the line \"paid for by the U.S. government,\" a 24-hour White House stream of its own highlights, and a White House app pushed onto federal employees' work phones.",
-    "rule": "Federal spending laws have barred taxpayer spending \"for publicity or propaganda purposes\" since 1951. Whether any of this crosses that line has not been tested; no ruling on it is on the record.",
+    "rule": "Federal spending laws have barred taxpayer spending \"for publicity or propaganda purposes\" since 1951. On October 12 a federal judge found the plaintiffs likely to succeed in showing the television ads violated that ban; the banners, the stream and the app have not been tested.",
     "ruleSources": [
       {
         "text": "Sen. Schiff - Exposes propaganda banners, illegal federal spending",
         "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-exposes-plans-for-additional-propaganda-banners-details-illegal-federal-spending-in-new-report/"
       },
       {
-        "text": "Associated Press: US government foots bill for television advertisement featuring Trump's midterm messaging (September 24, 2026)",
-        "url": "https://apnews.com/article/paid-by-us-government-ad-midterms-04b3fe552fc3de2ada0b14394706e0e0"
+        "text": "Common Cause v. Department of Homeland Security: opinion and order (Dkt. 42)",
+        "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.42.0.pdf"
       }
     ],
     "deck": [
@@ -155,13 +155,21 @@
       ]
     },
     {
-      "when": "Sept 2026",
+      "when": "Sept to Oct 2026",
       "item": "The television ads",
-      "payer": "Customs and Border Protection funds, confirmed by Sen. Susan Collins",
-      "amount": 2500000,
-      "note": "More than $2.5 million by AdImpact's count for three ads over seven days, the AP reported September 29; AdImpact misses some cable airings, and the first buy was about $14,000. Sens. Murray and Murphy say DHS appears to have dedicated $20 million; a $20 million CBP \"National Media Campaign\" contract awarded September 20 has not been tied to the ads",
+      "payer": "Customs and Border Protection funds: CBP asked OMB for $20 million on September 19 and issued a $20 million purchase order to the ad agency the next day, the court record shows",
+      "amount": 21705138,
+      "note": "AdImpact's count for the five ads by the morning of October 12, CBS reported; because the ads are classified as PSAs, AdImpact may not reflect the exact total. A federal judge halted the spending on October 11",
       "kind": "channel",
       "sources": [
+        {
+          "text": "CBS News: Judge orders Trump administration to cancel taxpayer-funded TV ads",
+          "url": "https://www.cbsnews.com/news/trump-taxpayer-funded-ads-judge-cancels/"
+        },
+        {
+          "text": "Common Cause v. Department of Homeland Security: opinion and order (Dkt. 42)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.42.0.pdf"
+        },
         {
           "text": "AP: Homeland Security taps $20M in taxpayer funds for pro-Trump ads (September 29, 2026)",
           "url": "https://apnews.com/article/trump-ads-taxpayer-money-homeland-security-b869294503c8454db4109ae175ee9e5c"
@@ -169,14 +177,6 @@
         {
           "text": "NBC News: Pro-Trump TV ads paid for with Customs and Border Protection money, official says (September 29, 2026)",
           "url": "https://www.nbcnews.com/politics/trump-administration/trump-tv-ads-customs-border-protection-money-rcna600527"
-        },
-        {
-          "text": "CNBC: Trump government ads were funded by Homeland Security, WSJ reports (September 29, 2026)",
-          "url": "https://www.cnbc.com/2026/09/29/trump-ads-cbp-dhs-taxpayer-funding-election.html"
-        },
-        {
-          "text": "Senate Appropriations Committee: Letter from Sens. Murray and Murphy to Secretary Mullin on DHS-funded ads (September 29, 2026)",
-          "url": "https://www.appropriations.senate.gov/imo/media/doc/dhs_letter_on_trump_ads.pdf"
         },
         {
           "text": "USAspending.gov: CBP award 70B06C26F00001137 to LMD Agency, National Media Campaign, $20,000,000 (September 20, 2026)",
@@ -798,9 +798,129 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-02",
+      "events": [
+        {
+          "actor": "press",
+          "title": "At least 13 ads, and the money meant for memorials",
+          "kind": "ads",
+          "body": [
+            "CNN reported that the administration has created at least 13 campaign-style ads, including \"God Made Trump,\" shown at Republicans' midterm convention, and obtained clips from a Dropbox account \"run by LMD, the agency that has been given the government contract for the ad buys.\" The Washington Post reported that to add $20 million to DHS's \"commemorative events\" line, OMB drew on money the 2025 law gave CBP; a House budget committee report said that line was intended for \"Line-of-Duty death memorials, Department or agency anniversaries, and commendation ceremonies.\"",
+            "The New York Times reported, citing people familiar with the matter, that \"President Donald Trump personally instructed his budget director to use taxpayer money for TV ads praising him and his presidency.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN: 'God made Trump' ad and at least 12 others are part of controversial taxpayer-funded ad campaign (October 2, 2026)",
+              "url": "https://www.cnn.com/2026/10/02/politics/trump-taxpayer-funded-ads"
+            },
+            {
+              "text": "Washington Post: Campaign-style Trump ads use money meant for border security, memorials (October 1, 2026)",
+              "url": "https://www.washingtonpost.com/politics/2026/10/01/trump-ads-use-money-border-security-slain-officers-memorials/"
+            },
+            {
+              "text": "The New York Times (via The Seattle Times): Trump directed use of taxpayer money for ads praising his presidency (October 2, 2026)",
+              "url": "https://www.seattletimes.com/nation-world/nation-politics/trump-directed-use-of-taxpayer-money-for-ads-praising-his-presidency/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "Trump says his super PAC will pay from now on",
+          "kind": "ads",
+          "body": [
+            "After criticism from both parties, Trump posted, \"This is a rather standard thing to do but, rather than doing that, although nothing will make them happy, I have decided to do the Patriotic Ads, among others, and pay for them myself, and with money I raised for MAGA, Inc.\" A White House official told CBS News the post \"was not referring to reimbursing the federal government\" for ads already bought.",
+            "Asked the next day whether he would repay the money already spent, he said, \"we'll decide,\" the AP reported."
+          ],
+          "sources": [
+            {
+              "text": "NBC News: After bipartisan criticism, Trump says taxpayers' dollars will no longer be used for TV ads promoting him",
+              "url": "https://www.nbcnews.com/politics/donald-trump/taxpayer-dollars-super-pac-tv-ads-promoting-president-maga-inc-rcna601772"
+            },
+            {
+              "text": "AP: Trump says his super PAC will pay for taxpayer-funded ads that sparked backlash for glorifying him",
+              "url": "https://apnews.com/article/trump-taxpayer-funded-ads-super-pac-e6f47f7b86f83938aacfb16bda12efaa"
+            },
+            {
+              "text": "CBS News: Trump says his super PAC will start paying for controversial taxpayer-funded ads",
+              "url": "https://www.cbsnews.com/news/trump-super-pac-maga-inc-taxpayer-funded-ads/"
+            },
+            {
+              "text": "AP: Trump doesn't commit to repaying federal funds already spent on controversial ads",
+              "url": "https://apnews.com/article/trump-taxpayer-funded-ads-super-pac-reimburse-d728ad3cf091576d09a63d9218be3fe2"
+            },
+            {
+              "text": "Washington Examiner: Trump won't reimburse taxpayers for campaign-style PSAs",
+              "url": "https://www.washingtonexaminer.com/news/white-house/4755525/trump-wont-reimburse-taxpayers-for-campaign-style-psas/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "events": [
+        {
+          "actor": "court",
+          "title": "A federal judge orders the ads off the air",
+          "kind": "ads",
+          "body": [
+            "In Common Cause v. Department of Homeland Security, Judge Jennifer L. Rochon of the Southern District of New York stayed CBP's $20 million purchase order and OMB's reallocation of the money and ordered the government to cancel remaining placements, \"including those placements for the evening of October 11, 2026,\" for 14 days. The Justice Department had argued an order was unnecessary because \"the alleged offending conduct will end tomorrow.\"",
+            "In her opinion the next day, Rochon wrote that \"Defendants do not contest the merits of Plaintiffs' claims\" and found the plaintiffs likely to succeed in showing the ads \"were disseminated to support Republican candidates and impact the midterm elections.\" She called DHS's statement that it had \"no plans\" for more buys \"equivocal\" and cited Trump's October 5 post calling the spending a \"standard thing to do.\""
+          ],
+          "sources": [
+            {
+              "text": "Common Cause v. Department of Homeland Security, No. 1:26-cv-08882 (S.D.N.Y.): temporary restraining order (Dkt. 41)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.41.0.pdf"
+            },
+            {
+              "text": "Common Cause v. Department of Homeland Security: opinion and order (Dkt. 42)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.42.0.pdf"
+            },
+            {
+              "text": "AP: Judge orders the Trump administration to cancel taxpayer-funded promotional TV ads",
+              "url": "https://apnews.com/article/trump-tv-ads-f845554063cea0b4b41275d32abd3633"
+            },
+            {
+              "text": "NBC News: Federal judge orders pro-Trump TV ads funded by taxpayers off air immediately",
+              "url": "https://www.nbcnews.com/politics/trump-administration/federal-judge-orders-trump-tv-ads-funded-taxpayers-air-immediately-rcna602879"
+            },
+            {
+              "text": "CBS News: Judge orders Trump administration to cancel taxpayer-funded TV ads",
+              "url": "https://www.cbsnews.com/news/trump-taxpayer-funded-ads-judge-cancels/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
+    {
+      "claim": "This is a rather standard thing to do",
+      "who": "President Trump, on Truth Social, October 5, 2026",
+      "found": "A federal judge cited this very post as a reason the spending might recur, and the government did not defend the ads' legality in court.",
+      "detail": "Judge Rochon wrote that \"Defendants do not contest the merits of Plaintiffs' claims\" and cited the post as a reason she could not be confident the spending would stop. A Reuters/Ipsos poll found 86 percent of adults think it is inappropriate to use taxpayer money for election-related TV ads featuring the president or his cabinet.",
+      "sources": [
+        {
+          "text": "Common Cause v. Department of Homeland Security: opinion and order (Dkt. 42)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.42.0.pdf"
+        },
+        {
+          "text": "The Hill: 86 percent think taxpayer-funded, campaign-style Trump ads inappropriate: Survey",
+          "url": "https://thehill.com/homenews/administration/6131379-donald-trump-taxpayer-tv-ads-disapproval-survey/"
+        },
+        {
+          "text": "GV Wire (Reuters): Americans Critical of Trump's Taxpayer-Paid Election Ads: Reuters/Ipsos Poll",
+          "url": "https://gvwire.com/2026/10/06/americans-critical-of-trumps-taxpayer-paid-election-ads-reuters-ipsos-poll/"
+        }
+      ]
+    },
     {
       "claim": "I'm not promoting a candidate. I'm not promoting myself because I'm not running for office.",
       "who": "President Trump, September 30, 2026",
@@ -1271,14 +1391,18 @@
       ]
     },
     {
-      "date": "2026-10-07",
-      "when": "Oct 7, 2026",
-      "title": "The House Democrats' deadline",
-      "text": "Reps. Joe Morelle, Rosa DeLauro and Robert Garcia demanded on September 25 that the ad stop airing and asked for answers by October 7.",
+      "date": "2026-10-25",
+      "when": "Oct 25, 2026",
+      "title": "The court order runs out",
+      "text": "Judge Rochon's order lasts 14 days from October 11 unless the court extends it. The Democratic National Committee has sued separately.",
       "sources": [
         {
-          "text": "House Administration Democrats: letter from Reps. Morelle, DeLauro and Garcia on the U.S. government-paid political ad (September 25, 2026)",
-          "url": "https://democrats-cha.house.gov/sites/evo-subsites/democrats-cha.house.gov/files/evo-media-document/-final-2026.09.25-letter-to-omb-re-us-gov-political-ad.pdf"
+          "text": "Common Cause v. Department of Homeland Security, No. 1:26-cv-08882 (S.D.N.Y.): temporary restraining order (Dkt. 41)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.41.0.pdf"
+        },
+        {
+          "text": "AP: Judge orders the Trump administration to cancel taxpayer-funded promotional TV ads",
+          "url": "https://apnews.com/article/trump-tv-ads-f845554063cea0b4b41275d32abd3633"
         }
       ]
     },
@@ -1319,7 +1443,7 @@
   ],
   "take": [
     "Each item here has a defense on its own terms. A president may publish video, and agencies may mark an anniversary. Put together, they describe what the propaganda restriction exists to prevent: public money spent to keep one politician's face and message in front of the public, most visibly in the weeks before an election.",
-    "The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president's campaign themes, a convention clip and a song that repeats \"love me\"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. The money turned out to be border-security funds, and the administration still will not say so; a Republican senator had to. Spending its sponsor will not own is spending nobody can be held to account for.",
+    "The ads began as the smallest line in the ledger and are now the largest, and they were always the plainest. One uses the president's campaign themes, a convention clip and a song that repeats \"love me\"; another is his 2024 campaign ad with the campaign ending cut off. Both carry a government disclaimer. Republicans in both chambers saw the problem at once. The money turned out to be border-security funds, which a Republican senator confirmed before the administration did. When the spending reached court, the government did not defend its legality, and a federal judge stopped it.",
     "The anniversary defense deserves a fair hearing, and the banners answer it themselves. They carry the sitting president's portrait and his own slogans, one of them on the headquarters of the department meant to be independent of him, and one contract runs into 2027."
   ],
   "corrections": [
