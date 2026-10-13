@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -894,6 +894,32 @@
             {
               "text": "CBS News: Judge orders Trump administration to cancel taxpayer-funded TV ads",
               "url": "https://www.cbsnews.com/news/trump-taxpayer-funded-ads-judge-cancels/"
+            }
+          ]
+        },
+        {
+          "actor": "court",
+          "title": "The ads keep airing after the order",
+          "kind": "ads",
+          "body": [
+            "The plaintiffs told the court that, by AdImpact's data, the ads \"ran in nearly 400 spots on programs that began airing at 7 p.m. Eastern last night,\" after the order took effect, including during CBS's \"60 Minutes\" and ABC's \"America's Funniest Home Videos,\" and kept running the next day. The government's status report explained that \"Agency counsel did not become aware of Government counsel's email until this morning\" and said, \"The undersigned apologizes to the Court and the plaintiffs.\" The plaintiffs said they \"do not presently seek contempt sanctions.\" The judge set a conference for October 14."
+          ],
+          "sources": [
+            {
+              "text": "Common Cause v. Department of Homeland Security: plaintiffs' letter on continued airing (Dkt. 43)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.43.0.pdf"
+            },
+            {
+              "text": "Common Cause v. Department of Homeland Security: government status report (Dkt. 44)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.674638/gov.uscourts.nysd.674638.44.0.pdf"
+            },
+            {
+              "text": "CNN: Taxpayer-funded ads aired hundreds of times after judge ordered Trump to halt the push",
+              "url": "https://www.cnn.com/2026/10/11/politics/trump-taxpayer-funded-ads-stop"
+            },
+            {
+              "text": "Washington Examiner: DOJ apologizes after Trump campaign-style ad airs despite court order",
+              "url": "https://www.washingtonexaminer.com/news/justice/4763967/doj-apologize-trump-campaign-ad-court/"
             }
           ]
         }

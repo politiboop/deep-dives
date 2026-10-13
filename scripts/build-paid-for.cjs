@@ -113,6 +113,10 @@ const OPINION = 'Common Cause v. Department of Homeland Security: opinion and or
 const AP_TRO = 'AP: Judge orders the Trump administration to cancel';
 const NBC_TRO = 'NBC News: Federal judge orders pro-Trump TV ads';
 const CBS_TRO = 'CBS News: Judge orders Trump administration to cancel';
+const DKT43 = "plaintiffs' letter on continued airing";
+const DKT44 = 'government status report (Dkt. 44)';
+const CNN_AIRED = 'CNN: Taxpayer-funded ads aired hundreds of times';
+const WEX_APOLOGY = 'Washington Examiner: DOJ apologizes';
 const SN_20M = 'Tennessee Lookout (States Newsroom)';
 
 // ── The ledger. amount is in dollars when known; agencies counts the agencies paying.
@@ -129,7 +133,7 @@ const ledger = [
 
 const dive = {
   slug: 'paid-for',
-  updated: '2026-10-12',
+  updated: '2026-10-13',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
@@ -339,6 +343,11 @@ const dive = {
           'In her opinion the next day, Rochon wrote that "Defendants do not contest the merits of Plaintiffs\' claims" and found the plaintiffs likely to succeed in showing the ads "were disseminated to support Republican candidates and impact the midterm elections." She called DHS\'s statement that it had "no plans" for more buys "equivocal" and cited Trump\'s October 5 post calling the spending a "standard thing to do."',
         ],
         sources: srcs(TRO, OPINION, AP_TRO, NBC_TRO, CBS_TRO) },
+      { actor: 'court', title: 'The ads keep airing after the order', kind: 'ads',
+        body: [
+          'The plaintiffs told the court that, by AdImpact\'s data, the ads "ran in nearly 400 spots on programs that began airing at 7 p.m. Eastern last night," after the order took effect, including during CBS\'s "60 Minutes" and ABC\'s "America\'s Funniest Home Videos," and kept running the next day. The government\'s status report explained that "Agency counsel did not become aware of Government counsel\'s email until this morning" and said, "The undersigned apologizes to the Court and the plaintiffs." The plaintiffs said they "do not presently seek contempt sanctions." The judge set a conference for October 14.',
+        ],
+        sources: srcs(DKT43, DKT44, CNN_AIRED, WEX_APOLOGY) },
     ] },
   ],
 
