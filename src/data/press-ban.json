@@ -1,13 +1,13 @@
 {
   "slug": "press-ban",
-  "updated": "2026-09-29",
+  "updated": "2026-10-14",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
   "meta": {
     "kicker": "The press",
     "title": "Shut Out",
-    "dek": "Trump banned three news organizations from the White House. Six days later a judge he appointed ordered them back in. The claims, the record, and what comes next.",
+    "dek": "Trump banned three news organizations from the White House. Six days later a judge he appointed ordered them back in, and three weeks after that he blocked the ban while the case continues. The claims, the record, and what comes next.",
     "outlets": [
       "CNN",
       "MS NOW",
@@ -15,9 +15,8 @@
     ],
     "bannedFrom": "2026-09-18",
     "restored": "2026-09-24",
-    "orderEnds": "2026-10-08",
-    "status": "Passes restored under a court order, but CNN kept off Air Force One",
-    "statusText": "A federal judge ordered the hard passes restored on September 24, and journalists from all three outlets were back inside the White House that day. Since then the White House has kept CNN and MS NOW out of Xi's state-dinner arrival and, on September 26, left CNN off Air Force One when it was the scheduled television pool network. The networks resumed pool coverage on September 27, leaving CNN's slot unfilled when the White House blocks it. The attorney general defended the ban on television as a matter of privilege and national security. The restraining order runs to October 8; the outlets filed their motion for a longer one on September 28, the government answers by October 2, and the court has said it \"intends to rule expeditiously.\""
+    "status": "The ban is blocked while the case continues; the government has appealed",
+    "statusText": "On October 13 Judge Timothy J. Kelly granted a preliminary injunction barring enforcement of the hard-pass revocations while the lawsuit proceeds, finding the ban likely unlawful viewpoint discrimination and \"practically nothing national security-related in the record connected to the President's decision.\" The Justice Department appealed to the D.C. Circuit the next day. The ruling does not address the television pool."
   },
   "hero": {
     "deck": [
@@ -798,6 +797,55 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "events": [
+        {
+          "actor": "court",
+          "title": "The judge blocks the ban while the case continues",
+          "body": [
+            "Judge Kelly, a Trump appointee, granted a preliminary injunction, an order that holds until the case is decided. \"The record is clear that President Trump made the decision at issue,\" he wrote, and, \"Freed from such a naiveté, it is not hard to conclude that President Trump likely banned Plaintiffs from the White House because he believes that their reporting is generally inaccurate and biased against him.\" His conclusion: \"Simply put, that is unlawful viewpoint discrimination.\" On the government's security rationale he found \"practically nothing national security-related in the record connected to the President's decision.\"",
+            "He added a caution in the other direction: \"no one should interpret the Court's decision to suggest that President Trump's concerns about accuracy and fairness in the media's reporting are unfounded.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN v. Trump, No. 1:26-cv-03287 (D.D.C.): memorandum opinion (ECF 50)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.50.0_3.pdf"
+            },
+            {
+              "text": "CNN v. Trump: order granting preliminary injunction (ECF 49)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.49.0_3.pdf"
+            },
+            {
+              "text": "CNN: Judge says Trump press ban likely violates First Amendment",
+              "url": "https://www.cnn.com/2026/10/13/politics/judge-gives-cnn-white-house-access-media-ban"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "The White House appeals",
+          "body": [
+            "\"The Fake News has no place demanding a spot in the President's Oval Office,\" a White House spokesperson said. The Justice Department filed a notice of appeal to the D.C. Circuit."
+          ],
+          "sources": [
+            {
+              "text": "CNN v. Trump: notice of appeal (ECF 51)",
+              "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.51.0_1.pdf"
+            },
+            {
+              "text": "MS NOW: Federal judge indefinitely reverses White House ban on national news organizations in victory for press",
+              "url": "https://www.ms.now/news/trump-white-house-media-ban-judge-ruling-ms-now-cnn-politico"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1258,44 +1306,20 @@
   ],
   "watch": [
     {
-      "date": "2026-09-28",
-      "when": "Mon Sept 28",
-      "title": "Motion for a preliminary injunction filed",
-      "text": "Filed September 28. The outlets ask for a longer order, one that would keep the ban blocked while the lawsuit continues.",
+      "when": "Open",
+      "title": "The appeal",
+      "text": "The Justice Department appealed the preliminary injunction to the D.C. Circuit on October 14. Until that court rules, the passes stay restored.",
       "sources": [
         {
-          "text": "CNBC: White House allows blocked reporters in after judge lifts Trump ban (September 24, 2026)",
-          "url": "https://www.cnbc.com/2026/09/24/judge-lifts-trumps-white-house-ban-on-cnn-ms-now-and-politico.html"
+          "text": "CNN v. Trump: notice of appeal (ECF 51)",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.51.0_1.pdf"
         }
       ]
     },
     {
-      "date": "2026-10-02",
-      "when": "Fri Oct 2",
-      "title": "The government responds",
-      "text": "The government’s response to the motion is due."
-    },
-    {
-      "date": "2026-10-05",
-      "when": "Mon Oct 5",
-      "title": "The reply, then a hearing",
-      "text": "The court will set a hearing date and says it \"intends to rule expeditiously.\""
-    },
-    {
-      "date": "2026-10-08",
-      "when": "Thu Oct 8",
-      "title": "The fourteen days run out",
-      "text": "The restraining order runs fourteen days from September 24. The briefing schedule is set inside that window."
-    },
-    {
       "when": "Open",
       "title": "Events and the pool",
-      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open."
-    },
-    {
-      "when": "Open",
-      "title": "An appeal",
-      "text": "Trump promised an appeal on September 21, before there was a ruling to appeal. The judge noted that restraining orders are generally unappealable."
+      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open. The October 13 injunction does not address the pool either."
     },
     {
       "when": "Open",
