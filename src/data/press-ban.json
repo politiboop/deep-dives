@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-10-14",
+  "updated": "2026-10-20",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
@@ -846,6 +846,28 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "events": [
+        {
+          "actor": "press",
+          "title": "CNN tells the Justice Department it will go back to court",
+          "body": [
+            "The White House kept CNN off Air Force One for a weekend trip to Georgia and Florida. CNN's lawyer, Ted Boutrous, wrote to the Justice Department: \"These efforts to retaliate and discriminate against CNN based on the content of its news coverage are mistaken, counterproductive, and unlawful.\" Without a fix by Thursday, he wrote, \"CNN will have no choice but to return to the court.\""
+          ],
+          "sources": [
+            {
+              "text": "CNN: CNN warns Trump White House: Restore Air Force One access or face further legal action",
+              "url": "https://www.cnn.com/2026/10/20/media/cnn-trump-white-house-media-ban-air-force-one"
+            },
+            {
+              "text": "Deadline: CNN Attorney Warns Trump DOJ It Will \"Return To Court\" Over Continued Ban On TV Pool Access To Air Force One",
+              "url": "https://deadline.com/2026/10/cnn-trump-ban-air-force-one-1237168681/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1319,7 +1341,13 @@
     {
       "when": "Open",
       "title": "Events and the pool",
-      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open. The October 13 injunction does not address the pool either."
+      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open. The October 13 injunction does not address the pool either. On October 19 CNN told the Justice Department it would return to court if access to the plane was not restored by Thursday.",
+      "sources": [
+        {
+          "text": "CNN: CNN warns Trump White House: Restore Air Force One access or face further legal action",
+          "url": "https://www.cnn.com/2026/10/20/media/cnn-trump-white-house-media-ban-air-force-one"
+        }
+      ]
     },
     {
       "when": "Open",
