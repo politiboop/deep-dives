@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
   ],
@@ -1357,6 +1357,17 @@
         {
           "text": "Trump on Truth Social: post on Byron Donalds and the \"Fake News Media\" (September 26, 2026, archived)",
           "url": "https://www.trumpstruth.org/statuses/41945"
+        }
+      ]
+    },
+    {
+      "when": "Open",
+      "title": "Moving the press corps out",
+      "text": "Trump has discussed moving the White House press corps to another building, two people close to him told CBS News on October 20; outside allies including Steve Bannon have pushed it. No final decision has been made. Communications director Steven Cheung said, \"All options remain on the table.\"",
+      "sources": [
+        {
+          "text": "CBS News: Trump weighs moving White House press corps out of building",
+          "url": "https://www.cbsnews.com/news/trump-white-house-press-corps/"
         }
       ]
     }
