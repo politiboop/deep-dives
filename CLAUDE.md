@@ -233,11 +233,17 @@ the status itself still has to be updated by hand.
   under 12px; the answer should be nothing.
 - Titles follow the tracker's headline rules: organic, newspaper-style, no em dashes.
 - No emojis. Arrows and typographic marks are fine.
-- Links to sibling sites use their configured domains only if they resolve. At creation,
-  `riggedbeforethevote.com` did not, so it is not linked.
+- Links to sibling sites use their configured domains only if they resolve. Rigged Before the
+  Vote is at `riggingelections.com`. `riggedbeforethevote.com` was never registered, so it never
+  resolved. The footer does not link the site yet.
 
 ## Deployment
 
-Static build, intended for Vercel like the other politiboop sites. `.nvmrc` pins Node 22.12.0+.
-The `site` URL in `astro.config.mjs` is a placeholder until a domain is chosen. Commit, and ask
-before pushing, per workspace convention.
+Static build, deployed on Vercel like the other politiboop sites (project `deep-dives`). `.nvmrc`
+pins Node 22.12.0+. The production site is `https://deep-dives-gamma.vercel.app` (there is no
+custom domain yet, and `deep-dives.vercel.app` does not serve this site), and `site` in
+`astro.config.mjs` is set to it. `site` feeds the sitemap (`@astrojs/sitemap` writes
+`sitemap-index.xml` and `sitemap-0.xml` into `.vercel/output/static`, one `<loc>` per page, each
+with a trailing slash) and the `rel="canonical"` and `og:url` tags that `Base.astro` puts on every
+page. Change `site` when a custom domain is added. Commit, and ask before pushing, per workspace
+convention.
