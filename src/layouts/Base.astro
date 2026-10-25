@@ -1,5 +1,5 @@
 ---
-// The shell every page shares: fonts, analytics, the topbar and the footer.
+// The shell every page shares: fonts, analytics, the network strip, the topbar and the footer.
 // A dive passes its own section links as `nav` and its countdown as the
 // `chip` slot; the front door passes neither.
 import '@fontsource/barlow-condensed/500.css';
@@ -13,6 +13,8 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import NetworkStrip from '../components/NetworkStrip.astro';
+import AlsoFromTeam from '../components/AlsoFromTeam.astro';
 
 interface Props {
   title: string;
@@ -47,6 +49,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <SpeedInsights />
   </head>
   <body>
+    <NetworkStrip />
+
     <header class="topbar">
       <div class="wrap topbar-inner">
         <a class="wordmark" href="/">Deep <em>Dives</em></a>
@@ -77,12 +81,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         </p>
         <div class="foot-links">
           <a href="/">All deep dives</a>
-          <a href="https://thetrumptracker.com" target="_blank" rel="noopener noreferrer">The Trump Tracker ↗</a>
-          <a href="https://research.thetrumptracker.com" target="_blank" rel="noopener noreferrer">The research site ↗</a>
-          <a href="https://thecivicsdesk.com" target="_blank" rel="noopener noreferrer">The Civics Desk ↗</a>
           <a href="#top">Back to top ↑</a>
         </div>
       </div>
+      <AlsoFromTeam />
     </footer>
   </body>
 </html>

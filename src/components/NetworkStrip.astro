@@ -1,0 +1,92 @@
+---
+// The network strip: one 36px line above the header that links the team's dark sites
+// (UI-ROADMAP.md WP4, part B). The current site is underlined in --brand-bright, and a
+// chip counts the days to the midterms until Election Day, then goes away. The strip
+// scrolls away with the page; the sticky header below it stays put.
+//
+// Each of the four dark sites carries its own copy of this component. The copies differ
+// in one line (`CURRENT`) and in the chip: election-rigging's copy has none, because its
+// own header already carries a countdown chip and two on one screen would be noise.
+import { NETWORK } from '../lib/network.js';
+
+const CURRENT = 'dives';
+const sites = NETWORK.filter((s) => s.strip);
+---
+
+<nav class="netstrip" aria-label="Sites in this network">
+  <div class="wrap netstrip-inner">
+    <span class="netstrip-label">The network</span>
+    {sites.map((s) => (
+      <a href={s.id === CURRENT ? '/' : s.href} aria-current={s.id === CURRENT ? 'true' : undefined}>{s.label}</a>
+    ))}
+    <span class="netstrip-spacer"></span>
+    {/* Filled in by the script below, so a page built last week never says "12 days".
+        Without scripts the chip simply is not there. */}
+    <span class="netstrip-days" id="netstrip-days" hidden><b></b><span></span></span>
+  </div>
+</nav>
+
+<script>
+  import { midtermsChip } from '../lib/midterms.js';
+
+  const chip = document.getElementById('netstrip-days');
+  if (chip) {
+    const number = chip.querySelector('b');
+    const text = chip.querySelector('span');
+    const draw = () => {
+      const c = midtermsChip();
+      chip.hidden = !c;
+      if (!c) return;
+      number.textContent = c.number;
+      text.textContent = c.text;
+    };
+    draw();
+    // A page left open across midnight (New York) keeps up.
+    setInterval(draw, 60 * 60 * 1000);
+  }
+</script>
+
+<style>
+  .netstrip {
+    height: 36px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  /* .wrap supplies the container width and side padding, so the strip lines up with the
+     header under it. The row scrolls sideways on a phone and hides its scrollbar. */
+  .netstrip-inner {
+    height: 100%;
+    display: flex; align-items: center; gap: 22px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .netstrip-inner::-webkit-scrollbar { display: none; }
+  .netstrip-label,
+  .netstrip a,
+  .netstrip-days {
+    font-family: var(--font-mono); font-size: 12px; line-height: 1;
+    letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+  }
+  .netstrip-label { color: var(--text-3); }
+  .netstrip a {
+    position: relative;
+    color: var(--text-2); text-decoration: none;
+    padding: 4px 0 3px;
+    border-bottom: 2px solid transparent;
+  }
+  /* The link text is 12px, which is a small target for a thumb. This widens the area that
+     answers a tap without changing how the strip looks. */
+  .netstrip a::before { content: ""; position: absolute; inset: -7px -8px; }
+  .netstrip a:hover { color: var(--text); border-bottom-color: var(--line); }
+  .netstrip a:focus-visible { outline: 2px solid var(--brand-bright); outline-offset: 2px; }
+  .netstrip a[aria-current] { color: var(--text); border-bottom-color: var(--brand-bright); }
+  .netstrip-spacer { flex: 1; min-width: 0; }
+  /* On the strip's own fill: --brand-bright is 4.75:1 there and under 4.5:1 on --raised,
+     so the chip is an outline, not a filled pill. */
+  .netstrip-days {
+    color: var(--text);
+    border: 1px solid var(--line); border-radius: 3px;
+    padding: 4px 8px;
+  }
+  .netstrip-days[hidden] { display: none; }
+  .netstrip-days b { color: var(--brand-bright); font-weight: 500; }
+</style>

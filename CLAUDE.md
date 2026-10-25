@@ -41,9 +41,11 @@ the batch workflow).
   record shows in a sentence or two of fact, and the rule that makes it matter. If you cannot
   write the question in one line, the page is two dives. (Paid For first tried to hold the
   ballroom too; readers could not tell what it was for, so the ballroom became its own dive.)
-- **Shared pieces:** `src/layouts/Base.astro` (fonts, analytics, topbar, footer),
+- **Shared pieces:** `src/layouts/Base.astro` (fonts, analytics, network strip, topbar, footer),
   `src/components/Sources.astro` (a row of source links labeled by outlet),
   `src/components/RecordToggle.astro` (the headlines-only switch on a record),
+  `src/components/NetworkStrip.astro` and `src/components/AlsoFromTeam.astro` (the network strip
+  and the footer line, see "The network strip and `/stats.json`" below),
   `src/lib/fmt.js` (dates, outlet labels, source counts), `src/styles/global.css`.
 - **Every dive is laid out the same way, in the same words.** The section nav reads
   Status · Ledger (where there is one) · Record · Claims · Voices · Rules · Our Take · Method, and
@@ -216,6 +218,29 @@ The countdown counts down only while the order has days left. From its end date 
 set to end [date]" instead of "0 days left", which stays true whatever the court does next, but
 the status itself still has to be updated by hand.
 
+## The network strip and `/stats.json`
+
+The roadmap's WP4 (`UI-ROADMAP.md` in the workspace repo), shared with the tracker, Research and
+Rigged Before the Vote.
+
+- **The strip.** `src/components/NetworkStrip.astro` is the 36px line above the topbar, rendered by
+  `Base.astro` on every page: Tracker, Research, Deep Dives, Rigged Before the Vote, with this site
+  underlined in `--brand-bright`. It scrolls away with the page and the sticky topbar stays. The chip
+  at its right reads "N days to the midterms" until Election Day, "Election Day" on the day, and is
+  gone after it. The count is drawn in the browser by `src/lib/midterms.js` (New York calendar days,
+  the rule election-rigging's header chip follows), because this site is built once per deploy and a
+  number baked into the HTML would be wrong by the next morning. Without scripts there is no chip.
+  The topbar's own `chip` slot (a dive's order countdown) is a different thing and stays.
+- **The list.** `src/lib/network.js` holds the five sites. The strip shows four; the footer's "Also
+  from this team" line (`src/components/AlsoFromTeam.astro`) shows all five. When a site moves (this
+  one is planned for `dives.thetrumptracker.com`), change it there and in the other three copies.
+- **`/stats.json`.** `src/pages/stats.json.js` publishes `{ site, dives, lastUpdated, generatedAt }`
+  at build time. `dives` is the number of entries in `dives.json`. `lastUpdated` is the newest
+  `updated` date among those dives' own data files, so a draft data file that is not in the registry
+  never moves it. A registry entry whose data file has no `updated` date fails the build. The
+  tracker's "Elsewhere" panels read this file when they build, so a count here can reach them a few
+  minutes after a deploy, not instantly.
+
 ## Design notes
 
 - Dark theme only, tokens and status palette shared with election-rigging.
@@ -235,7 +260,7 @@ the status itself still has to be updated by hand.
 - No emojis. Arrows and typographic marks are fine.
 - Links to sibling sites use their configured domains only if they resolve. Rigged Before the
   Vote is at `riggingelections.com`. `riggedbeforethevote.com` was never registered, so it never
-  resolved. The footer does not link the site yet.
+  resolved. The network strip and the footer's "Also from this team" line link it.
 
 ## Deployment
 
