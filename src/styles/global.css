@@ -1003,7 +1003,9 @@ a.countdown-chip:hover { border-color: var(--text-3); }
     padding: 6px 10px; border-radius: 4px;
   }
   .subnav a:first-child { margin-left: -10px; }
-  .subnav a.is-active { color: var(--brand-bright); background: var(--raised); }
+  /* The active link sits on --raised, where --brand-bright measures 4.4:1. #e64f54 is the same
+     red lifted to 4.6:1 there (the value election-rigging uses for brand red on --raised). */
+  .subnav a.is-active { color: #e64f54; background: var(--raised); }
 }
 
 /* ── the week at a glance, atop the timeline ──────────────────────────── */
