@@ -8,7 +8,8 @@ import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
 import sections from '../data/sections.json';
 import dives from '../data/dives.json';
-import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
+import { longDate, shortDate, monthYear, shortMonthYear, weekday, sourceCount, smartAll, money } from '../lib/fmt.js';
+import { eventAnchor } from '../lib/crosslinks.js';
 
 const section = sections.corruption;
 const files = import.meta.glob('../data/*.json', { eager: true });
@@ -57,7 +58,7 @@ const ACTORS = {
 // address is computed exactly as the dive page computes it, from the same date and title.
 const acts = answered.flatMap((q) => q.x.days.flatMap((day) => day.events.map((e) => ({
   ...e, date: day.date, monthOnly: !!day.month, q: q.key, n: q.n, qLabel: q.short, dive: q.dive, diveTitle: q.title,
-  anchor: `${day.date}-${slug(e.title)}`,
+  anchor: eventAnchor(day.date, e.title),
 })))).sort((a, b) => a.date.localeCompare(b.date));
 for (const a of acts) {
   if (!KINDS[a.kind]) throw new Error(`corruption: ${a.dive} event has no known kind: ${a.title}`);

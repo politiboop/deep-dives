@@ -1,0 +1,27 @@
+---
+// "Tracker entry" links: one per tracker entry an item was built from (UI-ROADMAP.md WP5).
+// The ids come straight from `trackerIds` in the dive's data, the address is the entry's page
+// on the tracker, and the label is the entry's title from src/generated/tracker-titles.json
+// (see src/lib/crosslinks.js). Nothing here is typed in.
+//
+// Under an event, a ledger row or a claim that carries its own `trackerIds` the links lead
+// with "Tracker entry →". In a dive's Method section, which lists every entry the dive was
+// built from under a heading that already says so, `lead={false}` leaves the lead-in off.
+import titles from '../generated/tracker-titles.json';
+import { trackerEntryUrl, trackerLabel } from '../lib/crosslinks.js';
+
+interface Props { ids?: string[]; lead?: boolean; }
+const { ids = [], lead = true } = Astro.props;
+---
+
+{ids.length > 0 && (
+  <ul class="trk-list" aria-label="Tracker entries">
+    {ids.map((id) => (
+      <li>
+        <a href={trackerEntryUrl(id)} target="_blank" rel="noopener">
+          {lead && <><span class="trk-lbl">Tracker entry →</span>{' '}</>}{trackerLabel(titles, id)}
+        </a>
+      </li>
+    ))}
+  </ul>
+)}

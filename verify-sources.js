@@ -14,6 +14,13 @@
  * in the tracker. A quotation that traces to nothing was reworded, misremembered,
  * or corrected upstream after the dive was written. Every one needs a human look.
  *
+ * And a third, for the "Tracker entry" links (UI-ROADMAP.md WP5):
+ *
+ *   3. Each link is labeled with the entry's title, copied into
+ *      src/generated/tracker-titles.json by sync-tracker-titles.js, because Vercel's
+ *      build cannot reach the tracker's data folder. The copy must match the tracker
+ *      now, entry for entry.
+ *
  * Usage:
  *   node verify-sources.js             # audit every dive listed in src/data/dives.json
  *   node verify-sources.js --verbose   # also list what passed
@@ -24,6 +31,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { linkedTrackerIds } from './src/lib/crosslinks.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataDir = path.join(__dirname, 'src', 'data');
@@ -172,6 +180,40 @@ for (const reg of registry) {
     console.log(`  🎉 Clean — every link traces to a seed entry, and every quotation appears in one.`);
   } else if (verbose) {
     console.log('  (see above)');
+  }
+}
+
+// The titles snapshot behind the "Tracker entry" links.
+{
+  const titlesPath = path.join(__dirname, 'src', 'generated', 'tracker-titles.json');
+  const snapshot = fs.existsSync(titlesPath) ? JSON.parse(fs.readFileSync(titlesPath, 'utf8')) : {};
+  const dives = {};
+  for (const reg of registry) {
+    const file = path.join(dataDir, `${reg.slug}.json`);
+    if (fs.existsSync(file)) dives[reg.slug] = JSON.parse(fs.readFileSync(file, 'utf8'));   // a missing file is reported above
+  }
+  const linked = linkedTrackerIds({ registry: registry.filter((r) => dives[r.slug]), dives });
+  const problems = [];
+  for (const id of linked) {
+    const entry = loadEntry(id);
+    if (!entry) continue;   // reported above as a missing entry
+    if (!(id in snapshot)) problems.push({ id, why: 'has no title in the snapshot' });
+    else if (snapshot[id] !== entry.title) problems.push({ id, why: 'has a different title in the tracker now', had: snapshot[id], now: entry.title });
+  }
+  for (const id of Object.keys(snapshot)) {
+    if (!linked.includes(id)) problems.push({ id, why: 'is in the snapshot but no dive links to it any more' });
+  }
+  console.log(`\ntracker titles: ${linked.length} linked entries against src/generated/tracker-titles.json`);
+  if (problems.length) {
+    failures += problems.length;
+    console.log(`  ❌ ${problems.length} title(s) out of step with the data or the tracker:`);
+    for (const p of problems) {
+      console.log(`     ${p.id} ${p.why}`);
+      if (p.had) console.log(`        snapshot: ${p.had}\n        tracker:  ${p.now}`);
+    }
+    console.log('  Run `node sync-tracker-titles.js` and commit the result.');
+  } else {
+    console.log('  🎉 Clean — every title matches the tracker.');
   }
 }
 

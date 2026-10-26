@@ -2,8 +2,10 @@
 import Base from '../layouts/Base.astro';
 import Sources from '../components/Sources.astro';
 import RecordToggle from '../components/RecordToggle.astro';
+import TrackerLinks from '../components/TrackerLinks.astro';
 import raw from '../data/his-own-account.json';
-import { longDate, shortDate, monthYear, shortMonthYear, weekday, slug, sourceCount, smartAll, money } from '../lib/fmt.js';
+import { longDate, shortDate, monthYear, shortMonthYear, weekday, sourceCount, smartAll, money } from '../lib/fmt.js';
+import { eventAnchor } from '../lib/crosslinks.js';
 
 // The data keeps straight quotes; the page renders typographer's quotes.
 const dive = smartAll(raw);
@@ -184,6 +186,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
               <span class="lg-note">{r.note}</span>
               {r.line && <span class="lg-line">Disclosure {r.line}</span>}
               <Sources sources={r.sources} />
+              {r.trackerIds && <TrackerLinks ids={r.trackerIds} />}
             </span>
             <span class="lg-payer" role="cell"><span class="cell-lbl">Paid by</span>{r.payer}{r.recipient && <span class="lg-recip">Paid to: {r.recipient}</span>}</span>
             <span class="lg-amt" role="cell">{r.approx ? '~' : ''}{money(r.amount, r.amount >= 1e8)}</span>
@@ -231,7 +234,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
             <h3 class="day-head"><span class="dow">{monthYear(m.first)}</span> <span class="cnt">{m.events.length} {m.events.length === 1 ? 'event' : 'events'}</span></h3>
             <ol class="events">
               {m.events.map((e) => (
-                <li class="ev" data-actor={e.actor} id={`${e.date}-${slug(e.title)}`}>
+                <li class="ev" data-actor={e.actor} id={eventAnchor(e.date, e.title)}>
                   <div class="ev-meta">
                     <span class="ev-date">{e.month ? monthYear(e.date) : `${weekday(e.date).slice(0, 3)} ${shortDate(e.date)}`}</span>
                     {e.time && <span class="ev-time">{e.time}</span>}
@@ -240,6 +243,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
                   <h3><button type="button" class="ev-t" aria-expanded="true">{e.title}</button></h3>
                   <div class="ev-body">{e.body.map((p) => <p>{p}</p>)}</div>
                   <Sources sources={e.sources} />
+                  {e.trackerIds && <TrackerLinks ids={e.trackerIds} />}
                 </li>
               ))}
             </ol>
@@ -281,6 +285,7 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
               <strong>{c.found}</strong>
               <span class="ev-detail">{c.detail}</span>
               <Sources sources={c.sources} />
+              {c.trackerIds && <TrackerLinks ids={c.trackerIds} />}
             </span>
           </div>
         ))}
@@ -405,6 +410,11 @@ const description = `${meta.dek} ${eventCount} documented events, ${claims.lengt
           {corrections.length
             ? <ul class="corrections">{corrections.map((c) => <li><span class="d">{longDate(c.date)}</span>{c.text}</li>)}</ul>
             : <p class="corr-none">None so far.</p>}
+        </div>
+        <div class="method-card is-entries">
+          <h3>The tracker entries behind this page</h3>
+          <p>Each has its own page in The Trump Tracker, with the full text and every source.</p>
+          <TrackerLinks ids={dive.trackerIds} lead={false} />
         </div>
       </div>
     </div>

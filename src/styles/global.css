@@ -1220,3 +1220,23 @@ a.countdown-chip:hover { border-color: var(--text-3); }
 .q-pending a:hover { border-color: var(--text-2); }
 @media (max-width: 560px) { .q-head { grid-template-columns: 1fr; gap: 6px; } .q-n { font-size: 32px; } }
 
+
+/* ── tracker entry links: under an event, a ledger row or a claim, and in Method ──
+   One line per tracker entry the item was built from, in the mono and size of the source
+   links around it; the "Tracker entry →" lead-in is the quiet part. In a dive's Method
+   section the list sits in a card that already says what it is, so the links read as plain
+   titles in the body face. Headlines-only hides them with the rest of an event's detail. */
+.trk-list { list-style: none; margin-top: 6px; }
+.trk-list a {
+  font-family: var(--font-mono); font-size: 12px; line-height: 1.6; color: var(--text-2);
+  text-decoration: none; border-bottom: 1px solid var(--line); padding: 3px 0;
+}
+.trk-list a:hover { color: var(--st-court); border-color: var(--st-court); }
+.trk-lbl { text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); white-space: nowrap; }
+.ev.is-closed .trk-list,
+html.dd-headlines .ev:not(.is-open) .trk-list { display: none; }
+.method-card.is-entries { grid-column: 1 / -1; }
+.method-card.is-entries p { margin-bottom: 10px; }
+.method-card .trk-list { margin-top: 0; }
+.method-card .trk-list a { font-family: var(--font-body); font-size: 14px; line-height: 1.5; padding: 2px 0; }
+@media (max-width: 640px) { .trk-list a { font-size: 13px; padding: 4px 0; } .method-card .trk-list a { font-size: 14px; padding: 2px 0; } }

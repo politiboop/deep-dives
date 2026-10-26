@@ -46,6 +46,8 @@ the batch workflow).
   `src/components/RecordToggle.astro` (the headlines-only switch on a record),
   `src/components/NetworkStrip.astro` and `src/components/AlsoFromTeam.astro` (the network strip
   and the footer line, see "The network strip and `/stats.json`" below),
+  `src/components/TrackerLinks.astro` and `src/lib/crosslinks.js` (the "Tracker entry" links and
+  `/crosslinks.json`, see "Cross-links with the tracker" below),
   `src/lib/fmt.js` (dates, outlet labels, source counts), `src/styles/global.css`.
 - **Every dive is laid out the same way, in the same words.** The section nav reads
   Status · Ledger (where there is one) · Record · Claims · Voices · Rules · Our Take · Method, and
@@ -56,7 +58,8 @@ the batch workflow).
 - **Method stays out of the way.** One line under the hero figures says how the page works and
   links to Method at the bottom; nothing about method sits between the headline and the story.
 - **The record can be skimmed.** Every event is expanded by default. The switch above the
-  record collapses each to its title, chip and sources; a title reopens its own event; the
+  record collapses each to its title, chip and sources (the tracker-entry line goes with the
+  rest of the detail); a title reopens its own event; the
   choice is remembered in the browser and applied before first paint (a class on `<html>`,
   set by an inline script in `Base.astro`). An event someone was sent a link to is always open.
 - **The stylesheet is election-rigging's, copied, with additions below a marked line.** Keep the
@@ -111,7 +114,9 @@ corrections [{ date, text }]
 `actor` is one of `wh` (the administration), `court`, `press`, `congress`, and, where a story needs
 it, `payer` (buyers, investors and companies paying the president or his family; By His Own Account
 labels `wh` "The president, his family and his administration"). The label text always renders next
-to the color. Any item may carry its own `trackerIds` to narrow what it traces to.
+to the color. Any item may carry its own `trackerIds` to narrow what it traces to. An event, a
+ledger row or a claim that carries its own shows a "Tracker entry →" link per id, and an event
+also gets its own row in `/crosslinks.json` (see "Cross-links with the tracker" below).
 
 `days` holds dated events. A story told over days renders them day by day (press-ban); one told
 over a year groups them by month in its page (paid-for). The data shape is the same.
@@ -153,7 +158,11 @@ Enforces rules 2 and 3 mechanically, for every dive in `dives.json`:
 - every source URL must appear in the sources of a seed entry (`trackerIds`);
 - every double-quoted passage of two words or more, in the data and in the page template, and
   every `quote` field, must appear verbatim in a seed entry's text (summary, keyFacts, headlines);
-- every item that states facts must carry sources.
+- every item that states facts must carry sources;
+- the titles behind the "Tracker entry" links, in `src/generated/tracker-titles.json`, must match
+  the tracker's entry files now: a title that differs, an id with no title, or a title no dive
+  links to any more fails, and `node sync-tracker-titles.js` fixes all three (see "Cross-links
+  with the tracker" below).
 
 It normalizes only what is typography (curly vs straight quotes, dash forms and spacing, ellipses,
 invisible joiners, bracketed capitals like `[N]othing`), never wording. It exits non-zero on any
@@ -206,13 +215,17 @@ echo '{"tool_input":{"file_path":"'$PWD'/src/data/press-ban.json"}}' | node .cla
 3. Copy `src/pages/press-ban.astro` to `src/pages/<slug>.astro` and adapt the sections to the
    story. Not every dive needs every section.
 4. Add the dive to `src/data/dives.json`.
-5. `node verify-sources.js`, `npm run build`, check it in the browser at desktop and phone width.
+5. `node sync-tracker-titles.js` (it copies the seed entries' titles, which label the "Tracker
+   entry" links), `node verify-sources.js`, `npm run build`, check it in the browser at desktop
+   and phone width.
 
 ## Keeping a dive current
 
 When the seed entry changes in a tracker batch, update the dive's data in the same pass: new
 events into `days`, a changed `meta.status` and `meta.statusText`, retired and new `watch` items,
 and `updated`. Log any correction in `corrections`, including corrections made to the seed entry.
+If the list of seed entries changed, or a title was corrected in the tracker, run
+`node sync-tracker-titles.js` too, or `verify-sources.js` will say the titles are behind.
 
 The countdown counts down only while the order has days left. From its end date it shows "Order
 set to end [date]" instead of "0 days left", which stays true whatever the court does next, but
@@ -240,6 +253,41 @@ Rigged Before the Vote.
   never moves it. A registry entry whose data file has no `updated` date fails the build. The
   tracker's "Elsewhere" panels read this file when they build, so a count here can reach them a few
   minutes after a deploy, not instantly.
+
+## Cross-links with the tracker (`/crosslinks.json` and the "Tracker entry" links)
+
+The roadmap's WP5 (`UI-ROADMAP.md` in the workspace repo): every tracker entry that appears in a
+dive links to it, and the tracker links back. All of it is generated from `trackerIds`; nothing is
+typed in.
+
+- **"Tracker entry" links.** An event, a ledger row or a claim that carries its own `trackerIds`
+  shows one "Tracker entry →" link per id under its sources (`src/components/TrackerLinks.astro`).
+  Each dive's Method section ends with a card listing every entry in the dive's top-level
+  `trackerIds` as a link. The address is `https://thetrumptracker.com/controversy/<id>/`
+  (`trackerEntryUrl` in `src/lib/crosslinks.js`, which takes the tracker's host from `network.js`)
+  and the label is the entry's title. Other items (voices, rules, watch items) do not render links
+  yet, even when they carry their own ids. The links are not sources: they sit outside every
+  `sources` array and `verify-sources.js` does not read them, but keep the template free of
+  double-quoted passages, which that check does read.
+- **The titles snapshot.** Vercel builds this repo on its own, so the build cannot read
+  `controversial-trump/data/controversies/`. `node sync-tracker-titles.js` copies each linked
+  entry's title into `src/generated/tracker-titles.json`, and the build bundles that copy. If an id
+  is missing from it the link is labeled with the bare id and the build logs a warning.
+  `node verify-sources.js` fails when the copy and the tracker disagree. Run the sync after any
+  change to a `trackerIds` list (a rebuilt dive included) and after a title is corrected in the
+  tracker, and commit the result with the data change.
+- **`/crosslinks.json`.** `src/pages/crosslinks.json.js` publishes
+  `{ "<entryId>": [{ "site": "dives", "title", "url" }] }` at build time. Each id in a dive's
+  top-level `trackerIds` gets a row for the dive (title: the dive's title from `dives.json`; url:
+  `https://deep-dives-gamma.vercel.app/<slug>/`), then a row for every event that lists the id in
+  its own `trackerIds` (title: the event's title; url: the dive's url plus the event's address).
+  Only events get rows of their own, because they are the one item with an address on the page.
+  Keys are sorted. The tracker reads the file when it builds, so a new event can take a few minutes
+  after a deploy here to show on the entry's page there.
+- **Event addresses.** `eventAnchor(date, title)` in `src/lib/crosslinks.js` is the only definition
+  of an event's DOM id. The four dive pages, the corruption timeline and the endpoint all call it,
+  so a link in the file cannot drift from the id on the page. It is built from the title as the
+  page prints it, so a retitled event changes its address.
 
 ## Design notes
 
