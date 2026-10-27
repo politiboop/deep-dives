@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-10-22",
+  "updated": "2026-10-27",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated",
     "white-house-counsel-politico-48-hours-retract-wiles-stories-apologize",
@@ -18,7 +18,7 @@
     "bannedFrom": "2026-09-18",
     "restored": "2026-09-24",
     "status": "The ban is blocked while the case continues; the government has appealed",
-    "statusText": "On October 13 Judge Timothy J. Kelly granted a preliminary injunction barring enforcement of the hard-pass revocations while the lawsuit proceeds, finding the ban likely unlawful viewpoint discrimination and \"practically nothing national security-related in the record connected to the President's decision.\" The Justice Department appealed to the D.C. Circuit the next day. The ruling does not address the television pool."
+    "statusText": "On October 13 Judge Timothy J. Kelly granted a preliminary injunction barring enforcement of the hard-pass revocations while the lawsuit proceeds, finding the ban likely unlawful viewpoint discrimination and \"practically nothing national security-related in the record connected to the President's decision.\" The Justice Department appealed to the D.C. Circuit the next day. The ruling does not address the television pool. On October 26 six readers of White House news filed a second suit, in New York, against the policy as a whole."
   },
   "hero": {
     "deck": [
@@ -923,6 +923,44 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-26",
+      "events": [
+        {
+          "actor": "court",
+          "title": "Six readers sue",
+          "body": [
+            "Six readers of White House news, not news outlets, sued in federal court in New York: Kenneth Roth, Daniel Froomkin, Beverly Gage, Peter Schmidt-Nowara, Benjamin Wittes and Ethan Young (Roth v. Trump, No. 1:26-cv-09327, S.D.N.Y.). The Knight First Amendment Institute and Yale Law School's Media Freedom and Information Access Clinic represent them. Naming Trump, communications director Steven Cheung, Secret Service Director Sean Curran and chief of staff Susie Wiles, they claim the policy \"imposes viewpoint-based and unreasonable restrictions on newsgathering and reporting in a limited public forum,\" burdening their right to receive information. The complaint: \"The ultimate injury here, however, is to the democratic public.\"",
+            "They ask for a declaration and an injunction against the policy as a whole, and no damages; a motion filed the same day asks the court to enjoin Cheung, Curran and Wiles while the case proceeds. A White House official told the AP, \"No person may demand access to the Oval Office.\""
+          ],
+          "sources": [
+            {
+              "text": "Complaint for Declaratory and Injunctive Relief, Roth v. Trump, No. 1:26-cv-09327 (S.D.N.Y., filed October 26, 2026)",
+              "url": "https://kfai-documents.s3.amazonaws.com/documents/985a0b3791/-Roth-v-Trump--2026.10.26-Complaint.pdf"
+            },
+            {
+              "text": "Memorandum of Law in Support of Plaintiffs' Motion for a Preliminary Injunction, Roth v. Trump, No. 1:26-cv-09327 (S.D.N.Y., filed October 26, 2026)",
+              "url": "https://kfai-documents.s3.amazonaws.com/documents/f37e9ca331/-Roth-v-Trump--2026.10.26--SDNY--Plaintiffs-PI-Motion.pdf"
+            },
+            {
+              "text": "AP (via WCCB Charlotte): 6 citizens sue Trump, saying media ban deprives them of news as audience stakeholders",
+              "url": "https://www.wccbcharlotte.com/2026/10/27/6-citizens-sue-trump-saying-media-ban-deprives-them-of-news-as-audience-stakeholders/"
+            },
+            {
+              "text": "Washington Examiner: Six citizens sue Trump over White House press ban",
+              "url": "https://www.washingtonexaminer.com/news/justice/4780407/six-citizens-trump-white-house-press-ban-lawsuit/"
+            },
+            {
+              "text": "BBC: Trump's media bans 'deprive the public', press freedom groups argue",
+              "url": "https://www.bbc.com/news/articles/crz98qg9k2w9o"
+            }
+          ],
+          "trackerIds": [
+            "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1390,6 +1428,17 @@
         {
           "text": "CNN v. Trump: notice of appeal (ECF 51)",
           "url": "https://storage.courtlistener.com/recap/gov.uscourts.dcd.296754/gov.uscourts.dcd.296754.51.0_1.pdf"
+        }
+      ]
+    },
+    {
+      "when": "Open",
+      "title": "The readers' suit",
+      "text": "Six readers sued on October 26 in New York, seeking a declaration and an injunction against the policy as a whole. A motion filed the same day asks the court to enjoin Cheung, Curran and Wiles while the case proceeds.",
+      "sources": [
+        {
+          "text": "Memorandum of Law in Support of Plaintiffs' Motion for a Preliminary Injunction, Roth v. Trump, No. 1:26-cv-09327 (S.D.N.Y., filed October 26, 2026)",
+          "url": "https://kfai-documents.s3.amazonaws.com/documents/f37e9ca331/-Roth-v-Trump--2026.10.26--SDNY--Plaintiffs-PI-Motion.pdf"
         }
       ]
     },
