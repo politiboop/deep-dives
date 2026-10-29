@@ -1,6 +1,6 @@
 {
   "slug": "press-ban",
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "trackerIds": [
     "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated",
     "white-house-counsel-politico-48-hours-retract-wiles-stories-apologize",
@@ -18,7 +18,7 @@
     "bannedFrom": "2026-09-18",
     "restored": "2026-09-24",
     "status": "The ban is blocked while the case continues; the government has appealed",
-    "statusText": "On October 13 Judge Timothy J. Kelly granted a preliminary injunction barring enforcement of the hard-pass revocations while the lawsuit proceeds, finding the ban likely unlawful viewpoint discrimination and \"practically nothing national security-related in the record connected to the President's decision.\" The Justice Department appealed to the D.C. Circuit the next day. The ruling does not address the television pool. On October 26 six readers of White House news filed a second suit, in New York, against the policy as a whole."
+    "statusText": "On October 13 Judge Timothy J. Kelly granted a preliminary injunction barring enforcement of the hard-pass revocations while the lawsuit proceeds, finding the ban likely unlawful viewpoint discrimination and \"practically nothing national security-related in the record connected to the President's decision.\" The Justice Department appealed to the D.C. Circuit the next day. The ruling does not address the television pool. On October 26 six readers of White House news filed a second suit, in New York, against the policy as a whole. On October 28 the three outlets amended their suit to challenge their exclusion from the press pool in the Oval Office and aboard Air Force One."
   },
   "hero": {
     "deck": [
@@ -961,6 +961,36 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "events": [
+        {
+          "actor": "court",
+          "title": "The outlets take the pool to court",
+          "body": [
+            "CNN, MS NOW and Politico amended their complaint before Judge Kelly to challenge their continued exclusion from press-pool duties in the Oval Office and aboard Air Force One, which his earlier orders did not cover, and added a Fifth Amendment due process claim to their First Amendment claims. The amended complaint says that \"once the White House opens those spaces to selected journalists for newsgathering and reporting, the White House may not exclude plaintiffs because it dislikes their coverage.\"",
+            "It alleges that CNN has repeatedly been kept from serving as designated television pooler aboard Air Force One, a role it has filled for more than four decades; that MS NOW has not been in the secondary television pool since September 18; and that Politico was barred from two out-of-town print pool assignments. \"Defendants have offered no official explanation for any of these exclusions,\" it says. A White House official told MS NOW, \"No person and no journalist has a constitutional right to access to the President's Oval Office, Air Force One, or other sensitive and private facilities.\""
+          ],
+          "sources": [
+            {
+              "text": "CNBC: Three media outlets seek full White House access in amended lawsuit (October 28, 2026)",
+              "url": "https://www.cnbc.com/2026/10/28/trump-white-house-media-ban-cnn-msnow-politico.html"
+            },
+            {
+              "text": "CNN: CNN, MS NOW and Politico expand lawsuit against Trump White House, citing continued 'viewpoint discrimination' (October 28, 2026)",
+              "url": "https://www.cnn.com/2026/10/28/media/cnn-msnow-politico-amended-lawsuit-trump-white-house-press"
+            },
+            {
+              "text": "MS NOW: MS NOW, CNN and Politico amend lawsuit, seeking to restore access to Oval Office and Air Force One (October 28, 2026)",
+              "url": "https://www.ms.now/news/ms-now-cnn-and-politico-amend-lawsuit-seeking-to-restore-access-to-oval-office-and-air-force-one"
+            }
+          ],
+          "trackerIds": [
+            "trump-bans-cnn-ms-now-politico-white-house-hard-passes-confiscated"
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1445,7 +1475,7 @@
     {
       "when": "Open",
       "title": "Events and the pool",
-      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open. The October 13 injunction does not address the pool either. On October 19 CNN told the Justice Department it would return to court if access to the plane was not restored by Thursday. On October 21 the White House dropped The Independent's reporter from the next day's travel pool after an Oval Office exchange; the WHCA called it retaliation.",
+      "text": "The order restored the hard passes. It says nothing directly about Air Force One, the AP noted, and gives no explicit instruction on the television pool, the New York Times reported. Since it issued, the White House has kept CNN and MS NOW out of the state-dinner arrival and CNN off the plane, and the networks now leave CNN's pool slot empty when it is blocked. Whether the court treats any of this as a violation is open. The October 13 injunction does not address the pool either. On October 19 CNN told the Justice Department it would return to court if access to the plane was not restored by Thursday. On October 21 the White House dropped The Independent's reporter from the next day's travel pool after an Oval Office exchange; the WHCA called it retaliation. On October 28 the three outlets amended their suit to ask Judge Kelly to restore their pool access in the Oval Office and aboard Air Force One.",
       "sources": [
         {
           "text": "CNN: CNN warns Trump White House: Restore Air Force One access or face further legal action",
@@ -1454,6 +1484,10 @@
         {
           "text": "White House Correspondents' Association: WHCA Statement on White House restriction on journalist",
           "url": "https://whca.press/2026/10/21/whca-statement-on-white-house-restriction-on-journalist/"
+        },
+        {
+          "text": "CNBC: Three media outlets seek full White House access in amended lawsuit (October 28, 2026)",
+          "url": "https://www.cnbc.com/2026/10/28/trump-white-house-media-ban-cnn-msnow-politico.html"
         }
       ]
     },
