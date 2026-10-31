@@ -1,6 +1,6 @@
 {
   "slug": "paid-for",
-  "updated": "2026-10-13",
+  "updated": "2026-10-31",
   "trackerIds": [
     "trump-ad-fox-news-paid-for-by-the-us-government",
     "white-house-launches-trump-tv-24-7-stream-after-press-ban",
@@ -16,8 +16,8 @@
     "kicker": "Public money",
     "title": "Paid For",
     "dek": "Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.",
-    "status": "A federal judge orders the taxpayer-funded ads off the air",
-    "statusText": "On October 11, Judge Jennifer L. Rochon of the Southern District of New York halted the ads for 14 days in a suit brought by Common Cause, staying CBP's $20 million purchase order and ordering remaining placements canceled. The Justice Department did not contest the merits; it argued the ads were ending anyway. By October 12, AdImpact counted $21,705,138 in government spending on five ads. Trump had said on October 5 that his super PAC would pay for future ads, and on October 6, asked about repaying what was spent, said, \"we'll decide.\" The FAA banner contract runs through 2027."
+    "status": "A federal judge pulls three more of the taxpayer-funded ads and lets the rest run for now",
+    "statusText": "On October 11, Judge Jennifer L. Rochon of the Southern District of New York halted the ads for 14 days in a suit brought by Common Cause, staying CBP's $20 million purchase order and ordering remaining placements canceled. The Justice Department did not contest the merits; it argued the ads were ending anyway. By October 12, AdImpact counted $21,705,138 in government spending on five ads. Trump had said on October 5 that his super PAC would pay for future ads, and on October 6, asked about repaying what was spent, said, \"we'll decide.\" On October 30 she ordered three more ads taken off government websites and social media and barred their distribution through third parties, including MAGA Inc., but declined to pull the others the plaintiffs challenged, saying she had concluded the government will ultimately prevail on many of them. The FAA banner contract runs through 2027."
   },
   "hero": {
     "question": "Is public money being used to promote the president himself?",
@@ -924,6 +924,26 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "events": [
+        {
+          "actor": "court",
+          "title": "The judge pulls three more ads, including from MAGA Inc.",
+          "kind": "ads",
+          "body": [
+            "At a hearing on whether to expand her temporary restraining order, Judge Rochon ordered three ads, \"$5,000 to Americans,\" \"Every Democrat Voted Against No Tax on Tips\" and \"Cost of Socialism,\" taken off government websites and social media, and ordered the cancellation of any plans to air or distribute them through authorized third parties, including Trump's super PAC, MAGA Inc., the AP reported. She found the plaintiffs likely to succeed on those three and at risk of irreparable harm: \"This court can neither postpone an election nor turn back the clock.\"",
+            "The plaintiffs had sought the removal of at least 13 ads. Rochon declined to pull the others for now, saying the plaintiffs sought to restrict the president's office in ways that were \"broad and far reaching,\" and that she had concluded the government will ultimately prevail on many of the ads; she said she could restore the three or bar more after hearing further evidence. White House spokesperson Lauren Bis said, \"This Biden-appointed activist judge issued a lawless order to stop the administration from sharing patriotic videos.\""
+          ],
+          "sources": [
+            {
+              "text": "WCAX (AP): Judge orders 3 taxpayer-funded Trump administration ads to be pulled from TV and social media",
+              "url": "https://www.wcax.com/2026/10/30/judge-orders-3-taxpayer-funded-trump-administration-ads-be-pulled-tv-social-media/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1417,10 +1437,9 @@
       ]
     },
     {
-      "date": "2026-10-25",
-      "when": "Oct 25, 2026",
-      "title": "The court order runs out",
-      "text": "Judge Rochon's order lasts 14 days from October 11 unless the court extends it. The Democratic National Committee has sued separately.",
+      "when": "Open",
+      "title": "The rest of the ads",
+      "text": "Judge Rochon's first order ran 14 days from October 11. On October 30 she pulled three more ads and declined to pull the others for now, saying she could restore the three or bar more after hearing further evidence. The Democratic National Committee has sued separately.",
       "sources": [
         {
           "text": "Common Cause v. Department of Homeland Security, No. 1:26-cv-08882 (S.D.N.Y.): temporary restraining order (Dkt. 41)",
@@ -1429,6 +1448,10 @@
         {
           "text": "AP: Judge orders the Trump administration to cancel taxpayer-funded promotional TV ads",
           "url": "https://apnews.com/article/trump-tv-ads-f845554063cea0b4b41275d32abd3633"
+        },
+        {
+          "text": "WCAX (AP): Judge orders 3 taxpayer-funded Trump administration ads to be pulled from TV and social media",
+          "url": "https://www.wcax.com/2026/10/30/judge-orders-3-taxpayer-funded-trump-administration-ads-be-pulled-tv-social-media/"
         }
       ]
     },

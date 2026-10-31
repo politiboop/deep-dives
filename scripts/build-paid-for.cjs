@@ -118,6 +118,7 @@ const DKT44 = 'government status report (Dkt. 44)';
 const CNN_AIRED = 'CNN: Taxpayer-funded ads aired hundreds of times';
 const WEX_APOLOGY = 'Washington Examiner: DOJ apologizes';
 const SN_20M = 'Tennessee Lookout (States Newsroom)';
+const WCAX_PULL = 'WCAX (AP): Judge orders 3 taxpayer-funded';
 
 // ── The ledger. amount is in dollars when known; agencies counts the agencies paying.
 const ledger = [
@@ -133,15 +134,15 @@ const ledger = [
 
 const dive = {
   slug: 'paid-for',
-  updated: '2026-10-13',
+  updated: '2026-10-31',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
     kicker: 'Public money',
     title: 'Paid For',
     dek: 'Is public money being used to promote the president himself? Banners of his face, an app on federal phones, a 24-hour stream and a TV ad with a government disclaimer: what each cost and who paid.',
-    status: 'A federal judge orders the taxpayer-funded ads off the air',
-    statusText: 'On October 11, Judge Jennifer L. Rochon of the Southern District of New York halted the ads for 14 days in a suit brought by Common Cause, staying CBP\'s $20 million purchase order and ordering remaining placements canceled. The Justice Department did not contest the merits; it argued the ads were ending anyway. By October 12, AdImpact counted $21,705,138 in government spending on five ads. Trump had said on October 5 that his super PAC would pay for future ads, and on October 6, asked about repaying what was spent, said, "we\'ll decide." The FAA banner contract runs through 2027.',
+    status: 'A federal judge pulls three more of the taxpayer-funded ads and lets the rest run for now',
+    statusText: 'On October 11, Judge Jennifer L. Rochon of the Southern District of New York halted the ads for 14 days in a suit brought by Common Cause, staying CBP\'s $20 million purchase order and ordering remaining placements canceled. The Justice Department did not contest the merits; it argued the ads were ending anyway. By October 12, AdImpact counted $21,705,138 in government spending on five ads. Trump had said on October 5 that his super PAC would pay for future ads, and on October 6, asked about repaying what was spent, said, "we\'ll decide." On October 30 she ordered three more ads taken off government websites and social media and barred their distribution through third parties, including MAGA Inc., but declined to pull the others the plaintiffs challenged, saying she had concluded the government will ultimately prevail on many of them. The FAA banner contract runs through 2027.',
   },
   hero: {
     question: 'Is public money being used to promote the president himself?',
@@ -349,6 +350,14 @@ const dive = {
         ],
         sources: srcs(DKT43, DKT44, CNN_AIRED, WEX_APOLOGY) },
     ] },
+    { date: '2026-10-30', events: [
+      { actor: 'court', title: 'The judge pulls three more ads, including from MAGA Inc.', kind: 'ads',
+        body: [
+          'At a hearing on whether to expand her temporary restraining order, Judge Rochon ordered three ads, "$5,000 to Americans," "Every Democrat Voted Against No Tax on Tips" and "Cost of Socialism," taken off government websites and social media, and ordered the cancellation of any plans to air or distribute them through authorized third parties, including Trump\'s super PAC, MAGA Inc., the AP reported. She found the plaintiffs likely to succeed on those three and at risk of irreparable harm: "This court can neither postpone an election nor turn back the clock."',
+          'The plaintiffs had sought the removal of at least 13 ads. Rochon declined to pull the others for now, saying the plaintiffs sought to restrict the president\'s office in ways that were "broad and far reaching," and that she had concluded the government will ultimately prevail on many of the ads; she said she could restore the three or bar more after hearing further evidence. White House spokesperson Lauren Bis said, "This Biden-appointed activist judge issued a lawless order to stop the administration from sharing patriotic videos."',
+        ],
+        sources: srcs(WCAX_PULL) },
+    ] },
   ],
 
   claims: [
@@ -425,7 +434,7 @@ const dive = {
     { date: '2026-11-03', when: 'Nov 3, 2026', title: 'Election Day', text: 'The ad ran six weeks before the midterms. Watch whether more spots carrying the government disclaimer run before the vote, and whether DHS answers the senators\' questions about the border money.' },
     { when: 'Open', title: 'The senators\' 48 hours', text: 'Sens. Murray and Murphy asked DHS on September 29 for a breakdown of the funds, copies of the contracts and who directed them, within 48 hours, copying the department\'s inspector general. Hassan\'s earlier questions on cost and contractors are also unanswered.', sources: srcs(SEN_LETTER, CBS_AD) },
     { when: 'Open', title: 'GAO', text: 'Reps. Raskin and Whitesides asked GAO on October 1 to identify the money and rule on whether the ads are legal. GAO acts on congressional requests and says it is deciding whether to take this one. A GAO opinion would test the propaganda restriction directly.', sources: srcs(BEAST_RASKIN, ARS_GAO) },
-    { date: '2026-10-25', when: 'Oct 25, 2026', title: 'The court order runs out', text: 'Judge Rochon\'s order lasts 14 days from October 11 unless the court extends it. The Democratic National Committee has sued separately.', sources: srcs(TRO, AP_TRO) },
+    { when: 'Open', title: 'The rest of the ads', text: 'Judge Rochon\'s first order ran 14 days from October 11. On October 30 she pulled three more ads and declined to pull the others for now, saying she could restore the three or bar more after hearing further evidence. The Democratic National Committee has sued separately.', sources: srcs(TRO, AP_TRO, WCAX_PULL) },
     { when: 'Open', title: 'The other complaints', text: 'Public Citizen\'s, filed September 25 with GAO and the Office of Special Counsel and September 29 with the FCC and FTC, and CREW\'s, filed September 30 with DHS\'s inspector general. The FCC chairman has said he sees no reason for review. None of the others has acted.', sources: srcs(PC_COMPLAINT, PC_FCC, CREW_IG, DEADLINE_FCC) },
     { when: 'Through 2027', title: 'The FAA banners', text: 'The FAA\'s banner contract runs through 2027.', sources: srcs(INDY_BAN) },
   ],
