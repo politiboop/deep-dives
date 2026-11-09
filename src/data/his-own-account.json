@@ -1,6 +1,6 @@
 {
   "slug": "his-own-account",
-  "updated": "2026-10-02",
+  "updated": "2026-11-09",
   "trackerIds": [
     "trump-2025-financial-disclosure-2-billion-crypto-earnings",
     "trump-meme-coin",
@@ -1220,6 +1220,36 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "Asked how his net worth rose, \"Well, you should've had stock\"",
+          "kind": "oversight",
+          "trackerIds": [
+            "trump-2025-financial-disclosure-2-billion-crypto-earnings"
+          ],
+          "body": [
+            "In a 60 Minutes interview aired November 8, Ross Douthat cited a Forbes estimate that his net worth had risen by $3 billion; the Guardian reported that the estimate covers the autumn of 2024 to the autumn of 2025. Trump answered, \"Well, so did everyone,\" and when Douthat said his own had not, \"Well, you should've had stock.\" Asked about World Liberty Financial, which he co-owns, he said, \"I know nothing about it.\" Asked why he does not divest, he said it was hard to tell his sons, \"Don't do anything anymore for four years because I'm president.\""
+          ],
+          "sources": [
+            {
+              "text": "CBS News: 60 Minutes Transcript: Donald Trump, the 2026 post-midterm elections interview",
+              "url": "https://www.cbsnews.com/news/donald-trump-2026-post-midterm-elections-interview-60-minutes-transcript/"
+            },
+            {
+              "text": "The Guardian: Trump admits deportation policy was 'too tough' despite promotion of Stephen Miller",
+              "url": "https://www.theguardian.com/us-news/2026/nov/09/trump-tells-60-minutes-deportation-policy-too-tough-ice-immigration"
+            },
+            {
+              "text": "HuffPost: Trump Has A Pretty Wild Explanation For How He Got So Much Richer In Office",
+              "url": "https://www.huffpost.com/entry/trump-60-minutes-billions-net-worth-increase-shouldve-had-stock_n_6af1d97be4b08067d849336c"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1247,7 +1277,7 @@
       "claim": "because the stock market's going up",
       "who": "Trump, explaining why he is profiting",
       "found": "Stock gains are not what drives the total.",
-      "detail": "The form reports his stock trades only in ranges; the exact figures that add up to about $2.16 billion are crypto proceeds, business revenue, license fees and settlements.",
+      "detail": "The form reports his stock trades only in ranges; the exact figures that add up to about $2.16 billion are crypto proceeds, business revenue, license fees and settlements. Asked on 60 Minutes in November 2026 about a reported $3 billion rise in his net worth, he said, \"Well, you should've had stock.\" PolitiFact rated his account Mostly False: of the $2.2 billion to $3 billion he took in during 2025, by The New York Times' and Forbes's estimates, his disclosure showed $1.4 billion from crypto ventures. Forbes editor Dan Alexander said \"Almost none\" of the $3 billion came from stock, PolitiFact reported.",
       "sources": [
         {
           "text": "U.S. Office of Government Ethics: Donald J. Trump, OGE Form 278e, Annual Report for 2025 (released June 30, 2026)",
@@ -1260,6 +1290,14 @@
         {
           "text": "Time: Trump Reports Over $1 Billion in Income From Crypto Ventures (July 1, 2026)",
           "url": "https://time.com/article/2026/07/01/trump-2025-financial-disclosure-crypto-world-liberty-financial/"
+        },
+        {
+          "text": "CBS News: 60 Minutes Transcript: Donald Trump, the 2026 post-midterm elections interview",
+          "url": "https://www.cbsnews.com/news/donald-trump-2026-post-midterm-elections-interview-60-minutes-transcript/"
+        },
+        {
+          "text": "PolitiFact: Trump's $3 billion net worth increase came largely from crypto, not stock",
+          "url": "https://politifact.com/factchecks/2026/nov/09/donald-trump/60-minutes-3-billion-net-worth-stocks-crypto/"
         }
       ]
     },

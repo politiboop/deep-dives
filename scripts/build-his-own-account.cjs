@@ -116,6 +116,10 @@ const ROLLCALL = 'U.S. Senate: Roll Call Vote 234';
 const AP_CRYPTO = 'AP: Senate blocks cryptocurrency regulation';
 const VULCAN = 'ProPublica: The White House Intervened';
 const VULCAN_CATO = 'Cato Institute: White House Intervention Bolsters';
+const SIXTY_NOV = '60 Minutes Transcript: Donald Trump, the 2026 post-midterm';
+const PF_STOCK = "PolitiFact: Trump's $3 billion net worth";
+const HP_STOCK = 'HuffPost: Trump Has A Pretty Wild Explanation';
+const GU_60 = "The Guardian: Trump admits deportation policy was 'too tough'";
 const PRISON = 'CREW: Trump has made 29 private prison stock trades';
 const PRISON_NPR = 'NPR: Private prisons announce $1.4 billion';
 
@@ -177,7 +181,7 @@ const ledger = [
 
 const dive = {
   slug: 'his-own-account',
-  updated: '2026-10-02',
+  updated: '2026-11-09',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
@@ -330,6 +334,11 @@ const dive = {
         body: ['The coin\'s official site announced a November 22 dinner with Trump at his Virginia club for the coin\'s top holders, ranked by their "time-weighted $TRUMP holdings as of Nov 12, 2026, 1 PM Eastern." ABC News reported that 185 top investors will attend, "the third such gathering since his return to office." The prizes include an 18-karat gold Trump watch. The White House referred Politico to the host organization, which did not respond.'],
         sources: srcs(GALA_SITE, GALA_ABC, GALA_POL) },
     ] },
+    { date: '2026-11-08', events: [
+      { actor: 'wh', title: 'Asked how his net worth rose, "Well, you should\'ve had stock"', kind: 'oversight', trackerIds: ['trump-2025-financial-disclosure-2-billion-crypto-earnings'],
+        body: ['In a 60 Minutes interview aired November 8, Ross Douthat cited a Forbes estimate that his net worth had risen by $3 billion; the Guardian reported that the estimate covers the autumn of 2024 to the autumn of 2025. Trump answered, "Well, so did everyone," and when Douthat said his own had not, "Well, you should\'ve had stock." Asked about World Liberty Financial, which he co-owns, he said, "I know nothing about it." Asked why he does not divest, he said it was hard to tell his sons, "Don\'t do anything anymore for four years because I\'m president."'],
+        sources: srcs(SIXTY_NOV, GU_60, HP_STOCK) },
+    ] },
   ],
 
   claims: [
@@ -339,8 +348,8 @@ const dive = {
       sources: srcs(OGE, TIME_DISC, INDY_DISC) },
     { claim: 'because the stock market\'s going up', who: 'Trump, explaining why he is profiting',
       found: 'Stock gains are not what drives the total.',
-      detail: 'The form reports his stock trades only in ranges; the exact figures that add up to about $2.16 billion are crypto proceeds, business revenue, license fees and settlements.',
-      sources: srcs(OGE, NBC_DISC, TIME_DISC) },
+      detail: 'The form reports his stock trades only in ranges; the exact figures that add up to about $2.16 billion are crypto proceeds, business revenue, license fees and settlements. Asked on 60 Minutes in November 2026 about a reported $3 billion rise in his net worth, he said, "Well, you should\'ve had stock." PolitiFact rated his account Mostly False: of the $2.2 billion to $3 billion he took in during 2025, by The New York Times\' and Forbes\'s estimates, his disclosure showed $1.4 billion from crypto ventures. Forbes editor Dan Alexander said "Almost none" of the $3 billion came from stock, PolitiFact reported.',
+      sources: srcs(OGE, NBC_DISC, TIME_DISC, SIXTY_NOV, PF_STOCK) },
     { claim: 'Neither the President nor his family has ever engaged—or will ever engage—in conflicts of interest.', who: 'The White House, in a statement on the disclosure',
       found: 'The conflict-of-interest rules do not apply to him, and his largest source of income is an industry his administration regulates.',
       detail: 'The president and vice president "are not subject to the ethics laws that prohibit conflicts of interest among most executive branch employees," Time noted. His administration shut down the Justice Department\'s crypto enforcement team, the SEC dropped its Binance case, and a regulator he appointed granted preliminary approval for a bank charter for his family\'s crypto company.',
