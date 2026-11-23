@@ -58,6 +58,8 @@ const MAL = 'Reuters via CNBC: Trump hosts crypto contest winners';
 const GALA_SITE = '$TRUMP official site: Exclusive Dinner';
 const GALA_ABC = 'ABC News: Trump to host another gala';
 const GALA_POL = 'Politico: Trump meme coin org promises dinner';
+const GALA_GU = 'The Guardian: Trump hosts third crypto gala';
+const GALA_AJ = 'Al Jazeera (Reuters): Trump hosts private dinner';
 const WLF_CNBC = 'CNBC: New details of Trump family crypto project';
 const WLF_CBS = 'CBS News: Trump plans to announce the World Liberty';
 const WLF_DECRYPT = 'Decrypt: What Is World Liberty Financial';
@@ -181,7 +183,7 @@ const ledger = [
 
 const dive = {
   slug: 'his-own-account',
-  updated: '2026-11-09',
+  updated: '2026-11-23',
   trackerIds: IDS,
   section: 'corruption',
   meta: {
@@ -339,6 +341,11 @@ const dive = {
         body: ['In a 60 Minutes interview aired November 8, Ross Douthat cited a Forbes estimate that his net worth had risen by $3 billion; the Guardian reported that the estimate covers the autumn of 2024 to the autumn of 2025. Trump answered, "Well, so did everyone," and when Douthat said his own had not, "Well, you should\'ve had stock." Asked about World Liberty Financial, which he co-owns, he said, "I know nothing about it." Asked why he does not divest, he said it was hard to tell his sons, "Don\'t do anything anymore for four years because I\'m president."'],
         sources: srcs(SIXTY_NOV, GU_60, HP_STOCK) },
     ] },
+    { date: '2026-11-22', events: [
+      { actor: 'wh', title: 'The third dinner for the coin\'s biggest holders', kind: 'crypto', trackerIds: ['trump-meme-coin-dinner-top-holders-virginia-club'],
+        body: ['The dinner was held at Trump National in Sterling, Virginia. Organizers indicated that 185 wallets qualified, though the contest leaderboard listed just 130 when it closed; together the listed wallets held $8.6 million, against $148 million listed for the May 2025 dinner, the Guardian and Reuters reported. The top four received a "Trump 18K gold watch." Trump told attendees, "I\'m doing it for the United States ... If we don\'t do it, China\'s going to do it."', 'The coin, which once traded as high as $75, was worth about $0.88 on the eve of the dinner, a record low, Reuters reported. A Public Citizen analysis prepared for Reuters found that more than half of the leaderboard wallets were tied directly to exchanges that bar U.S. users. The White House has called the dinner a "private event, not a government function."'],
+        sources: srcs(GALA_GU, GALA_AJ) },
+    ] },
   ],
 
   claims: [
@@ -388,8 +395,7 @@ const dive = {
   ],
 
   watch: [
-    { date: '2026-11-22', when: 'Nov 22, 2026', title: 'The third meme-coin dinner', text: 'Trump is to host the coin\'s top holders at his Virginia club. The ranking closes November 12.', sources: srcs(GALA_SITE, GALA_ABC) },
-    { date: '2027-05-15', when: 'May 15, 2027', title: 'The next disclosure', text: 'His report for 2026 is due. It will show the year the family\'s crypto bank charter was approved and the second meme-coin event was held.', sources: srcs(BANKING_LETTER) },
+    { date: '2027-05-15', when: 'May 15, 2027', title: 'The next disclosure', text: 'His report for 2026 is due. It will show the year the family\'s crypto bank charter was approved and the second and third meme-coin events were held.', sources: srcs(BANKING_LETTER) },
     { when: 'Open', title: 'The crypto market structure bill', text: 'Stalled in the Senate on September 15, 2026, with Democrats seeking a requirement that the president divest crypto holdings.', sources: srcs(AP_CRYPTO) },
     { when: 'Open', title: 'World Liberty\'s bank', text: 'The OCC\'s approval is preliminary and conditional; the bank cannot open until it meets the conditions.', sources: srcs(OCC) },
     { when: 'Open', title: 'Where the settlement money went', text: 'Democratic senators have asked his library foundation to account for the settlement money. No answer is on the record.', sources: srcs(LIB_WARREN) },

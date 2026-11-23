@@ -1,6 +1,6 @@
 {
   "slug": "his-own-account",
-  "updated": "2026-11-09",
+  "updated": "2026-11-23",
   "trackerIds": [
     "trump-2025-financial-disclosure-2-billion-crypto-earnings",
     "trump-meme-coin",
@@ -1250,6 +1250,33 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "events": [
+        {
+          "actor": "wh",
+          "title": "The third dinner for the coin's biggest holders",
+          "kind": "crypto",
+          "trackerIds": [
+            "trump-meme-coin-dinner-top-holders-virginia-club"
+          ],
+          "body": [
+            "The dinner was held at Trump National in Sterling, Virginia. Organizers indicated that 185 wallets qualified, though the contest leaderboard listed just 130 when it closed; together the listed wallets held $8.6 million, against $148 million listed for the May 2025 dinner, the Guardian and Reuters reported. The top four received a \"Trump 18K gold watch.\" Trump told attendees, \"I'm doing it for the United States ... If we don't do it, China's going to do it.\"",
+            "The coin, which once traded as high as $75, was worth about $0.88 on the eve of the dinner, a record low, Reuters reported. A Public Citizen analysis prepared for Reuters found that more than half of the leaderboard wallets were tied directly to exchanges that bar U.S. users. The White House has called the dinner a \"private event, not a government function.\""
+          ],
+          "sources": [
+            {
+              "text": "The Guardian: Trump hosts third crypto gala for meme coin amid conflict of interest outcry",
+              "url": "https://www.theguardian.com/us-news/2026/nov/22/trump-cryptocurrency-gala-meme-coin"
+            },
+            {
+              "text": "Al Jazeera (Reuters): Trump hosts private dinner for largest owners of his meme coin",
+              "url": "https://www.aljazeera.com/news/2026/11/22/trump-to-host-private-dinner-for-largest-owners-of-his-meme-coin"
+            }
+          ]
+        }
+      ]
     }
   ],
   "claims": [
@@ -1535,26 +1562,10 @@
   ],
   "watch": [
     {
-      "date": "2026-11-22",
-      "when": "Nov 22, 2026",
-      "title": "The third meme-coin dinner",
-      "text": "Trump is to host the coin's top holders at his Virginia club. The ranking closes November 12.",
-      "sources": [
-        {
-          "text": "$TRUMP official site: Exclusive Dinner in the World",
-          "url": "https://gettrumpmemes.com/gala-dinner"
-        },
-        {
-          "text": "ABC News: Trump to host another gala with investors in his meme coin",
-          "url": "https://abcnews.com/US/trump-host-gala-investors-meme-coin/story?id=136931120"
-        }
-      ]
-    },
-    {
       "date": "2027-05-15",
       "when": "May 15, 2027",
       "title": "The next disclosure",
-      "text": "His report for 2026 is due. It will show the year the family's crypto bank charter was approved and the second meme-coin event was held.",
+      "text": "His report for 2026 is due. It will show the year the family's crypto bank charter was approved and the second and third meme-coin events were held.",
       "sources": [
         {
           "text": "Senate Banking Committee Ranking Member: Letter to President Trump on 2026 crypto earnings (July 16, 2026)",
